@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Integration - Extending Kiro's capabilities - Kiro Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰ Menu</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>Kiro Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🚀 Getting Started</div>
+            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
+            <a href="introduction.html" class="sidebar-link">Introduction</a>
+            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
+            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local)</a>
+            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">💡 Core Concepts</div>
+            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
+            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+            <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
+            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro</a>
+            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Development</a>
+            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
+            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
+            <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">⚡ Advanced Topics</div>
+            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+            <a href="mcp-integration.html" class="sidebar-link active">MCP Integration</a>
+            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+            <a href="context-engineering.html#exercise1" class="sidebar-link sub-item">Exercise 1: Build a Private Power</a>
+            <a href="context-engineering.html#exercise2" class="sidebar-link sub-item">Exercise 2: Build an Agent Skill</a>
+            <a href="context-engineering.html#exercise3" class="sidebar-link sub-item">Exercise 3: Build a Custom Agent</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">✅ Wrap Up</div>
+            <a href="resource-cleanup.html" class="sidebar-link">Resource Cleanup</a>
+            <a href="wrapping-up.html" class="sidebar-link">Wrapping Up: Next Steps</a>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>MCP Integration - Extending Kiro's capabilities</h1>
+            <div class="accent-line"></div>
+            <p>Connect Kiro to external tools, APIs, and services</p>
+        </header>
+
+        <article class="content">
+            <h2>What is MCP?</h2>
+            <p>MCP (Model Context Protocol) is an open standard that allows AI assistants like Kiro to connect to external tools, data sources, and services. It provides a standardized way for AI models to interact with the world beyond the code editor.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Key Concept</span>
+                </div>
+                <p>MCP acts as a bridge between Kiro's AI capabilities and external systems, enabling Kiro to perform actions like querying databases, calling APIs, accessing documentation, and more.</p>
+            </div>
+
+            <h2>Why Use MCP Integration?</h2>
+            <p>MCP integration extends Kiro's capabilities beyond code generation and editing:</p>
+            <ul>
+                <li><strong>Database Access:</strong> Query databases directly from Kiro</li>
+                <li><strong>API Interaction:</strong> Call external APIs and process responses</li>
+                <li><strong>Documentation Lookup:</strong> Access up-to-date library and framework docs</li>
+                <li><strong>File System Operations:</strong> Perform complex file operations across your project</li>
+                <li><strong>Custom Tools:</strong> Build and integrate your own specialized tools</li>
+            </ul>
+
+            <h2>Common MCP Integrations</h2>
+            <div class="integration-grid">
+                <div class="integration-card">
+                    <h4>Database Connectors</h4>
+                    <p>Connect to PostgreSQL, MySQL, MongoDB, and other databases to query and analyze data</p>
+                </div>
+                <div class="integration-card">
+                    <h4>API Clients</h4>
+                    <p>Integrate with REST APIs, GraphQL endpoints, and third-party services</p>
+                </div>
+                <div class="integration-card">
+                    <h4>Documentation Servers</h4>
+                    <p>Access real-time documentation for frameworks, libraries, and APIs</p>
+                </div>
+                <div class="integration-card">
+                    <h4>Version Control</h4>
+                    <p>Enhanced Git operations, PR management, and code review workflows</p>
+                </div>
+                <div class="integration-card">
+                    <h4>Testing Tools</h4>
+                    <p>Run tests, analyze coverage, and generate test reports</p>
+                </div>
+                <div class="integration-card">
+                    <h4>Custom Scripts</h4>
+                    <p>Execute custom scripts and tools specific to your workflow</p>
+                </div>
+            </div>
+
+            <h2>Setting Up MCP Servers</h2>
+            <p>To configure MCP integration in Kiro:</p>
+            <ol>
+                <li>Open Kiro's settings or configuration file</li>
+                <li>Navigate to the MCP servers section</li>
+                <li>Add the MCP server configuration (command, arguments, environment variables)</li>
+                <li>Restart Kiro or reload the configuration</li>
+                <li>Verify the connection in the AI Chat panel</li>
+            </ol>
+
+            <h2>MCP Configuration Example</h2>
+            <div class="code-block">
+                <code>{
+  "mcpServers": {
+    "database": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres"],
+      "env": {
+        "DATABASE_URL": "postgresql://localhost:5432/mydb"
+      }
+    },
+    "docs": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-context7"]
+    }
+  }
+}</code>
+            </div>
+
+            <h2>Using MCP Tools in Kiro</h2>
+            <p>Once configured, you can use MCP tools through the AI Chat:</p>
+            <ul>
+                <li><strong>Ask Questions:</strong> "Query the users table for active users"</li>
+                <li><strong>Request Data:</strong> "Show me the API response from /api/posts"</li>
+                <li><strong>Lookup Docs:</strong> "Show me the latest React hooks documentation"</li>
+                <li><strong>Run Tools:</strong> "Run the test suite and show me the coverage report"</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Security Note</span>
+                </div>
+                <p>Be cautious when configuring MCP servers with access to sensitive data or production systems. Use appropriate access controls and environment variables for credentials.</p>
+            </div>
+
+            <h2>Building Custom MCP Servers</h2>
+            <p>You can create your own MCP servers to integrate custom tools:</p>
+            <ol>
+                <li>Create a new project using the MCP SDK</li>
+                <li>Define the tools, resources, and prompts your server provides</li>
+                <li>Implement the tool handlers and resource providers</li>
+                <li>Test your server locally</li>
+                <li>Configure Kiro to connect to your custom server</li>
+            </ol>
+
+            <h2>Best Practices</h2>
+            <ul>
+                <li><strong>Start Simple:</strong> Begin with one or two MCP servers and expand gradually</li>
+                <li><strong>Use Environment Variables:</strong> Store sensitive configuration in environment variables</li>
+                <li><strong>Monitor Performance:</strong> Watch for slow MCP servers that impact Kiro's responsiveness</li>
+                <li><strong>Version Control:</strong> Keep MCP configurations in version control for team consistency</li>
+                <li><strong>Document Setup:</strong> Document MCP server setup for team members</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Next Steps</span>
+                </div>
+                <p>Continue to "Advanced Steering" to learn about domain-specific guidance and custom steering patterns.</p>
+            </div>
+        </article>
+
+        <div class="navigation-buttons">
+            <a href="agent-hooks.html" class="btn btn-secondary">Previous: Agent Hooks</a>
+            <a href="advanced-steering.html" class="btn btn-primary">Next: Advanced Steering</a>
+        </div>
+    </main>
+<script src="scripts.js"></script>
+</body>
+</html>

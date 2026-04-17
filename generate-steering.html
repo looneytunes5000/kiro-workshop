@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Steering Documents - Kiro Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰ Menu</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>Kiro Workshop</h2>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🚀 Getting Started</div>
+            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
+            <a href="introduction.html" class="sidebar-link">Introduction</a>
+            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
+            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local)</a>
+            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">💡 Core Concepts</div>
+            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
+            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+            <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
+            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro</a>
+            <a href="generate-steering.html" class="sidebar-link active sub-item">Generate Steering Documents</a>
+            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Development</a>
+            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
+            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
+            <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">⚡ Advanced Topics</div>
+            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+            <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+            <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">✅ Wrap Up</div>
+            <a href="#" class="sidebar-link">Resource Cleanup</a>
+            <a href="#" class="sidebar-link">Wrapping Up: Next Steps</a>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Generate Steering Documents</h1>
+            <div class="accent-line"></div>
+            <p>Step-by-step guide to generating and reviewing steering documents for your project</p>
+        </header>
+
+        <article class="content">
+            <h2>Generate steering documents</h2>
+            <p>Let's create steering documents for the workshop project:</p>
+
+            <h3>Step 1: Open the Steering panel</h3>
+            <ol>
+                <li>Look at the left sidebar in Kiro</li>
+                <li>Find and click on the Kiro features panel (it's the cute little ghost)</li>
+                <li>Look for the "Generate Steering Docs" button</li>
+            </ol>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span><strong>Alternative method:</strong> You can also open the command palette with <span class="inline-code">Cmd + Shift + P</span> (Mac) or <span class="inline-code">Ctrl + Shift + P</span> (Windows/Linux), then type <span class="inline-code">Kiro: Generate Steering</span> and press Enter.</span>
+                </div>
+            </div>
+
+            <h3>Step 2: Generate the documents</h3>
+            <ol>
+                <li>Click "Generate Steering Docs"</li>
+                <li>Kiro will begin analyzing your codebase</li>
+            </ol>
+
+            <h3>Step 3: Wait for analysis</h3>
+            <p>Kiro will analyze your codebase in a new chat session. This typically takes 30-60 seconds. You'll see a progress indicator showing:</p>
+            <ul>
+                <li>Analyzing code files</li>
+                <li>Detecting patterns</li>
+                <li>Generating documentation</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span><strong>What's happening?</strong> Kiro is scanning your entire codebase including:</span>
+                </div>
+                <ul style="margin-top: 8px;">
+                    <li>Source code files (<span class="inline-code">.ts</span>, <span class="inline-code">.tsx</span>, <span class="inline-code">.js</span>, <span class="inline-code">.jsx</span>)</li>
+                    <li>Configuration files (<span class="inline-code">package.json</span>, <span class="inline-code">tsconfig.json</span>, etc.)</li>
+                    <li>Project structure and organization</li>
+                    <li>Existing documentation and comments</li>
+                </ul>
+            </div>
+
+            <h3>Step 4: Verify generation</h3>
+            <p>Once complete, Kiro will let you know with a confirmation message in the chat session.</p>
+            <p>The easiest way to view these documents is from the Agent Steering section of the Kiro features panel.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span><strong>Alternative method:</strong> You can also check the <span class="inline-code">.kiro/steering/</span> directory in your file explorer. You should see three new files:</span>
+                </div>
+                <ul style="margin-top: 8px;">
+                    <li><span class="inline-code">product.md</span></li>
+                    <li><span class="inline-code">tech.md</span></li>
+                    <li><span class="inline-code">structure.md</span></li>
+                </ul>
+            </div>
+
+            <h2>Review generated content</h2>
+            <p>Open the steering documents from the Agent Steering panel and review the three generated files.</p>
+
+            <h3>What to look for in each file</h3>
+
+            <h4>In product.md:</h4>
+            <ul class="checklist">
+                <li>Application name and description</li>
+                <li>Core features list</li>
+                <li>User personas or target audience</li>
+                <li>Architecture overview</li>
+            </ul>
+
+            <h4>In tech.md:</h4>
+            <ul class="checklist">
+                <li>Frontend framework and libraries (React, TypeScript, Vite)</li>
+                <li>Backend runtime and services (Node.js, Lambda, DynamoDB)</li>
+                <li>Build commands and scripts</li>
+                <li>Testing frameworks</li>
+            </ul>
+
+            <h4>In structure.md:</h4>
+            <ul class="checklist">
+                <li>Directory organization</li>
+                <li>Key file locations</li>
+                <li>Module responsibilities</li>
+                <li>Important patterns or conventions</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span><strong>Living documents:</strong> Steering documents should evolve with your codebase. Update them when you add new technologies, refactor architecture, or establish new patterns.</span>
+                </div>
+            </div>
+
+            <h2>Test steering context - Before and After</h2>
+            <p>Let's see the difference steering documents make.</p>
+
+            <h3>Without steering context (hypothetical)</h3>
+            <p>If you asked Kiro without steering:</p>
+            <div class="prompt-box">
+                <p><strong>Prompt:</strong> "Add a new API endpoint for user profiles"</p>
+            </div>
+            <p>Kiro would need to:</p>
+            <ul>
+                <li>Analyze multiple files to understand your framework and architecture</li>
+                <li>Search through the codebase to find patterns and conventions</li>
+                <li>Consume significant context window space reading configuration files</li>
+                <li>Take longer to respond while gathering this information</li>
+            </ul>
+
+            <h3>With steering context (now)</h3>
+            <p>Now test that Kiro understands your project context:</p>
+            <ol>
+                <li>Open a new Kiro chat session</li>
+                <li>Choose Vibe mode</li>
+                <li>Try this prompt:</li>
+            </ol>
+
+            <div class="prompt-box">
+                <p><strong>Test prompt:</strong> "What tech stack is this project using?"</p>
+            </div>
+
+            <p>You should see:</p>
+            <ul>
+                <li>At the top of the chat, Kiro displays "Including Steering Documents" with <span class="inline-code">product.md</span>, <span class="inline-code">structure.md</span>, and <span class="inline-code">tech.md</span> listed</li>
+                <li>Kiro responds with specific information (by referencing the steering files, not analyzing code):
+                    <ul>
+                        <li>Application name and purpose (micro-blogging platform)</li>
+                        <li>Frontend stack (React 18, TypeScript, Vite)</li>
+                        <li>Backend stack (Node.js 18, Lambda, DynamoDB)</li>
+                        <li>Architecture (serverless on AWS)</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span><strong>Key insight:</strong> Notice how Kiro provides specific, accurate information without analyzing your codebase. It's reading directly from the steering documents (<span class="inline-code">product.md</span> and <span class="inline-code">tech.md</span>) that were generated earlier. This is much faster and more efficient than scanning through code files.</span>
+                </div>
+            </div>
+
+            <h3>Try a more specific question</h3>
+            <p>Now try something more technical:</p>
+
+            <div class="prompt-box">
+                <p><strong>Advanced test prompt:</strong> "Where should I add a new Lambda function and what pattern should I follow?"</p>
+            </div>
+
+            <p>Kiro should reference <span class="inline-code">structure.md</span> to tell you:</p>
+            <ul>
+                <li>Create it in <span class="inline-code">backend/src/functions/</span></li>
+                <li>Follow the pattern of existing handlers like <span class="inline-code">posts.js</span> or <span class="inline-code">users.js</span></li>
+                <li>Use the AWS SDK v3 client libraries</li>
+                <li>Export handler functions for Lambda</li>
+            </ul>
+
+            <h2>Reflection</h2>
+            <p>Before moving on, consider:</p>
+            <ul>
+                <li><strong>How might steering documents reduce the time spent explaining context to AI?</strong> Instead of repeating your tech stack and architecture in every conversation, Kiro has persistent knowledge that's always available.</li>
+                <li><strong>What information about your current projects would be valuable in steering documents?</strong> Think about the questions you repeatedly answer for new team members - those same answers belong in steering docs.</li>
+                <li><strong>How does this compare to traditional documentation?</strong> Steering docs are automatically loaded and always up-to-date with your codebase, unlike wikis or README files that often become stale.</li>
+            </ul>
+
+            <h2>Next steps</h2>
+            <p>With steering documents in place, Kiro now has persistent knowledge about your project. In the next section, you'll use Vibe Coding to rapidly add features - and you'll see how steering eliminates the need to explain your tech stack in every prompt.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span><strong>Coming later:</strong> In the Advanced Steering section, you'll learn how to create domain-specific steering files that only load when relevant - perfect for design systems, API standards, and security policies.</span>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="steering.html" class="btn btn-secondary">← Previous: Steering Overview</a>
+                <a href="vibe-coding.html" class="btn btn-primary">Next: Vibe Coding →</a>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        document.addEventListener('click', function(e) {
+            const sidebar = document.querySelector('.sidebar');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            if (window.innerWidth <= 900 && 
+                !sidebar.contains(e.target) && 
+                !menuBtn.contains(e.target) && 
+                sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
+<script src="scripts.js"></script>
+</body>
+</html>

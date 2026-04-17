@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sub-Agents - Parallel task delegation - Kiro Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰ Menu</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>Kiro Workshop</h2>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🚀 Getting Started</div>
+            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
+            <a href="introduction.html" class="sidebar-link">Introduction</a>
+            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
+            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local)</a>
+            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">💡 Core Concepts</div>
+            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
+            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+            <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
+            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro</a>
+            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Development</a>
+            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
+            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
+            <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">⚡ Advanced Topics</div>
+            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+            <a href="sub-agents.html" class="sidebar-link active">Sub-Agents</a>
+            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+            <a href="context-engineering.html#exercise1" class="sidebar-link sub-item">Exercise 1: Build a Private Power</a>
+            <a href="context-engineering.html#exercise2" class="sidebar-link sub-item">Exercise 2: Build an Agent Skill</a>
+            <a href="context-engineering.html#exercise3" class="sidebar-link sub-item">Exercise 3: Build a Custom Agent</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">✅ Wrap Up</div>
+            <a href="resource-cleanup.html" class="sidebar-link">Resource Cleanup</a>
+            <a href="wrapping-up.html" class="sidebar-link">Wrapping Up: Next Steps</a>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Sub-Agents - Parallel task delegation</h1>
+            <div class="accent-line"></div>
+            <p>Delegate independent tasks to parallel AI agents for faster development</p>
+        </header>
+
+        <article class="content">
+            <h2>What are Sub-Agents?</h2>
+            <p>Sub-agents in Kiro allow you to delegate independent tasks to parallel AI agents. Instead of waiting for one task to complete before starting the next, you can run multiple tasks simultaneously, significantly speeding up your development workflow.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Key Concept</span>
+                </div>
+                <p>Sub-agents work independently on isolated tasks. They don't share context with each other, which prevents conflicts and ensures each agent can focus on its specific assignment.</p>
+            </div>
+
+            <h2>When to Use Sub-Agents</h2>
+            <p>Sub-agents are ideal for:</p>
+            <ul>
+                <li><strong>Independent File Changes:</strong> Modifying multiple files that don't depend on each other</li>
+                <li><strong>Parallel Testing:</strong> Running different test suites simultaneously</li>
+                <li><strong>Multi-Feature Development:</strong> Building separate features that don't interact</li>
+                <li><strong>Code Refactoring:</strong> Refactoring different modules in parallel</li>
+                <li><strong>Documentation Updates:</strong> Updating documentation for multiple components</li>
+            </ul>
+
+            <h2>Sub-Agent Workflow</h2>
+            <div class="workflow-diagram">
+                <span class="step">Main Agent</span>
+                <span class="arrow">→</span>
+                <span class="step">Task 1</span>
+                <span class="arrow">→</span>
+                <span class="step">Sub-Agent A</span>
+                <br>
+                <span class="arrow" style="margin-left: 140px;">→</span>
+                <span class="step">Task 2</span>
+                <span class="arrow">→</span>
+                <span class="step">Sub-Agent B</span>
+                <br>
+                <span class="arrow" style="margin-left: 140px;">→</span>
+                <span class="step">Task 3</span>
+                <span class="arrow">→</span>
+                <span class="step">Sub-Agent C</span>
+            </div>
+
+            <h2>How to Use Sub-Agents</h2>
+            <ol>
+                <li><strong>Identify Independent Tasks:</strong> Break your work into tasks that don't depend on each other</li>
+                <li><strong>Launch Sub-Agents:</strong> Use the Agent Panel to spawn sub-agents for each task</li>
+                <li><strong>Monitor Progress:</strong> Track each sub-agent's progress independently</li>
+                <li><strong>Review Results:</strong> Review and merge the results from each sub-agent</li>
+            </ol>
+
+            <h2>Example: Parallel Feature Development</h2>
+            <p>Imagine you need to add three independent features to your application:</p>
+            <ul>
+                <li><strong>Sub-Agent A:</strong> Add user profile page</li>
+                <li><strong>Sub-Agent B:</strong> Add notification settings</li>
+                <li><strong>Sub-Agent C:</strong> Add dark mode toggle</li>
+            </ul>
+            <p>Since these features don't interact, you can run all three sub-agents in parallel instead of sequentially.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Important</span>
+                </div>
+                <p>Only use sub-agents for truly independent tasks. If tasks depend on each other's output, run them sequentially to avoid conflicts and inconsistent results.</p>
+            </div>
+
+            <h2>Best Practices</h2>
+            <ul>
+                <li><strong>Clear Task Definitions:</strong> Give each sub-agent a clear, specific task description</li>
+                <li><strong>Isolated Scope:</strong> Ensure tasks don't modify the same files or shared state</li>
+                <li><strong>Monitor Resources:</strong> Be aware of resource usage when running multiple agents</li>
+                <li><strong>Review Carefully:</strong> Review each sub-agent's output before merging</li>
+                <li><strong>Use for Repetitive Tasks:</strong> Sub-agents excel at repetitive, well-defined tasks</li>
+            </ul>
+
+            <h2>Limitations</h2>
+            <ul>
+                <li>Sub-agents cannot share context or communicate with each other</li>
+                <li>Tasks that modify the same files should not run in parallel</li>
+                <li>Complex tasks with many dependencies are better suited for sequential execution</li>
+                <li>Resource usage increases with each additional sub-agent</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Next Steps</span>
+                </div>
+                <p>Continue to "Going Further: Context Engineering" to learn about advanced context management and custom agent building.</p>
+            </div>
+        </article>
+
+        <div class="navigation-buttons">
+            <a href="advanced-steering.html" class="btn btn-secondary">Previous: Advanced Steering</a>
+            <a href="context-engineering.html" class="btn btn-primary">Next: Context Engineering</a>
+        </div>
+    </main>
+<script src="scripts.js"></script>
+</body>
+</html>

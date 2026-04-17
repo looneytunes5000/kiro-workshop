@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Going Further: Context Engineering - Kiro Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰ Menu</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>Kiro Workshop</h2>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🚀 Getting Started</div>
+            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
+            <a href="introduction.html" class="sidebar-link">Introduction</a>
+            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
+            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local)</a>
+            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">💡 Core Concepts</div>
+            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
+            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+            <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
+            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro</a>
+            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Development</a>
+            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
+            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
+            <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">⚡ Advanced Topics</div>
+            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+            <a href="context-engineering.html" class="sidebar-link active">Going Further: Context Engineering</a>
+            <a href="#exercise1" class="sidebar-link sub-item">Exercise 1: Build a Private Power</a>
+            <a href="#exercise2" class="sidebar-link sub-item">Exercise 2: Build an Agent Skill</a>
+            <a href="#exercise3" class="sidebar-link sub-item">Exercise 3: Build a Custom Agent</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">✅ Wrap Up</div>
+            <a href="resource-cleanup.html" class="sidebar-link">Resource Cleanup</a>
+            <a href="wrapping-up.html" class="sidebar-link">Wrapping Up: Next Steps</a>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Going Further: Context Engineering</h1>
+            <div class="accent-line"></div>
+            <p>Advanced techniques for optimizing AI context and building custom capabilities</p>
+        </header>
+
+        <article class="content">
+            <h2>What is Context Engineering?</h2>
+            <p>Context engineering is the practice of designing and optimizing the information provided to AI systems to improve their output quality. In Kiro, this means carefully curating what the AI knows about your codebase, conventions, and requirements.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Key Concept</span>
+                </div>
+                <p>Better context leads to better AI output. Context engineering is about providing the right information at the right time, in the right format, to maximize Kiro's effectiveness.</p>
+            </div>
+
+            <h2>Context Engineering Principles</h2>
+            <ul>
+                <li><strong>Relevance:</strong> Include only information that's directly relevant to the task</li>
+                <li><strong>Specificity:</strong> Be specific rather than vague in your guidance</li>
+                <li><strong>Structure:</strong> Organize context in a way that's easy for the AI to parse</li>
+                <li><strong>Recency:</strong> Keep context up-to-date with your current codebase state</li>
+                <li><strong>Progressive Disclosure:</strong> Provide context gradually as needed, not all at once</li>
+            </ul>
+
+            <h2 id="exercise1">Exercise 1: Build a Private Power</h2>
+            <div class="exercise-card">
+                <h3>Building Custom Powers</h3>
+                <p>Powers in Kiro are custom capabilities you define to extend the AI's abilities. A "private power" is a power specific to your project or team.</p>
+                
+                <div class="objective">
+                    <p><strong>Objective:</strong> Create a custom power that automates a repetitive task specific to your workflow.</p>
+                </div>
+
+                <h4>Steps:</h4>
+                <ol>
+                    <li><strong>Identify the Task:</strong> Choose a repetitive task you do frequently (e.g., generating API clients, creating component templates)</li>
+                    <li><strong>Define the Power:</strong> Create a power definition file that describes the task, inputs, and expected outputs</li>
+                    <li><strong>Implement the Logic:</strong> Write the logic that Kiro will execute when the power is invoked</li>
+                    <li><strong>Test the Power:</strong> Invoke the power and verify it produces the expected output</li>
+                    <li><strong>Refine:</strong> Adjust the power based on test results and edge cases</li>
+                </ol>
+
+                <div class="callout">
+                    <div class="callout-header">
+                        <div class="dot"></div>
+                        <span>Tip</span>
+                    </div>
+                    <p>Start with a simple, well-defined task. Complex powers are harder to debug and maintain.</p>
+                </div>
+            </div>
+
+            <h2 id="exercise2">Exercise 2: Build an Agent Skill</h2>
+            <div class="exercise-card">
+                <h3>Creating Reusable Skills</h3>
+                <p>Agent skills are reusable capabilities that you can invoke across different projects. Unlike powers which are project-specific, skills are designed to be portable.</p>
+                
+                <div class="objective">
+                    <p><strong>Objective:</strong> Build a skill that can be reused across multiple projects to solve a common problem.</p>
+                </div>
+
+                <h4>Steps:</h4>
+                <ol>
+                    <li><strong>Identify the Pattern:</strong> Find a pattern or practice that applies across multiple projects</li>
+                    <li><strong>Design the Skill:</strong> Define the skill's interface, inputs, outputs, and behavior</li>
+                    <li><strong>Implement the Skill:</strong> Write the skill implementation using Kiro's skill framework</li>
+                    <li><strong>Package the Skill:</strong> Package the skill for distribution and reuse</li>
+                    <li><strong>Test Across Projects:</strong> Verify the skill works in different project contexts</li>
+                </ol>
+
+                <h4>Example Skill Ideas:</h4>
+                <ul>
+                    <li>Database migration generator</li>
+                    <li>API endpoint tester</li>
+                    <li>Code style enforcer</li>
+                    <li>Documentation generator</li>
+                </ul>
+            </div>
+
+            <h2 id="exercise3">Exercise 3: Build a Custom Agent</h2>
+            <div class="exercise-card">
+                <h3>Creating Specialized Agents</h3>
+                <p>Custom agents are specialized AI configurations designed for specific types of work. They combine context, tools, and behavior patterns into a reusable agent definition.</p>
+                
+                <div class="objective">
+                    <p><strong>Objective:</strong> Build a custom agent optimized for a specific type of development task.</p>
+                </div>
+
+                <h4>Steps:</h4>
+                <ol>
+                    <li><strong>Define the Agent's Purpose:</strong> What specific type of work will this agent handle?</li>
+                    <li><strong>Configure Context:</strong> Set up the context files and steering documents the agent needs</li>
+                    <li><strong>Define Tools:</strong> Specify which tools the agent should have access to</li>
+                    <li><strong>Set Behavior Patterns:</strong> Define how the agent should approach problems and make decisions</li>
+                    <li><strong>Test and Iterate:</strong> Run the agent on sample tasks and refine its configuration</li>
+                </ol>
+
+                <h4>Example Agent Types:</h4>
+                <ul>
+                    <li><strong>Test Agent:</strong> Specialized in writing and running tests</li>
+                    <li><strong>Refactor Agent:</strong> Focused on code refactoring and cleanup</li>
+                    <li><strong>Documentation Agent:</strong> Dedicated to writing and updating documentation</li>
+                    <li><strong>Security Agent:</strong> Specialized in security review and vulnerability detection</li>
+                </ul>
+            </div>
+
+            <h2>Context Engineering Best Practices</h2>
+            <ul>
+                <li><strong>Start Small:</strong> Begin with minimal context and add more as needed</li>
+                <li><strong>Use Examples:</strong> Include concrete examples in your context documents</li>
+                <li><strong>Keep It Current:</strong> Regularly update context to match your codebase</li>
+                <li><strong>Measure Results:</strong> Track how context changes affect AI output quality</li>
+                <li><strong>Share Knowledge:</strong> Document effective context patterns for your team</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Next Steps</span>
+                </div>
+                <p>You've now completed all the advanced topics. Continue to "Resource Cleanup" to learn how to clean up any AWS resources created during the workshop.</p>
+            </div>
+        </article>
+
+        <div class="navigation-buttons">
+            <a href="sub-agents.html" class="btn btn-secondary">Previous: Sub-Agents</a>
+            <a href="resource-cleanup.html" class="btn btn-primary">Next: Resource Cleanup</a>
+        </div>
+    </main>
+<script src="scripts.js"></script>
+</body>
+</html>

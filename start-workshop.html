@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Workshop - Kiro Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>Kiro Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
+        </div>
+
+        <div class="sidebar-section">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🚀 Getting Started</div>
+            <a href="introduction.html" class="sidebar-link">Introduction</a>
+            <a href="start-workshop.html" class="sidebar-link active">Start Workshop</a>
+            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
+            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local Installation)</a>
+            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">💡 Core Concepts</div>
+            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
+            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+            <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
+            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro about your codebase</a>
+            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
+            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
+            <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks - Automating your workflow</a>
+            <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+            <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+            <a href="mcp-integration.html" class="sidebar-link">MCP Integration - Extending Kiro's capabilities</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">⚡ Advanced Topics</div>
+            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+            <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+            <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">✅ Wrap Up</div>
+            <a href="#" class="sidebar-link">Resource cleanup</a>
+            <a href="#" class="sidebar-link">Wrapping up: Next steps and feedback</a>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Start Workshop</h1>
+            <div class="accent-line"></div>
+            <p>Set up your development environment and prepare to start building with Kiro</p>
+        </header>
+
+        <article class="content">
+                <h2 id="overview">Getting Started</h2>
+                <p>Welcome to the hands-on portion of the Kiro workshop! In this section, you'll set up your development environment and prepare to start building with Kiro.</p>
+
+                <div class="callout">
+                    <div class="callout-header">
+                        <div class="dot"></div>
+                        <span>What You'll Do</span>
+                    </div>
+                    <p>In this section, you will:</p>
+                    <ul>
+                        <li>Install the Kiro IDE on your machine</li>
+                        <li>Configure Kiro for local development</li>
+                        <li>Authenticate with AWS Builder ID</li>
+                        <li>Clone the workshop application repository</li>
+                    </ul>
+                </div>
+
+                <h2 id="prerequisites">Before You Begin</h2>
+                <p>Make sure you have the following ready:</p>
+                <ul>
+                    <li>A computer with administrator access</li>
+                    <li>Stable internet connection</li>
+                    <li>AWS Builder ID credentials (you'll set this up in this section)</li>
+                    <li>Basic familiarity with your operating system's terminal/command prompt</li>
+                </ul>
+
+                <div class="callout">
+                    <div class="callout-header">
+                        <div class="dot"></div>
+                        <span>Important Note</span>
+                    </div>
+                    <p>The workshop provides a pre-configured application repository. You don't need to create a new project from scratch - you'll be working with an existing codebase that demonstrates real-world patterns.</p>
+                </div>
+
+                <h2 id="next-steps">Next Steps</h2>
+                <p>Follow the pages in this section in order:</p>
+                <ol>
+                    <li><strong>Install Kiro</strong> - Download and install the Kiro IDE on your machine</li>
+                    <li><strong>Take Kiro Home</strong> - Configure Kiro for local development with your preferences</li>
+                    <li><strong>Authenticate with Builder ID</strong> - Set up AWS Builder ID authentication to access workshop resources</li>
+                </ol>
+
+                <p>Once you've completed these steps, you'll be ready to dive into the core concepts and hands-on exercises!</p>
+            </article>
+
+        <div class="navigation-buttons">
+            <a href="introduction.html" class="btn btn-secondary">Previous: Introduction</a>
+            <a href="install-kiro.html" class="btn btn-primary">Next: Install Kiro</a>
+        </div>
+    </main>
+<script src="scripts.js"></script>
+</body>
+</html>

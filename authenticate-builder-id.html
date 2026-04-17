@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authenticate with Builder ID - Kiro Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>Kiro Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
+        </div>
+
+        <div class="sidebar-section">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🚀 Getting Started</div>
+            <a href="introduction.html" class="sidebar-link">Introduction</a>
+            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
+            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local Installation)</a>
+            <a href="authenticate-builder-id.html" class="sidebar-link sub-item active">Authenticate with Builder ID</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">💡 Core Concepts</div>
+            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
+            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+            <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
+            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro about your codebase</a>
+            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
+            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
+            <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks - Automating your workflow</a>
+            <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+            <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+            <a href="mcp-integration.html" class="sidebar-link">MCP Integration - Extending Kiro's capabilities</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">⚡ Advanced Topics</div>
+            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+            <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+            <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">✅ Wrap Up</div>
+            <a href="#" class="sidebar-link">Resource cleanup</a>
+            <a href="#" class="sidebar-link">Wrapping up: Next steps and feedback</a>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Authenticate with Builder ID</h1>
+            <div class="accent-line"></div>
+            <p>Set up AWS Builder ID authentication to enable Kiro's AI features</p>
+        </header>
+
+        <article class="content">
+            <h2 id="overview">Setting Up AWS Builder ID Authentication</h2>
+            <p>AWS Builder ID is a free, personal identity that allows you to explore AWS services and use AWS-powered tools like Kiro. In this step, you'll authenticate Kiro with your AWS Builder ID to enable AI features and access workshop resources.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>What is AWS Builder ID?</span>
+                </div>
+                <p>AWS Builder ID is a personal AWS identity that provides free access to select AWS services and tools. It's separate from AWS IAM Identity Center and doesn't require an AWS account. You can use it to:</p>
+                <ul>
+                    <li>Access AWS Workshop Studio</li>
+                    <li>Use AI-powered development tools</li>
+                    <li>Explore AWS services in a sandbox environment</li>
+                </ul>
+            </div>
+
+            <h2 id="create-builder-id">Create or Sign In with Builder ID</h2>
+            <ol>
+                <li>
+                    <strong>Open Kiro IDE</strong>
+                    <p>Launch Kiro if it's not already open.</p>
+                </li>
+                <li>
+                    <strong>Access the Authentication Prompt</strong>
+                    <p>When you first use Kiro's AI features, you'll be prompted to sign in. If you don't see a prompt:</p>
+                    <ul>
+                        <li>Look for a "Sign In" button in the Kiro AI panel</li>
+                        <li>Or go to Settings > AWS > Authentication</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Choose Builder ID</strong>
+                    <p>Select "AWS Builder ID" as your authentication method (not AWS IAM Identity Center).</p>
+                </li>
+                <li>
+                    <strong>Complete the Authentication Flow</strong>
+                    <p>A browser window will open asking you to:</p>
+                    <ul>
+                        <li><strong>Sign in</strong> if you already have a Builder ID</li>
+                        <li><strong>Create a new Builder ID</strong> if you don't have one</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Authorize Kiro</strong>
+                    <p>After signing in, you'll be asked to authorize Kiro to access your Builder ID. Click "Allow" or "Authorize".</p>
+                </li>
+                <li>
+                    <strong>Return to Kiro</strong>
+                    <p>Once authorized, you'll be redirected back to Kiro. The AI panel should now show that you're authenticated.</p>
+                </li>
+            </ol>
+
+            <h2 id="create-new">Creating a New Builder ID</h2>
+            <p>If you don't have a Builder ID, you'll need to create one:</p>
+            <ol>
+                <li>
+                    <strong>Enter your email address</strong>
+                    <p>Use a personal email address (not a work email, as Builder ID is for personal use).</p>
+                </li>
+                <li>
+                    <strong>Verify your email</strong>
+                    <p>Check your email for a verification code from AWS and enter it on the verification page.</p>
+                </li>
+                <li>
+                    <strong>Create a password</strong>
+                    <p>Choose a strong password for your Builder ID account.</p>
+                </li>
+                <li>
+                    <strong>Complete your profile</strong>
+                    <p>Enter your name and any other required information.</p>
+                </li>
+            </ol>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Important Notes</span>
+                </div>
+                <ul>
+                    <li><strong>Builder ID is free:</strong> There is no cost to create or use a Builder ID</li>
+                    <li><strong>Personal use only:</strong> Builder ID is intended for personal, non-commercial use</li>
+                    <li><strong>Not an AWS account:</strong> Builder ID is separate from an AWS account and doesn't provide access to the AWS Management Console</li>
+                    <li><strong>Workshop access:</strong> Your Builder ID gives you access to this workshop and its resources</li>
+                </ul>
+            </div>
+
+            <h2 id="verify">Verify Authentication</h2>
+            <p>To verify that authentication is working correctly:</p>
+            <ol>
+                <li>Open the Kiro AI chat panel</li>
+                <li>Type a simple question like "Hello, are you working?"</li>
+                <li>Verify that you receive a response from the AI</li>
+                <li>Check the status indicator in the AI panel - it should show "Connected" or similar</li>
+            </ol>
+
+            <h2 id="troubleshooting">Troubleshooting</h2>
+            <p>If you encounter authentication issues:</p>
+            <ul>
+                <li><strong>Browser doesn't open:</strong> Check your default browser settings and ensure pop-ups aren't blocked</li>
+                <li><strong>Authorization fails:</strong> Make sure you're using Builder ID, not IAM Identity Center</li>
+                <li><strong>AI features still unavailable:</strong> Try restarting Kiro after authentication</li>
+                <li><strong>Session expires:</strong> You may need to re-authenticate periodically - simply repeat the sign-in process</li>
+                <li><strong>Network issues:</strong> Ensure you have a stable internet connection, as AI features require cloud connectivity</li>
+            </ul>
+
+            <h2 id="next-steps">You're Ready!</h2>
+            <p>Congratulations! You've completed the setup phase. You now have:</p>
+            <ul>
+                <li>Kiro IDE installed and configured</li>
+                <li>AWS Builder ID authentication set up</li>
+                <li>AI features enabled and working</li>
+            </ul>
+            <p>In the next section, you'll dive into the core concepts of Kiro and start exploring its AI-native development capabilities.</p>
+        </article>
+
+        <div class="navigation-buttons">
+            <a href="take-kiro-home.html" class="btn btn-secondary">Previous: Take Kiro Home</a>
+            <a href="kiro-overview.html" class="btn btn-primary">Next: Kiro Overview</a>
+        </div>
+    </main>
+<script src="scripts.js"></script>
+</body>
+</html>

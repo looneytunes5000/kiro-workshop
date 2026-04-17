@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Coding: Rapid Feature Development - Kiro Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰ Menu</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>Kiro Workshop</h2>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🚀 Getting Started</div>
+            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
+            <a href="introduction.html" class="sidebar-link">Introduction</a>
+            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
+            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local)</a>
+            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">💡 Core Concepts</div>
+            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
+            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+            <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
+            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro</a>
+            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+            <a href="vibe-coding.html" class="sidebar-link active">Vibe Coding: Rapid Development</a>
+            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
+            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
+            <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">⚡ Advanced Topics</div>
+            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+            <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+            <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">✅ Wrap Up</div>
+            <a href="#" class="sidebar-link">Resource Cleanup</a>
+            <a href="#" class="sidebar-link">Wrapping Up: Next Steps</a>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Vibe Coding: Rapid Feature Development</h1>
+            <div class="accent-line"></div>
+            <p>Experience the speed and simplicity of Vibe mode by adding real features to the micro-blogging application</p>
+        </header>
+
+        <article class="content">
+            <h2>Overview</h2>
+            <p>Vibe Coding is Kiro's conversational mode for rapid feature implementation. Unlike traditional AI coding assistants that require detailed instructions, Vibe mode leverages your steering documents to understand context automatically, allowing you to describe what you want in natural language and get production-ready code.</p>
+
+            <p>In this module, you'll experience the speed and simplicity of Vibe mode by adding real features to the micro-blogging application.</p>
+
+            <h2>When to Use Vibe Mode</h2>
+            <p><strong>Vibe mode excels at:</strong></p>
+            <ul>
+                <li>Quick UI additions - Adding buttons, forms, or visual elements</li>
+                <li>Simple feature enhancements - Extending existing functionality</li>
+                <li>Bug fixes - Addressing specific issues in isolated components</li>
+                <li>Refactoring - Improving code structure in single files</li>
+            </ul>
+
+            <p><strong>Vibe mode is not ideal for:</strong></p>
+            <ul>
+                <li>Complex, multi-file features requiring architectural changes</li>
+                <li>Features requiring detailed requirements and design documentation</li>
+                <li>Changes affecting multiple system boundaries</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Key Principle</span>
+                </div>
+                <p>Vibe mode works best when you can describe the desired outcome in a single, focused prompt. If you find yourself writing multiple paragraphs of requirements, consider using Spec mode instead.</p>
+            </div>
+
+            <h2>How Vibe Mode Uses Steering</h2>
+            <p>Before you write a single prompt, Kiro has already read your steering documents:</p>
+            <ul>
+                <li><span class="inline-code">product.md</span> - Understands what features exist and user personas</li>
+                <li><span class="inline-code">tech.md</span> - Knows your React + TypeScript + Vite stack and patterns</li>
+                <li><span class="inline-code">structure.md</span> - Understands where components live and how they're organized</li>
+            </ul>
+
+            <p><strong>This means you don't need to explain:</strong></p>
+            <ul>
+                <li>"Use TypeScript"</li>
+                <li>"Follow React hooks patterns"</li>
+                <li>"Match the existing button styling"</li>
+                <li>"Put it in the right directory"</li>
+            </ul>
+
+            <p>Kiro already knows. You just describe what you want, not how to build it.</p>
+
+            <h2>What You'll Build</h2>
+            <p>In this module, you'll add a Cancel button to the New Post page - a feature that demonstrates Vibe mode's strengths for focused, single-component changes.</p>
+
+            <p>This exercise will help you understand:</p>
+            <ul>
+                <li>How to write effective Vibe prompts</li>
+                <li>When Vibe mode is the right choice</li>
+                <li>How steering documents work behind the scenes</li>
+                <li>The iterative nature of conversational coding</li>
+            </ul>
+
+            <h2>The Vibe Workflow</h2>
+            <div class="workflow-steps">
+                <div class="workflow-step">Open Kiro Chat</div>
+                <div class="workflow-step">Select Vibe Mode</div>
+                <div class="workflow-step">Write Prompt</div>
+                <div class="workflow-step">Kiro Generates Code</div>
+                <div class="workflow-step">Review Diff</div>
+                <div class="workflow-step">Looks Good?</div>
+                <div class="workflow-step">Accept & Test</div>
+            </div>
+
+            <p>The workflow is iterative and conversational:</p>
+            <ol>
+                <li><strong>Open Kiro Chat</strong> - Start a new session</li>
+                <li><strong>Select Vibe Mode</strong> - Choose conversational coding</li>
+                <li><strong>Write Your Prompt</strong> - Describe what you want in natural language</li>
+                <li><strong>Review the Diff</strong> - Examine what Kiro changed</li>
+                <li><strong>Test It</strong> - Verify the feature works as expected</li>
+                <li><strong>Iterate if Needed</strong> - Refine with follow-up prompts</li>
+            </ol>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Pro Tip</span>
+                </div>
+                <p>Vibe mode is iterative. Your first prompt doesn't need to be perfect. Start with the core functionality, test it, then refine with follow-up prompts like "make the button red" or "add an icon to the left of the text."</p>
+            </div>
+
+            <h2>Example Prompts: Good vs. Poor</h2>
+            <p>Understanding what makes a good Vibe prompt helps you get better results faster.</p>
+
+            <h3>Example 1: Adding a UI Element</h3>
+            <div class="prompt-box bad">
+                <p><strong>Poor prompt:</strong> "Add a cancel button to the new post page that looks nice and works properly with the existing form"</p>
+            </div>
+            <div class="prompt-box good">
+                <p><strong>Good prompt:</strong> "Add a Cancel button next to the Submit button on the New Post page. It should clear the form and navigate back to the feed."</p>
+            </div>
+
+            <h3>Example 2: Styling Changes</h3>
+            <div class="prompt-box bad">
+                <p><strong>Poor prompt:</strong> "Make the buttons look better"</p>
+            </div>
+            <div class="prompt-box good">
+                <p><strong>Good prompt:</strong> "Make the Cancel button a secondary style with a gray background and white text, matching the design system"</p>
+            </div>
+
+            <h3>Example 3: Bug Fixes</h3>
+            <div class="prompt-box bad">
+                <p><strong>Poor prompt:</strong> "Fix the bug"</p>
+            </div>
+            <div class="prompt-box good">
+                <p><strong>Good prompt:</strong> "The form doesn't clear after submitting a post. Fix the reset logic in the NewPost component"</p>
+            </div>
+
+            <h2>Before You Start</h2>
+            <p>Before diving into the exercise, make sure you have:</p>
+            <ul class="checklist">
+                <li><strong>Application running</strong> - Frontend dev server should be running at <span class="inline-code">http://localhost:5173</span>. If not: <span class="inline-code">cd frontend && npm run dev</span></li>
+                <li><strong>Steering documents generated</strong> - Check that <span class="inline-code">.kiro/steering/</span> contains <span class="inline-code">product.md</span>, <span class="inline-code">tech.md</span>, and <span class="inline-code">structure.md</span>. If not: Go back and generate them</li>
+                <li><strong>Kiro chat panel open</strong> - Look for the chat icon in the left sidebar or press <span class="inline-code">Cmd/Ctrl + Shift + K</span></li>
+                <li><strong>Test data created</strong> - You should have at least 1-2 posts in your feed. If not: Create a few posts through the UI</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Quick check</span>
+                </div>
+                <p>Open your browser to <span class="inline-code">http://localhost:5173</span> and verify you can see the feed with your posts. This confirms everything is working before you start making changes.</p>
+            </div>
+
+            <h2>Ready to Start?</h2>
+            <p>You'll begin with a simple feature to get comfortable with Vibe mode, then progressively tackle more complex challenges. By the end of this module, you'll understand exactly when to reach for Vibe mode versus Spec mode in your daily development workflow.</p>
+
+            <p><strong>Let's start building.</strong></p>
+
+            <div class="navigation-buttons">
+                <a href="generate-steering.html" class="btn btn-secondary">← Previous: Generate Steering</a>
+                <a href="cancel-button.html" class="btn btn-primary">Next: Add a Cancel Button →</a>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        document.addEventListener('click', function(e) {
+            const sidebar = document.querySelector('.sidebar');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            if (window.innerWidth <= 900 && 
+                !sidebar.contains(e.target) && 
+                !menuBtn.contains(e.target) && 
+                sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
+<script src="scripts.js"></script>
+</body>
+</html>

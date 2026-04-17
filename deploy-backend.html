@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(Optional) Deploy the Backend - Kiro Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰ Menu</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>Kiro Workshop</h2>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🚀 Getting Started</div>
+            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
+            <a href="introduction.html" class="sidebar-link">Introduction</a>
+            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
+            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local)</a>
+            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">💡 Core Concepts</div>
+            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
+            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+            <a href="deploy-backend.html" class="sidebar-link active sub-item">(Optional) Deploy Backend</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
+            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro</a>
+            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Development</a>
+            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
+            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
+            <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">⚡ Advanced Topics</div>
+            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+            <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+            <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">✅ Wrap Up</div>
+            <a href="#" class="sidebar-link">Resource Cleanup</a>
+            <a href="#" class="sidebar-link">Wrapping Up: Next Steps</a>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>(Optional) Deploy the Backend Yourself</h1>
+            <div class="accent-line"></div>
+            <p>Manual deployment instructions for running the workshop in your own AWS account</p>
+        </header>
+
+        <article class="content">
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span><strong>When do you need this?</strong> Follow these steps if you are running the workshop in your own AWS account, outside of an AWS-hosted event. If you're attending an AWS event, the backend is already deployed for you — skip this page and continue with the main setup instructions.</span>
+                </div>
+            </div>
+
+            <h2>Overview</h2>
+            <p>🚀 To complete the workshop exercises, you need a running backend on AWS. The deployment script included in the project handles everything: installing dependencies, building Lambda packages, bootstrapping CDK, and deploying the full stack.</p>
+
+            <p>This is a one-time setup step. The goal here is not to learn about deployment — it's to get the infrastructure in place so you can focus on building features with Kiro.</p>
+
+            <h2>Prerequisites</h2>
+            <p>Before running the deployment, make sure you have:</p>
+            <ul class="checklist">
+                <li>AWS CLI installed and configured with credentials (<span class="inline-code">aws sts get-caller-identity</span> should return your account info)</li>
+                <li>Node.js 22+ installed</li>
+                <li>AWS CDK installed globally (<span class="inline-code">npm install -g aws-cdk</span>)</li>
+                <li>The <span class="inline-code">kiro-workshop</span> project open in Kiro</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span><strong>AWS permissions required:</strong> Your AWS credentials need permissions to create Lambda functions, API Gateway, DynamoDB tables, Cognito resources, IAM roles, and CloudFormation stacks. If you're using an admin-level role or a broad development role, you should be fine.</span>
+                </div>
+            </div>
+
+            <h2>Step 1: Set environment variables</h2>
+            <p>Open a terminal in Kiro (<strong>Terminal → New Terminal</strong>) and set the required environment variables.</p>
+
+            <h3>Bash (macOS/Linux)</h3>
+            <div class="code-block"><code>export AWS_REGION="us-east-1"
+export STACK_NAME="KiroWorkshop"</code></div>
+
+            <h3>PowerShell (Windows)</h3>
+            <div class="code-block"><code>$env:AWS_REGION = "us-east-1"
+$env:STACK_NAME = "KiroWorkshop"</code></div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span><strong>Region choice:</strong> You can use any AWS region that supports all required services (Lambda, API Gateway, DynamoDB, Cognito). <span class="inline-code">us-east-1</span> is recommended for simplicity.</span>
+                </div>
+            </div>
+
+            <h2>Step 2: Run the deployment script</h2>
+            <p>From the root of the <span class="inline-code">kiro-workshop</span> project, run the deployment script:</p>
+
+            <h3>Bash (macOS/Linux)</h3>
+            <div class="code-block"><code>./deploy-backend.sh</code></div>
+
+            <h3>PowerShell (Windows)</h3>
+            <div class="code-block"><code>.\deploy-backend.ps1</code></div>
+
+            <p>The script will:</p>
+            <ol>
+                <li>Install backend dependencies</li>
+                <li>Build and package Lambda functions</li>
+                <li>Bootstrap AWS CDK (if not already done)</li>
+                <li>Deploy the CloudFormation stack</li>
+            </ol>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span><strong>Deployment time:</strong> This takes approximately 5–10 minutes. You'll see progress updates as CloudFormation creates resources. Don't close the terminal or interrupt the process.</span>
+                </div>
+            </div>
+
+            <h2>Step 3: Save the outputs</h2>
+            <p>When the deployment completes, you'll see output similar to this:</p>
+
+            <div class="code-block"><code>Outputs:
+KiroWorkshop.ApiUrl = https://abc123xyz.execute-api.us-east-1.amazonaws.com/prod
+KiroWorkshop.UserPoolId = us-east-1_ABC123XYZ
+KiroWorkshop.UserPoolClientId = 1a2b3c4d5e6f7g8h9i0j
+KiroWorkshop.IdentityPoolId = us-east-1:12345678-1234-1234-1234-123456789abc</code></div>
+
+            <p>Copy these four values — you'll need them to configure the frontend <span class="inline-code">.env</span> file in the next step of the main setup instructions.</p>
+
+            <h2>Troubleshooting</h2>
+            <ul>
+                <li><strong>"Unable to resolve AWS account"</strong> — Your AWS credentials are not configured or have expired. Verify with <span class="inline-code">aws sts get-caller-identity</span>. If this fails, reconfigure your credentials using <span class="inline-code">aws configure</span> or by exporting temporary session credentials.</li>
+                <li><strong>"Stack already exists"</strong> — A stack with the same name already exists. Either use a different name (<span class="inline-code">export STACK_NAME="KiroWorkshop-2"</span>) or delete the existing stack first (<span class="inline-code">cd infrastructure && cdk destroy</span>).</li>
+                <li><strong>CDK bootstrap errors</strong> — If CDK has never been bootstrapped in this account/region, the script should handle it automatically. If it fails, run manually: <span class="inline-code">cdk bootstrap aws://ACCOUNT_ID/REGION</span> (replace with your values).</li>
+                <li><strong>Deployment fails midway</strong> — Check the CloudFormation events for details: <span class="inline-code">aws cloudformation describe-stack-events --stack-name KiroWorkshop --max-items 10</span>. Common causes: insufficient permissions, service limits, or resource naming conflicts.</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Once the deployment is complete, go back to the main <a href="understanding-application.html">Understanding the Application</a> page and continue from <strong>Part 2: Locate Your Backend Configuration</strong> — but instead of looking at the Event Dashboard, use the stack outputs printed in your terminal.</span>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="understanding-application.html" class="btn btn-secondary">← Previous: Understanding the Application</a>
+                <a href="#" class="btn btn-primary disabled">Next: Steering →</a>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', function(e) {
+            const sidebar = document.querySelector('.sidebar');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            if (window.innerWidth <= 900 && 
+                !sidebar.contains(e.target) && 
+                !menuBtn.contains(e.target) && 
+                sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
+<script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Install Kiro - Kiro Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>Kiro Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
+        </div>
+
+        <div class="sidebar-section">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🚀 Getting Started</div>
+            <a href="introduction.html" class="sidebar-link">Introduction</a>
+            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+            <a href="install-kiro.html" class="sidebar-link sub-item active">Install Kiro</a>
+            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local Installation)</a>
+            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">💡 Core Concepts</div>
+            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
+            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+            <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
+            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro about your codebase</a>
+            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
+            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
+            <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks - Automating your workflow</a>
+            <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+            <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+            <a href="mcp-integration.html" class="sidebar-link">MCP Integration - Extending Kiro's capabilities</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">⚡ Advanced Topics</div>
+            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+            <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+            <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">✅ Wrap Up</div>
+            <a href="#" class="sidebar-link">Resource cleanup</a>
+            <a href="#" class="sidebar-link">Wrapping up: Next steps and feedback</a>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Install Kiro</h1>
+            <div class="accent-line"></div>
+            <p>Download and install the Kiro IDE on your machine</p>
+        </header>
+
+        <article class="content">
+                <h2 id="overview">Installing Kiro IDE</h2>
+                <p>In this step, you'll download and install the Kiro IDE on your machine. Kiro is available for Windows, macOS, and Linux.</p>
+
+                <div class="callout">
+                    <div class="callout-header">
+                        <div class="dot"></div>
+                        <span>System Requirements</span>
+                    </div>
+                    <ul>
+                        <li><strong>Windows:</strong> Windows 10 or later (64-bit)</li>
+                        <li><strong>macOS:</strong> macOS 11.0 (Big Sur) or later</li>
+                        <li><strong>Linux:</strong> Ubuntu 18.04+, Debian 10+, or equivalent</li>
+                        <li><strong>RAM:</strong> 8GB minimum, 16GB recommended</li>
+                        <li><strong>Disk:</strong> 500MB for installation</li>
+                    </ul>
+                </div>
+
+                <h2 id="download">Download Kiro</h2>
+                <ol>
+                    <li>
+                        <strong>Visit the Kiro download page</strong>
+                        <p>Navigate to the official Kiro download page and select the installer for your operating system.</p>
+                    </li>
+                    <li>
+                        <strong>Download the installer</strong>
+                        <p>Click the download button for your platform. The installer package is approximately 200-300MB.</p>
+                    </li>
+                    <li>
+                        <strong>Run the installer</strong>
+                        <p>Once the download completes, run the installer and follow the on-screen instructions.</p>
+                        <ul>
+                            <li><strong>Windows:</strong> Run the <code>.exe</code> installer</li>
+                            <li><strong>macOS:</strong> Open the <code>.dmg</code> file and drag Kiro to Applications</li>
+                            <li><strong>Linux:</strong> Use the provided <code>.deb</code> or <code>.rpm</code> package</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Launch Kiro</strong>
+                        <p>After installation completes, launch Kiro from your applications menu or desktop shortcut.</p>
+                    </li>
+                </ol>
+
+                <h2 id="first-launch">First Launch</h2>
+                <p>When you first launch Kiro, you'll see a welcome screen with several options:</p>
+                <ul>
+                    <li><strong>Open a folder</strong> - Open an existing project directory</li>
+                    <li><strong>Clone a repository</strong> - Clone a Git repository directly</li>
+                    <li><strong>Create a new project</strong> - Start a fresh project from a template</li>
+                </ul>
+
+                <div class="callout">
+                    <div class="callout-header">
+                        <div class="dot"></div>
+                        <span>Workshop Setup</span>
+                    </div>
+                    <p>For this workshop, you'll be cloning the provided workshop repository. Don't worry about this yet - we'll cover it in the next steps after you've completed the Kiro setup and authentication.</p>
+                </div>
+
+                <h2 id="verify">Verify Installation</h2>
+                <p>To verify that Kiro is installed correctly:</p>
+                <ol>
+                    <li>Open Kiro IDE</li>
+                    <li>Check that the interface loads without errors</li>
+                    <li>Look for the Kiro AI panel in the sidebar - this confirms the AI features are available</li>
+                    <li>Open the command palette (Ctrl+Shift+P or Cmd+Shift+P) and type "Kiro" - you should see Kiro-specific commands</li>
+                </ol>
+
+                <h2 id="troubleshooting">Troubleshooting</h2>
+                <p>If you encounter issues during installation:</p>
+                <ul>
+                    <li><strong>Installation fails on Windows:</strong> Make sure you have administrator privileges and try running the installer as administrator</li>
+                    <li><strong>Kiro won't launch on macOS:</strong> Check System Preferences > Security & Privacy and allow Kiro if it's blocked</li>
+                    <li><strong>AI features not available:</strong> Ensure you have an active internet connection, as Kiro's AI features require cloud connectivity</li>
+                    <li><strong>Slow performance:</strong> Close other resource-intensive applications and ensure you have at least 8GB of RAM available</li>
+                </ul>
+            </article>
+
+        <div class="navigation-buttons">
+            <a href="start-workshop.html" class="btn btn-secondary">Previous: Start Workshop</a>
+            <a href="take-kiro-home.html" class="btn btn-primary">Next: Take Kiro Home</a>
+        </div>
+    </main>
+<script src="scripts.js"></script>
+</body>
+</html>

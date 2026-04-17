@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding the Application - Kiro Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰ Menu</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>Kiro Workshop</h2>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🚀 Getting Started</div>
+            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
+            <a href="introduction.html" class="sidebar-link">Introduction</a>
+            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
+            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local)</a>
+            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">💡 Core Concepts</div>
+            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
+            <a href="understanding-application.html" class="sidebar-link active">Understanding the Application</a>
+            <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
+            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro</a>
+            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Development</a>
+            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
+            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
+            <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">⚡ Advanced Topics</div>
+            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+            <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+            <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">✅ Wrap Up</div>
+            <a href="#" class="sidebar-link">Resource Cleanup</a>
+            <a href="#" class="sidebar-link">Wrapping Up: Next Steps</a>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Understanding the Application</h1>
+            <div class="accent-line"></div>
+            <p>Explore the application architecture and configure the frontend to connect to your deployed backend</p>
+        </header>
+
+        <article class="content">
+            <h2>Overview</h2>
+            <p>Before you can start building features with Kiro, you need to understand the application you'll be working with. The backend infrastructure has already been deployed automatically to your AWS account. In this section, you'll explore the application architecture and configure the frontend to connect to your deployed backend.</p>
+
+            <h3>Why work with an existing application?</h3>
+            <p>Working with an existing, running application is crucial for understanding how AI can assist with real-world development scenarios. While AI can certainly help with brand-new projects, this workshop focuses on the more common scenario: enhancing and maintaining existing codebases. This approach demonstrates:</p>
+            <ul>
+                <li>How Kiro understands existing code patterns and architecture</li>
+                <li>How AI-assisted development integrates with your current workflow</li>
+                <li>How to safely modify production-like applications with AI guidance</li>
+                <li>The importance of testing changes against a working system</li>
+            </ul>
+
+            <h2>Understanding the Application</h2>
+            <p>The micro-blogging application you'll be working with consists of:</p>
+
+            <h3>Backend (AWS - Already Deployed):</h3>
+            <ul>
+                <li>Lambda functions for API endpoints</li>
+                <li>DynamoDB tables for data storage</li>
+                <li>API Gateway for HTTP routing</li>
+                <li>Cognito for user authentication</li>
+            </ul>
+
+            <h3>Frontend (Local):</h3>
+            <ul>
+                <li>React + TypeScript + Vite application</li>
+                <li>Runs locally on your machine during the workshop</li>
+                <li>Connects to the deployed AWS backend</li>
+            </ul>
+
+            <h3>Architecture:</h3>
+            <div class="architecture-diagram">
+                <p><strong>Users/Browsers</strong> → React Frontend (Local Dev Server)</p>
+                <p>↓ HTTPS / API Calls</p>
+                <p><strong>API Gateway</strong> → Lambda Functions (Node.js 22)</p>
+                <p>↓ Invokes / Read/Write</p>
+                <p><strong>DynamoDB</strong> (NoSQL Database)</p>
+                <p>↓ Authenticate / User Sessions</p>
+                <p><strong>AWS Cognito</strong> (Authentication)</p>
+            </div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span><strong>Backend Already Deployed:</strong> The backend infrastructure was automatically deployed to your AWS account when you started this workshop. You don't need to run any deployment commands - the infrastructure is ready to use!</span>
+                </div>
+            </div>
+
+            <h2>Part 1: Access the Source Code</h2>
+            <p>To participate in this workshop, you need to get a copy of the application source code.</p>
+
+            <h3>Step 1: Download the Code</h3>
+            <p>Click the download link in the workshop to obtain a zipped version of the source.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span><strong>Verify download:</strong> Check your Downloads folder for <span class="inline-code">kiro-workshop-assets.zip</span>. The file should be approximately 140 KB.</span>
+                </div>
+            </div>
+
+            <h3>Step 2: Unzip the Application</h3>
+            <p>Unzip the source in the folder of your choice. After extraction, you should see the following structure:</p>
+
+            <div class="file-tree">
+kiro-workshop/
+├── frontend/                 # React application
+│   ├── src/
+│   │   ├── components/      # UI components
+│   │   ├── pages/           # Page components
+│   │   ├── services/        # API service layer
+│   │   └── contexts/        # React contexts
+│   ├── package.json
+│   └── .env.example         # Environment template
+├── backend/                  # Lambda functions (for reference)
+│   ├── src/
+│   │   └── functions/       # API handlers
+│   └── package.json
+├── infrastructure/           # AWS CDK code (for reference)
+│   └── lib/                 # Stack definitions
+└── DESIGN_LANGUAGE.md       # Application design patterns
+            </div>
+
+            <h3>Open in Kiro</h3>
+            <p>In Kiro, go to <strong>File → Open Folder</strong> and select the <span class="inline-code">kiro-workshop</span> directory you just extracted. This will be your workspace for the entire workshop.</p>
+
+            <h2>Part 2: Locate Your Backend Configuration</h2>
+            <p>Your backend infrastructure has already been deployed. You need to find the configuration values to connect your frontend to it.</p>
+
+            <h3>Step 1: Find the Stack Outputs</h3>
+            <ol>
+                <li>Navigate to the Event Dashboard</li>
+                <li>Look for the <strong>Stack Outputs</strong> section</li>
+                <li>You should see four values displayed (in this order):
+                    <ul>
+                        <li><span class="inline-code">ViteApiUrl</span> - Your API Gateway endpoint</li>
+                        <li><span class="inline-code">ViteUserPoolId</span> - Your Cognito User Pool ID</li>
+                        <li><span class="inline-code">ViteUserPoolClientId</span> - Your Cognito App Client ID</li>
+                        <li><span class="inline-code">ViteIdentityPoolId</span> - Your Cognito Identity Pool ID</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span><strong>Can't find the outputs?</strong> If you don't see the Stack Outputs section on the Event Dashboard, the backend deployment may still be in progress. Wait a few minutes and refresh the page. The deployment typically takes 5-10 minutes to complete.</span>
+                </div>
+            </div>
+
+            <h3>Step 2: Copy the Values</h3>
+            <p>Keep these values handy - you'll need them in the next step to configure your frontend application.</p>
+
+            <h2>Part 3: Configure the Frontend</h2>
+            <p>Now you'll connect the frontend React application to your deployed backend.</p>
+
+            <h3>Step 1: Update Environment File</h3>
+            <p>The frontend needs to know where your backend API is located and how to authenticate users. The project includes a <span class="inline-code">.env</span> file with placeholder values that you need to update.</p>
+
+            <ol>
+                <li>In Kiro, navigate to the <span class="inline-code">frontend/</span> folder in the file explorer</li>
+                <li>Open the <span class="inline-code">.env</span> file</li>
+                <li>You'll see the following keys already defined:
+                    <div class="code-block"><code>VITE_API_URL=
+VITE_USER_POOL_ID=
+VITE_USER_POOL_CLIENT_ID=
+VITE_IDENTITY_POOL_ID=</code></div>
+                </li>
+                <li>Copy each value from the Stack Outputs on the Event Dashboard and paste it after the corresponding key</li>
+                <li>Save the file (Cmd + S on Mac, Ctrl + S on Windows/Linux)</li>
+            </ol>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span><strong>Example:</strong> Your <span class="inline-code">.env</span> file should look something like this after adding the values:</span>
+                </div>
+            </div>
+
+            <div class="code-block"><code>VITE_API_URL=https://abc123xyz.execute-api.us-east-1.amazonaws.com/prod
+VITE_USER_POOL_ID=us-east-1_ABC123XYZ
+VITE_USER_POOL_CLIENT_ID=1a2b3c4d5e6f7g8h9i0j
+VITE_IDENTITY_POOL_ID=us-east-1:12345678-1234-1234-1234-123456789abc</code></div>
+
+            <h3>Step 2: Install Dependencies and Start Dev Server</h3>
+            <p>With the configuration in place, open a terminal in Kiro (<strong>Terminal → New Terminal</strong>) and install the frontend dependencies:</p>
+
+            <div class="code-block"><code>cd frontend
+npm install
+npm run dev</code></div>
+
+            <p>You should see:</p>
+
+            <div class="code-block"><code>  VITE v5.0.0  ready in 500 ms
+
+  ➜  Local:   http://localhost:5173/</code></div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span><strong>Keep This Running:</strong> Leave this terminal running throughout the workshop. The dev server will automatically reload when you make code changes with Kiro.</span>
+                </div>
+            </div>
+
+            <h2>Part 4: Test the Application</h2>
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span><strong>Your isolated environment:</strong> The entire backend infrastructure is deployed in your AWS account. When you register, you're creating a user in your own AWS Cognito user pool—your data stays in your account.</span>
+                </div>
+            </div>
+
+            <h3>Step 1: Open and Register</h3>
+            <ol>
+                <li>Open a web browser and navigate to <span class="inline-code">http://localhost:5173</span></li>
+                <li>Click "Register"</li>
+                <li>Create a new account (this creates a user in your AWS Cognito user pool)</li>
+            </ol>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span><strong>Password Requirements:</strong> The registration form doesn't display password requirements, but AWS Cognito enforces them. Your password must be at least 8 characters and include:</span>
+                </div>
+                <ul style="margin-top: 8px;">
+                    <li>At least one uppercase letter</li>
+                    <li>At least one lowercase letter</li>
+                    <li>At least one number</li>
+                    <li>At least one special character (e.g., !@#$%^&*)</li>
+                </ul>
+                <p style="margin-top: 8px;">If registration fails with a generic error, double-check your password meets these requirements. We'll address this UX gap later in the workshop!</p>
+            </div>
+
+            <p>Once the account is created, you will be redirected to the landing page.</p>
+
+            <h3>Step 2: Create Test Data</h3>
+            <ol>
+                <li>Click "New Post" in the navigation</li>
+                <li>Create 2-3 test posts with different content</li>
+                <li>Each time a post is created, you are redirected to the feed</li>
+            </ol>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span><strong>Why Create Test Data?</strong> Having posts in your feed makes it easier to test the features you'll build with Kiro. You'll be able to see your changes immediately.</span>
+                </div>
+            </div>
+
+            <h2>Validation Checklist</h2>
+            <p>Before proceeding, verify:</p>
+            <ul class="checklist">
+                <li>Source code downloaded and opened in Kiro</li>
+                <li>Stack Outputs visible on workshop welcome page</li>
+                <li><span class="inline-code">.env</span> file created with correct values</li>
+                <li>Frontend dev server is running</li>
+                <li>Application loads in browser at <span class="inline-code">http://localhost:5173</span></li>
+                <li>You can register and log in</li>
+                <li>You can create posts and see them in the feed</li>
+            </ul>
+
+            <h2>Troubleshooting</h2>
+            <h3>Frontend Configuration Issues:</h3>
+            <ul>
+                <li><strong>"Network Error" when logging in</strong> - Check <span class="inline-code">VITE_API_URL</span> in <span class="inline-code">.env</span> matches the ApiUrl from Stack Outputs</li>
+                <li><strong>"User pool does not exist"</strong> - Verify <span class="inline-code">VITE_USER_POOL_ID</span> is correct and matches Stack Outputs</li>
+                <li><strong>Missing Stack Outputs</strong> - The backend deployment may still be in progress. Wait a few minutes and refresh the workshop page</li>
+                <li><strong>Port 5173 already in use</strong> - Stop other Vite servers</li>
+            </ul>
+
+            <h3>Frontend Dependency Issues:</h3>
+            <p>Dependencies fail to install - Clear cache and retry:</p>
+            <div class="code-block"><code>cd frontend
+rm -rf node_modules package-lock.json
+npm install</code></div>
+
+            <p><strong>Windows (PowerShell):</strong></p>
+            <div class="code-block"><code>cd frontend
+Remove-Item -Recurse -Force node_modules, package-lock.json -ErrorAction SilentlyContinue
+npm install</code></div>
+
+            <h3>Backend Status Check:</h3>
+            <p>To verify your backend deployment status:</p>
+            <div class="code-block"><code>aws cloudformation describe-stacks --stack-name CodeServer --query 'Stacks[0].StackStatus'</code></div>
+
+            <p><strong>Expected status:</strong> <span class="inline-code">"CREATE_COMPLETE"</span> or <span class="inline-code">"UPDATE_COMPLETE"</span></p>
+
+            <h2>Reflection</h2>
+            <p>Before moving on, consider:</p>
+            <ul>
+                <li><strong>Why do you think we work with a deployed application?</strong> Having a working application allows you to test changes immediately and understand how new features integrate with existing functionality.</li>
+                <li><strong>How does having a working application help with AI-assisted development?</strong> AI can better understand context when it can analyze a complete, running system. It can see how components interact, follow existing patterns, and suggest changes that fit the current architecture.</li>
+                <li><strong>Why focus on existing projects?</strong> AI is powerful for both new and existing projects. This workshop focuses on existing codebases because that's where most developers spend their time in real-world scenarios. Learning to work with AI on existing code gives you skills that transfer directly to your daily work—understanding how AI learns from established patterns, maintains consistency, and integrates changes safely into production systems.</li>
+            </ul>
+
+            <h2>Next Steps</h2>
+            <p>Your application is now fully configured and running! You have:</p>
+            <ul>
+                <li>✅ Backend infrastructure deployed on AWS</li>
+                <li>✅ Frontend running locally and connected to backend</li>
+                <li>✅ Test account and data created</li>
+            </ul>
+            <p>You're ready to start building features with Kiro. Click Next to begin learning about Steering.</p>
+
+            <div class="navigation-buttons">
+                <a href="kiro-overview.html" class="btn btn-secondary">← Previous: Kiro Overview</a>
+                <a href="deploy-backend.html" class="btn btn-primary">Next: Deploy Backend →</a>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', function(e) {
+            const sidebar = document.querySelector('.sidebar');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            if (window.innerWidth <= 900 && 
+                !sidebar.contains(e.target) && 
+                !menuBtn.contains(e.target) && 
+                sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
+<script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Hooks - Kiro Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰ Menu</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>Kiro Workshop</h2>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🚀 Getting Started</div>
+            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
+            <a href="introduction.html" class="sidebar-link">Introduction</a>
+            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
+            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local)</a>
+            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">💡 Core Concepts</div>
+            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
+            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+            <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
+            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro</a>
+            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Development</a>
+            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
+            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
+            <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">⚡ Advanced Topics</div>
+            <a href="agent-hooks.html" class="sidebar-link active">Agent Hooks</a>
+            <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+            <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">✅ Wrap Up</div>
+            <a href="resource-cleanup.html" class="sidebar-link">Resource Cleanup</a>
+            <a href="wrapping-up.html" class="sidebar-link">Wrapping Up: Next Steps</a>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Agent Hooks - Automating Your Workflow</h1>
+            <div class="accent-line"></div>
+            <p>Configure automated actions that trigger when Kiro performs specific operations</p>
+        </header>
+
+        <article class="content">
+            <h2>Overview</h2>
+            <p>Agent Hooks are automated triggers that execute custom actions when Kiro performs specific operations. They allow you to enforce coding standards, run tests automatically, generate documentation, and maintain consistency across your codebase without manual intervention.</p>
+
+            <p>Think of hooks as guardrails and accelerators - they catch issues before they become problems and automate repetitive tasks that would otherwise slow down your development workflow.</p>
+
+            <h2>Why Use Agent Hooks?</h2>
+            <p>When working with AI-assisted development, hooks serve several critical purposes:</p>
+            <ul>
+                <li><strong>Quality enforcement</strong> - Automatically run linters, formatters, and type checkers after Kiro generates code</li>
+                <li><strong>Consistency</strong> - Ensure all generated code follows your team's conventions</li>
+                <li><strong>Safety</strong> - Prevent Kiro from introducing security vulnerabilities or breaking changes</li>
+                <li><strong>Automation</strong> - Trigger tests, builds, or deployments after specific operations</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Key Principle</span>
+                </div>
+                <p>Hooks shift quality checks from manual code review to automated enforcement, catching issues the moment they're introduced rather than during a later review cycle.</p>
+            </div>
+
+            <h2>Types of Hooks</h2>
+            <p>Kiro supports several hook types that trigger at different points in the development workflow:</p>
+
+            <h3>Pre-Write Hooks</h3>
+            <p>Execute before Kiro writes files to disk. Useful for:</p>
+            <ul>
+                <li>Validating that proposed changes follow architectural patterns</li>
+                <li>Checking for security-sensitive operations</li>
+                <li>Ensuring required documentation is updated</li>
+            </ul>
+
+            <h3>Post-Write Hooks</h3>
+            <p>Execute after Kiro writes files to disk. Common uses include:</p>
+            <ul>
+                <li>Running code formatters (Prettier, Black, gofmt)</li>
+                <li>Executing linters (ESLint, Pylint, RuboCop)</li>
+                <li>Running type checkers (TypeScript, mypy)</li>
+                <li>Updating generated documentation</li>
+            </ul>
+
+            <h3>Pre-Command Hooks</h3>
+            <p>Execute before Kiro runs shell commands. Useful for:</p>
+            <ul>
+                <li>Validating command safety</li>
+                <li>Setting up environment variables</li>
+                <li>Logging command execution for audit trails</li>
+            </ul>
+
+            <h3>Post-Command Hooks</h3>
+            <p>Execute after Kiro runs shell commands. Common uses:</p>
+            <ul>
+                <li>Processing command output</li>
+                <li>Running tests after build commands</li>
+                <li>Notifying team members of deployment status</li>
+            </ul>
+
+            <h2>Hook Configuration</h2>
+            <p>Hooks are configured in your project's <span class="inline-code">.kiro/hooks.json</span> file. Each hook definition specifies:</p>
+
+            <div class="code-block">
+                <code>{
+  "hooks": [
+    {
+      "event": "post-write",
+      "pattern": "**/*.ts",
+      "command": "npx eslint {{file}} --fix"
+    },
+    {
+      "event": "post-write",
+      "pattern": "**/*.py",
+      "command": "black {{file}}"
+    },
+    {
+      "event": "pre-write",
+      "pattern": "**/*",
+      "command": "check-architecture.sh {{file}}"
+    }
+  ]
+}</code>
+            </div>
+
+            <h2>Hook Variables</h2>
+            <p>Hooks support template variables that provide context about the triggering event:</p>
+            <ul>
+                <li><span class="inline-code">{{file}}</span> - The file path that triggered the hook</li>
+                <li><span class="inline-code">{{files}}</span> - All files modified in the current operation</li>
+                <li><span class="inline-code">{{event}}</span> - The event type (pre-write, post-write, etc.)</li>
+                <li><span class="inline-code">{{timestamp}}</span> - When the event occurred</li>
+            </ul>
+
+            <h2>Best Practices</h2>
+            <ul>
+                <li><strong>Keep hooks fast</strong> - Slow hooks disrupt the development flow. Aim for under 5 seconds per hook execution</li>
+                <li><strong>Make hooks idempotent</strong> - Running a hook multiple times should produce the same result</li>
+                <li><strong>Fail gracefully</strong> - Hooks should report errors clearly without blocking legitimate work</li>
+                <li><strong>Log hook execution</strong> - Maintain an audit trail of what hooks ran and their results</li>
+                <li><strong>Test your hooks</strong> - Treat hook scripts as production code with proper testing</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Important</span>
+                </div>
+                <p>Hooks that modify files can create infinite loops if not carefully designed. Always ensure your hook commands don't trigger the same hook again.</p>
+            </div>
+
+            <h2>Hands-On Exercises</h2>
+            <p>In the following exercises, you'll learn to configure and use hooks effectively:</p>
+            <ol>
+                <li><strong>Hook Configuration</strong> - Set up hooks for your project's specific needs</li>
+                <li><strong>Hook Examples</strong> - Explore real-world hook patterns for common workflows</li>
+            </ol>
+
+            <p>These exercises will demonstrate how hooks can automate quality checks and enforce coding standards in your AI-assisted development workflow.</p>
+        </article>
+
+        <div class="navigation-buttons">
+            <a href="deployment-troubleshooting.html" class="btn btn-secondary">← Previous: Fix Deployment Scripts</a>
+            <a href="hook-configuration.html" class="btn btn-primary">Next: Hook Configuration →</a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.querySelector('.sidebar');
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 900 && !sidebar.contains(e.target) && !e.target.classList.contains('mobile-menu-btn')) {
+                    sidebar.classList.remove('open');
+                }
+            });
+        });
+    </script>
+<script src="scripts.js"></script>
+</body>
+</html>

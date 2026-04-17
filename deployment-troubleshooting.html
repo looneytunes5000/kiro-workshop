@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixing Deployment Scripts - Kiro Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰ Menu</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>Kiro Workshop</h2>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🚀 Getting Started</div>
+            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
+            <a href="introduction.html" class="sidebar-link">Introduction</a>
+            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
+            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local)</a>
+            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">💡 Core Concepts</div>
+            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
+            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+            <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
+            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro</a>
+            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Development</a>
+            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
+            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
+            <a href="deployment-troubleshooting.html" class="sidebar-link active sub-item">Exercise: Fix Deployment</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">⚡ Advanced Topics</div>
+            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+            <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+            <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">✅ Wrap Up</div>
+            <a href="#" class="sidebar-link">Resource Cleanup</a>
+            <a href="#" class="sidebar-link">Wrapping Up: Next Steps</a>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Exercise: Fixing Deployment Scripts</h1>
+            <div class="accent-line"></div>
+            <p>Use Spec mode to diagnose and fix broken deployment configurations in a brownfield scenario</p>
+        </header>
+
+        <article class="content">
+            <h2>Exercise Overview</h2>
+            <p>In this exercise, you'll use Kiro's Spec mode to troubleshoot and fix deployment issues. Unlike the previous greenfield exercise (adding a commenting feature), this is a brownfield scenario where something is broken and needs systematic diagnosis and repair.</p>
+
+            <p>Spec mode is surprisingly effective for troubleshooting because it forces a structured approach: understand the problem, design the fix, and execute methodically.</p>
+
+            <h2>Common Deployment Issues</h2>
+            <p>Deployment scripts can fail for many reasons. Some common issues include:</p>
+            <ul>
+                <li><strong>Environment variable mismatches</strong> - Variables referenced in scripts don't match the deployment environment</li>
+                <li><strong>Missing dependencies</strong> - Required packages or services aren't installed or configured</li>
+                <li><strong>Incorrect resource paths</strong> - File paths or URLs that work locally but fail in production</li>
+                <li><strong>Permission errors</strong> - IAM roles or service accounts lacking required permissions</li>
+                <li><strong>Version conflicts</strong> - Incompatible dependency versions between development and production</li>
+            </ul>
+
+            <h2>Why Spec Mode for Troubleshooting?</h2>
+            <p>While Vibe mode might seem natural for quick fixes, deployment troubleshooting benefits from Spec mode's structured approach:</p>
+
+            <div class="comparison-grid">
+                <div class="outcome-item">
+                    <h4>Vibe Mode Approach</h4>
+                    <ul>
+                        <li>Describe the error, get a suggested fix</li>
+                        <li>Risk of addressing symptoms, not root causes</li>
+                        <li>No documentation of what was wrong</li>
+                        <li>May introduce new issues</li>
+                    </ul>
+                </div>
+                <div class="outcome-item">
+                    <h4>Spec Mode Approach</h4>
+                    <ul>
+                        <li>Systematic diagnosis of all failure points</li>
+                        <li>Documents root cause and fix strategy</li>
+                        <li>Creates a task list for methodical repair</li>
+                        <li>Leaves a paper trail for future reference</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Step 1: Describe the Problem</h2>
+            <p>Open Kiro and switch to Spec mode. Provide a description of the deployment issue:</p>
+
+            <div class="code-block">
+                <code>The deployment pipeline is failing. The build succeeds locally,
+but the CDK deployment to AWS fails with errors. Please analyze
+the deployment scripts, identify the root causes, and create a
+plan to fix them.</code>
+            </div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Tip</span>
+                </div>
+                <p>Include any error messages, logs, or symptoms you've observed. The more context you provide, the more accurate Kiro's diagnosis will be.</p>
+            </div>
+
+            <h2>Step 2: Review the Diagnosis (Requirements)</h2>
+            <p>Kiro will generate a <span class="inline-code">requirements.md</span> that serves as a diagnosis document. It should include:</p>
+
+            <ul class="checklist">
+                <li>Identification of each failure point</li>
+                <li>Root cause analysis for each issue</li>
+                <li>Impact assessment (what breaks because of each issue)</li>
+                <li>Priority ranking (which issues must be fixed first)</li>
+            </ul>
+
+            <p>Review the diagnosis carefully. Does it match what you're seeing? Are there issues Kiro missed? Provide feedback to refine the analysis.</p>
+
+            <h2>Step 3: Review the Fix Strategy (Design)</h2>
+            <p>The <span class="inline-code">design.md</span> document outlines the fix strategy. Look for:</p>
+
+            <ul class="checklist">
+                <li>Specific changes needed for each deployment script</li>
+                <li>Environment configuration updates</li>
+                <li>Dependency version corrections</li>
+                <li>Testing strategy to verify fixes</li>
+            </ul>
+
+            <p>Pay special attention to whether the proposed fixes maintain compatibility with your existing infrastructure and don't introduce regressions.</p>
+
+            <h2>Step 4: Review the Fix Tasks</h2>
+            <p>The <span class="inline-code">tasks.md</span> should break the fixes into ordered, testable steps:</p>
+
+            <div class="code-block">
+                <code>Task 1: Fix environment variable references in deploy.sh
+Task 2: Update CDK stack configuration for correct region
+Task 3: Add missing IAM permissions to deployment role
+Task 4: Fix S3 bucket policy for static asset uploads
+Task 5: Update package.json dependencies to compatible versions
+Task 6: Test deployment in staging environment
+Task 7: Update deployment documentation with new requirements</code>
+            </div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Important</span>
+                </div>
+                <p>For deployment fixes, the order matters. Infrastructure changes (IAM, S3) should typically come before application changes. Make sure the task order reflects these dependencies.</p>
+            </div>
+
+            <h2>Step 5: Execute and Verify</h2>
+            <p>As Kiro executes each fix task:</p>
+            <ol>
+                <li>Review the changes to deployment scripts and configurations</li>
+                <li>Verify each fix addresses the identified root cause</li>
+                <li>Test the deployment after each significant change</li>
+                <li>Document any additional issues discovered during the fix process</li>
+            </ol>
+
+            <h2>Best Practices for Deployment Troubleshooting with Kiro</h2>
+            <ul>
+                <li><strong>Always test in a non-production environment first</strong> - Never apply deployment fixes directly to production</li>
+                <li><strong>Keep a rollback plan</strong> - Document how to revert each change if it causes new issues</li>
+                <li><strong>Update your steering documents</strong> - If the deployment issue revealed gaps in your <span class="inline-code">tech.md</span> or <span class="inline-code">structure.md</span>, update them to prevent future issues</li>
+                <li><strong>Document the fix</strong> - The generated spec documents serve as valuable troubleshooting references for your team</li>
+            </ul>
+
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li>Spec mode brings structure to troubleshooting, preventing haphazard fixes</li>
+                <li>The diagnosis-design-tasks workflow ensures root causes are addressed, not just symptoms</li>
+                <li>Generated documentation helps the team understand what went wrong and how it was fixed</li>
+                <li>Updating steering documents after fixes prevents the same issues from recurring</li>
+                <li>Spec mode is valuable for both greenfield development and brownfield troubleshooting</li>
+            </ul>
+        </article>
+
+        <div class="navigation-buttons">
+            <a href="commenting-feature.html" class="btn btn-secondary">← Previous: Add Commenting Feature</a>
+            <a href="#" class="btn btn-primary disabled">Next: Coming Soon →</a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.querySelector('.sidebar');
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 900 && !sidebar.contains(e.target) && !e.target.classList.contains('mobile-menu-btn')) {
+                    sidebar.classList.remove('open');
+                }
+            });
+        });
+    </script>
+<script src="scripts.js"></script>
+</body>
+</html>

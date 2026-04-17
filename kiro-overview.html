@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiro Overview - Kiro Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>Kiro Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
+        </div>
+
+        <div class="sidebar-section">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🚀 Getting Started</div>
+            <a href="introduction.html" class="sidebar-link">Introduction</a>
+            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
+            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local Installation)</a>
+            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">💡 Core Concepts</div>
+            <a href="kiro-overview.html" class="sidebar-link active">Kiro Overview</a>
+            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+            <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy the backend yourself</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
+            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro about your codebase</a>
+            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
+            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
+            <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+            <a href="#" class="sidebar-link">Agent Hooks - Automating your workflow</a>
+            <a href="#" class="sidebar-link">MCP Integration - Extending Kiro's capabilities</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">⚡ Advanced Topics</div>
+            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+            <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+            <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">✅ Wrap Up</div>
+            <a href="#" class="sidebar-link">Resource cleanup</a>
+            <a href="#" class="sidebar-link">Wrapping up: Next steps and feedback</a>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Kiro Overview</h1>
+            <div class="accent-line"></div>
+            <p>Understand Kiro's core capabilities and AI-native development approach</p>
+        </header>
+
+        <article class="content">
+            <h2 id="what-is-kiro">What is Kiro?</h2>
+            <p>Kiro is an AI-native development environment that reimagines how developers build software. Unlike traditional IDEs that add AI as an afterthought, Kiro is built from the ground up around AI collaboration. This means every feature, every workflow, and every interaction is designed to maximize the synergy between human creativity and AI capability.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Key Difference</span>
+                </div>
+                <p>Traditional IDEs: Code editor + AI plugin<br>
+                Kiro: AI-native environment where code and AI work as one</p>
+            </div>
+
+            <h2 id="interface">The Kiro Interface</h2>
+            <p>Kiro's interface is designed for seamless AI collaboration. Here are the key components:</p>
+
+            <h3>Editor Area</h3>
+            <p>The main code editing area where you write and modify code. Kiro provides intelligent syntax highlighting, auto-completion, and inline AI suggestions as you type.</p>
+
+            <h3>AI Chat Panel</h3>
+            <p>The AI chat panel is your primary interface for conversational development. You can:</p>
+            <ul>
+                <li>Ask questions about your codebase</li>
+                <li>Request code changes in natural language</li>
+                <li>Get explanations of complex code</li>
+                <li>Generate new features from descriptions</li>
+                <li>Debug issues with AI assistance</li>
+            </ul>
+
+            <h3>Agent Panel</h3>
+            <p>The agent panel allows Kiro to work autonomously on larger tasks. You can assign multi-step tasks and Kiro will plan and execute them, showing you progress along the way.</p>
+
+            <h3>Terminal</h3>
+            <p>The integrated terminal lets you run commands, build projects, and test your code without leaving the IDE.</p>
+
+            <h2 id="core-capabilities">Core Capabilities</h2>
+            <p>Kiro offers five core capabilities that you'll explore throughout this workshop:</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Vibe Coding</span>
+                </div>
+                <p>Rapid feature development through natural language. Describe what you want and Kiro helps you build it quickly while maintaining code quality and following your project's patterns.</p>
+            </div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Spec-Driven Development</span>
+                </div>
+                <p>For complex, multi-file features, use structured specifications to guide Kiro through planning and implementation. This ensures thorough consideration of requirements before writing code.</p>
+            </div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Steering</span>
+                </div>
+                <p>Teach Kiro about your codebase conventions, architectural patterns, and team standards through steering documents. This helps Kiro generate code that fits seamlessly into your project.</p>
+            </div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Agent Hooks</span>
+                </div>
+                <p>Automate repetitive workflows by configuring Kiro to respond to specific events or patterns. Agent Hooks let you customize Kiro's behavior to match your team's development practices.</p>
+            </div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>MCP Integration</span>
+                </div>
+                <p>Extend Kiro's capabilities by connecting to external tools and services through the Model Context Protocol (MCP). This allows Kiro to interact with databases, APIs, version control, and more.</p>
+            </div>
+
+            <h2 id="ai-models">AI Models</h2>
+            <p>Kiro integrates with advanced AI models to provide:</p>
+            <ul>
+                <li><strong>Code Generation:</strong> Generate code from natural language descriptions</li>
+                <li><strong>Code Understanding:</strong> Explain complex code and architecture</li>
+                <li><strong>Refactoring:</strong> Suggest and implement code improvements</li>
+                <li><strong>Debugging:</strong> Identify and fix bugs with AI assistance</li>
+                <li><strong>Testing:</strong> Generate test cases and validate code</li>
+            </ul>
+
+            <h2 id="workflow">Typical Workflow</h2>
+            <p>A typical development workflow with Kiro looks like this:</p>
+            <ol>
+                <li><strong>Describe your goal:</strong> Tell Kiro what you want to build or change</li>
+                <li><strong>Review the plan:</strong> Kiro may propose a plan for complex changes</li>
+                <li><strong>Implement:</strong> Kiro generates the code changes</li>
+                <li><strong>Review and refine:</strong> Review the changes, ask for modifications if needed</li>
+                <li><strong>Test:</strong> Run tests to verify the changes work correctly</li>
+            </ol>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Important Note</span>
+                </div>
+                <p>While Kiro is powerful, you remain in control. Always review AI-generated code before accepting changes. Kiro is a collaborator, not a replacement for your judgment and expertise.</p>
+            </div>
+
+            <h2 id="next-steps">Next Steps</h2>
+            <p>Now that you understand Kiro's capabilities, the next page will walk you through the demo application you'll be working with throughout this workshop.</p>
+        </article>
+
+        <div class="navigation-buttons">
+            <a href="authenticate-builder-id.html" class="btn btn-secondary">Previous: Authenticate with Builder ID</a>
+            <a href="understanding-application.html" class="btn btn-primary">Next: Understanding the Application</a>
+        </div>
+    </main>
+<script src="scripts.js"></script>
+</body>
+</html>

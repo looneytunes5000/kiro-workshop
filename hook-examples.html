@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hook Examples - Kiro Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰ Menu</button>
+    <nav class="sidebar">
+        <div class="sidebar-header"><h2>Kiro Workshop</h2></div>
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🚀 Getting Started</div>
+            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
+            <a href="introduction.html" class="sidebar-link">Introduction</a>
+            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
+            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local)</a>
+            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        </div>
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">💡 Core Concepts</div>
+            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
+            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+            <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+        </div>
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
+            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro</a>
+            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Development</a>
+            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
+            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
+            <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+        </div>
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">⚡ Advanced Topics</div>
+            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+            <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+            <a href="hook-examples.html" class="sidebar-link active sub-item">Hook Examples</a>
+            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+        </div>
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">✅ Wrap Up</div>
+            <a href="resource-cleanup.html" class="sidebar-link">Resource Cleanup</a>
+            <a href="wrapping-up.html" class="sidebar-link">Wrapping Up: Next Steps</a>
+        </div>
+    </nav>
+    <div class="sidebar-backdrop"></div>
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Hook Examples</h1>
+            <div class="accent-line"></div>
+            <p>Real-world hook patterns for common development workflows</p>
+        </header>
+
+        <article class="content">
+            <h2>TypeScript/React Project</h2>
+            <p>A comprehensive hook setup for a modern TypeScript React application:</p>
+            <div class="code-block">
+                <code>{
+  "hooks": [
+    {
+      "event": "post-write",
+      "pattern": "**/*.{ts,tsx}",
+      "command": "npx prettier --write {{file}} && npx eslint {{file}} --fix"
+    },
+    {
+      "event": "post-write",
+      "pattern": "**/*.{ts,tsx}",
+      "command": "npx tsc --noEmit"
+    },
+    {
+      "event": "post-write",
+      "pattern": "**/*.test.{ts,tsx}",
+      "command": "npm test -- --testPathPattern={{file}}"
+    }
+  ]
+}</code>
+            </div>
+
+            <h2>Python/FastAPI Project</h2>
+            <p>Hooks for a Python backend service using FastAPI:</p>
+            <div class="code-block">
+                <code>{
+  "hooks": [
+    {
+      "event": "post-write",
+      "pattern": "**/*.py",
+      "command": "black {{file}} && isort {{file}}"
+    },
+    {
+      "event": "post-write",
+      "pattern": "**/*.py",
+      "command": "mypy {{file}}"
+    },
+    {
+      "event": "post-write",
+      "pattern": "tests/**/*.py",
+      "command": "pytest {{file}} -v"
+    }
+  ]
+}</code>
+            </div>
+
+            <h2>Go Microservice</h2>
+            <p>Hooks for a Go-based microservice:</p>
+            <div class="code-block">
+                <code>{
+  "hooks": [
+    {
+      "event": "post-write",
+      "pattern": "**/*.go",
+      "command": "gofmt -w {{file}}"
+    },
+    {
+      "event": "post-write",
+      "pattern": "**/*.go",
+      "command": "go vet ./..."
+    },
+    {
+      "event": "post-write",
+      "pattern": "**/*_test.go",
+      "command": "go test -v ./..."
+    }
+  ]
+}</code>
+            </div>
+
+            <h2>Documentation Hooks</h2>
+            <p>Automatically update documentation when code changes:</p>
+            <div class="code-block">
+                <code>{
+  "hooks": [
+    {
+      "event": "post-write",
+      "pattern": "**/api/**/*.ts",
+      "command": "npx typedoc --out docs/api {{file}}"
+    },
+    {
+      "event": "post-write",
+      "pattern": "**/*.py",
+      "command": "pdoc --html --output-dir docs {{file}}"
+    }
+  ]
+}</code>
+            </div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Tip</span>
+                </div>
+                <p>Use documentation hooks to keep your API docs, type definitions, and code examples in sync with your implementation. This eliminates the common problem of outdated documentation.</p>
+            </div>
+
+            <h2>Security Scanning Hooks</h2>
+            <p>Run security checks on every code change:</p>
+            <div class="code-block">
+                <code>{
+  "hooks": [
+    {
+      "event": "post-write",
+      "pattern": "**/*.{js,ts,py,go}",
+      "command": "npx audit-ci --moderate"
+    },
+    {
+      "event": "post-write",
+      "pattern": "**/*.py",
+      "command": "bandit -r {{file}}"
+    },
+    {
+      "event": "pre-write",
+      "pattern": "**/*",
+      "command": "check-secrets.sh {{file}}"
+    }
+  ]
+}</code>
+            </div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Warning</span>
+                </div>
+                <p>Security scanning hooks can be slow. Consider running them only on specific file types or using incremental scanning to avoid blocking your workflow.</p>
+            </div>
+
+            <h2>Deployment Hooks</h2>
+            <p>Automate deployment tasks after code changes:</p>
+            <div class="code-block">
+                <code>{
+  "hooks": [
+    {
+      "event": "post-write",
+      "pattern": "Dockerfile",
+      "command": "docker build -t myapp:latest ."
+    },
+    {
+      "event": "post-write",
+      "pattern": "docker-compose.yml",
+      "command": "docker-compose up -d"
+    },
+    {
+      "event": "post-command",
+      "pattern": "**/*",
+      "command": "notify-deploy.sh 'Code updated by Kiro'"
+    }
+  ]
+}</code>
+            </div>
+
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li>Start with formatting hooks and gradually add more complex automation</li>
+                <li>Use pattern matching to target specific file types and directories</li>
+                <li>Chain related commands to reduce hook execution overhead</li>
+                <li>Test hooks thoroughly before adding them to shared configurations</li>
+                <li>Monitor hook performance and optimize slow-running hooks</li>
+            </ul>
+        </article>
+        <div class="navigation-buttons">
+            <a href="hook-configuration.html" class="btn btn-secondary">← Previous: Hook Configuration</a>
+            <a href="mcp-integration.html" class="btn btn-primary">Next: MCP Integration →</a>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.querySelector('.sidebar');
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 900 && !sidebar.contains(e.target) && !e.target.classList.contains('mobile-menu-btn')) {
+                    sidebar.classList.remove('open');
+                }
+            });
+        });
+    </script>
+<script src="scripts.js"></script>
+</body>
+</html>
