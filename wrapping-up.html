@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wrapping Up: Next Steps and Feedback - Kiro Workshop</title>
+    <title>Wrapping Up - TRAE SOLO Workshop</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -14,53 +14,101 @@
 
     <nav class="sidebar">
         <div class="sidebar-header">
-            <h2>Kiro Workshop</h2>
+            <h2>TRAE SOLO Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">🚀 Getting Started</div>
-            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
-            <a href="introduction.html" class="sidebar-link">Introduction</a>
-            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
-            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
-            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local)</a>
-            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        <div class="sidebar-search">
+            <input type="text" class="sidebar-search-input" placeholder="Search pages..." aria-label="Search pages">
+            <button class="sidebar-search-clear" aria-label="Clear search" style="display: none;">×</button>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">💡 Core Concepts</div>
-            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
-            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
-            <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+        <div class="sidebar-section collapsible" data-section="home">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with TRAE SOLO</a>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
-            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro</a>
-            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
-            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Development</a>
-            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
-            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
-            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
-            <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+        <div class="sidebar-section collapsible" data-section="getting-started">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🚀 Getting Started</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="introduction.html" class="sidebar-link">Introduction</a>
+                <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+                <a href="get-started.html" class="sidebar-link sub-item">Get Started (Web & Desktop)</a>
+                <a href="desktop-client.html" class="sidebar-link sub-item">Desktop Client</a>
+                <a href="setup-account.html" class="sidebar-link sub-item">Setup Account</a>
+            </div>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">⚡ Advanced Topics</div>
-            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
-            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
-            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
-            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
-            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
-            <a href="context-engineering.html#exercise1" class="sidebar-link sub-item">Exercise 1: Build a Private Power</a>
-            <a href="context-engineering.html#exercise2" class="sidebar-link sub-item">Exercise 2: Build an Agent Skill</a>
-            <a href="context-engineering.html#exercise3" class="sidebar-link sub-item">Exercise 3: Build a Custom Agent</a>
+        <div class="sidebar-section collapsible" data-section="core-concepts">
+            <div class="sidebar-section-title collapsible-header">
+                <span>💡 Core Concepts</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="trae-solo-overview.html" class="sidebar-link">TRAE SOLO Overview</a>
+                <a href="dual-clients.html" class="sidebar-link">Web vs Desktop Clients</a>
+                <a href="dual-modes.html" class="sidebar-link">MTC vs Code Modes</a>
+                <a href="cloud-agent.html" class="sidebar-link">Cloud Agent</a>
+                <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+                <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+            </div>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">✅ Wrap Up</div>
-            <a href="resource-cleanup.html" class="sidebar-link">Resource Cleanup</a>
-            <a href="wrapping-up.html" class="sidebar-link active">Wrapping Up: Next Steps</a>
+        <div class="sidebar-section collapsible" data-section="hands-on">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🛠️ Hands-on Exercises</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="steering.html" class="sidebar-link">Steering - Teaching TRAE SOLO about your codebase</a>
+                <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+                <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+                <a href="cancel-button.html" class="sidebar-link sub-item">Add LLM Evaluation</a>
+                <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+                <a href="practice-mode-feature.html" class="sidebar-link sub-item">Exercise: Add Practice Mode</a>
+                <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="advanced">
+            <div class="sidebar-section-title collapsible-header">
+                <span>⚡ Advanced Topics</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+                <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+                <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+                <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+                <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+                <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+                <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="wrap-up">
+            <div class="sidebar-section-title collapsible-header">
+                <span>✅ Wrap Up</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="resource-cleanup.html" class="sidebar-link">Resource cleanup</a>
+                <a href="wrapping-up.html" class="sidebar-link active">Wrapping up: Next steps and feedback</a>
+            </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section collapsible toolkit-section" data-section="toolkit">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🧰 Hackathon Toolkit</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="opencode-web-ui.html" class="sidebar-link">OpenCode Web UI</a>
+            </div>
         </div>
     </nav>
 
@@ -68,26 +116,27 @@
 
     <main class="main" id="main-content">
         <header class="page-header">
-            <h1>Wrapping Up: Next Steps and Feedback</h1>
-            <div class="accent-line"></div>
-            <p>Complete your workshop journey and continue learning</p>
+            <h1>Wrapping Up</h1>
+            <p>Review what you've learned and explore next steps</p>
         </header>
 
         <article class="content">
             <div class="completion-badge">
                 <h3>Congratulations!</h3>
-                <p>You've completed the AI IDE - Kiro Hands-on Workshop</p>
+                <p>You've completed the TRAE SOLO Hands-on Workshop</p>
             </div>
 
             <h2>What You've Learned</h2>
-            <p>Throughout this workshop, you've explored the key capabilities of Kiro:</p>
+            <p>Throughout this workshop, you've explored the key capabilities of TRAE SOLO:</p>
             <ul>
-                <li><strong>Steering:</strong> How to teach Kiro your coding conventions and preferences</li>
-                <li><strong>Vibe Coding:</strong> Rapid, iterative development with AI assistance</li>
+                <li><strong>Dual Clients:</strong> Using both Web and Desktop clients for different workflows</li>
+                <li><strong>MTC vs Code Modes:</strong> Understanding when to use each mode for maximum productivity</li>
+                <li><strong>Cloud Agent:</strong> Leveraging cloud-based AI agents for complex tasks</li>
+                <li><strong>Steering:</strong> How to teach TRAE SOLO your coding conventions and preferences</li>
+                <li><strong>Vibe Coding:</strong> Rapid, iterative feature development with AI assistance</li>
                 <li><strong>Spec-Driven Development:</strong> Structured approach for complex features</li>
                 <li><strong>Agent Hooks:</strong> Automating repetitive tasks with AI-powered workflows</li>
-                <li><strong>MCP Integration:</strong> Extending Kiro's capabilities with external tools</li>
-                <li><strong>Advanced Steering:</strong> Domain-specific guidance for different contexts</li>
+                <li><strong>MCP Integration:</strong> Extending TRAE SOLO's capabilities with external tools</li>
                 <li><strong>Sub-Agents:</strong> Parallel task delegation for faster development</li>
                 <li><strong>Context Engineering:</strong> Optimizing AI context for better results</li>
             </ul>
@@ -95,16 +144,16 @@
             <h2>Next Steps</h2>
             <div class="next-steps-grid">
                 <div class="next-step-card">
-                    <h4>Continue Exploring Kiro</h4>
-                    <p>Try using Kiro on your own projects. Apply the techniques you've learned and discover new workflows.</p>
+                    <h4>Continue Exploring TRAE SOLO</h4>
+                    <p>Try using TRAE SOLO on your own projects. Apply the techniques you've learned and discover new workflows.</p>
                 </div>
                 <div class="next-step-card">
                     <h4>Build Custom Capabilities</h4>
-                    <p>Create your own powers, skills, and agents tailored to your specific development needs.</p>
+                    <p>Create your own hooks, skills, and agents tailored to your specific development needs.</p>
                 </div>
                 <div class="next-step-card">
                     <h4>Join the Community</h4>
-                    <p>Connect with other Kiro users to share tips, best practices, and custom configurations.</p>
+                    <p>Connect with other TRAE SOLO users to share tips, best practices, and custom configurations.</p>
                 </div>
                 <div class="next-step-card">
                     <h4>Explore Advanced Features</h4>
@@ -112,19 +161,19 @@
                 </div>
                 <div class="next-step-card">
                     <h4>Contribute to Open Source</h4>
-                    <p>Use Kiro to contribute to open source projects and share your custom capabilities.</p>
+                    <p>Use TRAE SOLO to contribute to open source projects and share your custom capabilities.</p>
                 </div>
                 <div class="next-step-card">
                     <h4>Stay Updated</h4>
-                    <p>Follow Kiro's development to learn about new features and capabilities as they're released.</p>
+                    <p>Follow TRAE SOLO's development to learn about new features and capabilities as they're released.</p>
                 </div>
             </div>
 
             <h2>Provide Feedback</h2>
-            <p>Your feedback helps us improve this workshop and Kiro itself. Please take a moment to share your experience:</p>
+            <p>Your feedback helps us improve this workshop and TRAE SOLO itself. Please take a moment to share your experience:</p>
             <ul>
                 <li>What did you find most valuable about this workshop?</li>
-                <li>Which Kiro features do you plan to use in your daily work?</li>
+                <li>Which TRAE SOLO features do you plan to use in your daily work?</li>
                 <li>What additional topics would you like to see covered?</li>
                 <li>How could we improve the workshop experience?</li>
             </ul>
@@ -134,7 +183,7 @@
                     <div class="dot"></div>
                     <span>Remember</span>
                 </div>
-                <p>Please complete the workshop feedback survey at the link provided in your workshop dashboard or email.</p>
+                <p>Please complete the workshop feedback survey at the link provided by your workshop facilitator.</p>
             </div>
 
             <div class="callout">
@@ -142,20 +191,20 @@
                     <div class="dot"></div>
                     <span>Remember</span>
                 </div>
-                <p>The best way to learn is by doing. Start using Kiro on your projects today and continue exploring its capabilities.</p>
+                <p>The best way to learn is by doing. Start using TRAE SOLO on your projects today and continue exploring its capabilities.</p>
             </div>
 
             <h2>Resources</h2>
             <p>Continue your learning with these resources:</p>
             <ul>
-                <li><strong>Kiro Documentation:</strong> Official documentation and guides</li>
+                <li><strong>TRAE SOLO Documentation:</strong> Official documentation and guides</li>
                 <li><strong>Community Forum:</strong> Ask questions and share experiences</li>
                 <li><strong>GitHub Repository:</strong> Access sample projects and examples</li>
-                <li><strong>Blog:</strong> Stay updated with the latest Kiro features and best practices</li>
+                <li><strong>Blog:</strong> Stay updated with the latest TRAE SOLO features and best practices</li>
             </ul>
 
             <h2>Thank You!</h2>
-            <p>Thank you for participating in the AI IDE - Kiro Hands-on Workshop. We hope you found it valuable and that Kiro becomes a productive part of your development workflow.</p>
+            <p>Thank you for participating in the TRAE SOLO Hands-on Workshop. We hope you found it valuable and that TRAE SOLO becomes a productive part of your development workflow.</p>
 
             <div class="callout">
                 <div class="callout-header">
@@ -168,7 +217,7 @@
 
         <div class="navigation-buttons">
             <a href="resource-cleanup.html" class="btn btn-secondary">Previous: Resource Cleanup</a>
-            <a href="index.html" class="btn btn-primary">Back to Home</a>
+            <a href="index.html" class="btn btn-primary">Next: Back to Home →</a>
         </div>
     </main>
 <script src="scripts.js"></script>

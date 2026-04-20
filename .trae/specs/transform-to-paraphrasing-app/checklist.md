@@ -1,0 +1,28 @@
+# Checklist
+
+- [x] understanding-application.html describes paraphrasing mentoring app architecture
+- [x] understanding-application.html includes paraphrasing, evaluation, and practice endpoints in architecture diagram
+- [x] understanding-application.html test data instructions say "submit texts for paraphrasing" instead of "create posts"
+- [x] understanding-application.html validation checklist references paraphrasing functionality
+- [x] vibe-coding.html exercise describes LLM evaluation panel integration
+- [x] vibe-coding.html example prompts reference Ollama API integration
+- [x] vibe-coding.html "Before You Start" checklist includes Ollama running locally
+- [x] cancel-button.html renamed/updated to LLM evaluation exercise
+- [x] cancel-button.html includes step-by-step Ollama integration instructions
+- [x] cancel-button.html example Vibe prompts are specific to evaluation panel
+- [x] spec-driven.html introduction references free practice mode instead of commenting
+- [x] spec-driven.html requirements.md example shows practice mode user stories
+- [x] spec-driven.html design.md example shows practice session data model
+- [x] practice-mode-feature.html created with SDD workflow for free practice mode
+- [x] practice-mode-feature.html includes complete task breakdown
+- [x] deployment-troubleshooting.html references paraphrasing app scenarios
+- [x] deployment-troubleshooting.html includes LLM connectivity troubleshooting
+- [x] steering.html examples reference paraphrasing app context
+- [x] generate-steering.html includes paraphrasing app steering documents
+- [x] All sidebar navigation links updated across all pages
+- [x] "Add a Cancel Button" replaced with "Add LLM Evaluation" in navigation
+- [x] "Exercise: Add Commenting" replaced with "Exercise: Add Practice Mode" in navigation
+- [x] All page links point to correct files (including practice-mode-feature.html)
+- [x] No remaining references to "blog posts", "create post", or "comments" in exercise content
+- [x] All example prompts throughout workshop reference paraphrasing app features
+- [x] Page titles and headers consistent with paraphrasing app domain

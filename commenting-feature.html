@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Commenting Feature - Kiro Workshop</title>
+    <title>Add Commenting Feature - TRAE SOLO Workshop</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -14,34 +14,41 @@
 
     <nav class="sidebar">
         <div class="sidebar-header">
-            <h2>Kiro Workshop</h2>
+            <h2>TRAE SOLO Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
+        </div>
+
+        <div class="sidebar-section">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with TRAE SOLO</a>
         </div>
 
         <div class="sidebar-section">
             <div class="sidebar-section-title">🚀 Getting Started</div>
-            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
             <a href="introduction.html" class="sidebar-link">Introduction</a>
             <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
-            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
-            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local)</a>
-            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+            <a href="get-started.html" class="sidebar-link sub-item">Get Started (Web & Desktop)</a>
+            <a href="desktop-client.html" class="sidebar-link sub-item">Desktop Client</a>
+            <a href="setup-account.html" class="sidebar-link sub-item">Setup Account</a>
         </div>
 
         <div class="sidebar-section">
             <div class="sidebar-section-title">💡 Core Concepts</div>
-            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
+            <a href="trae-solo-overview.html" class="sidebar-link">TRAE SOLO Overview</a>
+            <a href="dual-clients.html" class="sidebar-link">Web vs Desktop Clients</a>
+            <a href="dual-modes.html" class="sidebar-link">MTC vs Code Modes</a>
+            <a href="cloud-agent.html" class="sidebar-link">Cloud Agent</a>
             <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
             <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
         </div>
 
         <div class="sidebar-section">
             <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
-            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro</a>
+            <a href="steering.html" class="sidebar-link">Steering - Teaching TRAE SOLO about your codebase</a>
             <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
-            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Development</a>
-            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
+            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+            <a href="cancel-button.html" class="sidebar-link sub-item">Add LLM Evaluation</a>
             <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
-            <a href="commenting-feature.html" class="sidebar-link active sub-item">Exercise: Add Commenting</a>
+            <a href="practice-mode-feature.html" class="sidebar-link active sub-item">Exercise: Add Practice Mode</a>
             <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
         </div>
 
@@ -58,8 +65,8 @@
 
         <div class="sidebar-section">
             <div class="sidebar-section-title">✅ Wrap Up</div>
-            <a href="#" class="sidebar-link">Resource Cleanup</a>
-            <a href="#" class="sidebar-link">Wrapping Up: Next Steps</a>
+            <a href="resource-cleanup.html" class="sidebar-link">Resource cleanup</a>
+            <a href="wrapping-up.html" class="sidebar-link">Wrapping up: Next steps and feedback</a>
         </div>
     </nav>
 
@@ -68,13 +75,12 @@
     <main class="main" id="main-content">
         <header class="page-header">
             <h1>Exercise: Add a Commenting Feature</h1>
-            <div class="accent-line"></div>
             <p>Use Spec mode to plan and implement a commenting system for the micro-blogging application</p>
         </header>
 
         <article class="content">
             <h2>Exercise Overview</h2>
-            <p>In this exercise, you'll use Kiro's Spec mode to add a commenting feature to the micro-blogging application. This is a multi-component feature that touches the frontend UI, backend API, and data model - making it an ideal candidate for Spec-driven development.</p>
+            <p>In this exercise, you'll use TRAE SOLO's Spec mode to add a commenting feature to the micro-blogging application. This is a multi-component feature that touches the frontend UI, backend API, and data model - making it an ideal candidate for Spec-driven development.</p>
 
             <h2>Why Spec Mode for This Feature?</h2>
             <p>Adding comments involves several interconnected changes:</p>
@@ -88,7 +94,7 @@
             <p>Trying to implement all of this through conversational Vibe mode would likely result in inconsistent implementations and missed edge cases. Spec mode ensures every aspect is planned before coding begins.</p>
 
             <h2>Step 1: Initiate the Spec</h2>
-            <p>Open Kiro and switch to Spec mode. Provide a high-level description of what you want to build:</p>
+            <p>Open TRAE SOLO and switch to Spec mode. Provide a high-level description of what you want to build:</p>
 
             <div class="code-block">
                 <code>Add a commenting feature to blog posts. Users should be able to:
@@ -103,11 +109,11 @@ Comments should display the author name and timestamp.</code>
                     <div class="dot"></div>
                     <span>Tip</span>
                 </div>
-                <p>Keep your initial prompt focused on the user-facing behavior. Kiro will use your steering documents to understand the technical context, so you don't need to specify implementation details like "use TypeScript" or "follow REST conventions."</p>
+                <p>Keep your initial prompt focused on the user-facing behavior. TRAE SOLO will use your steering documents to understand the technical context, so you don't need to specify implementation details like "use TypeScript" or "follow REST conventions."</p>
             </div>
 
             <h2>Step 2: Review the Requirements</h2>
-            <p>Kiro will generate a <span class="inline-code">requirements.md</span> document. Review it carefully and look for:</p>
+            <p>TRAE SOLO will generate a <span class="inline-code">requirements.md</span> document. Review it carefully and look for:</p>
 
             <ul class="checklist">
                 <li>Clear user stories with acceptance criteria</li>
@@ -116,10 +122,10 @@ Comments should display the author name and timestamp.</code>
                 <li>Explicit out-of-scope items (nested replies, comment editing, moderation)</li>
             </ul>
 
-            <p>If anything is missing or incorrect, provide feedback. Kiro will revise the requirements until you approve them.</p>
+            <p>If anything is missing or incorrect, provide feedback. TRAE SOLO will revise the requirements until you approve them.</p>
 
             <h2>Step 3: Review the Design</h2>
-            <p>Once requirements are approved, Kiro generates a <span class="inline-code">design.md</span> document. Check that it includes:</p>
+            <p>Once requirements are approved, TRAE SOLO generates a <span class="inline-code">design.md</span> document. Check that it includes:</p>
 
             <ul class="checklist">
                 <li>Comment data model with field types and constraints</li>
@@ -128,10 +134,10 @@ Comments should display the author name and timestamp.</code>
                 <li>Data flow between components</li>
             </ul>
 
-            <p>Pay special attention to how the design aligns with your existing architecture. Your <span class="inline-code">tech.md</span> and <span class="inline-code">structure.md</span> steering documents should guide Kiro toward consistent patterns.</p>
+            <p>Pay special attention to how the design aligns with your existing architecture. Your <span class="inline-code">tech.md</span> and <span class="inline-code">structure.md</span> steering documents should guide TRAE SOLO toward consistent patterns.</p>
 
             <h2>Step 4: Review the Tasks</h2>
-            <p>Kiro breaks the implementation into discrete tasks in <span class="inline-code">tasks.md</span>. A well-structured task list might look like:</p>
+            <p>TRAE SOLO breaks the implementation into discrete tasks in <span class="inline-code">tasks.md</span>. A well-structured task list might look like:</p>
 
             <div class="code-block">
                 <code>Task 1: Create Comment model and database schema
@@ -149,11 +155,11 @@ Task 8: Write tests for all new components and API endpoints</code>
                     <div class="dot"></div>
                     <span>Watch for</span>
                 </div>
-                <p>Tasks that are too large or combine unrelated concerns. Each task should be independently testable and completable. If a task feels too big, ask Kiro to split it.</p>
+                <p>Tasks that are too large or combine unrelated concerns. Each task should be independently testable and completable. If a task feels too big, ask TRAE SOLO to split it.</p>
             </div>
 
             <h2>Step 5: Execute and Monitor</h2>
-            <p>Once all three documents are approved, Kiro begins executing the tasks. As each task completes:</p>
+            <p>Once all three documents are approved, TRAE SOLO begins executing the tasks. As each task completes:</p>
             <ol>
                 <li>Review the generated code changes</li>
                 <li>Verify the acceptance criteria are met</li>

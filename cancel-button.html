@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add a Cancel Button - Kiro Workshop</title>
+    <title>Add LLM Evaluation - TRAE SOLO Workshop</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -14,52 +14,101 @@
 
     <nav class="sidebar">
         <div class="sidebar-header">
-            <h2>Kiro Workshop</h2>
+            <h2>TRAE SOLO Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">🚀 Getting Started</div>
-            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
-            <a href="introduction.html" class="sidebar-link">Introduction</a>
-            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
-            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
-            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local)</a>
-            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        <div class="sidebar-search">
+            <input type="text" class="sidebar-search-input" placeholder="Search pages..." aria-label="Search pages">
+            <button class="sidebar-search-clear" aria-label="Clear search" style="display: none;">×</button>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">💡 Core Concepts</div>
-            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
-            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
-            <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+        <div class="sidebar-section collapsible" data-section="home">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with TRAE SOLO</a>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
-            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro</a>
-            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
-            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Development</a>
-            <a href="cancel-button.html" class="sidebar-link active sub-item">Add a Cancel Button</a>
-            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
-            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
-            <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+        <div class="sidebar-section collapsible" data-section="getting-started">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🚀 Getting Started</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="introduction.html" class="sidebar-link">Introduction</a>
+                <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+                <a href="get-started.html" class="sidebar-link sub-item">Get Started (Web & Desktop)</a>
+                <a href="desktop-client.html" class="sidebar-link sub-item">Desktop Client</a>
+                <a href="setup-account.html" class="sidebar-link sub-item">Setup Account</a>
+            </div>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">⚡ Advanced Topics</div>
-            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
-            <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
-            <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
-            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
-            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
-            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
-            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+        <div class="sidebar-section collapsible" data-section="core-concepts">
+            <div class="sidebar-section-title collapsible-header">
+                <span>💡 Core Concepts</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="trae-solo-overview.html" class="sidebar-link">TRAE SOLO Overview</a>
+                <a href="dual-clients.html" class="sidebar-link">Web vs Desktop Clients</a>
+                <a href="dual-modes.html" class="sidebar-link">MTC vs Code Modes</a>
+                <a href="cloud-agent.html" class="sidebar-link">Cloud Agent</a>
+                <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+                <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+            </div>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">✅ Wrap Up</div>
-            <a href="#" class="sidebar-link">Resource Cleanup</a>
-            <a href="#" class="sidebar-link">Wrapping Up: Next Steps</a>
+        <div class="sidebar-section collapsible" data-section="hands-on">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🛠️ Hands-on Exercises</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="steering.html" class="sidebar-link">Steering - Teaching TRAE SOLO about your codebase</a>
+                <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+                <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+                <a href="cancel-button.html" class="sidebar-link active sub-item">Add LLM Evaluation</a>
+                <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+                <a href="practice-mode-feature.html" class="sidebar-link sub-item">Exercise: Add Practice Mode</a>
+                <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="advanced">
+            <div class="sidebar-section-title collapsible-header">
+                <span>⚡ Advanced Topics</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+                <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+                <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+                <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+                <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+                <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+                <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="wrap-up">
+            <div class="sidebar-section-title collapsible-header">
+                <span>✅ Wrap Up</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="resource-cleanup.html" class="sidebar-link">Resource cleanup</a>
+                <a href="wrapping-up.html" class="sidebar-link">Wrapping up: Next steps and feedback</a>
+            </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section collapsible toolkit-section" data-section="toolkit">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🧰 Hackathon Toolkit</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="opencode-web-ui.html" class="sidebar-link">OpenCode Web UI</a>
+            </div>
         </div>
     </nav>
 
@@ -67,285 +116,85 @@
 
     <main class="main" id="main-content">
         <header class="page-header">
-            <h1>Add a Cancel Button</h1>
-            <div class="accent-line"></div>
-            <p>Hands-on exercise: Add a cancel button to the New Post page using Vibe mode</p>
+            <h1>Add LLM Evaluation</h1>
+            <p>Use Vibe mode to integrate a local LLM (Ollama) for paraphrase quality evaluation</p>
         </header>
 
         <article class="content">
-            <h2>The Problem</h2>
-            <p>Before starting, let's understand what we're fixing:</p>
-            <ol>
-                <li>Open your browser and navigate to the new post form by clicking on the New Post menu item</li>
-                <li>Notice the current UI - you'll see:
-                    <ul>
-                        <li>A textarea for post content</li>
-                        <li>A "Create Post" button</li>
-                        <li>No way to cancel or go back</li>
-                    </ul>
-                </li>
-            </ol>
+            <h2>Exercise Overview</h2>
+            <p>In this exercise, you'll use TRAE SOLO's Vibe mode to add an LLM evaluation panel to the paraphrase results page. This exercise demonstrates how Vibe mode can quickly integrate external APIs and display the results in your UI.</p>
 
-            <div class="callout">
-                <div class="callout-header">
-                    <div class="dot"></div>
-                    <span>Take a moment</span>
-                </div>
-                <p>Take a screenshot or mental note of the current UI. After implementing the feature, you'll compare to see what changed.</p>
-            </div>
-
-            <p><strong>The issue:</strong> Users who change their mind or accidentally click "New Post" have no way to return to the feed without creating a post. This is poor UX - every form should have a cancel option.</p>
-
-            <h2>Your Task</h2>
-            <p>Add a Cancel button to the New Post page that:</p>
+            <h2>Why Vibe Mode?</h2>
+            <p>Adding LLM evaluation is a focused task that Vibe mode handles well:</p>
             <ul>
-                <li>Returns the user to the feed</li>
-                <li>Warns them if they've started typing (draft in progress)</li>
-                <li>Matches the existing button styling</li>
+                <li>It involves a single API call to Ollama</li>
+                <li>The UI component is self-contained</li>
+                <li>Steering documents provide the React/TypeScript context</li>
+                <li>You can iterate quickly with follow-up prompts</li>
             </ul>
 
-            <h2>Step 1: Start a Vibe Session</h2>
-            <ol>
-                <li>Open Kiro (if not already open)</li>
-                <li>Open the Chat panel (usually on the right side)</li>
-                <li>Click "New Session" (the + icon at the top of the chat panel)</li>
-                <li>Select Vibe mode</li>
-            </ol>
-
             <div class="callout">
                 <div class="callout-header">
                     <div class="dot"></div>
-                    <span>Why Vibe Mode?</span>
+                    <span>Prerequisite</span>
                 </div>
-                <p>This is a single-component change with simple requirements. Perfect for Vibe mode's conversational approach.</p>
+                <p>Make sure Ollama is installed and running on your machine. You can start it with <span class="inline-code">ollama serve</span>. The default API endpoint is <span class="inline-code">http://localhost:11434</span>.</p>
             </div>
+
+            <h2>Step 1: Open TRAE SOLO Chat</h2>
+            <p>Open the TRAE SOLO chat panel and make sure Vibe mode is selected. You should see the conversational interface ready for your prompt.</p>
 
             <h2>Step 2: Write Your Prompt</h2>
-            <p>Here's a prompt that works well:</p>
+            <p>Describe what you want clearly and specifically:</p>
 
-            <div class="prompt-box">
-                <p><strong>Prompt example:</strong> "Add a Cancel button to the New Post page. When clicked, it should navigate back to the feed. If the user has started typing, show a confirmation dialog before discarding their draft."</p>
+            <div class="code-block">
+                <code>Add an evaluation panel to the paraphrase results page that:
+1. Calls the Ollama API at http://localhost:11434/api/generate
+2. Sends the paraphrased text with a prompt to evaluate quality (1-10 scale)
+3. Displays the score with color coding (green for 7+, yellow for 4-6, red for 1-3)
+4. Shows improvement suggestions returned by the LLM</code>
             </div>
 
-            <h3>Why this prompt works</h3>
-            <p>Let's break down what makes this prompt effective:</p>
-
-            <table class="prompt-table">
-                <thead>
-                    <tr>
-                        <th>Element</th>
-                        <th>What it does</th>
-                        <th>Why it matters</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>"Cancel" button</td>
-                        <td>Clear objective</td>
-                        <td>Kiro knows exactly what to create</td>
-                    </tr>
-                    <tr>
-                        <td>"New Post page"</td>
-                        <td>Specific location</td>
-                        <td>Kiro knows which component to modify</td>
-                    </tr>
-                    <tr>
-                        <td>"navigate back to the feed"</td>
-                        <td>Defined behavior</td>
-                        <td>Kiro knows what action to implement</td>
-                    </tr>
-                    <tr>
-                        <td>"If the user has started typing"</td>
-                        <td>Edge case handling</td>
-                        <td>Prevents data loss</td>
-                    </tr>
-                    <tr>
-                        <td>"show a confirmation dialog"</td>
-                        <td>UX detail</td>
-                        <td>Specifies how to handle the edge case</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3>What you DON'T need to specify:</h3>
-            <ul>
-                <li>❌ File paths (<span class="inline-code">frontend/src/pages/CreatePost.tsx</span>)</li>
-                <li>❌ Implementation details (React Router's <span class="inline-code">useNavigate</span> hook)</li>
-                <li>❌ Styling specifics (button classes, colors)</li>
-                <li>❌ State management (how to track if user typed)</li>
-            </ul>
-
-            <p>Kiro figures all of this out using your steering documents!</p>
-
             <h2>Step 3: Review the Changes</h2>
-            <p>Kiro will analyze the codebase and make changes. When complete:</p>
-            <ol>
-                <li>Look for the "View diff" or "Show changes" button in the chat</li>
-                <li>Click it to see what changed</li>
-                <li>Examine the modifications carefully:</li>
-            </ol>
-
-            <h3>Questions to ask while reviewing:</h3>
-            <ul>
-                <li><strong>Did Kiro modify the correct component?</strong> Should be <span class="inline-code">CreatePost.tsx</span>. Check the file path in the diff.</li>
-                <li><strong>Where did Kiro add the button?</strong> Is it in a logical location (near the Create Post button)? Does the placement make sense visually?</li>
-                <li><strong>How did it implement the draft detection?</strong> Does it check if the textarea has content? Is the logic sound?</li>
-                <li><strong>Does it match the existing button styling?</strong> Compare to the Create Post button. Are classes/styles consistent?</li>
-                <li><strong>Are there any unexpected changes?</strong> Did Kiro modify anything else? Are all changes related to the cancel button?</li>
+            <p>TRAE SOLO will generate the code changes. Review the diff carefully to ensure:</p>
+            <ul class="checklist">
+                <li>The API call targets the correct Ollama endpoint</li>
+                <li>Error handling is in place for when Ollama is not running</li>
+                <li>The evaluation panel displays next to the paraphrase output</li>
+                <li>Color coding matches the specified score ranges</li>
+                <li>Loading states are shown while waiting for the LLM response</li>
             </ul>
 
             <h2>Step 4: Test the Feature</h2>
-            <p>Go back to your browser - it should auto-reload. Navigate to the New Post page (<span class="inline-code">http://localhost:5173/new-post</span>)</p>
+            <p>Accept the changes and test them:</p>
+            <ol>
+                <li>Ensure Ollama is running (<span class="inline-code">ollama serve</span>)</li>
+                <li>Submit a text for paraphrasing</li>
+                <li>Verify the evaluation panel appears with a quality score</li>
+                <li>Check that color coding matches the score</li>
+                <li>Stop Ollama and verify the error message displays correctly</li>
+            </ol>
 
-            <h3>Testing checklist</h3>
-            <p>Test each scenario systematically:</p>
-
-            <h4>Empty form test</h4>
-            <ul>
-                <li>Click Cancel with empty textarea</li>
-                <li><strong>Expected:</strong> Navigate immediately to feed (no warning)</li>
-            </ul>
-
-            <h4>Draft in progress test</h4>
-            <ul>
-                <li>Type some text in the textarea</li>
-                <li>Click Cancel</li>
-                <li><strong>Expected:</strong> Confirmation dialog appears</li>
-            </ul>
-
-            <h4>Confirm discard test</h4>
-            <ul>
-                <li>Type text, click Cancel, click "OK" on dialog</li>
-                <li><strong>Expected:</strong> Navigate to feed, text is lost</li>
-            </ul>
-
-            <h4>Cancel discard test</h4>
-            <ul>
-                <li>Type text, click Cancel, click "Cancel" on dialog</li>
-                <li><strong>Expected:</strong> Stay on page, text is preserved</li>
-            </ul>
-
-            <h4>Visual test</h4>
-            <ul>
-                <li>Does the Cancel button look like it belongs?</li>
-                <li>Is it positioned logically?</li>
-                <li>Does it match the Create Post button style?</li>
-            </ul>
-
-            <h3>What to do if it doesn't work</h3>
-            <ul>
-                <li><strong>Button doesn't appear?</strong> Check browser console for errors (F12 → Console tab). Verify the dev server is still running. Try hard refresh (Cmd+Shift+R or Ctrl+Shift+R).</li>
-                <li><strong>Navigation doesn't work?</strong> Check console for routing errors.</li>
-                <li><strong>Styling looks off?</strong> Use a follow-up prompt: "Match the Cancel button styling to the Create Post button"</li>
-            </ul>
-
-            <h2>Step 5: Iterate (Optional)</h2>
-            <p>Not happy with something? Use follow-up prompts:</p>
-
-            <div class="prompt-box">
-                <p><strong>Example refinements:</strong></p>
-                <ul style="margin-top: 8px;">
-                    <li>"Make the Cancel button a secondary style with gray background"</li>
-                    <li>"Add a cancel icon to the left of the text"</li>
-                    <li>"Move the Cancel button to the left of the Create Post button"</li>
-                </ul>
+            <h2>Step 5: Iterate and Refine</h2>
+            <p>Use follow-up prompts to improve the feature:</p>
+            <div class="code-block">
+                <code>"Add a loading spinner while waiting for the LLM response"</code>
+            </div>
+            <div class="code-block">
+                <code>"Make the evaluation panel collapsible with a toggle button"</code>
+            </div>
+            <div class="code-block">
+                <code>"Add a history of previous evaluations for this text"</code>
             </div>
 
-            <h2>What You Learned</h2>
+            <h2>Key Takeaways</h2>
             <ul>
-                <li>✅ <strong>Vibe mode is fast</strong> - From prompt to working feature in seconds</li>
-                <li>✅ <strong>Steering provides context</strong> - You didn't need to explain:
-                    <ul>
-                        <li>What framework you're using (React)</li>
-                        <li>Where the component lives (Kiro found it)</li>
-                        <li>How to style buttons (matched existing patterns)</li>
-                        <li>How to navigate (used the right routing method)</li>
-                    </ul>
-                </li>
-                <li>✅ <strong>Iteration is natural</strong> - Refine with conversational follow-ups</li>
-                <li>✅ <strong>You stay in control</strong> - Review diffs before accepting changes</li>
+                <li>Vibe mode excels at focused API integration tasks</li>
+                <li>Specific prompts with endpoint details get better results</li>
+                <li>Always include error handling for external service calls</li>
+                <li>Iterate with follow-up prompts to refine the UI</li>
+                <li>Test with the external service both running and stopped</li>
             </ul>
-
-            <h2>Reflection</h2>
-            <p>Take a moment to consider what just happened:</p>
-            <ul>
-                <li><strong>How did Kiro know where to place the button?</strong> It used <span class="inline-code">structure.md</span> to understand the codebase organization and found the CreatePost component automatically.</li>
-                <li><strong>What would have happened without steering documents?</strong> Kiro would have needed to analyze multiple files to understand your framework (React), routing library (React Router), styling approach, and file structure—consuming context window space before even starting the task. Steering eliminated that overhead.</li>
-                <li><strong>When did you feel Vibe mode was most effective?</strong> Likely when you saw how quickly it went from prompt to working code. The conversational nature makes it feel natural, and the iteration cycle is fast.</li>
-                <li><strong>What surprised you?</strong> Maybe how Kiro matched the existing button styling without being told, or how it knew to use <span class="inline-code">window.confirm</span> for the dialog, or how it correctly implemented the draft detection logic.</li>
-            </ul>
-
-            <h2>Stretch Goals: Improve the Registration Experience</h2>
-            <p>Remember the password requirements issue from the deployment section? The registration form has two UX problems that are perfect for Vibe mode practice. Try one or both!</p>
-
-            <h3>Option A: Password Validation</h3>
-            <p>The registration form doesn't tell users what password requirements Cognito enforces, leading to frustrating failed attempts.</p>
-
-            <p><strong>Requirements:</strong></p>
-            <ul>
-                <li>Display password requirements below the password field</li>
-                <li>Show real-time validation as the user types (checkmarks for met requirements)</li>
-                <li>Disable the Register button until all requirements are met</li>
-            </ul>
-
-            <div class="prompt-box">
-                <p><strong>Prompt example:</strong> "Add password requirements validation to the registration form. Show a list of requirements below the password field with checkmarks that update in real-time as the user types. Disable the Register button until all requirements are met."</p>
-            </div>
-
-            <p><strong>Why this is a good Vibe exercise:</strong></p>
-            <ul>
-                <li>Single component modification (Register page)</li>
-                <li>Clear, testable requirements</li>
-                <li>Real-time state updates</li>
-                <li>Conditional styling and button state</li>
-            </ul>
-
-            <h3>Option B: Better Error Display</h3>
-            <p>When registration fails (e.g., email already exists, password doesn't meet requirements), the app shows a generic "An error occurred" message instead of the actual Cognito error.</p>
-
-            <p><strong>Requirements:</strong></p>
-            <ul>
-                <li>Display the actual error message from Cognito instead of a generic message</li>
-                <li>Style the error message clearly (red text, visible placement)</li>
-                <li>Clear the error when the user starts typing again</li>
-            </ul>
-
-            <div class="prompt-box">
-                <p><strong>Prompt example:</strong> "Improve the registration error handling. Instead of showing 'An error occurred', display the actual error message from Cognito. Style it clearly in red text below the form, and clear it when the user starts typing again."</p>
-            </div>
-
-            <p><strong>Why this is a good Vibe exercise:</strong></p>
-            <ul>
-                <li>Requires understanding the existing error handling flow</li>
-                <li>Involves try/catch and error state management</li>
-                <li>Tests Kiro's ability to trace through service calls</li>
-                <li>Improves real user experience</li>
-            </ul>
-
-            <h2>The Limits of Vibe Coding</h2>
-            <p>Don't be surprised if Kiro doesn't nail these on the first try. These exercises deliberately push vibe coding to test its boundaries. You might find:</p>
-            <ul>
-                <li>The validation UI appears but doesn't update in real-time</li>
-                <li>Error messages are captured but not displayed correctly</li>
-                <li>Some requirements are implemented while others are missed</li>
-            </ul>
-
-            <p>This is the challenge with vibe coding. As features grow in complexity—requiring coordination across multiple elements, state management, and interconnected logic—a single conversational prompt becomes less reliable. You'll need multiple iterations to get everything right.</p>
-
-            <div class="callout">
-                <div class="callout-header">
-                    <div class="dot"></div>
-                    <span>This is exactly why Spec-Driven Development exists.</span>
-                </div>
-                <p>In the next module, you'll learn how to tackle complex, multi-requirement features through a structured approach: requirements → design → implementation. Instead of hoping Kiro understands everything from one prompt, you'll break down the feature systematically, ensuring nothing gets missed.</p>
-            </div>
-
-            <h2>Next Steps</h2>
-            <p>You've experienced Vibe mode's power for rapid feature development. You've seen how steering documents eliminate the need for repetitive context-setting, and how conversational iteration lets you refine features naturally.</p>
-
-            <p>Next, you'll learn when Vibe mode isn't enough and how Spec mode handles complex, multi-file features through structured development.</p>
-
-            <p><strong>Ready to continue? Click Next.</strong></p>
 
             <div class="navigation-buttons">
                 <a href="vibe-coding.html" class="btn btn-secondary">← Previous: Vibe Coding</a>
@@ -355,15 +204,13 @@
     </main>
 
     <script>
-        document.addEventListener('click', function(e) {
+        document.addEventListener('DOMContentLoaded', function() {
             const sidebar = document.querySelector('.sidebar');
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            if (window.innerWidth <= 900 && 
-                !sidebar.contains(e.target) && 
-                !menuBtn.contains(e.target) && 
-                sidebar.classList.contains('open')) {
-                sidebar.classList.remove('open');
-            }
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 900 && !sidebar.contains(e.target) && !e.target.classList.contains('mobile-menu-btn')) {
+                    sidebar.classList.remove('open');
+                }
+            });
         });
     </script>
 <script src="scripts.js"></script>

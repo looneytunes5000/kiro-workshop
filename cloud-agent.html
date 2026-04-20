@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Agent - TRAE SOLO Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰ Menu</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>TRAE SOLO Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
+        </div>
+
+        <div class="sidebar-search">
+            <input type="text" class="sidebar-search-input" placeholder="Search pages..." aria-label="Search pages">
+            <button class="sidebar-search-clear" aria-label="Clear search" style="display: none;">×</button>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="home">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with TRAE SOLO</a>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="getting-started">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🚀 Getting Started</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="introduction.html" class="sidebar-link">Introduction</a>
+                <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+                <a href="get-started.html" class="sidebar-link sub-item">Get Started (Web & Desktop)</a>
+                <a href="desktop-client.html" class="sidebar-link sub-item">Desktop Client</a>
+                <a href="setup-account.html" class="sidebar-link sub-item">Setup Account</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="core-concepts">
+            <div class="sidebar-section-title collapsible-header">
+                <span>💡 Core Concepts</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="trae-solo-overview.html" class="sidebar-link">TRAE SOLO Overview</a>
+                <a href="dual-clients.html" class="sidebar-link">Web vs Desktop Clients</a>
+                <a href="dual-modes.html" class="sidebar-link">MTC vs Code Modes</a>
+                <a href="cloud-agent.html" class="sidebar-link active">Cloud Agent</a>
+                <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+                <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="hands-on">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🛠️ Hands-on Exercises</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="steering.html" class="sidebar-link">Steering - Teaching TRAE SOLO about your codebase</a>
+                <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+                <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+                <a href="cancel-button.html" class="sidebar-link sub-item">Add LLM Evaluation</a>
+                <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+                <a href="practice-mode-feature.html" class="sidebar-link sub-item">Exercise: Add Practice Mode</a>
+                <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="advanced">
+            <div class="sidebar-section-title collapsible-header">
+                <span>⚡ Advanced Topics</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+                <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+                <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+                <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+                <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+                <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+                <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="wrap-up">
+            <div class="sidebar-section-title collapsible-header">
+                <span>✅ Wrap Up</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="resource-cleanup.html" class="sidebar-link">Resource cleanup</a>
+                <a href="wrapping-up.html" class="sidebar-link">Wrapping up: Next steps and feedback</a>
+            </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section collapsible toolkit-section" data-section="toolkit">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🧰 Hackathon Toolkit</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="opencode-web-ui.html" class="sidebar-link">OpenCode Web UI</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Cloud Agent</h1>
+            <div class="accent-line"></div>
+            <p>Execute code in a managed cloud environment with unified runtime and dependency management</p>
+        </header>
+
+        <article class="content">
+            <h2>Overview</h2>
+            <p>The Cloud Agent enables code analysis, running, and debugging in a fully managed cloud environment. It provides unified runtime and dependency management, ensuring stable and isolated remote execution without any local setup.</p>
+
+            <p>Instead of configuring your local machine for each project, the Cloud Agent provisions a clean environment on demand, executes your tasks, and returns results directly to your chat interface.</p>
+
+            <h2>Benefits</h2>
+            <ul class="checklist">
+                <li><strong>No local setup needed</strong> - Avoids compatibility issues from local environment differences</li>
+                <li><strong>Unified dependency management</strong> - All dependencies managed centrally and consistently</li>
+                <li><strong>Isolated execution</strong> - Each task runs in a clean, isolated environment</li>
+                <li><strong>Focus on the task</strong> - No distractions from environment configuration or device limitations</li>
+            </ul>
+
+            <h2>When to Use Cloud Agent</h2>
+            <p>The Cloud Agent is ideal in these scenarios:</p>
+            <ul>
+                <li><strong>Complex projects with many dependencies</strong> - Let the cloud handle the setup while you focus on development</li>
+                <li><strong>Team collaboration with consistent environments</strong> - Everyone works in the same configured environment</li>
+                <li><strong>Working across different devices</strong> - Switch between machines without reconfiguring anything</li>
+                <li><strong>Avoiding local setup time</strong> - Skip the "works on my machine" problem entirely</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Key Principle</span>
+                </div>
+                <p>The Cloud Agent removes the friction of environment setup. You describe what you want to build, and the cloud provides a ready-to-use workspace with all dependencies pre-configured.</p>
+            </div>
+
+            <h2>How It Works</h2>
+            <div class="workflow-steps">
+                <div class="workflow-step">Submit Your Task</div>
+                <div class="workflow-step">Cloud Environment Provisions</div>
+                <div class="workflow-step">Code Executes in Isolated Container</div>
+                <div class="workflow-step">Results Returned to Chat</div>
+            </div>
+
+            <ol>
+                <li><strong>Submit your task</strong> - Describe what you want to build or analyze in the chat interface</li>
+                <li><strong>Cloud environment provisions automatically</strong> - A clean, isolated container is created with the right runtime and dependencies</li>
+                <li><strong>Code executes in isolated container</strong> - Your task runs in a managed environment with no interference from other processes</li>
+                <li><strong>Results returned to your chat interface</strong> - Output, diffs, and artifacts appear directly in your conversation</li>
+            </ol>
+
+            <h2>Cloud vs Local</h2>
+            <p>Understanding when to use Cloud Agent versus local execution helps you work more efficiently.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Use Cloud Agent When</span>
+                </div>
+                <ul>
+                    <li>Starting a new project from scratch</li>
+                    <li>Working with complex dependency trees</li>
+                    <li>Collaborating with a team that needs consistent environments</li>
+                    <li>Switching between different machines or devices</li>
+                    <li>You want to avoid "works on my machine" issues</li>
+                </ul>
+            </div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Use Local Execution When</span>
+                </div>
+                <ul>
+                    <li>You already have a well-configured local environment</li>
+                    <li>Working offline or with limited connectivity</li>
+                    <li>Running quick, single-file edits that don't need execution</li>
+                    <li>Debugging hardware-specific or OS-specific issues</li>
+                </ul>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="dual-modes.html" class="btn btn-secondary">← Previous: MTC vs Code Modes</a>
+                <a href="understanding-application.html" class="btn btn-primary">Next: Understanding the Application →</a>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        document.addEventListener('click', function(e) {
+            const sidebar = document.querySelector('.sidebar');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            if (window.innerWidth <= 900 && 
+                !sidebar.contains(e.target) && 
+                !menuBtn.contains(e.target) && 
+                sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
+<script src="scripts.js"></script>
+</body>
+</html>

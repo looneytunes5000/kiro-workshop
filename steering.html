@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steering - Teaching Kiro about your codebase - Kiro Workshop</title>
+    <title>Steering - Teaching TRAE SOLO about your codebase - TRAE SOLO Workshop</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -14,52 +14,101 @@
 
     <nav class="sidebar">
         <div class="sidebar-header">
-            <h2>Kiro Workshop</h2>
+            <h2>TRAE SOLO Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">🚀 Getting Started</div>
-            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
-            <a href="introduction.html" class="sidebar-link">Introduction</a>
-            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
-            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
-            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local)</a>
-            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        <div class="sidebar-search">
+            <input type="text" class="sidebar-search-input" placeholder="Search pages..." aria-label="Search pages">
+            <button class="sidebar-search-clear" aria-label="Clear search" style="display: none;">×</button>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">💡 Core Concepts</div>
-            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
-            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
-            <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+        <div class="sidebar-section collapsible" data-section="home">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with TRAE SOLO</a>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
-            <a href="steering.html" class="sidebar-link active">Steering - Teaching Kiro</a>
-            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
-            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Development</a>
-            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
-            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
-            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
-            <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+        <div class="sidebar-section collapsible" data-section="getting-started">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🚀 Getting Started</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="introduction.html" class="sidebar-link">Introduction</a>
+                <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+                <a href="get-started.html" class="sidebar-link sub-item">Get Started (Web & Desktop)</a>
+                <a href="desktop-client.html" class="sidebar-link sub-item">Desktop Client</a>
+                <a href="setup-account.html" class="sidebar-link sub-item">Setup Account</a>
+            </div>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">⚡ Advanced Topics</div>
-            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
-            <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
-            <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
-            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
-            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
-            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
-            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+        <div class="sidebar-section collapsible" data-section="core-concepts">
+            <div class="sidebar-section-title collapsible-header">
+                <span>💡 Core Concepts</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="trae-solo-overview.html" class="sidebar-link">TRAE SOLO Overview</a>
+                <a href="dual-clients.html" class="sidebar-link">Web vs Desktop Clients</a>
+                <a href="dual-modes.html" class="sidebar-link">MTC vs Code Modes</a>
+                <a href="cloud-agent.html" class="sidebar-link">Cloud Agent</a>
+                <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+                <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+            </div>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">✅ Wrap Up</div>
-            <a href="#" class="sidebar-link">Resource Cleanup</a>
-            <a href="#" class="sidebar-link">Wrapping Up: Next Steps</a>
+        <div class="sidebar-section collapsible" data-section="hands-on">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🛠️ Hands-on Exercises</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="steering.html" class="sidebar-link active">Steering - Teaching TRAE SOLO about your codebase</a>
+                <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+                <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+                <a href="cancel-button.html" class="sidebar-link sub-item">Add LLM Evaluation</a>
+                <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+                <a href="practice-mode-feature.html" class="sidebar-link sub-item">Exercise: Add Practice Mode</a>
+                <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="advanced">
+            <div class="sidebar-section-title collapsible-header">
+                <span>⚡ Advanced Topics</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+                <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+                <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+                <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+                <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+                <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+                <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="wrap-up">
+            <div class="sidebar-section-title collapsible-header">
+                <span>✅ Wrap Up</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="resource-cleanup.html" class="sidebar-link">Resource cleanup</a>
+                <a href="wrapping-up.html" class="sidebar-link">Wrapping up: Next steps and feedback</a>
+            </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section collapsible toolkit-section" data-section="toolkit">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🧰 Hackathon Toolkit</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="opencode-web-ui.html" class="sidebar-link">OpenCode Web UI</a>
+            </div>
         </div>
     </nav>
 
@@ -67,14 +116,13 @@
 
     <main class="main" id="main-content">
         <header class="page-header">
-            <h1>Steering - Teaching Kiro about your codebase</h1>
-            <div class="accent-line"></div>
-            <p>Generate foundational steering documents that teach Kiro about your project automatically</p>
+            <h1>Steering - Teaching TRAE SOLO about your codebase</h1>
+            <p>Generate foundational steering documents that teach TRAE SOLO about your project automatically</p>
         </header>
 
         <article class="content">
             <h2>Overview</h2>
-            <p>📚 Steering documents provide persistent context about your project, eliminating the need to explain your tech stack and architecture in every prompt. In this section, you'll generate foundational steering documents that teach Kiro about your codebase automatically.</p>
+            <p>📚 Steering documents provide persistent context about your project, eliminating the need to explain your tech stack and architecture in every prompt. In this section, you'll generate foundational steering documents that teach TRAE SOLO about your codebase automatically.</p>
 
             <h3>Learning objectives</h3>
             <ul>
@@ -91,7 +139,7 @@
                 <li><span class="inline-code">structure.md</span> - Codebase organization and key files</li>
             </ul>
 
-            <p>These documents are stored in <span class="inline-code">.kiro/steering/</span> and automatically referenced in every Kiro conversation, providing consistent context without consuming your conversation window.</p>
+            <p>These documents are stored in <span class="inline-code">.trae/steering/</span> and automatically referenced in every TRAE SOLO conversation, providing consistent context without consuming your conversation window.</p>
 
             <h2>How steering differs from traditional documentation</h2>
             <p>Traditional documentation is written for humans to read when they need information. Steering documents are written for AI to reference automatically in every interaction.</p>
@@ -109,8 +157,8 @@
                 <div class="outcome-item">
                     <h4>Steering Docs</h4>
                     <ul>
-                        <li>Stored in <span class="inline-code">.kiro/steering/</span></li>
-                        <li>Automatically loaded by Kiro</li>
+                        <li>Stored in <span class="inline-code">.trae/steering/</span></li>
+                        <li>Automatically loaded by TRAE SOLO</li>
                         <li>Generated from codebase analysis</li>
                         <li>Always available in AI context</li>
                     </ul>
@@ -125,21 +173,21 @@
             </ul>
 
             <h2>Understanding context windows</h2>
-            <p>AI agents like Kiro have a context window - a finite amount of information they can process in a single session. Think of it like short-term memory: the agent can only "see" a certain number of tokens (roughly words) at once.</p>
+            <p>AI agents like TRAE SOLO have a context window - a finite amount of information they can process in a single session. Think of it like short-term memory: the agent can only "see" a certain number of tokens (roughly words) at once.</p>
 
             <h3>Why this matters:</h3>
             <ul>
-                <li>Every file Kiro reads consumes context window space</li>
+                <li>Every file TRAE SOLO reads consumes context window space</li>
                 <li>Analyzing your codebase to understand tech stack and patterns uses valuable context</li>
                 <li>Less space remains for your actual code changes and reasoning</li>
             </ul>
 
-            <p><strong>Example:</strong> If Kiro needs to understand your React + TypeScript + AWS setup, it might read:</p>
+            <p><strong>Example:</strong> If TRAE SOLO needs to understand your React + TypeScript setup, it might read:</p>
             <ul>
                 <li><span class="inline-code">package.json</span> (dependencies)</li>
                 <li><span class="inline-code">tsconfig.json</span> (TypeScript config)</li>
                 <li>Several component files (to understand patterns)</li>
-                <li>Infrastructure files (to understand AWS setup)</li>
+                <li>Configuration files (to understand build setup)</li>
             </ul>
 
             <p>This could consume some of the context window before even starting your task.</p>
@@ -147,14 +195,14 @@
             <h2>Why steering matters</h2>
             <p>Steering documents solve the context window problem by providing persistent knowledge that's always available:</p>
 
-            <p><strong>Without steering documents</strong>, Kiro would need to analyze your entire codebase for every request to understand:</p>
+            <p><strong>Without steering documents</strong>, TRAE SOLO would need to analyze your entire codebase for every request to understand:</p>
             <ul>
                 <li>What framework and language you're using</li>
                 <li>Where different components are located</li>
                 <li>What patterns and conventions to follow</li>
             </ul>
 
-            <p><strong>With steering documents</strong>, this essential information is pre-loaded without consuming valuable context space, allowing Kiro to focus on your actual request and use the context window for the code that matters.</p>
+            <p><strong>With steering documents</strong>, this essential information is pre-loaded without consuming valuable context space, allowing TRAE SOLO to focus on your actual request and use the context window for the code that matters.</p>
 
             <div class="callout">
                 <div class="callout-header">

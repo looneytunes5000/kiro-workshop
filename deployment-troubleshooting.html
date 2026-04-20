@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fixing Deployment Scripts - Kiro Workshop</title>
+    <title>Fixing Deployment Scripts - TRAE SOLO Workshop</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -14,52 +14,101 @@
 
     <nav class="sidebar">
         <div class="sidebar-header">
-            <h2>Kiro Workshop</h2>
+            <h2>TRAE SOLO Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">🚀 Getting Started</div>
-            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
-            <a href="introduction.html" class="sidebar-link">Introduction</a>
-            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
-            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
-            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local)</a>
-            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        <div class="sidebar-search">
+            <input type="text" class="sidebar-search-input" placeholder="Search pages..." aria-label="Search pages">
+            <button class="sidebar-search-clear" aria-label="Clear search" style="display: none;">×</button>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">💡 Core Concepts</div>
-            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
-            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
-            <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+        <div class="sidebar-section collapsible" data-section="home">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with TRAE SOLO</a>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
-            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro</a>
-            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
-            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Development</a>
-            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
-            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
-            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
-            <a href="deployment-troubleshooting.html" class="sidebar-link active sub-item">Exercise: Fix Deployment</a>
+        <div class="sidebar-section collapsible" data-section="getting-started">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🚀 Getting Started</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="introduction.html" class="sidebar-link">Introduction</a>
+                <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+                <a href="get-started.html" class="sidebar-link sub-item">Get Started (Web & Desktop)</a>
+                <a href="desktop-client.html" class="sidebar-link sub-item">Desktop Client</a>
+                <a href="setup-account.html" class="sidebar-link sub-item">Setup Account</a>
+            </div>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">⚡ Advanced Topics</div>
-            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
-            <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
-            <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
-            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
-            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
-            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
-            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+        <div class="sidebar-section collapsible" data-section="core-concepts">
+            <div class="sidebar-section-title collapsible-header">
+                <span>💡 Core Concepts</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="trae-solo-overview.html" class="sidebar-link">TRAE SOLO Overview</a>
+                <a href="dual-clients.html" class="sidebar-link">Web vs Desktop Clients</a>
+                <a href="dual-modes.html" class="sidebar-link">MTC vs Code Modes</a>
+                <a href="cloud-agent.html" class="sidebar-link">Cloud Agent</a>
+                <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+                <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+            </div>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">✅ Wrap Up</div>
-            <a href="#" class="sidebar-link">Resource Cleanup</a>
-            <a href="#" class="sidebar-link">Wrapping Up: Next Steps</a>
+        <div class="sidebar-section collapsible" data-section="hands-on">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🛠️ Hands-on Exercises</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="steering.html" class="sidebar-link">Steering - Teaching TRAE SOLO about your codebase</a>
+                <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+                <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+                <a href="cancel-button.html" class="sidebar-link sub-item">Add LLM Evaluation</a>
+                <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+                <a href="practice-mode-feature.html" class="sidebar-link sub-item">Exercise: Add Practice Mode</a>
+                <a href="deployment-troubleshooting.html" class="sidebar-link active sub-item">Exercise: Fix Deployment</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="advanced">
+            <div class="sidebar-section-title collapsible-header">
+                <span>⚡ Advanced Topics</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+                <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+                <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+                <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+                <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+                <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+                <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="wrap-up">
+            <div class="sidebar-section-title collapsible-header">
+                <span>✅ Wrap Up</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="resource-cleanup.html" class="sidebar-link">Resource cleanup</a>
+                <a href="wrapping-up.html" class="sidebar-link">Wrapping up: Next steps and feedback</a>
+            </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section collapsible toolkit-section" data-section="toolkit">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🧰 Hackathon Toolkit</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="opencode-web-ui.html" class="sidebar-link">OpenCode Web UI</a>
+            </div>
         </div>
     </nav>
 
@@ -68,13 +117,12 @@
     <main class="main" id="main-content">
         <header class="page-header">
             <h1>Exercise: Fixing Deployment Scripts</h1>
-            <div class="accent-line"></div>
             <p>Use Spec mode to diagnose and fix broken deployment configurations in a brownfield scenario</p>
         </header>
 
         <article class="content">
             <h2>Exercise Overview</h2>
-            <p>In this exercise, you'll use Kiro's Spec mode to troubleshoot and fix deployment issues. Unlike the previous greenfield exercise (adding a commenting feature), this is a brownfield scenario where something is broken and needs systematic diagnosis and repair.</p>
+            <p>In this exercise, you'll use TRAE SOLO's Spec mode to troubleshoot and fix deployment issues for the paraphrasing mentoring app. Unlike the previous greenfield exercise (adding a practice mode), this is a brownfield scenario where something is broken and needs systematic diagnosis and repair.</p>
 
             <p>Spec mode is surprisingly effective for troubleshooting because it forces a structured approach: understand the problem, design the fix, and execute methodically.</p>
 
@@ -84,8 +132,9 @@
                 <li><strong>Environment variable mismatches</strong> - Variables referenced in scripts don't match the deployment environment</li>
                 <li><strong>Missing dependencies</strong> - Required packages or services aren't installed or configured</li>
                 <li><strong>Incorrect resource paths</strong> - File paths or URLs that work locally but fail in production</li>
-                <li><strong>Permission errors</strong> - IAM roles or service accounts lacking required permissions</li>
+                <li><strong>Permission errors</strong> - Service accounts or deployment credentials lacking required permissions</li>
                 <li><strong>Version conflicts</strong> - Incompatible dependency versions between development and production</li>
+                <li><strong>LLM connectivity issues</strong> - Ollama API endpoint not accessible from deployed environment</li>
             </ul>
 
             <h2>Why Spec Mode for Troubleshooting?</h2>
@@ -113,13 +162,14 @@
             </div>
 
             <h2>Step 1: Describe the Problem</h2>
-            <p>Open Kiro and switch to Spec mode. Provide a description of the deployment issue:</p>
+            <p>Open TRAE SOLO and switch to Spec mode. Provide a description of the deployment issue:</p>
 
             <div class="code-block">
-                <code>The deployment pipeline is failing. The build succeeds locally,
-but the CDK deployment to AWS fails with errors. Please analyze
-the deployment scripts, identify the root causes, and create a
-plan to fix them.</code>
+                <code>The deployment pipeline for the paraphrasing app is failing. The build succeeds locally,
+but the deployment to the cloud environment fails with errors.
+The LLM evaluation feature works locally with Ollama but fails in production.
+Please analyze the deployment scripts, identify the root causes,
+and create a plan to fix them.</code>
             </div>
 
             <div class="callout">
@@ -127,11 +177,11 @@ plan to fix them.</code>
                     <div class="dot"></div>
                     <span>Tip</span>
                 </div>
-                <p>Include any error messages, logs, or symptoms you've observed. The more context you provide, the more accurate Kiro's diagnosis will be.</p>
+                <p>Include any error messages, logs, or symptoms you've observed. The more context you provide, the more accurate TRAE SOLO's diagnosis will be.</p>
             </div>
 
             <h2>Step 2: Review the Diagnosis (Requirements)</h2>
-            <p>Kiro will generate a <span class="inline-code">requirements.md</span> that serves as a diagnosis document. It should include:</p>
+            <p>TRAE SOLO will generate a <span class="inline-code">requirements.md</span> that serves as a diagnosis document. It should include:</p>
 
             <ul class="checklist">
                 <li>Identification of each failure point</li>
@@ -140,7 +190,7 @@ plan to fix them.</code>
                 <li>Priority ranking (which issues must be fixed first)</li>
             </ul>
 
-            <p>Review the diagnosis carefully. Does it match what you're seeing? Are there issues Kiro missed? Provide feedback to refine the analysis.</p>
+            <p>Review the diagnosis carefully. Does it match what you're seeing? Are there issues TRAE SOLO missed? Provide feedback to refine the analysis.</p>
 
             <h2>Step 3: Review the Fix Strategy (Design)</h2>
             <p>The <span class="inline-code">design.md</span> document outlines the fix strategy. Look for:</p>
@@ -159,12 +209,13 @@ plan to fix them.</code>
 
             <div class="code-block">
                 <code>Task 1: Fix environment variable references in deploy.sh
-Task 2: Update CDK stack configuration for correct region
-Task 3: Add missing IAM permissions to deployment role
-Task 4: Fix S3 bucket policy for static asset uploads
+Task 2: Update deployment configuration for correct region
+Task 3: Add missing permissions to deployment role
+Task 4: Fix storage bucket policy for static asset uploads
 Task 5: Update package.json dependencies to compatible versions
-Task 6: Test deployment in staging environment
-Task 7: Update deployment documentation with new requirements</code>
+Task 6: Configure cloud LLM service as fallback for local Ollama
+Task 7: Test deployment in staging environment
+Task 8: Update deployment documentation with new requirements</code>
             </div>
 
             <div class="callout">
@@ -172,11 +223,11 @@ Task 7: Update deployment documentation with new requirements</code>
                     <div class="dot"></div>
                     <span>Important</span>
                 </div>
-                <p>For deployment fixes, the order matters. Infrastructure changes (IAM, S3) should typically come before application changes. Make sure the task order reflects these dependencies.</p>
+                <p>For deployment fixes, the order matters. Infrastructure changes (permissions, storage) should typically come before application changes. Make sure the task order reflects these dependencies.</p>
             </div>
 
             <h2>Step 5: Execute and Verify</h2>
-            <p>As Kiro executes each fix task:</p>
+            <p>As TRAE SOLO executes each fix task:</p>
             <ol>
                 <li>Review the changes to deployment scripts and configurations</li>
                 <li>Verify each fix addresses the identified root cause</li>
@@ -184,7 +235,7 @@ Task 7: Update deployment documentation with new requirements</code>
                 <li>Document any additional issues discovered during the fix process</li>
             </ol>
 
-            <h2>Best Practices for Deployment Troubleshooting with Kiro</h2>
+            <h2>Best Practices for Deployment Troubleshooting with TRAE SOLO</h2>
             <ul>
                 <li><strong>Always test in a non-production environment first</strong> - Never apply deployment fixes directly to production</li>
                 <li><strong>Keep a rollback plan</strong> - Document how to revert each change if it causes new issues</li>
@@ -203,8 +254,8 @@ Task 7: Update deployment documentation with new requirements</code>
         </article>
 
         <div class="navigation-buttons">
-            <a href="commenting-feature.html" class="btn btn-secondary">← Previous: Add Commenting Feature</a>
-            <a href="#" class="btn btn-primary disabled">Next: Coming Soon →</a>
+            <a href="practice-mode-feature.html" class="btn btn-secondary">← Previous: Add Practice Mode</a>
+            <a href="agent-hooks.html" class="btn btn-primary">Next: Agent Hooks →</a>
         </div>
     </main>
 

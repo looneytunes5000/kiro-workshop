@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hook Configuration - Kiro Workshop</title>
+    <title>Hook Configuration - TRAE SOLO Workshop</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -11,60 +11,118 @@
     <div class="progress-bar"></div>
     <a href="#main-content" class="skip-nav">Skip to main content</a>
     <button class="mobile-menu-btn">☰ Menu</button>
+
     <nav class="sidebar">
-        <div class="sidebar-header"><h2>Kiro Workshop</h2></div>
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">🚀 Getting Started</div>
-            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
-            <a href="introduction.html" class="sidebar-link">Introduction</a>
-            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
-            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
-            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local)</a>
-            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        <div class="sidebar-header">
+            <h2>TRAE SOLO Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
         </div>
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">💡 Core Concepts</div>
-            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
-            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
-            <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+
+        <div class="sidebar-search">
+            <input type="text" class="sidebar-search-input" placeholder="Search pages..." aria-label="Search pages">
+            <button class="sidebar-search-clear" aria-label="Clear search" style="display: none;">×</button>
         </div>
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
-            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro</a>
-            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
-            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Development</a>
-            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
-            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
-            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
-            <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+
+        <div class="sidebar-section collapsible" data-section="home">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with TRAE SOLO</a>
         </div>
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">⚡ Advanced Topics</div>
-            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
-            <a href="hook-configuration.html" class="sidebar-link active sub-item">Hook Configuration</a>
-            <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
-            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
-            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
-            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
-            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+
+        <div class="sidebar-section collapsible" data-section="getting-started">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🚀 Getting Started</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="introduction.html" class="sidebar-link">Introduction</a>
+                <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+                <a href="get-started.html" class="sidebar-link sub-item">Get Started (Web & Desktop)</a>
+                <a href="desktop-client.html" class="sidebar-link sub-item">Desktop Client</a>
+                <a href="setup-account.html" class="sidebar-link sub-item">Setup Account</a>
+            </div>
         </div>
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">✅ Wrap Up</div>
-            <a href="resource-cleanup.html" class="sidebar-link">Resource Cleanup</a>
-            <a href="wrapping-up.html" class="sidebar-link">Wrapping Up: Next Steps</a>
+
+        <div class="sidebar-section collapsible" data-section="core-concepts">
+            <div class="sidebar-section-title collapsible-header">
+                <span>💡 Core Concepts</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="trae-solo-overview.html" class="sidebar-link">TRAE SOLO Overview</a>
+                <a href="dual-clients.html" class="sidebar-link">Web vs Desktop Clients</a>
+                <a href="dual-modes.html" class="sidebar-link">MTC vs Code Modes</a>
+                <a href="cloud-agent.html" class="sidebar-link">Cloud Agent</a>
+                <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+                <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="hands-on">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🛠️ Hands-on Exercises</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="steering.html" class="sidebar-link">Steering - Teaching TRAE SOLO about your codebase</a>
+                <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+                <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+                <a href="cancel-button.html" class="sidebar-link sub-item">Add LLM Evaluation</a>
+                <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+                <a href="practice-mode-feature.html" class="sidebar-link sub-item">Exercise: Add Practice Mode</a>
+                <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="advanced">
+            <div class="sidebar-section-title collapsible-header">
+                <span>⚡ Advanced Topics</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+                <a href="hook-configuration.html" class="sidebar-link active sub-item">Hook Configuration</a>
+                <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+                <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+                <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+                <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+                <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="wrap-up">
+            <div class="sidebar-section-title collapsible-header">
+                <span>✅ Wrap Up</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="resource-cleanup.html" class="sidebar-link">Resource cleanup</a>
+                <a href="wrapping-up.html" class="sidebar-link">Wrapping up: Next steps and feedback</a>
+            </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section collapsible toolkit-section" data-section="toolkit">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🧰 Hackathon Toolkit</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="opencode-web-ui.html" class="sidebar-link">OpenCode Web UI</a>
+            </div>
         </div>
     </nav>
+
     <div class="sidebar-backdrop"></div>
+
     <main class="main" id="main-content">
         <header class="page-header">
             <h1>Hook Configuration</h1>
-            <div class="accent-line"></div>
             <p>Learn how to configure hooks for your specific project needs</p>
         </header>
 
         <article class="content">
             <h2>Configuration File Location</h2>
-            <p>Hooks are configured in the <span class="inline-code">.kiro/hooks.json</span> file at your project root. This file is automatically loaded when you open a project in Kiro.</p>
+            <p>Hooks are configured in the <span class="inline-code">.trae/hooks.json</span> file at your project root. This file is automatically loaded when you open a project in TRAE SOLO.</p>
 
             <h2>Basic Hook Structure</h2>
             <p>Each hook definition consists of three required fields:</p>
@@ -139,7 +197,7 @@
             <p>Before deploying hooks to your team, test them thoroughly:</p>
             <ol>
                 <li>Create a test file that matches your hook pattern</li>
-                <li>Have Kiro modify the file</li>
+                <li>Have TRAE SOLO modify the file</li>
                 <li>Verify the hook executed correctly</li>
                 <li>Check for any unintended side effects</li>
             </ol>
@@ -161,11 +219,13 @@
                 <li><strong>Full-stack projects</strong> - Language-specific formatters + integration tests</li>
             </ul>
         </article>
+
         <div class="navigation-buttons">
             <a href="agent-hooks.html" class="btn btn-secondary">← Previous: Agent Hooks</a>
             <a href="hook-examples.html" class="btn btn-primary">Next: Hook Examples →</a>
         </div>
     </main>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const sidebar = document.querySelector('.sidebar');

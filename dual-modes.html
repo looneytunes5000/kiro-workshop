@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTC vs Code Modes - TRAE SOLO Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰ Menu</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>TRAE SOLO Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
+        </div>
+
+        <div class="sidebar-search">
+            <input type="text" class="sidebar-search-input" placeholder="Search pages..." aria-label="Search pages">
+            <button class="sidebar-search-clear" aria-label="Clear search" style="display: none;">×</button>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="home">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with TRAE SOLO</a>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="getting-started">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🚀 Getting Started</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="introduction.html" class="sidebar-link">Introduction</a>
+                <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+                <a href="get-started.html" class="sidebar-link sub-item">Get Started (Web & Desktop)</a>
+                <a href="desktop-client.html" class="sidebar-link sub-item">Desktop Client</a>
+                <a href="setup-account.html" class="sidebar-link sub-item">Setup Account</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="core-concepts">
+            <div class="sidebar-section-title collapsible-header">
+                <span>💡 Core Concepts</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="trae-solo-overview.html" class="sidebar-link">TRAE SOLO Overview</a>
+                <a href="dual-clients.html" class="sidebar-link">Web vs Desktop Clients</a>
+                <a href="dual-modes.html" class="sidebar-link active">MTC vs Code Modes</a>
+                <a href="cloud-agent.html" class="sidebar-link">Cloud Agent</a>
+                <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+                <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="hands-on">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🛠️ Hands-on Exercises</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="steering.html" class="sidebar-link">Steering - Teaching TRAE SOLO about your codebase</a>
+                <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+                <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+                <a href="cancel-button.html" class="sidebar-link sub-item">Add LLM Evaluation</a>
+                <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+                <a href="practice-mode-feature.html" class="sidebar-link sub-item">Exercise: Add Practice Mode</a>
+                <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="advanced">
+            <div class="sidebar-section-title collapsible-header">
+                <span>⚡ Advanced Topics</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+                <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+                <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+                <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+                <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+                <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+                <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="wrap-up">
+            <div class="sidebar-section-title collapsible-header">
+                <span>✅ Wrap Up</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="resource-cleanup.html" class="sidebar-link">Resource cleanup</a>
+                <a href="wrapping-up.html" class="sidebar-link">Wrapping up: Next steps and feedback</a>
+            </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section collapsible toolkit-section" data-section="toolkit">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🧰 Hackathon Toolkit</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="opencode-web-ui.html" class="sidebar-link">OpenCode Web UI</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>MTC vs Code Modes</h1>
+            <p>TRAE SOLO offers two modes designed for different user groups</p>
+        </header>
+
+        <article class="content">
+            <h2>Overview</h2>
+            <p>To accommodate users from different backgrounds, TRAE SOLO offers two distinct modes: MTC (More Than Coding) and Code. Each mode is tailored to a specific audience and set of tasks, ensuring that every user gets the most effective experience for their needs.</p>
+
+            <h2>MTC Mode (More Than Coding)</h2>
+            <p>MTC mode is designed for users who are not involved in software development but still want to leverage AI-powered assistance for their daily work.</p>
+
+            <ul class="checklist">
+                <li><strong>Target users</strong> - Product managers, data analysts, operations professionals, and other non-developers</li>
+                <li><strong>Ideal for</strong> - Handling documents, data analysis, presentations, and similar materials</li>
+                <li><strong>No coding knowledge required</strong> - Interact entirely through natural language</li>
+                <li><strong>Natural language interaction</strong> - Describe what you need in plain language, and the AI handles the rest</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Who Should Use MTC Mode</span>
+                </div>
+                <p>If your daily work involves documents, spreadsheets, presentations, data analysis, or project management rather than writing code, MTC mode is designed for you.</p>
+            </div>
+
+            <h2>Code Mode</h2>
+            <p>Code mode is designed for developers who are accustomed to agent-driven development workflows and need full IDE capabilities.</p>
+
+            <ul class="checklist">
+                <li><strong>Focus areas</strong> - Coding, debugging, repository management, and Git workflows</li>
+                <li><strong>Ideal for</strong> - Software development, feature implementation, code review, and refactoring</li>
+                <li><strong>Full IDE capabilities</strong> - Access to code navigation, IntelliSense, debugging tools, and version control</li>
+                <li><strong>Advanced AI coding features</strong> - Spec-driven development, vibe coding, agent hooks, and more</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Who Should Use Code Mode</span>
+                </div>
+                <p>If you write code, manage repositories, review pull requests, or build software, Code mode provides the full power of TRAE SOLO's AI development capabilities.</p>
+            </div>
+
+            <h2>Choosing Your Mode</h2>
+            <p>Use this guide to decide which mode fits your role and task type:</p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Factor</th>
+                        <th>MTC Mode</th>
+                        <th>Code Mode</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Your Role</td>
+                        <td>Product, Data, Operations, Marketing</td>
+                        <td>Developer, Engineer, Technical Lead</td>
+                    </tr>
+                    <tr>
+                        <td>Primary Tasks</td>
+                        <td>Documents, Data, Presentations</td>
+                        <td>Coding, Debugging, Code Review</td>
+                    </tr>
+                    <tr>
+                        <td>Coding Knowledge</td>
+                        <td>Not Required</td>
+                        <td>Expected</td>
+                    </tr>
+                    <tr>
+                        <td>Interaction Style</td>
+                        <td>Natural Language Only</td>
+                        <td>Natural Language + Code</td>
+                    </tr>
+                    <tr>
+                        <td>Output Type</td>
+                        <td>Documents, Analysis, Content</td>
+                        <td>Code, Features, Fixes</td>
+                    </tr>
+                    <tr>
+                        <td>IDE Features Needed</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Switching Modes</h2>
+            <p>TRAE SOLO makes it easy to switch between modes based on your current task. You are not locked into a single mode - switch as your needs change throughout the day.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>When to Switch</span>
+                </div>
+                <p>Switch to MTC mode when you need to work on documents, analyze data, or create presentations. Switch to Code mode when you need to write code, debug issues, or manage repositories. Many users switch between modes multiple times per day as their tasks change.</p>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="dual-clients.html" class="btn btn-secondary">← Previous: Web vs Desktop Clients</a>
+                <a href="cloud-agent.html" class="btn btn-primary">Next: Cloud Agent →</a>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        document.addEventListener('click', function(e) {
+            const sidebar = document.querySelector('.sidebar');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            if (window.innerWidth <= 900 && 
+                !sidebar.contains(e.target) && 
+                !menuBtn.contains(e.target) && 
+                sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
+<script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAE SOLO Overview - TRAE SOLO Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>TRAE SOLO Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
+        </div>
+
+        <div class="sidebar-search">
+            <input type="text" class="sidebar-search-input" placeholder="Search pages..." aria-label="Search pages">
+            <button class="sidebar-search-clear" aria-label="Clear search" style="display: none;">×</button>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="home">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with TRAE SOLO</a>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="getting-started">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🚀 Getting Started</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="introduction.html" class="sidebar-link">Introduction</a>
+                <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+                <a href="get-started.html" class="sidebar-link sub-item">Get Started (Web & Desktop)</a>
+                <a href="desktop-client.html" class="sidebar-link sub-item">Desktop Client</a>
+                <a href="setup-account.html" class="sidebar-link sub-item">Setup Account</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="core-concepts">
+            <div class="sidebar-section-title collapsible-header">
+                <span>💡 Core Concepts</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="trae-solo-overview.html" class="sidebar-link active">TRAE SOLO Overview</a>
+                <a href="dual-clients.html" class="sidebar-link">Web vs Desktop Clients</a>
+                <a href="dual-modes.html" class="sidebar-link">MTC vs Code Modes</a>
+                <a href="cloud-agent.html" class="sidebar-link">Cloud Agent</a>
+                <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+                <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="hands-on">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🛠️ Hands-on Exercises</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="steering.html" class="sidebar-link">Steering - Teaching TRAE SOLO about your codebase</a>
+                <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+                <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+                <a href="cancel-button.html" class="sidebar-link sub-item">Add LLM Evaluation</a>
+                <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+                <a href="practice-mode-feature.html" class="sidebar-link sub-item">Exercise: Add Practice Mode</a>
+                <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="advanced">
+            <div class="sidebar-section-title collapsible-header">
+                <span>⚡ Advanced Topics</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+                <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+                <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+                <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+                <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+                <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+                <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="wrap-up">
+            <div class="sidebar-section-title collapsible-header">
+                <span>✅ Wrap Up</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="resource-cleanup.html" class="sidebar-link">Resource cleanup</a>
+                <a href="wrapping-up.html" class="sidebar-link">Wrapping up: Next steps and feedback</a>
+            </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section collapsible toolkit-section" data-section="toolkit">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🧰 Hackathon Toolkit</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="opencode-web-ui.html" class="sidebar-link">OpenCode Web UI</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>TRAE SOLO Overview</h1>
+            <p>Understand TRAE SOLO's core capabilities and AI-native workspace approach</p>
+        </header>
+
+        <article class="content">
+            <h2 id="what-is-trae-solo">What is TRAE SOLO?</h2>
+            <p>TRAE SOLO is an AI-native workspace offering both web and desktop clients, featuring dual modes (MTC and Code). It provides a unified, efficient, and customizable AI collaboration experience covering scenarios from professional development to everyday office work.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Key Difference</span>
+                </div>
+                <p>Traditional IDEs: Code editor with AI bolted on as a plugin<br>
+                TRAE SOLO: AI-native workspace where code, AI, and workflow are unified from the ground up</p>
+            </div>
+
+            <h2 id="interface">The TRAE SOLO Interface</h2>
+            <p>TRAE SOLO's interface is designed for seamless AI collaboration. Here are the key components:</p>
+
+            <h3>Editor Area</h3>
+            <p>The main code editing area where you write and modify code. TRAE SOLO provides intelligent syntax highlighting, auto-completion, and inline AI suggestions as you type.</p>
+
+            <h3>AI Chat Panel</h3>
+            <p>The AI chat panel is your primary interface for conversational development. You can:</p>
+            <ul>
+                <li>Ask questions about your codebase</li>
+                <li>Request code changes in natural language</li>
+                <li>Get explanations of complex code</li>
+                <li>Generate new features from descriptions</li>
+                <li>Debug issues with AI assistance</li>
+            </ul>
+
+            <h3>Agent Panel</h3>
+            <p>The agent panel allows TRAE SOLO to work autonomously on larger tasks. You can assign multi-step tasks and TRAE SOLO will plan and execute them, showing you progress along the way.</p>
+
+            <h3>Terminal</h3>
+            <p>The integrated terminal lets you run commands, build projects, and test your code without leaving the workspace.</p>
+
+            <h3>Task Progress Display</h3>
+            <p>Track the progress of AI-driven tasks in real-time. See what TRAE SOLO is working on, review intermediate results, and intervene when needed.</p>
+
+            <h2 id="dual-clients">Dual Clients</h2>
+            <p>TRAE SOLO offers two client options to fit different workflows:</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Web Client</span>
+                </div>
+                <p>Lightweight and accessible from any browser. Ideal for quick tasks, on-the-go development, or environments where installing software isn't possible. No setup required — just open and start working.</p>
+            </div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Desktop Client</span>
+                </div>
+                <p>Full-featured and independent of the web client. Offers deeper integration with your local environment, offline capabilities, and access to system-level tools. Best for professional development workflows.</p>
+            </div>
+
+            <h2 id="dual-modes">Dual Modes</h2>
+            <p>TRAE SOLO adapts to your skill level and needs through two distinct modes:</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>MTC Mode</span>
+                </div>
+                <p>Designed for non-developers. Focus on describing what you want in natural language while TRAE SOLO handles the implementation. Perfect for product managers, designers, and anyone who needs to build without writing code.</p>
+            </div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Code Mode</span>
+                </div>
+                <p>Built for developers who want AI assistance while maintaining full control over the code. Write, review, and refine code with AI as your pair programmer. Ideal for professional software development.</p>
+            </div>
+
+            <h2 id="cloud-agent">Cloud Agent</h2>
+            <p>TRAE SOLO's Cloud Agent provides cloud-based runtime execution with unified management. The agent runs tasks in the cloud, enabling:</p>
+            <ul>
+                <li>Consistent execution environment regardless of local setup</li>
+                <li>Centralized management of AI-driven tasks</li>
+                <li>Seamless switching between web and desktop clients</li>
+                <li>Scalable compute resources for complex operations</li>
+            </ul>
+
+            <h2 id="input-types">Input Types</h2>
+            <p>TRAE SOLO supports multiple input methods to match how you work:</p>
+            <ul>
+                <li><strong>Text:</strong> Type your requests, descriptions, and questions directly</li>
+                <li><strong>Voice:</strong> Speak your instructions for hands-free development</li>
+                <li><strong>Attachments:</strong> Upload files, images, or documents for context</li>
+                <li><strong>Skills:</strong> Leverage pre-built capabilities and custom extensions</li>
+            </ul>
+
+            <h2 id="core-capabilities">Core Capabilities</h2>
+            <p>TRAE SOLO offers five core capabilities that you'll explore throughout this workshop:</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Vibe Coding</span>
+                </div>
+                <p>Rapid feature development through natural language. Describe what you want and TRAE SOLO helps you build it quickly while maintaining code quality and following your project's patterns.</p>
+            </div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Spec-Driven Development</span>
+                </div>
+                <p>For complex, multi-file features, use structured specifications to guide TRAE SOLO through planning and implementation. This ensures thorough consideration of requirements before writing code.</p>
+            </div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Steering</span>
+                </div>
+                <p>Teach TRAE SOLO about your codebase conventions, architectural patterns, and team standards through steering documents. This helps TRAE SOLO generate code that fits seamlessly into your project.</p>
+            </div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Agent Hooks</span>
+                </div>
+                <p>Automate repetitive workflows by configuring TRAE SOLO to respond to specific events or patterns. Agent Hooks let you customize TRAE SOLO's behavior to match your team's development practices.</p>
+            </div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>MCP Integration</span>
+                </div>
+                <p>Extend TRAE SOLO's capabilities by connecting to external tools and services through the Model Context Protocol (MCP). This allows TRAE SOLO to interact with databases, APIs, version control, and more.</p>
+            </div>
+
+            <h2 id="ai-models">AI Models</h2>
+            <p>TRAE SOLO integrates with advanced AI models to provide:</p>
+            <ul>
+                <li><strong>Code Generation:</strong> Generate code from natural language descriptions</li>
+                <li><strong>Code Understanding:</strong> Explain complex code and architecture</li>
+                <li><strong>Refactoring:</strong> Suggest and implement code improvements</li>
+                <li><strong>Debugging:</strong> Identify and fix bugs with AI assistance</li>
+                <li><strong>Testing:</strong> Generate test cases and validate code</li>
+            </ul>
+
+            <h2 id="workflow">Typical Workflow</h2>
+            <p>A typical development workflow with TRAE SOLO looks like this:</p>
+            <ol>
+                <li><strong>Describe your goal:</strong> Tell TRAE SOLO what you want to build or change</li>
+                <li><strong>Review the plan:</strong> TRAE SOLO may propose a plan for complex changes</li>
+                <li><strong>Implement:</strong> TRAE SOLO generates the code changes</li>
+                <li><strong>Review and refine:</strong> Review the changes, ask for modifications if needed</li>
+                <li><strong>Test:</strong> Run tests to verify the changes work correctly</li>
+            </ol>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Important Note</span>
+                </div>
+                <p>While TRAE SOLO is powerful, you remain in control. Always review AI-generated code before accepting changes. TRAE SOLO is a collaborator, not a replacement for your judgment and expertise.</p>
+            </div>
+
+            <h2 id="next-steps">Next Steps</h2>
+            <p>Now that you understand TRAE SOLO's capabilities, the next page explores the differences between the web and desktop clients in detail.</p>
+        </article>
+
+        <div class="navigation-buttons">
+            <a href="setup-account.html" class="btn btn-secondary">Previous: Setup Account</a>
+            <a href="dual-clients.html" class="btn btn-primary">Next: Web vs Desktop Clients</a>
+        </div>
+    </main>
+<script src="scripts.js"></script>
+</body>
+</html>

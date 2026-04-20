@@ -1,0 +1,18 @@
+- [x] All HTML pages have "Kiro" replaced with "TRAE SOLO" in titles, headers, and content
+- [x] Homepage (index.html) includes dual clients section (web & desktop)
+- [x] Homepage (index.html) includes dual modes section (MTC & Code)
+- [x] Introduction page explains TRAE SOLO's architecture and capabilities
+- [x] All AWS-specific references removed (Builder ID, Lambda, DynamoDB, CloudFront)
+- [x] Setup pages are platform-agnostic (web client + desktop download options)
+- [x] New cloud-agent.html page created with cloud runtime explanation
+- [x] New dual-clients.html page created comparing web vs desktop
+- [x] New dual-modes.html page created explaining MTC vs Code modes
+- [x] All sidebar navigation links updated and consistent across all pages
+- [x] All next/previous navigation buttons point to correct pages
+- [x] Hands-on exercises retain structure but use TRAE SOLO terminology
+- [x] Cost section is generic without AWS service mentions
+- [x] test-e-preview.html updated to match new homepage
+- [x] No broken links or missing pages in the workshop
+- [x] Design system (styles.css, scripts.js) unchanged and working
+- [x] All pages maintain consistent styling and layout
+- [x] Mobile responsive design preserved across all pages

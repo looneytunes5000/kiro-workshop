@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resource Cleanup - Kiro Workshop</title>
+    <title>Resource Cleanup - TRAE SOLO Workshop</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -14,53 +14,101 @@
 
     <nav class="sidebar">
         <div class="sidebar-header">
-            <h2>Kiro Workshop</h2>
+            <h2>TRAE SOLO Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">🚀 Getting Started</div>
-            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
-            <a href="introduction.html" class="sidebar-link">Introduction</a>
-            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
-            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
-            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local)</a>
-            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        <div class="sidebar-search">
+            <input type="text" class="sidebar-search-input" placeholder="Search pages..." aria-label="Search pages">
+            <button class="sidebar-search-clear" aria-label="Clear search" style="display: none;">×</button>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">💡 Core Concepts</div>
-            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
-            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
-            <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+        <div class="sidebar-section collapsible" data-section="home">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with TRAE SOLO</a>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
-            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro</a>
-            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
-            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Development</a>
-            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
-            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
-            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
-            <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+        <div class="sidebar-section collapsible" data-section="getting-started">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🚀 Getting Started</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="introduction.html" class="sidebar-link">Introduction</a>
+                <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+                <a href="get-started.html" class="sidebar-link sub-item">Get Started (Web & Desktop)</a>
+                <a href="desktop-client.html" class="sidebar-link sub-item">Desktop Client</a>
+                <a href="setup-account.html" class="sidebar-link sub-item">Setup Account</a>
+            </div>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">⚡ Advanced Topics</div>
-            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
-            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
-            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
-            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
-            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
-            <a href="context-engineering.html#exercise1" class="sidebar-link sub-item">Exercise 1: Build a Private Power</a>
-            <a href="context-engineering.html#exercise2" class="sidebar-link sub-item">Exercise 2: Build an Agent Skill</a>
-            <a href="context-engineering.html#exercise3" class="sidebar-link sub-item">Exercise 3: Build a Custom Agent</a>
+        <div class="sidebar-section collapsible" data-section="core-concepts">
+            <div class="sidebar-section-title collapsible-header">
+                <span>💡 Core Concepts</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="trae-solo-overview.html" class="sidebar-link">TRAE SOLO Overview</a>
+                <a href="dual-clients.html" class="sidebar-link">Web vs Desktop Clients</a>
+                <a href="dual-modes.html" class="sidebar-link">MTC vs Code Modes</a>
+                <a href="cloud-agent.html" class="sidebar-link">Cloud Agent</a>
+                <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+                <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+            </div>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">✅ Wrap Up</div>
-            <a href="resource-cleanup.html" class="sidebar-link active">Resource Cleanup</a>
-            <a href="wrapping-up.html" class="sidebar-link">Wrapping Up: Next Steps</a>
+        <div class="sidebar-section collapsible" data-section="hands-on">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🛠️ Hands-on Exercises</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="steering.html" class="sidebar-link">Steering - Teaching TRAE SOLO about your codebase</a>
+                <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+                <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+                <a href="cancel-button.html" class="sidebar-link sub-item">Add LLM Evaluation</a>
+                <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+                <a href="practice-mode-feature.html" class="sidebar-link sub-item">Exercise: Add Practice Mode</a>
+                <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="advanced">
+            <div class="sidebar-section-title collapsible-header">
+                <span>⚡ Advanced Topics</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+                <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+                <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+                <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+                <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+                <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+                <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="wrap-up">
+            <div class="sidebar-section-title collapsible-header">
+                <span>✅ Wrap Up</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="resource-cleanup.html" class="sidebar-link active">Resource cleanup</a>
+                <a href="wrapping-up.html" class="sidebar-link">Wrapping up: Next steps and feedback</a>
+            </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section collapsible toolkit-section" data-section="toolkit">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🧰 Hackathon Toolkit</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="opencode-web-ui.html" class="sidebar-link">OpenCode Web UI</a>
+            </div>
         </div>
     </nav>
 
@@ -69,81 +117,35 @@
     <main class="main" id="main-content">
         <header class="page-header">
             <h1>Resource Cleanup</h1>
-            <div class="accent-line"></div>
-            <p>Clean up AWS resources created during the workshop</p>
+            <p>Clean up any resources you created during the workshop</p>
         </header>
 
         <article class="content">
             <h2>Why Clean Up?</h2>
-            <p>It's important to clean up resources after completing the workshop to avoid ongoing charges and to keep your AWS account organized. Even if resources are covered by the AWS Free Tier, good cleanup habits are essential for cloud development.</p>
+            <p>It's important to clean up resources after completing the workshop to avoid ongoing charges and to keep your development environment organized. Good cleanup habits are essential for any cloud or local development workflow.</p>
 
             <div class="callout">
                 <div class="callout-header">
                     <div class="dot"></div>
                     <span>Important</span>
                 </div>
-                <p>Some resources may incur charges if left running. Complete this cleanup section before ending your workshop session.</p>
+                <p>If you deployed any cloud resources during this workshop, make sure to clean them up to avoid ongoing charges. Check your cloud provider's console for active resources.</p>
             </div>
 
-            <h2>Resources to Clean Up</h2>
-            <table class="resource-table">
-                <thead>
-                    <tr>
-                        <th>Resource Type</th>
-                        <th>Service</th>
-                        <th>Cleanup Method</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Backend API</td>
-                        <td>AWS Lambda / API Gateway</td>
-                        <td>Delete stack or service</td>
-                    </tr>
-                    <tr>
-                        <td>Database</td>
-                        <td>Amazon DynamoDB</td>
-                        <td>Delete table</td>
-                    </tr>
-                    <tr>
-                        <td>Storage</td>
-                        <td>Amazon S3</td>
-                        <td>Empty and delete bucket</td>
-                    </tr>
-                    <tr>
-                        <td>Authentication</td>
-                        <td>Amazon Cognito</td>
-                        <td>Delete user pool</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2>Cleanup Steps</h2>
-            <ol>
-                <li><strong>Navigate to AWS Console:</strong> Open the AWS Management Console in your browser</li>
-                <li><strong>Go to CloudFormation:</strong> Navigate to the CloudFormation service</li>
-                <li><strong>Select Workshop Stack:</strong> Find the stack created for this workshop</li>
-                <li><strong>Delete Stack:</strong> Select the stack and click "Delete"</li>
-                <li><strong>Verify Deletion:</strong> Wait for the stack deletion to complete and verify all resources are removed</li>
-            </ol>
-
-            <h2>Alternative: AWS CLI Cleanup</h2>
-            <p>If you prefer using the command line:</p>
-            <div class="code-block">
-                <code># Delete the CloudFormation stack
-aws cloudformation delete-stack --stack-name kiro-workshop-stack
-
-# Wait for deletion to complete
-aws cloudformation wait stack-delete-complete --stack-name kiro-workshop-stack</code>
-            </div>
-
-            <h2>Verify Cleanup</h2>
-            <p>After cleanup, verify that resources have been removed:</p>
+            <h2>Local Resources</h2>
+            <p>Don't forget to clean up local resources as well:</p>
             <ul>
-                <li>Check CloudFormation for deleted stacks</li>
-                <li>Verify Lambda functions are removed</li>
-                <li>Confirm DynamoDB tables are deleted</li>
-                <li>Check S3 buckets are empty and removed</li>
+                <li><strong>Remove local test data:</strong> Delete any temporary files or test databases created during exercises</li>
+                <li><strong>Close development servers:</strong> Stop any running local servers or background processes</li>
+                <li><strong>Clean up test credentials:</strong> Remove any temporary configuration files or test credentials</li>
+            </ul>
+
+            <h2>Cloud Resources</h2>
+            <p>If you deployed any cloud services during the workshop:</p>
+            <ul>
+                <li><strong>Check cloud provider console:</strong> Log in to your cloud provider's dashboard and review active resources</li>
+                <li><strong>Delete any deployed services:</strong> Remove any applications, functions, or services you deployed</li>
+                <li><strong>Remove test databases:</strong> Delete any database instances or tables created for testing</li>
             </ul>
 
             <div class="callout">
@@ -154,12 +156,12 @@ aws cloudformation wait stack-delete-complete --stack-name kiro-workshop-stack</
                 <p>Some resources may take a few minutes to fully delete. If you encounter errors, wait a few minutes and try again.</p>
             </div>
 
-            <h2>Local Cleanup</h2>
-            <p>Don't forget to clean up local resources as well:</p>
+            <h2>Verify Cleanup</h2>
+            <p>After cleanup, verify that resources have been removed:</p>
             <ul>
-                <li>Remove any temporary files created during exercises</li>
-                <li>Clean up local database instances if you created any</li>
-                <li>Remove test credentials or configuration files</li>
+                <li>Check your cloud provider's console for any remaining resources</li>
+                <li>Verify that local development servers are stopped</li>
+                <li>Confirm test databases and temporary files are deleted</li>
             </ul>
 
             <div class="callout">
@@ -167,7 +169,7 @@ aws cloudformation wait stack-delete-complete --stack-name kiro-workshop-stack</
                     <div class="dot"></div>
                     <span>Next Steps</span>
                 </div>
-                <p>Continue to "Wrapping Up: Next Steps and Feedback" to complete the workshop and provide feedback.</p>
+                <p>Continue to "Wrapping up: Next steps and feedback" to complete the workshop and provide feedback.</p>
             </div>
         </article>
 

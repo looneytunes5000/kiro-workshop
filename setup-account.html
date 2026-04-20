@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Account - TRAE SOLO Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>TRAE SOLO Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
+        </div>
+
+        <div class="sidebar-search">
+            <input type="text" class="sidebar-search-input" placeholder="Search pages..." aria-label="Search pages">
+            <button class="sidebar-search-clear" aria-label="Clear search" style="display: none;">×</button>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="home">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with TRAE SOLO</a>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="getting-started">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🚀 Getting Started</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="introduction.html" class="sidebar-link">Introduction</a>
+                <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+                <a href="get-started.html" class="sidebar-link sub-item">Get Started (Web & Desktop)</a>
+                <a href="desktop-client.html" class="sidebar-link sub-item">Desktop Client</a>
+                <a href="setup-account.html" class="sidebar-link active sub-item">Setup Account</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="core-concepts">
+            <div class="sidebar-section-title collapsible-header">
+                <span>💡 Core Concepts</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="trae-solo-overview.html" class="sidebar-link">TRAE SOLO Overview</a>
+                <a href="dual-clients.html" class="sidebar-link">Web vs Desktop Clients</a>
+                <a href="dual-modes.html" class="sidebar-link">MTC vs Code Modes</a>
+                <a href="cloud-agent.html" class="sidebar-link">Cloud Agent</a>
+                <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+                <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="hands-on">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🛠️ Hands-on Exercises</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="steering.html" class="sidebar-link">Steering - Teaching TRAE SOLO about your codebase</a>
+                <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+                <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+                <a href="cancel-button.html" class="sidebar-link sub-item">Add LLM Evaluation</a>
+                <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+                <a href="practice-mode-feature.html" class="sidebar-link sub-item">Exercise: Add Practice Mode</a>
+                <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="advanced">
+            <div class="sidebar-section-title collapsible-header">
+                <span>⚡ Advanced Topics</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+                <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+                <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+                <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+                <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+                <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+                <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="wrap-up">
+            <div class="sidebar-section-title collapsible-header">
+                <span>✅ Wrap Up</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="resource-cleanup.html" class="sidebar-link">Resource cleanup</a>
+                <a href="wrapping-up.html" class="sidebar-link">Wrapping up: Next steps and feedback</a>
+            </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section collapsible toolkit-section" data-section="toolkit">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🧰 Hackathon Toolkit</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="opencode-web-ui.html" class="sidebar-link">OpenCode Web UI</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Setup Your TRAE SOLO Account</h1>
+            <p>Create or sign in to your TRAE SOLO account to access all features</p>
+        </header>
+
+        <article class="content">
+            <h2 id="overview">Setting Up Your TRAE SOLO Account</h2>
+            <p>A TRAE SOLO account gives you access to all AI-powered development features, cloud agent capabilities, and your personalized development environment. In this step, you'll create or sign in to your account.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Why You Need an Account</span>
+                </div>
+                <p>Your TRAE SOLO account enables:</p>
+                <ul>
+                    <li>AI-powered code generation and assistance</li>
+                    <li>Cloud agent for background task execution</li>
+                    <li>Personalized settings and preferences</li>
+                    <li>Access to MCP integrations and extensions</li>
+                </ul>
+            </div>
+
+            <h2 id="create-account">Creating an Account</h2>
+            <ol>
+                <li>
+                    <strong>Sign up with email or SSO</strong>
+                    <p>Visit the TRAE SOLO sign-up page and create an account using your email address or your organization's single sign-on (SSO) provider.</p>
+                </li>
+                <li>
+                    <strong>Choose your plan</strong>
+                    <p>Select the plan that fits your needs. TRAE SOLO offers free and paid tiers with varying levels of AI usage and features.</p>
+                </li>
+                <li>
+                    <strong>Access web or desktop client</strong>
+                    <p>Once your account is created, you can access TRAE SOLO through the web client or sign in on the desktop client.</p>
+                </li>
+            </ol>
+
+            <h2 id="signing-in">Signing In</h2>
+
+            <h3>Web Client</h3>
+            <ol>
+                <li>Navigate to the TRAE SOLO web application</li>
+                <li>Click "Sign In" and enter your credentials</li>
+                <li>Complete any two-factor authentication if enabled</li>
+                <li>You'll be redirected to your TRAE SOLO workspace</li>
+            </ol>
+
+            <h3>Desktop Client</h3>
+            <ol>
+                <li>Open the TRAE SOLO Desktop application</li>
+                <li>Click "Sign In" on the welcome screen or in the account settings</li>
+                <li>A browser window will open for authentication</li>
+                <li>Enter your credentials and authorize the desktop app</li>
+                <li>Return to the desktop app - you should now be authenticated</li>
+            </ol>
+
+            <h2 id="account-settings">Account Settings</h2>
+            <p>After signing in, you can configure your account settings:</p>
+            <ul>
+                <li><strong>Profile preferences</strong> - Update your display name, avatar, and notification settings</li>
+                <li><strong>API keys</strong> - Generate and manage API keys for integrations and external tools</li>
+                <li><strong>Usage monitoring</strong> - Track your AI usage, quota, and billing information</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Important Notes</span>
+                </div>
+                <ul>
+                    <li><strong>Free tier available:</strong> TRAE SOLO offers a free tier with generous AI usage limits</li>
+                    <li><strong>One account, multiple clients:</strong> Your account works across both web and desktop clients</li>
+                    <li><strong>Secure authentication:</strong> TRAE SOLO supports email, SSO, and two-factor authentication</li>
+                </ul>
+            </div>
+
+            <h2 id="verify">Verify Authentication</h2>
+            <p>To verify that your account is set up correctly:</p>
+            <ol>
+                <li>Open the TRAE SOLO AI chat panel</li>
+                <li>Type a simple question like "Hello, are you working?"</li>
+                <li>Verify that you receive a response from the AI</li>
+                <li>Check the status indicator in the AI panel - it should show "Connected" or similar</li>
+            </ol>
+
+            <h2 id="troubleshooting">Troubleshooting</h2>
+            <p>If you encounter authentication issues:</p>
+            <ul>
+                <li><strong>Browser doesn't open:</strong> Check your default browser settings and ensure pop-ups aren't blocked</li>
+                <li><strong>Authorization fails:</strong> Make sure you're using the correct credentials and your account is active</li>
+                <li><strong>AI features still unavailable:</strong> Try restarting TRAE SOLO after authentication</li>
+                <li><strong>Session expires:</strong> You may need to re-authenticate periodically - simply repeat the sign-in process</li>
+                <li><strong>Network issues:</strong> Ensure you have a stable internet connection, as AI features require cloud connectivity</li>
+            </ul>
+
+            <h2 id="next-steps">You're Ready!</h2>
+            <p>Congratulations! You've completed the setup phase. You now have:</p>
+            <ul>
+                <li>TRAE SOLO installed and configured (or web access ready)</li>
+                <li>Your account set up and authenticated</li>
+                <li>AI features enabled and working</li>
+            </ul>
+            <p>In the next section, you'll dive into the core concepts of TRAE SOLO and start exploring its AI-native development capabilities.</p>
+        </article>
+
+        <div class="navigation-buttons">
+            <a href="desktop-client.html" class="btn btn-secondary">Previous: Desktop Client</a>
+            <a href="trae-solo-overview.html" class="btn btn-primary">Next: TRAE SOLO Overview</a>
+        </div>
+    </main>
+<script src="scripts.js"></script>
+</body>
+</html>

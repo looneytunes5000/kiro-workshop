@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>(Optional) Deploy the Backend - Kiro Workshop</title>
+    <title>(Optional) Deploy Backend - TRAE SOLO Workshop</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -14,52 +14,101 @@
 
     <nav class="sidebar">
         <div class="sidebar-header">
-            <h2>Kiro Workshop</h2>
+            <h2>TRAE SOLO Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">🚀 Getting Started</div>
-            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
-            <a href="introduction.html" class="sidebar-link">Introduction</a>
-            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
-            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
-            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local)</a>
-            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        <div class="sidebar-search">
+            <input type="text" class="sidebar-search-input" placeholder="Search pages..." aria-label="Search pages">
+            <button class="sidebar-search-clear" aria-label="Clear search" style="display: none;">×</button>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">💡 Core Concepts</div>
-            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
-            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
-            <a href="deploy-backend.html" class="sidebar-link active sub-item">(Optional) Deploy Backend</a>
+        <div class="sidebar-section collapsible" data-section="home">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with TRAE SOLO</a>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
-            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro</a>
-            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
-            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Development</a>
-            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
-            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
-            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
-            <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+        <div class="sidebar-section collapsible" data-section="getting-started">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🚀 Getting Started</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="introduction.html" class="sidebar-link">Introduction</a>
+                <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+                <a href="get-started.html" class="sidebar-link sub-item">Get Started (Web & Desktop)</a>
+                <a href="desktop-client.html" class="sidebar-link sub-item">Desktop Client</a>
+                <a href="setup-account.html" class="sidebar-link sub-item">Setup Account</a>
+            </div>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">⚡ Advanced Topics</div>
-            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
-            <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
-            <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
-            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
-            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
-            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
-            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+        <div class="sidebar-section collapsible" data-section="core-concepts">
+            <div class="sidebar-section-title collapsible-header">
+                <span>💡 Core Concepts</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="trae-solo-overview.html" class="sidebar-link">TRAE SOLO Overview</a>
+                <a href="dual-clients.html" class="sidebar-link">Web vs Desktop Clients</a>
+                <a href="dual-modes.html" class="sidebar-link">MTC vs Code Modes</a>
+                <a href="cloud-agent.html" class="sidebar-link">Cloud Agent</a>
+                <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+                <a href="deploy-backend.html" class="sidebar-link active sub-item">(Optional) Deploy Backend</a>
+            </div>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">✅ Wrap Up</div>
-            <a href="#" class="sidebar-link">Resource Cleanup</a>
-            <a href="#" class="sidebar-link">Wrapping Up: Next Steps</a>
+        <div class="sidebar-section collapsible" data-section="hands-on">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🛠️ Hands-on Exercises</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="steering.html" class="sidebar-link">Steering - Teaching TRAE SOLO about your codebase</a>
+                <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+                <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+                <a href="cancel-button.html" class="sidebar-link sub-item">Add LLM Evaluation</a>
+                <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+                <a href="practice-mode-feature.html" class="sidebar-link sub-item">Exercise: Add Practice Mode</a>
+                <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="advanced">
+            <div class="sidebar-section-title collapsible-header">
+                <span>⚡ Advanced Topics</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+                <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+                <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+                <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+                <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+                <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+                <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="wrap-up">
+            <div class="sidebar-section-title collapsible-header">
+                <span>✅ Wrap Up</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="resource-cleanup.html" class="sidebar-link">Resource cleanup</a>
+                <a href="wrapping-up.html" class="sidebar-link">Wrapping up: Next steps and feedback</a>
+            </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section collapsible toolkit-section" data-section="toolkit">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🧰 Hackathon Toolkit</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="opencode-web-ui.html" class="sidebar-link">OpenCode Web UI</a>
+            </div>
         </div>
     </nav>
 
@@ -68,110 +117,116 @@
     <main class="main" id="main-content">
         <header class="page-header">
             <h1>(Optional) Deploy the Backend Yourself</h1>
-            <div class="accent-line"></div>
-            <p>Manual deployment instructions for running the workshop in your own AWS account</p>
+            <p>Manual deployment instructions for running the workshop in your own environment</p>
         </header>
 
         <article class="content">
             <div class="callout">
                 <div class="callout-header">
                     <div class="dot"></div>
-                    <span><strong>When do you need this?</strong> Follow these steps if you are running the workshop in your own AWS account, outside of an AWS-hosted event. If you're attending an AWS event, the backend is already deployed for you — skip this page and continue with the main setup instructions.</span>
+                    <span><strong>When do you need this?</strong> Follow these steps if you are running the workshop in your own environment, outside of a hosted event. If you're attending a hosted event, the backend is already deployed for you — skip this page and continue with the main setup instructions.</span>
                 </div>
             </div>
 
             <h2>Overview</h2>
-            <p>🚀 To complete the workshop exercises, you need a running backend on AWS. The deployment script included in the project handles everything: installing dependencies, building Lambda packages, bootstrapping CDK, and deploying the full stack.</p>
+            <p>To complete the workshop exercises, you need a running backend. The deployment script included in the project handles everything: installing dependencies, building serverless function packages, and deploying the full stack.</p>
 
-            <p>This is a one-time setup step. The goal here is not to learn about deployment — it's to get the infrastructure in place so you can focus on building features with Kiro.</p>
+            <p>This is a one-time setup step. The goal here is not to learn about deployment — it's to get the infrastructure in place so you can focus on building features with TRAE SOLO.</p>
 
             <h2>Prerequisites</h2>
             <p>Before running the deployment, make sure you have:</p>
             <ul class="checklist">
-                <li>AWS CLI installed and configured with credentials (<span class="inline-code">aws sts get-caller-identity</span> should return your account info)</li>
-                <li>Node.js 22+ installed</li>
-                <li>AWS CDK installed globally (<span class="inline-code">npm install -g aws-cdk</span>)</li>
-                <li>The <span class="inline-code">kiro-workshop</span> project open in Kiro</li>
+                <li>Node.js 18+ installed</li>
+                <li>A package manager (npm, yarn, or pnpm)</li>
+                <li>A hosting environment for serverless functions (e.g., Vercel, Netlify, Railway, or your own server)</li>
+                <li>A database service (e.g., MongoDB, PostgreSQL, or MySQL)</li>
+                <li>An authentication provider (e.g., Auth0, Firebase Auth, or Cognito)</li>
+                <li>The <span class="inline-code">trae-solo-workshop</span> project open in TRAE SOLO</li>
             </ul>
 
             <div class="callout">
                 <div class="callout-header">
                     <div class="dot"></div>
-                    <span><strong>AWS permissions required:</strong> Your AWS credentials need permissions to create Lambda functions, API Gateway, DynamoDB tables, Cognito resources, IAM roles, and CloudFormation stacks. If you're using an admin-level role or a broad development role, you should be fine.</span>
+                    <span><strong>Environment requirements:</strong> You need a hosting environment that supports serverless functions or a Node.js runtime, a database, and an authentication service. The exact services don't matter — the key is having API endpoints, data storage, and user auth.</span>
                 </div>
             </div>
 
-            <h2>Step 1: Set environment variables</h2>
-            <p>Open a terminal in Kiro (<strong>Terminal → New Terminal</strong>) and set the required environment variables.</p>
+            <h2>Step 1: Configure Your Environment</h2>
+            <p>Set up the required environment variables for your backend deployment.</p>
 
-            <h3>Bash (macOS/Linux)</h3>
-            <div class="code-block"><code>export AWS_REGION="us-east-1"
-export STACK_NAME="KiroWorkshop"</code></div>
+            <h3>Create a .env file</h3>
+            <p>In the <span class="inline-code">backend/</span> directory, create a <span class="inline-code">.env</span> file with your configuration:</p>
 
-            <h3>PowerShell (Windows)</h3>
-            <div class="code-block"><code>$env:AWS_REGION = "us-east-1"
-$env:STACK_NAME = "KiroWorkshop"</code></div>
+            <div class="code-block"><code>DATABASE_URL=your-database-connection-string
+AUTH_PROVIDER_URL=your-auth-provider-url
+AUTH_CLIENT_ID=your-auth-client-id
+API_BASE_URL=your-api-base-url</code></div>
 
             <div class="callout">
                 <div class="callout-header">
                     <div class="dot"></div>
-                    <span><strong>Region choice:</strong> You can use any AWS region that supports all required services (Lambda, API Gateway, DynamoDB, Cognito). <span class="inline-code">us-east-1</span> is recommended for simplicity.</span>
+                    <span><strong>Configuration:</strong> Replace the placeholder values with your actual service credentials. The exact variable names may vary depending on your chosen services.</span>
                 </div>
             </div>
 
-            <h2>Step 2: Run the deployment script</h2>
-            <p>From the root of the <span class="inline-code">kiro-workshop</span> project, run the deployment script:</p>
+            <h2>Step 2: Install Dependencies and Deploy</h2>
+            <p>From the root of the <span class="inline-code">trae-solo-workshop</span> project, install dependencies and deploy:</p>
 
-            <h3>Bash (macOS/Linux)</h3>
-            <div class="code-block"><code>./deploy-backend.sh</code></div>
+            <h3>Install Dependencies</h3>
+            <div class="code-block"><code>cd backend
+npm install</code></div>
 
-            <h3>PowerShell (Windows)</h3>
-            <div class="code-block"><code>.\deploy-backend.ps1</code></div>
+            <h3>Deploy</h3>
+            <p>Use your hosting platform's deployment command. Common options:</p>
 
-            <p>The script will:</p>
-            <ol>
-                <li>Install backend dependencies</li>
-                <li>Build and package Lambda functions</li>
-                <li>Bootstrap AWS CDK (if not already done)</li>
-                <li>Deploy the CloudFormation stack</li>
-            </ol>
+            <div class="code-block"><code># Vercel
+vercel deploy --prod
+
+# Netlify
+netlify deploy --prod
+
+# Railway
+railway up
+
+# Docker (self-hosted)
+docker build -t workshop-backend .
+docker run -p 3000:3000 --env-file .env workshop-backend</code></div>
 
             <div class="callout">
                 <div class="callout-header">
                     <div class="dot"></div>
-                    <span><strong>Deployment time:</strong> This takes approximately 5–10 minutes. You'll see progress updates as CloudFormation creates resources. Don't close the terminal or interrupt the process.</span>
+                    <span><strong>Deployment time:</strong> This takes approximately 5–10 minutes depending on your hosting platform. Don't close the terminal or interrupt the process.</span>
                 </div>
             </div>
 
-            <h2>Step 3: Save the outputs</h2>
-            <p>When the deployment completes, you'll see output similar to this:</p>
+            <h2>Step 3: Save the Outputs</h2>
+            <p>When the deployment completes, note down your API endpoint and configuration values:</p>
 
-            <div class="code-block"><code>Outputs:
-KiroWorkshop.ApiUrl = https://abc123xyz.execute-api.us-east-1.amazonaws.com/prod
-KiroWorkshop.UserPoolId = us-east-1_ABC123XYZ
-KiroWorkshop.UserPoolClientId = 1a2b3c4d5e6f7g8h9i0j
-KiroWorkshop.IdentityPoolId = us-east-1:12345678-1234-1234-1234-123456789abc</code></div>
+            <div class="code-block"><code>API_URL=https://your-app.your-hosting.com/api
+AUTH_USER_POOL_ID=your-user-pool-id
+AUTH_CLIENT_ID=your-client-id
+AUTH_IDENTITY_POOL_ID=your-identity-pool-id</code></div>
 
             <p>Copy these four values — you'll need them to configure the frontend <span class="inline-code">.env</span> file in the next step of the main setup instructions.</p>
 
             <h2>Troubleshooting</h2>
             <ul>
-                <li><strong>"Unable to resolve AWS account"</strong> — Your AWS credentials are not configured or have expired. Verify with <span class="inline-code">aws sts get-caller-identity</span>. If this fails, reconfigure your credentials using <span class="inline-code">aws configure</span> or by exporting temporary session credentials.</li>
-                <li><strong>"Stack already exists"</strong> — A stack with the same name already exists. Either use a different name (<span class="inline-code">export STACK_NAME="KiroWorkshop-2"</span>) or delete the existing stack first (<span class="inline-code">cd infrastructure && cdk destroy</span>).</li>
-                <li><strong>CDK bootstrap errors</strong> — If CDK has never been bootstrapped in this account/region, the script should handle it automatically. If it fails, run manually: <span class="inline-code">cdk bootstrap aws://ACCOUNT_ID/REGION</span> (replace with your values).</li>
-                <li><strong>Deployment fails midway</strong> — Check the CloudFormation events for details: <span class="inline-code">aws cloudformation describe-stack-events --stack-name KiroWorkshop --max-items 10</span>. Common causes: insufficient permissions, service limits, or resource naming conflicts.</li>
+                <li><strong>"Dependencies not found"</strong> — Make sure you ran <span class="inline-code">npm install</span> in the backend directory before deploying.</li>
+                <li><strong>"Environment variables missing"</strong> — Verify your <span class="inline-code">.env</span> file is properly configured and uploaded to your hosting platform.</li>
+                <li><strong>"Deployment failed"</strong> — Check your hosting platform's deployment logs for details. Common causes: missing environment variables, incorrect build commands, or resource limits.</li>
+                <li><strong>"API not responding"</strong> — Verify your API endpoint is correct and the server is running. Check the hosting platform's dashboard for status.</li>
             </ul>
 
             <div class="callout">
                 <div class="callout-header">
                     <div class="dot"></div>
-                    <span>Once the deployment is complete, go back to the main <a href="understanding-application.html">Understanding the Application</a> page and continue from <strong>Part 2: Locate Your Backend Configuration</strong> — but instead of looking at the Event Dashboard, use the stack outputs printed in your terminal.</span>
+                    <span>Once the deployment is complete, go back to the main <a href="understanding-application.html">Understanding the Application</a> page and continue from <strong>Part 2: Locate Your Backend Configuration</strong> — but instead of looking at the Event Dashboard, use the configuration values from your deployment.</span>
                 </div>
             </div>
 
             <div class="navigation-buttons">
                 <a href="understanding-application.html" class="btn btn-secondary">← Previous: Understanding the Application</a>
-                <a href="#" class="btn btn-primary disabled">Next: Steering →</a>
+                <a href="steering.html" class="btn btn-primary">Next: Steering →</a>
             </div>
         </article>
     </main>

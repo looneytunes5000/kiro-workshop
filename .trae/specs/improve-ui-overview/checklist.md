@@ -1,0 +1,15 @@
+- [x] CSS `--content-gap` reduced from 48px to 32px
+- [x] `.content-wrapper` padding updated with reduced left margin
+- [x] `.overview` column styles added with sticky positioning (240px wide, top: 24px)
+- [x] `.overview-link` styles added with hover and active states
+- [x] Responsive breakpoint at 1200px hides overview column
+- [x] `.content` max-width adjusted to 720px for optimal readability
+- [x] JavaScript function scans page for h2/h3 headings
+- [x] Overview column HTML generated dynamically with anchor links
+- [x] Scroll spy highlights current section in overview (verified at 300px, 800px, 1500px)
+- [x] Overview links scroll smoothly to correct sections
+- [x] Overview column dynamically inserted into all HTML pages via JavaScript
+- [x] Overview column appears correctly on desktop viewports (1440px)
+- [x] Overview column hides on viewports below 1200px (verified at 1024px)
+- [x] Content readability maintained with new layout (720px content + 240px overview)
+- [x] All pages have consistent overview column behavior

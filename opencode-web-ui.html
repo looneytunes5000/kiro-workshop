@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenCode Web UI - TRAE SOLO Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰ Menu</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>TRAE SOLO Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
+        </div>
+
+        <div class="sidebar-search">
+            <input type="text" class="sidebar-search-input" placeholder="Search pages..." aria-label="Search pages">
+            <button class="sidebar-search-clear" aria-label="Clear search" style="display: none;">×</button>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="home">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with TRAE SOLO</a>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="getting-started">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🚀 Getting Started</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="introduction.html" class="sidebar-link">Introduction</a>
+                <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+                <a href="get-started.html" class="sidebar-link sub-item">Get Started (Web & Desktop)</a>
+                <a href="desktop-client.html" class="sidebar-link sub-item">Desktop Client</a>
+                <a href="setup-account.html" class="sidebar-link sub-item">Setup Account</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="core-concepts">
+            <div class="sidebar-section-title collapsible-header">
+                <span>💡 Core Concepts</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="trae-solo-overview.html" class="sidebar-link">TRAE SOLO Overview</a>
+                <a href="dual-clients.html" class="sidebar-link">Web vs Desktop Clients</a>
+                <a href="dual-modes.html" class="sidebar-link">MTC vs Code Modes</a>
+                <a href="cloud-agent.html" class="sidebar-link">Cloud Agent</a>
+                <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+                <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="hands-on">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🛠️ Hands-on Exercises</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="steering.html" class="sidebar-link">Steering - Teaching TRAE SOLO about your codebase</a>
+                <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+                <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+                <a href="cancel-button.html" class="sidebar-link sub-item">Add LLM Evaluation</a>
+                <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+                <a href="practice-mode-feature.html" class="sidebar-link sub-item">Exercise: Add Practice Mode</a>
+                <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="advanced">
+            <div class="sidebar-section-title collapsible-header">
+                <span>⚡ Advanced Topics</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+                <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+                <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+                <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+                <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+                <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+                <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="wrap-up">
+            <div class="sidebar-section-title collapsible-header">
+                <span>✅ Wrap Up</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="resource-cleanup.html" class="sidebar-link">Resource cleanup</a>
+                <a href="wrapping-up.html" class="sidebar-link">Wrapping up: Next steps and feedback</a>
+            </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section collapsible toolkit-section" data-section="toolkit">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🧰 Hackathon Toolkit</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="opencode-web-ui.html" class="sidebar-link active">OpenCode Web UI</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>OpenCode Web UI</h1>
+            <p>Run and configure the OpenCode web-based interface for remote and collaborative development</p>
+        </header>
+
+        <article class="content">
+            <p>OpenCode provides a built-in web UI that lets you interact with the agent through a browser. This is useful for remote development, shared environments, or when you prefer a web-based workflow over the desktop client.</p>
+
+            <h2 id="getting-started">Getting Started</h2>
+            <p>To launch the OpenCode web server, run the following command in your terminal:</p>
+
+            <pre><code>opencode web</code></pre>
+
+            <p>By default, the server starts on <code>localhost:3000</code>. Open your browser and navigate to <code>http://localhost:3000</code> to access the web interface.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Tip</span>
+                </div>
+                <p>The web UI provides the same core functionality as the desktop client, including chat sessions, file editing, and terminal access.</p>
+            </div>
+
+            <h2 id="configuration">Configuration</h2>
+            <p>The web server supports several configuration options to customize how it runs:</p>
+
+            <figure class="doc-image">
+                <img src="opencode-config-settings.png" alt="OpenCode configuration settings showing port, hostname, and mDNS options in the web server configuration panel">
+                <figcaption>Configuration panel showing port, hostname, and mDNS settings for the OpenCode web server</figcaption>
+            </figure>
+
+            <h3 id="port">Port</h3>
+            <p>Specify a custom port for the web server:</p>
+
+            <pre><code>opencode web --port 8080</code></pre>
+
+            <p>This starts the server on port 8080 instead of the default 3000.</p>
+
+            <h3 id="hostname">Hostname</h3>
+            <p>Bind the server to a specific hostname or IP address:</p>
+
+            <pre><code>opencode web --host 0.0.0.0</code></pre>
+
+            <p>Binding to <code>0.0.0.0</code> makes the server accessible from other machines on the network, which is useful for remote development setups.</p>
+
+            <h3 id="mdns">mDNS</h3>
+            <p>OpenCode supports mDNS (multicast DNS) broadcasting, which allows the server to be discovered on the local network by its hostname. This is enabled by default when running the web server.</p>
+
+            <p>When mDNS is active, you can access the server using a local hostname like <code>http://your-machine.local:3000</code> from other devices on the same network.</p>
+
+            <h3 id="cors">CORS</h3>
+            <p>Cross-Origin Resource Sharing (CORS) is configured to allow the web UI to communicate with the server. If you are running the server on a different origin than the client, ensure CORS is properly configured to allow requests from your client's origin.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Note</span>
+                </div>
+                <p>When using <code>--host 0.0.0.0</code>, be mindful of network security. Only expose the server to trusted networks, especially when authentication is not enabled.</p>
+            </div>
+
+            <h2 id="authentication">Authentication</h2>
+            <p>To protect your OpenCode web server with a password, set the <code>OPENCODE_SERVER_PASSWORD</code> environment variable before starting the server:</p>
+
+            <pre><code>export OPENCODE_SERVER_PASSWORD="your-secure-password"
+opencode web</code></pre>
+
+            <p>Once set, anyone accessing the web UI will be prompted to enter the password before they can interact with the agent.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Security</span>
+                </div>
+                <p>Always use a strong password when exposing the web server to a network. Never commit the password to version control or share it in plain text.</p>
+            </div>
+
+            <h2 id="using-the-web-interface">Using the Web Interface</h2>
+            <p>The OpenCode web UI provides a full-featured development environment accessible from your browser.</p>
+
+            <h3 id="sessions">Sessions</h3>
+            <p>Each conversation with the agent is organized into a session. You can:</p>
+            <ul>
+                <li><strong>Create new sessions</strong> to start fresh conversations on different topics</li>
+                <li><strong>Switch between sessions</strong> using the session sidebar to continue previous work</li>
+                <li><strong>Review session history</strong> to see the full context of past interactions</li>
+            </ul>
+
+            <figure class="doc-image">
+                <img src="opencode-sessions-sidebar.png" alt="OpenCode sessions sidebar showing a list of active and previous chat sessions with session titles and timestamps">
+                <figcaption>Sessions sidebar displaying active and previous conversations for quick navigation</figcaption>
+            </figure>
+
+            <h3 id="server-status">Server Status</h3>
+            <p>The web interface displays the current server status, including:</p>
+            <ul>
+                <li>Connection state (connected/disconnected)</li>
+                <li>Server version information</li>
+                <li>Active session count</li>
+            </ul>
+
+            <h3 id="attaching-terminal">Attaching Terminal</h3>
+            <p>The web UI includes an integrated terminal that you can attach to your session. This allows you to:</p>
+            <ul>
+                <li>Run shell commands directly from the browser</li>
+                <li>View command output in real-time</li>
+                <li>Interact with the agent while executing commands</li>
+            </ul>
+
+            <p>To attach a terminal, look for the terminal panel in the web interface and click to open it. The terminal runs in the same working directory as your OpenCode project.</p>
+
+            <figure class="doc-image">
+                <img src="opencode-terminal-panel.png" alt="OpenCode integrated terminal panel showing command output and interactive shell within the web interface">
+                <figcaption>Integrated terminal panel for running shell commands directly from the browser</figcaption>
+            </figure>
+
+            <h2 id="config-file">Config File</h2>
+            <p>OpenCode uses a JSON configuration file to define server settings. The config file is typically located at <code>.opencode/config.json</code> in your project root.</p>
+
+            <p>Here is an example configuration:</p>
+
+            <pre><code>{
+  "server": {
+    "port": 3000,
+    "host": "0.0.0.0",
+    "mdns": true,
+    "cors": {
+      "allowed_origins": ["http://localhost:3000"]
+    }
+  },
+  "auth": {
+    "password_env": "OPENCODE_SERVER_PASSWORD"
+  }
+}</code></pre>
+
+            <p>The configuration supports the following fields:</p>
+            <ul>
+                <li><code>server.port</code> - The port number the web server listens on</li>
+                <li><code>server.host</code> - The hostname or IP address to bind to</li>
+                <li><code>server.mdns</code> - Enable or disable mDNS broadcasting</li>
+                <li><code>server.cors.allowed_origins</code> - List of allowed origins for CORS</li>
+                <li><code>auth.password_env</code> - The environment variable name for the authentication password</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Remember</span>
+                </div>
+                <p>Command-line arguments take precedence over config file values. Use the config file for persistent settings and CLI flags for temporary overrides.</p>
+            </div>
+        </article>
+
+        <div class="navigation-buttons">
+            <a href="wrapping-up.html" class="btn btn-secondary">Previous: Wrapping Up</a>
+            <a href="index.html" class="btn btn-primary">Next: Back to Home →</a>
+        </div>
+    </main>
+<script src="scripts.js"></script>
+</body>
+</html>

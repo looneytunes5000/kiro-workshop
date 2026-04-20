@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction - Kiro Workshop</title>
+    <title>Introduction - TRAE SOLO Workshop</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -14,58 +14,101 @@
 
     <nav class="sidebar">
         <div class="sidebar-header">
-            <h2>Kiro Workshop</h2>
+            <h2>TRAE SOLO Workshop</h2>
             <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
         </div>
 
-        <div class="sidebar-section">
-            <a href="index.html" class="sidebar-link">AI-Driven Development with Kiro</a>
+        <div class="sidebar-search">
+            <input type="text" class="sidebar-search-input" placeholder="Search pages..." aria-label="Search pages">
+            <button class="sidebar-search-clear" aria-label="Clear search" style="display: none;">×</button>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">🚀 Getting Started</div>
-            <a href="introduction.html" class="sidebar-link active">Introduction</a>
-            <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
-            <a href="install-kiro.html" class="sidebar-link sub-item">Install Kiro</a>
-            <a href="take-kiro-home.html" class="sidebar-link sub-item">Take Kiro Home (Local Installation)</a>
-            <a href="authenticate-builder-id.html" class="sidebar-link sub-item">Authenticate with Builder ID</a>
+        <div class="sidebar-section collapsible" data-section="home">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with TRAE SOLO</a>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">💡 Core Concepts</div>
-            <a href="kiro-overview.html" class="sidebar-link">Kiro Overview</a>
-            <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
-            <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+        <div class="sidebar-section collapsible" data-section="getting-started">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🚀 Getting Started</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="introduction.html" class="sidebar-link active">Introduction</a>
+                <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
+                <a href="get-started.html" class="sidebar-link sub-item">Get Started (Web & Desktop)</a>
+                <a href="desktop-client.html" class="sidebar-link sub-item">Desktop Client</a>
+                <a href="setup-account.html" class="sidebar-link sub-item">Setup Account</a>
+            </div>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">🛠️ Hands-on Exercises</div>
-            <a href="steering.html" class="sidebar-link">Steering - Teaching Kiro about your codebase</a>
-            <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
-            <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
-            <a href="cancel-button.html" class="sidebar-link sub-item">Add a Cancel Button</a>
-            <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
-            <a href="commenting-feature.html" class="sidebar-link sub-item">Exercise: Add Commenting</a>
-            <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
-            <a href="#" class="sidebar-link">Agent Hooks - Automating your workflow</a>
-            <a href="#" class="sidebar-link">MCP Integration - Extending Kiro's capabilities</a>
+        <div class="sidebar-section collapsible" data-section="core-concepts">
+            <div class="sidebar-section-title collapsible-header">
+                <span>💡 Core Concepts</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="trae-solo-overview.html" class="sidebar-link">TRAE SOLO Overview</a>
+                <a href="dual-clients.html" class="sidebar-link">Web vs Desktop Clients</a>
+                <a href="dual-modes.html" class="sidebar-link">MTC vs Code Modes</a>
+                <a href="cloud-agent.html" class="sidebar-link">Cloud Agent</a>
+                <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
+                <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+            </div>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">⚡ Advanced Topics</div>
-            <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
-            <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
-            <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
-            <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
-            <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
-            <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
-            <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+        <div class="sidebar-section collapsible" data-section="hands-on">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🛠️ Hands-on Exercises</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="steering.html" class="sidebar-link">Steering - Teaching TRAE SOLO about your codebase</a>
+                <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+                <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+                <a href="cancel-button.html" class="sidebar-link sub-item">Add LLM Evaluation</a>
+                <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+                <a href="practice-mode-feature.html" class="sidebar-link sub-item">Exercise: Add Practice Mode</a>
+                <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+            </div>
         </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-section-title">✅ Wrap Up</div>
-            <a href="#" class="sidebar-link">Resource cleanup</a>
-            <a href="#" class="sidebar-link">Wrapping up: Next steps and feedback</a>
+        <div class="sidebar-section collapsible" data-section="advanced">
+            <div class="sidebar-section-title collapsible-header">
+                <span>⚡ Advanced Topics</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+                <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+                <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+                <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+                <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+                <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+                <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="wrap-up">
+            <div class="sidebar-section-title collapsible-header">
+                <span>✅ Wrap Up</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="resource-cleanup.html" class="sidebar-link">Resource cleanup</a>
+                <a href="wrapping-up.html" class="sidebar-link">Wrapping up: Next steps and feedback</a>
+            </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section collapsible toolkit-section" data-section="toolkit">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🧰 Hackathon Toolkit</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="opencode-web-ui.html" class="sidebar-link">OpenCode Web UI</a>
+            </div>
         </div>
     </nav>
 
@@ -74,14 +117,13 @@
     <main class="main" id="main-content">
         <header class="page-header">
             <h1>Introduction</h1>
-            <div class="accent-line"></div>
-            <p>Welcome to the Kiro Hands-on Workshop - explore AI-native development through practical exercises</p>
+            <p>Welcome to the TRAE SOLO Hands-on Workshop</p>
         </header>
 
         <article class="content">
                 <h2 id="overview">Overview</h2>
-                <p>Welcome to the <strong>Kiro Hands-on Workshop</strong>! In this workshop, you'll explore Kiro's AI-native development capabilities through practical, hands-on exercises with a real serverless application.</p>
-                <p>Kiro is an AI-native development environment that transforms how you build software. Rather than simply adding AI features to a traditional IDE, Kiro reimagines the development experience around AI collaboration. You'll learn to work with Kiro's unique capabilities to implement features faster while maintaining code quality and architectural consistency.</p>
+                <p>Welcome to the <strong>TRAE SOLO Hands-on Workshop</strong>! In this workshop, you'll explore TRAE SOLO's AI-native development capabilities through practical, hands-on exercises with a real serverless application.</p>
+                <p>TRAE SOLO is an AI-native workspace offering both web and desktop clients, featuring dual modes (MTC and Code) designed for different user groups. It provides a unified, efficient, and customizable AI collaboration experience covering scenarios from professional development to everyday office work.</p>
 
                 <h2 id="prerequisites">Prerequisites</h2>
                 <h3>Knowledge and experience</h3>
@@ -93,14 +135,60 @@
 
                 <h3>Required tools</h3>
                 <ul>
-                    <li><strong>Kiro IDE</strong> - You'll install and configure Kiro during the workshop</li>
-                    <li><strong>AWS Builder ID</strong> - For authentication and accessing workshop resources</li>
+                    <li><strong>TRAE SOLO account (web or desktop)</strong> - You'll set up your account during the workshop</li>
                     <li><strong>Modern web browser</strong> - Chrome, Firefox, Safari, or Edge</li>
-                    <li><strong>Text editor</strong> - For any manual code edits (though Kiro handles most of this)</li>
+                    <li><strong>Basic understanding of software development concepts</strong></li>
                 </ul>
 
+                <h2 id="dual-clients">Dual Clients</h2>
+                <p>TRAE SOLO provides two client options to suit different workflows and environments:</p>
+
+                <div class="callout">
+                    <div class="callout-header">
+                        <div class="dot"></div>
+                        <span>Web Client</span>
+                    </div>
+                    <p>Lightweight and accessible from anywhere with no installation required. The web client is perfect for quick tasks, on-the-go development, and environments where you can't install software. Simply open your browser and start working.</p>
+                </div>
+
+                <div class="callout">
+                    <div class="callout-header">
+                        <div class="dot"></div>
+                        <span>Desktop Client</span>
+                    </div>
+                    <p>Built on an independent architecture with full performance capabilities. The desktop client supports rich input methods including text, voice, attachments, and skills. It's ideal for intensive development work and provides the most complete TRAE SOLO experience.</p>
+                </div>
+
+                <h2 id="dual-modes">Dual Modes</h2>
+                <p>TRAE SOLO features two distinct modes designed for different user groups and tasks:</p>
+
+                <div class="callout">
+                    <div class="callout-header">
+                        <div class="dot"></div>
+                        <span>MTC Mode</span>
+                    </div>
+                    <p>Designed for non-developers including product managers, analysts, and operations staff. MTC Mode excels at creating documents, analyzing data, building presentations, and handling everyday office productivity tasks through natural language interaction.</p>
+                </div>
+
+                <div class="callout">
+                    <div class="callout-header">
+                        <div class="dot"></div>
+                        <span>Code Mode</span>
+                    </div>
+                    <p>Built for developers who need coding, debugging, repository management, and Git workflow capabilities. Code Mode provides deep codebase understanding, intelligent suggestions, and seamless integration with your development tools and processes.</p>
+                </div>
+
+                <h2 id="cloud-agent">Cloud Agent</h2>
+                <p>TRAE SOLO includes a Cloud Agent - a cloud-based runtime environment that provides:</p>
+                <ul>
+                    <li><strong>Unified dependency management</strong> - No need to manually install or configure packages</li>
+                    <li><strong>Isolated execution</strong> - Each session runs in its own clean environment</li>
+                    <li><strong>No local setup required</strong> - Start coding immediately without configuring your machine</li>
+                </ul>
+                <p>The Cloud Agent ensures consistent, reproducible environments and eliminates the "works on my machine" problem.</p>
+
                 <h2 id="demo-application">Demo Application</h2>
-                <p>Throughout this workshop, you'll work with a <strong>serverless micro-blogging platform</strong>. This application provides a realistic codebase to practice Kiro's capabilities on, including:</p>
+                <p>Throughout this workshop, you'll work with a <strong>paraphrasing mentoring application for students</strong>. This application provides a realistic codebase to practice TRAE SOLO's capabilities on, including:</p>
                 <ul>
                     <li><strong>Frontend</strong> - A web interface for creating and viewing posts</li>
                     <li><strong>Backend APIs</strong> - Serverless functions handling CRUD operations</li>
@@ -109,24 +197,24 @@
                 </ul>
                 <p>The application is designed to be simple enough to understand quickly, yet complex enough to demonstrate real-world development scenarios.</p>
 
-                <h2 id="deploying">Deploying the Application</h2>
-                <p>The workshop provides a pre-configured application that you'll enhance and modify using Kiro. You'll learn to:</p>
+                <h2 id="deploying">Setting Up the Application</h2>
+                <p>The workshop provides a pre-configured application that you'll enhance and modify using TRAE SOLO. You'll learn to:</p>
                 <ul>
                     <li>Set up the development environment</li>
                     <li>Understand the existing codebase structure</li>
-                    <li>Use Kiro to implement new features</li>
+                    <li>Use TRAE SOLO to implement new features</li>
                     <li>Test and validate your changes</li>
                 </ul>
 
-                <h2 id="core-capabilities">Kiro's Core Capabilities</h2>
-                <p>Throughout this workshop, you'll explore five key capabilities that make Kiro unique:</p>
+                <h2 id="core-capabilities">TRAE SOLO's Core Capabilities</h2>
+                <p>Throughout this workshop, you'll explore six key capabilities that make TRAE SOLO unique:</p>
 
                 <div class="callout">
                     <div class="callout-header">
                         <div class="dot"></div>
                         <span>Vibe Coding</span>
                     </div>
-                    <p>Rapid feature development through natural language descriptions. Describe what you want in plain English, and Kiro helps you build it quickly while maintaining code quality.</p>
+                    <p>Rapid feature development through natural language descriptions. Describe what you want in plain English, and TRAE SOLO helps you build it quickly while maintaining code quality.</p>
                 </div>
 
                 <div class="callout">
@@ -134,7 +222,7 @@
                         <div class="dot"></div>
                         <span>Spec-Driven Development</span>
                     </div>
-                    <p>For complex, multi-file features, use structured specifications to guide Kiro through planning and implementation. This ensures thorough consideration of requirements, edge cases, and architectural impact before writing code.</p>
+                    <p>For complex, multi-file features, use structured specifications to guide TRAE SOLO through planning and implementation. This ensures thorough consideration of requirements, edge cases, and architectural impact before writing code.</p>
                 </div>
 
                 <div class="callout">
@@ -142,7 +230,7 @@
                         <div class="dot"></div>
                         <span>Steering</span>
                     </div>
-                    <p>Teach Kiro about your codebase conventions, architectural patterns, and team standards. Steering documents help Kiro understand your project's unique context and generate code that fits seamlessly.</p>
+                    <p>Teach TRAE SOLO about your codebase conventions, architectural patterns, and team standards. Steering documents help TRAE SOLO understand your project's unique context and generate code that fits seamlessly.</p>
                 </div>
 
                 <div class="callout">
@@ -150,7 +238,7 @@
                         <div class="dot"></div>
                         <span>Agent Hooks</span>
                     </div>
-                    <p>Automate repetitive workflows by configuring Kiro to respond to specific events or patterns. Agent Hooks let you customize Kiro's behavior to match your team's development practices.</p>
+                    <p>Automate repetitive workflows by configuring TRAE SOLO to respond to specific events or patterns. Agent Hooks let you customize TRAE SOLO's behavior to match your team's development practices.</p>
                 </div>
 
                 <div class="callout">
@@ -158,7 +246,15 @@
                         <div class="dot"></div>
                         <span>MCP Integration</span>
                     </div>
-                    <p>Extend Kiro's capabilities by connecting to external tools and services through the Model Context Protocol (MCP). This allows Kiro to interact with databases, APIs, version control, and more.</p>
+                    <p>Extend TRAE SOLO's capabilities by connecting to external tools and services through the Model Context Protocol (MCP). This allows TRAE SOLO to interact with databases, APIs, version control, and more.</p>
+                </div>
+
+                <div class="callout">
+                    <div class="callout-header">
+                        <div class="dot"></div>
+                        <span>Cloud Agent</span>
+                    </div>
+                    <p>A cloud-based runtime environment with unified dependency management and isolated execution. The Cloud Agent eliminates local setup requirements and ensures consistent, reproducible development environments.</p>
                 </div>
 
                 <h2 id="workshop-structure">Workshop Structure</h2>
@@ -176,7 +272,7 @@
                     <div class="outcome-item">
                         <span class="marker">&rarr;</span>
                         <span class="label"><strong>Core Concepts</strong> (~45 minutes)<br>
-                        Understanding Kiro's architecture and the demo application</span>
+                        Understanding TRAE SOLO's architecture, dual clients, dual modes, and the demo application</span>
                     </div>
                 </div>
 
@@ -224,18 +320,18 @@
                 <h2 id="reflection">Reflection Questions</h2>
                 <p>As you progress through the workshop, consider these questions:</p>
                 <ul>
-                    <li>How does Kiro's approach differ from traditional AI code completion tools?</li>
-                    <li>Which Kiro capability would have the biggest impact on your current workflow?</li>
+                    <li>How does TRAE SOLO's approach differ from traditional AI code completion tools?</li>
+                    <li>Which TRAE SOLO capability would have the biggest impact on your current workflow?</li>
                     <li>How could you introduce these practices to your team?</li>
-                    <li>What types of projects would benefit most from Kiro's capabilities?</li>
+                    <li>What types of projects would benefit most from TRAE SOLO's capabilities?</li>
                 </ul>
 
                 <h2 id="next-steps">Next Steps</h2>
-                <p>Ready to get started? In the next section, you'll begin the workshop by installing Kiro and setting up your development environment.</p>
+                <p>Ready to get started? In the next section, you'll begin the workshop by setting up your TRAE SOLO account and development environment.</p>
             </article>
 
         <div class="navigation-buttons">
-            <a href="index.html" class="btn btn-secondary">Previous: AI-Driven Development with Kiro</a>
+            <a href="index.html" class="btn btn-secondary">Previous: AI-Driven Development with TRAE SOLO</a>
             <a href="start-workshop.html" class="btn btn-primary">Next: Start Workshop</a>
         </div>
     </main>
