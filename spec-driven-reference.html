@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spec-Driven Development - TRAE SOLO Workshop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
+
+    <nav class="sidebar"></nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Spec-Driven Development</h1>
+            <p>The heavy duty</p>
+        </header>
+
+        <article class="content">
+            <h2>Overview</h2>
+            <p>Spec-Driven Development is a structured approach to building complex features. Instead of jumping straight into coding, it creates three planning documents first: what you want to build, how it should work, and the steps to build it. This gives the AI agent much better context to work with, leading to cleaner code and fewer mistakes down the line.</p>
+
+            <h2>When to Use Spec Mode</h2>
+            <p><strong>Spec mode excels at:</strong></p>
+            <ul>
+                <li>Complex, multi-file features requiring architectural decisions</li>
+                <li>Features that need clear requirements and acceptance criteria</li>
+                <li>Cross-cutting changes affecting multiple system components</li>
+                <li>Features requiring design documentation for team alignment</li>
+            </ul>
+
+            <p><strong>Spec mode is not ideal for:</strong></p>
+            <ul>
+                <li>Simple, single-file changes (use Vibe mode instead)</li>
+                <li>Quick bug fixes or typos</li>
+                <li>Exploratory prototyping where requirements are unclear</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Key Principle</span>
+                </div>
+                <p>Research shows that addressing issues during the planning phase is 5 to 7 times less costly than resolving them during implementation. Spec mode bakes this principle into your AI-assisted workflow.</p>
+            </div>
+
+            <h2>The Spec Workflow</h2>
+            <p>When you initiate a /spec, the agent guides you through a structured process:</p>
+
+            <div class="workflow-image-container">
+                <div class="workflow-image-zoomable" onclick="openImageModal()">
+                    <img src="img/sdd_dark.png" alt="Spec-Driven Development Workflow" class="workflow-image workflow-image-dark">
+                    <img src="img/sdd_white.png" alt="Spec-Driven Development Workflow" class="workflow-image workflow-image-light">
+                    <span class="zoom-hint">Click to enlarge</span>
+                </div>
+            </div>
+
+            <div class="image-modal" id="imageModal" onclick="closeImageModal()">
+                <span class="modal-close">&times;</span>
+                <div class="modal-content" onclick="event.stopPropagation()">
+                    <img src="img/sdd_dark.png" alt="Spec-Driven Development Workflow" class="modal-image modal-image-dark">
+                    <img src="img/sdd_white.png" alt="Spec-Driven Development Workflow" class="modal-image modal-image-light">
+                </div>
+            </div>
+
+            <h3>How It Works</h3>
+            <p>Type <span class="inline-code">/spec</span> in the chat box to activate Spec mode:</p>
+
+            <div class="spec-input-demo">
+                <div class="spec-input-box">
+                    <span class="spec-input-cursor">/spec</span>
+                </div>
+            </div>
+
+            <p>TRAE will ask you follow-up questions to understand what you want to build. Once it has enough context, it generates three <strong>.md files</strong> (Markdown documents — simple text files that are easy to read and edit):</p>
+
+            <ul>
+                <li><span class="inline-code">requirements.md</span> — What you want to build and how you'll know it's done</li>
+                <li><span class="inline-code">design.md</span> — How it should work and fit into your project</li>
+                <li><span class="inline-code">tasks.md</span> — Step-by-step instructions for building it</li>
+            </ul>
+
+            <p>Review the three files, make any changes you'd like, then approve them. TRAE will execute the tasks one by one, and you can track the progress as it builds your feature.</p>
+
+            <h2>Vibe vs Spec: Choosing the Right Mode</h2>
+            <div class="callout">
+                <div class="callout-title">
+                    <span class="callout-bullet"></span>
+                    Vibe Mode
+                </div>
+                <p>Conversational and interactive. Best for simple, focused changes with fast iteration. No documentation generated — relies on steering documents for context.</p>
+            </div>
+
+            <div class="callout">
+                <div class="callout-title">
+                    <span class="callout-bullet"></span>
+                    Spec Mode
+                </div>
+                <p>Structured and document-driven. Best for complex, multi-file features. Generates requirements, design, and tasks for thorough planning upfront. Creates an audit trail for the team.</p>
+            </div>
+        </article>
+
+        <div class="navigation-buttons">
+            <a href="vibe-coding-reference.html" class="btn btn-secondary">Previous: Vibe Coding</a>
+            <a href="trae-solo-reference.html" class="btn btn-primary">Next: TRAE SOLO</a>
+        </div>
+    </main>
+
+    <script>
+        function openImageModal() {
+            document.getElementById('imageModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal() {
+            document.getElementById('imageModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeImageModal();
+            }
+        });
+    </script>
+<script src="scripts.js"></script>
+</body>
+</html>

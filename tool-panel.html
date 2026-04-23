@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Panel - TRAE SOLO Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰ Menu</button>
+
+    <nav class="sidebar"></nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Tool Panel</h1>
+            <p>Access the full range of tools available in SOLO mode</p>
+        </header>
+
+        <article class="content">
+            <h2>Overview</h2>
+            <p>SOLO mode provides a range of tools, including an editor, documentation viewer, browser, terminal, and more. You can use these tools to expand your capabilities while the AI analyzes and executes tasks in SOLO Builder or SOLO Coder.</p>
+
+            <h2>Show the Tool Panel</h2>
+            <p>After switching to SOLO mode, you can open the Tool Panel using one of the following methods:</p>
+
+            <ul class="checklist">
+                <li><strong>Show Tools icon</strong> - Click the Show Tools icon in the upper-right corner of the interface</li>
+            </ul>
+
+            <img src="img/tool_panel.png" alt="Tool Panel interface showing all available tools" class="workflow-image">
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Quick Access</span>
+                </div>
+                <p>The Tool Panel is your central hub for all available tools. Once open, you can switch between tools as needed while the AI is working on your tasks.</p>
+            </div>
+
+            <h2>Available Tools</h2>
+            <p>During the process of analyzing and executing tasks in SOLO Builder or SOLO Coder, different tools play different roles. Here are all 11 tools available:</p>
+
+            <table class="comparison-table" id="tools-table">
+                <thead>
+                    <tr>
+                        <th style="width: 12%;">Tool</th>
+                        <th style="width: 30%;">Purpose</th>
+                        <th style="width: 18%;">Availability</th>
+                        <th style="width: 40%;">Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Editor</strong></td>
+                        <td>Shows the coding process and final code. Supports manual editing and sending code snippets to AI.</td>
+                        <td>SOLO Builder &amp; Coder</td>
+                        <td>Agent seeks confirmation before destructive operations like file deletion.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DocView</strong></td>
+                        <td>Presents drafts and generation process for development docs (PRDs, architecture docs, etc.).</td>
+                        <td>SOLO Builder &amp; Coder</td>
+                        <td>Supports Markdown, manual editing, and AI-assisted editing.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Terminal</strong></td>
+                        <td>Displays command execution process and results.</td>
+                        <td>SOLO Builder &amp; Coder</td>
+                        <td>Send output or errors to AI chat for analysis.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Browser</strong></td>
+                        <td>Previews AI-built web apps with click-to-edit static text support.</td>
+                        <td>SOLO Builder &amp; Coder</td>
+                        <td>Element selection, deploy, external URLs, console errors.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DiffView</strong></td>
+                        <td>Shows code changes: file count, names, line count, and file-level diffs.</td>
+                        <td>SOLO Builder &amp; Coder</td>
+                        <td>Access from Editor via View Diff button.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Figma</strong></td>
+                        <td>Convert Figma design frames into code via AI chat.</td>
+                        <td>SOLO Builder &amp; Coder</td>
+                        <td><span class="badge badge-warning">Premium — not permitted in aiHackathon</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Supabase</strong></td>
+                        <td>Connect projects to Supabase for frontend/backend management.</td>
+                        <td>SOLO Builder &amp; Coder</td>
+                        <td><span class="badge badge-warning">Premium — not permitted in aiHackathon</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Integrations</strong></td>
+                        <td>Third-party services: Deployment, AI providers, Payment.</td>
+                        <td>SOLO Builder only</td>
+                        <td><span class="badge badge-warning">Premium services require subscription</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Agents</strong></td>
+                        <td>View built-in agents and manage custom agents.</td>
+                        <td>SOLO Builder &amp; Coder</td>
+                        <td>Access the agent library for task automation.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>MCP</strong></td>
+                        <td>Manage MCP (Model Context Protocol) servers.</td>
+                        <td>SOLO Builder &amp; Coder</td>
+                        <td>Extend AI capabilities with tools and prompts.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Settings</strong></td>
+                        <td>Configure TRAE: Account, General, Development Environment.</td>
+                        <td>SOLO Builder &amp; Coder</td>
+                        <td>Manage IDE preferences and environment config.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout" style="margin-top: 24px;">
+                <div class="callout-header">
+                    <div class="dot" style="background: #ef4444;"></div>
+                    <span>aiHackathon Notice</span>
+                </div>
+                <p><strong>Paid premium features are not permitted during the aiHackathon.</strong> This includes Figma AI, Supabase, Payment service integrations, and other subscription-based services. Participants should use free-tier services, local development, and built-in features only (Editor, DocView, Terminal, Browser, DiffView, Agents, MCP, Settings).</p>
+            </div>
+
+            <h2>Flow Mode</h2>
+            <p>You can enable or disable Flow mode by clicking the Flow button in the upper-left corner of the Tool Panel. When enabled, the system automatically switches tools based on the AI's current work stage and displays real-time progress and output.</p>
+
+            <h3>How Flow Mode Works</h3>
+            <p>For example, when the AI is generating a product requirement document based on your instructions, the system automatically opens the DocView tool to show the document generation process. When the AI starts coding, it switches to the Editor tool to display the coding process.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Read-Only During Execution</span>
+                </div>
+                <p>During task execution in Flow mode, the tools are read-only and manual operations are not allowed. If you double-click or scroll within the tool, the system will automatically exit Flow mode.</p>
+            </div>
+
+            <h3>Exiting Flow Mode</h3>
+            <p>If you need to manually intervene or edit content:</p>
+            <ul class="checklist">
+                <li><strong>Turn off Flow mode first</strong> - Click the Flow button to disable automatic switching before editing</li>
+                <li><strong>Double-click or scroll</strong> - The system will also exit Flow mode if you interact with the tool directly</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Task-Scoped Flow</span>
+                </div>
+                <p>If the AI is processing multiple tasks simultaneously, Flow mode applies only to the current task and does not carry over across tasks. Each task manages its own Flow state independently.</p>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="dual-clients.html" class="btn btn-secondary">← Previous: Dual Clients</a>
+                <a href="cloud-agent.html" class="btn btn-primary">Next: Cloud Agent →</a>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        document.addEventListener('click', function(e) {
+            const sidebar = document.querySelector('.sidebar');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            if (window.innerWidth <= 900 && 
+                !sidebar.contains(e.target) && 
+                !menuBtn.contains(e.target) && 
+                sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
+<script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills in Action - TRAE SOLO Workshop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
+
+    <nav class="sidebar"></nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Skills in Action</h1>
+            <p>See how skills transform your workflow with real examples</p>
+        </header>
+
+        <article class="content">
+            <h2>Overview</h2>
+            <p>Skills aren't just a list of capabilities - they're active tools that elevate the quality of your work. When you activate a skill, TRAE SOLO applies specialized knowledge, follows proven workflows, and checks for issues that general-purpose AI might miss.</p>
+
+            <p>Below are two demonstrations that show skills in action: one for polishing user interfaces, and another for catching issues in AI-generated code.</p>
+
+            <h2>Demo 1: Polishing UI with Frontend Design</h2>
+            <p>The <strong>frontend-design</strong> skill turns rough interfaces into polished, professional designs. When you ask TRAE SOLO to improve your UI, this skill kicks in automatically - evaluating visual hierarchy, spacing, typography, and overall aesthetics.</p>
+
+            <div class="workflow-image-container">
+                <div class="workflow-image-zoomable" onclick="openImageModal('demo1')">
+                    <img src="img/skills_demo_1.png" alt="Frontend Design Skill Demo" class="workflow-image">
+                    <span class="zoom-hint">Click to enlarge</span>
+                </div>
+            </div>
+
+            <div class="image-modal" id="imageModal-demo1" onclick="closeImageModal('demo1')">
+                <span class="modal-close">&times;</span>
+                <div class="modal-content" onclick="event.stopPropagation()">
+                    <img src="img/skills_demo_1.png" alt="Frontend Design Skill Demo" class="modal-image">
+                </div>
+            </div>
+
+            <h3>What the Skill Does</h3>
+            <p>When you activate the frontend-design skill, TRAE SOLO:</p>
+            <ul>
+                <li>Analyzes the current UI for visual hierarchy issues</li>
+                <li>Fixes spacing, alignment, and layout problems</li>
+                <li>Improves typography for better readability</li>
+                <li>Adds strategic color and visual interest</li>
+                <li>Optimizes for accessibility and responsive design</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Try It Yourself</span>
+                </div>
+                <p>Type <span class="inline-code">/frontend-design</span> followed by your request, like "Polish the login page to make it look more professional and modern."</p>
+            </div>
+
+            <h2>Demo 2: Checking AI-Generated Code with Code Reviewer</h2>
+            <p>AI generates code quickly, but it doesn't always get everything right. The <strong>code-reviewer</strong> skill acts as a safety net - catching hardcoded data, placeholder content, and other issues that can slip into production code.</p>
+
+            <details class="prompt-accordion" open>
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">▶</span>
+                    <span>Demo: Skills in Action</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <p>Skills aren't just a list of capabilities — they're active tools that elevate the quality of your work. When you activate a skill, TRAE SOLO applies specialized knowledge, follows proven workflows, and checks for issues that general-purpose AI might miss.</p>
+
+                    <p>Below are two demonstrations that show skills in action: one for polishing user interfaces, and another for catching issues in AI-generated code.</p>
+                </div>
+            </details>
+
+            <h3>Example Prompt</h3>
+            <p>Here's a prompt you can use to run a thorough code review:</p>
+
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">&#9654;</span>
+                    <span>Click to reveal the prompt</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <div class="code-block">
+                        <code>/code-reviewer Review the code for quality and maintainability. Additionally, identify all hardcoded mock data, placeholder content, and fabricated values. Flag any that appear in user-facing features and should be replaced with real data sources.</code>
+                    </div>
+                </div>
+            </details>
+
+            <h3>What the Skill Checks For</h3>
+            <ul>
+                <li><strong>Hardcoded mock data</strong> - Fake user profiles, test orders, sample content that should come from a database</li>
+                <li><strong>Placeholder content</strong> - Lorem ipsum, "TODO" markers, "Coming soon" text left in production</li>
+                <li><strong>Fabricated values</strong> - Made-up prices, fake timestamps, random IDs that don't match real data</li>
+                <li><strong>User-facing inconsistencies</strong> - Data that looks real but isn't, misleading users about functionality</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-title">
+                    <span class="callout-bullet"></span>
+                    Key Takeaway
+                </div>
+                <p>Always review AI-generated code before shipping. What looks correct at first glance often contains subtle issues that only a careful review will catch. The code-reviewer skill makes this systematic and thorough.</p>
+            </div>
+
+        </article>
+
+        <div class="navigation-buttons">
+            <a href="skills.html" class="btn btn-secondary">Previous: Skills Basics</a>
+            <a href="practice-mode-feature.html" class="btn btn-primary">Next: Practice Mode Feature</a>
+        </div>
+    </main>
+
+    <script>
+        function openImageModal(demoId) {
+            document.getElementById('imageModal-' + demoId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal(demoId) {
+            document.getElementById('imageModal-' + demoId).classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.image-modal.active').forEach(function(modal) {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+    <script src="scripts.js"></script>
+</body>
+</html>

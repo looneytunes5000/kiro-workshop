@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenCode Overview - AI Hackathon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">Menu</button>
+
+    <nav class="sidebar"></nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>OpenCode Overview</h1>
+            <p>Your free, open-source AI coding assistant for the hackathon</p>
+        </header>
+
+        <article class="content">
+            <h2>What is OpenCode?</h2>
+            <p>OpenCode is a free, open-source AI coding assistant that runs locally on your machine. Think of it as your personal pair programmer that helps you write, debug, and complete code faster — without any subscription fees or usage limits.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Why use OpenCode at a hackathon?</span>
+                </div>
+                <p>You already have it installed on this machine from Day 0. It gives you AI-powered coding assistance for building your hackathon project, with zero cost and no internet dependency required.</p>
+            </div>
+
+            <h2>Getting Started</h2>
+            <p>OpenCode is already set up on your computer from the Day 0 setup. You can start using it right now by opening your terminal or command prompt and navigating to your project folder.</p>
+
+            <h3>Open your project with OpenCode</h3>
+            <p>When you're ready to start building, open your project folder with:</p>
+            <div class="code-block"><code>opencode .</code></div>
+
+            <p>This launches OpenCode with your current folder as the context. It will read your existing code, understand your project structure, and be ready to help you build new features.</p>
+
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">▶</span>
+                    <span>Click to reveal a starter prompt for your first session</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <div class="code-block"><code>I'm starting a new hackathon project. I want to build a simple web app that shows a list of items. Can you help me set up the basic project structure with HTML, CSS, and JavaScript? I want a clean, modern design.</code></div>
+                </div>
+            </details>
+
+            <h2>How OpenCode Works</h2>
+            <p>OpenCode uses a chat-like interface where you describe what you want to build in plain English, and it helps you write the code. Here's what it can do for you:</p>
+
+            <ul class="checklist">
+                <li><strong>Write new code</strong> — Describe a feature or component and get working code</li>
+                <li><strong>Fix bugs</strong> — Paste error messages or describe the problem</li>
+                <li><strong>Explain code</strong> — Ask it to walk through existing code line by line</li>
+                <li><strong>Refactor</strong> — Improve code quality without changing behavior</li>
+                <li><strong>Generate boilerplate</strong> — Scaffold project structures and templates</li>
+                <li><strong>Write documentation</strong> — Auto-generate comments, README files, and API docs</li>
+            </ul>
+
+            <h2>Navigation in OpenCode Mode</h2>
+            <p>When working in OpenCode's chat mode, you'll use keyboard shortcuts to navigate. The most important ones are:</p>
+
+            <ul class="checklist">
+                <li><strong>Arrow keys</strong> — Move up and down through messages</li>
+                <li><strong>Enter</strong> — Send your message</li>
+                <li><strong>Esc</strong> — Cancel the current input</li>
+                <li><strong>Ctrl+C</strong> — Interrupt if something is taking too long</li>
+            </ul>
+
+            <h2>Next Steps</h2>
+            <p>Now that you understand OpenCode basics, continue to learn about the browser-based interface:</p>
+
+            <div class="navigation-buttons">
+                <a href="deploy-backend.html" class="btn btn-secondary">Previous: Deploy Backend</a>
+                <a href="opencode-web-ui.html" class="btn btn-primary">Next: OpenCode Web UI</a>
+            </div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Pro tip</span>
+                </div>
+                <p>Start with the terminal interface for quick tasks, then switch to the <a href="opencode-web-ui.html">Web UI</a> when you want a more visual, browser-based experience. Both share the same AI model and project context.</p>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        document.addEventListener('click', function(e) {
+            const sidebar = document.querySelector('.sidebar');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            if (window.innerWidth <= 900 && 
+                !sidebar.contains(e.target) && 
+                !menuBtn.contains(e.target) && 
+                sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
+<script src="scripts.js"></script>
+</body>
+</html>

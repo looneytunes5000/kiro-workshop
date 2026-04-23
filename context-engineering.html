@@ -10,119 +10,21 @@
 <body>
     <div class="progress-bar"></div>
     <a href="#main-content" class="skip-nav">Skip to main content</a>
-    <button class="mobile-menu-btn">☰ Menu</button>
+    <button class="mobile-menu-btn">?衽enu</button>
 
-    <nav class="sidebar">
-        <div class="sidebar-header">
-            <h2>TRAE SOLO Workshop</h2>
-            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
-        </div>
-
-        <div class="sidebar-search">
-            <input type="text" class="sidebar-search-input" placeholder="Search pages..." aria-label="Search pages">
-            <button class="sidebar-search-clear" aria-label="Clear search" style="display: none;">×</button>
-        </div>
-
-        <div class="sidebar-section collapsible" data-section="home">
-            <a href="index.html" class="sidebar-link">AI-Driven Development with TRAE SOLO</a>
-        </div>
-
-        <div class="sidebar-section collapsible" data-section="getting-started">
-            <div class="sidebar-section-title collapsible-header">
-                <span>🚀 Getting Started</span>
-                <span class="collapse-icon">▾</span>
-            </div>
-            <div class="sidebar-section-content">
-                <a href="introduction.html" class="sidebar-link">Introduction</a>
-                <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
-                <a href="get-started.html" class="sidebar-link sub-item">Get Started (Web & Desktop)</a>
-                <a href="desktop-client.html" class="sidebar-link sub-item">Desktop Client</a>
-                <a href="setup-account.html" class="sidebar-link sub-item">Setup Account</a>
-            </div>
-        </div>
-
-        <div class="sidebar-section collapsible" data-section="core-concepts">
-            <div class="sidebar-section-title collapsible-header">
-                <span>💡 Core Concepts</span>
-                <span class="collapse-icon">▾</span>
-            </div>
-            <div class="sidebar-section-content">
-                <a href="trae-solo-overview.html" class="sidebar-link">TRAE SOLO Overview</a>
-                <a href="dual-clients.html" class="sidebar-link">Web vs Desktop Clients</a>
-                <a href="dual-modes.html" class="sidebar-link">MTC vs Code Modes</a>
-                <a href="cloud-agent.html" class="sidebar-link">Cloud Agent</a>
-                <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
-                <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
-            </div>
-        </div>
-
-        <div class="sidebar-section collapsible" data-section="hands-on">
-            <div class="sidebar-section-title collapsible-header">
-                <span>🛠️ Hands-on Exercises</span>
-                <span class="collapse-icon">▾</span>
-            </div>
-            <div class="sidebar-section-content">
-                <a href="steering.html" class="sidebar-link">Steering - Teaching TRAE SOLO about your codebase</a>
-                <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
-                <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
-                <a href="cancel-button.html" class="sidebar-link sub-item">Add LLM Evaluation</a>
-                <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
-                <a href="practice-mode-feature.html" class="sidebar-link sub-item">Exercise: Add Practice Mode</a>
-                <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
-            </div>
-        </div>
-
-        <div class="sidebar-section collapsible" data-section="advanced">
-            <div class="sidebar-section-title collapsible-header">
-                <span>⚡ Advanced Topics</span>
-                <span class="collapse-icon">▾</span>
-            </div>
-            <div class="sidebar-section-content">
-                <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
-                <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
-                <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
-                <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
-                <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
-                <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
-                <a href="context-engineering.html" class="sidebar-link active">Going Further: Context Engineering</a>
-            </div>
-        </div>
-
-        <div class="sidebar-section collapsible" data-section="wrap-up">
-            <div class="sidebar-section-title collapsible-header">
-                <span>✅ Wrap Up</span>
-                <span class="collapse-icon">▾</span>
-            </div>
-            <div class="sidebar-section-content">
-                <a href="resource-cleanup.html" class="sidebar-link">Resource cleanup</a>
-                <a href="wrapping-up.html" class="sidebar-link">Wrapping up: Next steps and feedback</a>
-            </div>
-        </div>
-
-        <div class="sidebar-divider"></div>
-
-        <div class="sidebar-section collapsible toolkit-section" data-section="toolkit">
-            <div class="sidebar-section-title collapsible-header">
-                <span>🧰 Hackathon Toolkit</span>
-                <span class="collapse-icon">▾</span>
-            </div>
-            <div class="sidebar-section-content">
-                <a href="opencode-web-ui.html" class="sidebar-link">OpenCode Web UI</a>
-            </div>
-        </div>
-    </nav>
+    <nav class="sidebar"></nav>
 
     <div class="sidebar-backdrop"></div>
 
     <main class="main" id="main-content">
         <header class="page-header">
             <h1>Going Further: Context Engineering</h1>
-            <p>Advanced techniques for optimizing AI context and building custom capabilities</p>
+            <p>Advanced techniques for optimising AI context and building custom capabilities</p>
         </header>
 
         <article class="content">
             <h2>What is Context Engineering?</h2>
-            <p>Context engineering is the practice of designing and optimizing the information provided to AI systems to improve their output quality. In TRAE SOLO, this means carefully curating what the AI knows about your codebase, conventions, and requirements.</p>
+            <p>Context engineering is the practice of designing and optimising the information provided to AI systems to improve their output quality. In TRAE SOLO, this means carefully curating what the AI knows about your codebase, conventions, and requirements.</p>
 
             <div class="callout">
                 <div class="callout-header">
@@ -136,7 +38,7 @@
             <ul>
                 <li><strong>Relevance:</strong> Include only information that's directly relevant to the task</li>
                 <li><strong>Specificity:</strong> Be specific rather than vague in your guidance</li>
-                <li><strong>Structure:</strong> Organize context in a way that's easy for the AI to parse</li>
+                <li><strong>Structure:</strong> Organise context in a way that's easy for the AI to parse</li>
                 <li><strong>Recency:</strong> Keep context up-to-date with your current codebase state</li>
                 <li><strong>Progressive Disclosure:</strong> Provide context gradually as needed, not all at once</li>
             </ul>
@@ -180,7 +82,7 @@
                 <h4>Steps:</h4>
                 <ol>
                     <li><strong>Identify the Pattern:</strong> Find a pattern or practice that applies across multiple projects</li>
-                    <li><strong>Design the Skill:</strong> Define the skill's interface, inputs, outputs, and behavior</li>
+                    <li><strong>Design the Skill:</strong> Define the skill's interface, inputs, outputs, and behaviour</li>
                     <li><strong>Implement the Skill:</strong> Write the skill implementation using TRAE SOLO's skill framework</li>
                     <li><strong>Package the Skill:</strong> Package the skill for distribution and reuse</li>
                     <li><strong>Test Across Projects:</strong> Verify the skill works in different project contexts</li>
@@ -198,7 +100,7 @@
             <h2 id="exercise3">Exercise 3: Build a Custom Agent</h2>
             <div class="exercise-card">
                 <h3>Creating Specialized Agents</h3>
-                <p>Custom agents are specialized AI configurations designed for specific types of work. They combine context, tools, and behavior patterns into a reusable agent definition.</p>
+                <p>Custom agents are specialised AI configurations designed for specific types of work. They combine context, tools, and behaviour patterns into a reusable agent definition.</p>
 
                 <div class="objective">
                     <p><strong>Objective:</strong> Build a custom agent optimized for a specific type of development task.</p>
@@ -209,7 +111,7 @@
                     <li><strong>Define the Agent's Purpose:</strong> What specific type of work will this agent handle?</li>
                     <li><strong>Configure Context:</strong> Set up the context files and steering documents the agent needs</li>
                     <li><strong>Define Tools:</strong> Specify which tools the agent should have access to</li>
-                    <li><strong>Set Behavior Patterns:</strong> Define how the agent should approach problems and make decisions</li>
+                    <li><strong>Set Behaviour Patterns:</strong> Define how the agent should approach problems and make decisions</li>
                     <li><strong>Test and Iterate:</strong> Run the agent on sample tasks and refine its configuration</li>
                 </ol>
 
@@ -241,8 +143,8 @@
         </article>
 
         <div class="navigation-buttons">
-            <a href="sub-agents.html" class="btn btn-secondary">← Previous: Sub-Agents</a>
-            <a href="resource-cleanup.html" class="btn btn-primary">Next: Resource cleanup →</a>
+            <a href="sub-agents.html" class="btn btn-secondary">?revious: Sub-Agents</a>
+            <a href="resource-cleanup.html" class="btn btn-primary">Next: Resource cleanup </a>
         </div>
     </main>
 

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add LLM Evaluation - TRAE SOLO Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰ Menu</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>TRAE SOLO Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
+        </div>
+
+        <div class="sidebar-search">
+            <input type="text" class="sidebar-search-input" placeholder="Search pages..." aria-label="Search pages">
+            <button class="sidebar-search-clear" aria-label="Clear search" style="display: none;">×</button>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="training-reference">
+            <div class="sidebar-section-title collapsible-header">
+                <span>📚 AI Hackathon Training Reference</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="training-reference.html" class="sidebar-link">AI Hackathon Training Reference</a>
+                <a href="ai-coding-agents.html" class="sidebar-link sub-item">AI Coding Agents</a>
+                <a href="vibe-coding-reference.html" class="sidebar-link sub-item">Vibe Coding</a>
+                <a href="spec-driven-reference.html" class="sidebar-link sub-item">Spec-Driven Development</a>
+                <a href="trae-solo-reference.html" class="sidebar-link sub-item">TRAE SOLO</a>
+                <a href="skills.html" class="sidebar-link sub-item">Skills</a>
+                <a href="advanced-topics-reference.html" class="sidebar-link sub-item">Advanced Topics</a>
+                <a href="best-practices-reference.html" class="sidebar-link sub-item">Best Practices</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="home">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with TRAE SOLO</a>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="core-concepts">
+            <div class="sidebar-section-title collapsible-header">
+                <span>💡 Core Concepts</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="trae-solo-overview.html" class="sidebar-link">TRAE SOLO Overview</a>
+                <a href="multitasking.html" class="sidebar-link sub-item">Multitasking</a>
+                <a href="dual-modes.html" class="sidebar-link">MTC vs Code Modes</a>
+                <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="hands-on">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🛠️ Hands-on Exercises</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="steering.html" class="sidebar-link">Steering - Teaching TRAE SOLO about your codebase</a>
+                <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+                <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+                <a href="llm-eval-intro.html" class="sidebar-link active sub-item">Add LLM Evaluation</a>
+                <a href="cancel-button.html" class="sidebar-link sub-item">Cancel Button</a>
+                <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+                <a href="practice-mode-feature.html" class="sidebar-link sub-item">Exercise: Add Practice Mode</a>
+                <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="advanced">
+            <div class="sidebar-section-title collapsible-header">
+                <span>⚡ Advanced Topics</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+                <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+                <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+                <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+                <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+                <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+                <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="wrap-up">
+            <div class="sidebar-section-title collapsible-header">
+                <span>✅ Wrap Up</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="resource-cleanup.html" class="sidebar-link">Resource cleanup</a>
+                <a href="wrapping-up.html" class="sidebar-link">Wrapping up: Next steps and feedback</a>
+            </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section collapsible toolkit-section" data-section="toolkit">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🧰 Hackathon Toolkit</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="opencode-web-ui.html" class="sidebar-link">OpenCode Web UI</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Demonstration: Integrating a Local LLM</h1>
+            <p>Use Vibe mode to integrate a local LLM (Ollama) for paraphrase quality evaluation</p>
+        </header>
+
+        <article class="content">
+            <h2 id="demonstration-overview">Demonstration Overview</h2>
+            <p>In this exercise, you'll use TRAE SOLO's Vibe mode to add an LLM evaluation panel to the paraphrase results page. This exercise demonstrates how Vibe mode can quickly integrate external APIs and display the results in your UI.</p>
+
+            <h2>Why Vibe Mode?</h2>
+            <p>Adding LLM evaluation is a focused task that Vibe mode handles well:</p>
+            <ul>
+                <li>It involves a single API call to Ollama</li>
+                <li>The UI component is self-contained</li>
+                <li>Steering documents provide the React/TypeScript context</li>
+                <li>You can iterate quickly with follow-up prompts</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>A Note About Ollama</span>
+                </div>
+                <p>Ollama is already installed on the aiHackathon computers. It can understand both text and images you give it, and respond with text. Think of it as a local AI assistant that runs right on your machine, without needing an internet connection.</p>
+            </div>
+
+            <h2>Step 1: Open the Paraphrasing Mentor Project</h2>
+            <p>Open TRAE SOLO and import the existing <strong>Paraphrasing Mentor</strong> project from your Mac. Click <strong>Open Folder</strong> in the centre of the left panel, or click <strong>Select Project</strong> &gt; <strong>Open Folder</strong> in the upper-left corner of the interface, then navigate to the Paraphrasing Mentor folder.</p>
+
+            <div class="step-video">
+                <video autoplay muted loop playsinline class="step-video-player">
+                    <source src="img/vibecoding1.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <p>Once the project is open, ask the AI agent to help you run the app:</p>
+
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">▶</span>
+                    <span>Click to reveal the prompt</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <div class="code-block">
+                        <code>Help me run this app on localhost so I can see it in my browser.</code>
+                    </div>
+                </div>
+            </details>
+
+            <h2>Step 2: Write Your Prompt</h2>
+            <p>Tell the AI agent what you want in plain English. Be clear about using the local LLM running on your machine:</p>
+
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">▶</span>
+                    <span>Click to reveal the prompt</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <div class="code-block">
+                        <code>Use the local LLM in Ollama (qwen 3.5) to evaluate the paraphrasing attempts.</code>
+                    </div>
+                </div>
+            </details>
+
+            <h2>Step 3: Test the Feature</h2>
+            <p>Accept the changes and test them:</p>
+            <ol>
+                <li>Ensure Ollama is running (<span class="inline-code">ollama serve</span>)</li>
+                <li>Submit a text for paraphrasing</li>
+                <li>Verify the evaluation panel appears with a quality score</li>
+                <li>Check that colour coding matches the score</li>
+                <li>Stop Ollama and verify the error message displays correctly</li>
+            </ol>
+
+            <h2>Step 4: Iterate and Refine</h2>
+            <p>Use follow-up prompts to improve the feature:</p>
+
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">▶</span>
+                    <span>Click to reveal example prompts</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <div class="code-block">
+                        <code>"Add a loading spinner while waiting for the LLM response"</code>
+                    </div>
+                    <div class="code-block">
+                        <code>"Make the evaluation panel collapsible with a toggle button"</code>
+                    </div>
+                    <div class="code-block">
+                        <code>"Add a history of previous evaluations for this text"</code>
+                    </div>
+                </div>
+            </details>
+
+            <div class="callout">
+                <div class="callout-title">
+                    <span class="callout-bullet"></span>
+                    Key Takeaway
+                </div>
+                <p>Vibe mode lets you add AI features to your app by simply describing what you want in plain English. The AI writes the code, you test it in your browser, and refine it with follow-up requests — no coding required.</p>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="vibe-coding.html" class="btn btn-secondary">← Previous: Vibe Coding</a>
+                <a href="cancel-button.html" class="btn btn-primary">Next: Cancel Button →</a>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.querySelector('.sidebar');
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 900 && !sidebar.contains(e.target) && !e.target.classList.contains('mobile-menu-btn')) {
+                    sidebar.classList.remove('open');
+                }
+            });
+        });
+    </script>
+<script src="scripts.js"></script>
+</body>
+</html>

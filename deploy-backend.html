@@ -3,236 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>(Optional) Deploy Backend - TRAE SOLO Workshop</title>
+    <title>Deployment Guide - AI Hackathon</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="progress-bar"></div>
     <a href="#main-content" class="skip-nav">Skip to main content</a>
-    <button class="mobile-menu-btn">☰ Menu</button>
+    <button class="mobile-menu-btn">Menu</button>
 
-    <nav class="sidebar">
-        <div class="sidebar-header">
-            <h2>TRAE SOLO Workshop</h2>
-            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
-        </div>
-
-        <div class="sidebar-search">
-            <input type="text" class="sidebar-search-input" placeholder="Search pages..." aria-label="Search pages">
-            <button class="sidebar-search-clear" aria-label="Clear search" style="display: none;">×</button>
-        </div>
-
-        <div class="sidebar-section collapsible" data-section="home">
-            <a href="index.html" class="sidebar-link">AI-Driven Development with TRAE SOLO</a>
-        </div>
-
-        <div class="sidebar-section collapsible" data-section="getting-started">
-            <div class="sidebar-section-title collapsible-header">
-                <span>🚀 Getting Started</span>
-                <span class="collapse-icon">▾</span>
-            </div>
-            <div class="sidebar-section-content">
-                <a href="introduction.html" class="sidebar-link">Introduction</a>
-                <a href="start-workshop.html" class="sidebar-link">Start Workshop</a>
-                <a href="get-started.html" class="sidebar-link sub-item">Get Started (Web & Desktop)</a>
-                <a href="desktop-client.html" class="sidebar-link sub-item">Desktop Client</a>
-                <a href="setup-account.html" class="sidebar-link sub-item">Setup Account</a>
-            </div>
-        </div>
-
-        <div class="sidebar-section collapsible" data-section="core-concepts">
-            <div class="sidebar-section-title collapsible-header">
-                <span>💡 Core Concepts</span>
-                <span class="collapse-icon">▾</span>
-            </div>
-            <div class="sidebar-section-content">
-                <a href="trae-solo-overview.html" class="sidebar-link">TRAE SOLO Overview</a>
-                <a href="dual-clients.html" class="sidebar-link">Web vs Desktop Clients</a>
-                <a href="dual-modes.html" class="sidebar-link">MTC vs Code Modes</a>
-                <a href="cloud-agent.html" class="sidebar-link">Cloud Agent</a>
-                <a href="understanding-application.html" class="sidebar-link">Understanding the Application</a>
-                <a href="deploy-backend.html" class="sidebar-link active sub-item">(Optional) Deploy Backend</a>
-            </div>
-        </div>
-
-        <div class="sidebar-section collapsible" data-section="hands-on">
-            <div class="sidebar-section-title collapsible-header">
-                <span>🛠️ Hands-on Exercises</span>
-                <span class="collapse-icon">▾</span>
-            </div>
-            <div class="sidebar-section-content">
-                <a href="steering.html" class="sidebar-link">Steering - Teaching TRAE SOLO about your codebase</a>
-                <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
-                <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
-                <a href="cancel-button.html" class="sidebar-link sub-item">Add LLM Evaluation</a>
-                <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
-                <a href="practice-mode-feature.html" class="sidebar-link sub-item">Exercise: Add Practice Mode</a>
-                <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
-            </div>
-        </div>
-
-        <div class="sidebar-section collapsible" data-section="advanced">
-            <div class="sidebar-section-title collapsible-header">
-                <span>⚡ Advanced Topics</span>
-                <span class="collapse-icon">▾</span>
-            </div>
-            <div class="sidebar-section-content">
-                <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
-                <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
-                <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
-                <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
-                <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
-                <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
-                <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
-            </div>
-        </div>
-
-        <div class="sidebar-section collapsible" data-section="wrap-up">
-            <div class="sidebar-section-title collapsible-header">
-                <span>✅ Wrap Up</span>
-                <span class="collapse-icon">▾</span>
-            </div>
-            <div class="sidebar-section-content">
-                <a href="resource-cleanup.html" class="sidebar-link">Resource cleanup</a>
-                <a href="wrapping-up.html" class="sidebar-link">Wrapping up: Next steps and feedback</a>
-            </div>
-        </div>
-
-        <div class="sidebar-divider"></div>
-
-        <div class="sidebar-section collapsible toolkit-section" data-section="toolkit">
-            <div class="sidebar-section-title collapsible-header">
-                <span>🧰 Hackathon Toolkit</span>
-                <span class="collapse-icon">▾</span>
-            </div>
-            <div class="sidebar-section-content">
-                <a href="opencode-web-ui.html" class="sidebar-link">OpenCode Web UI</a>
-            </div>
-        </div>
-    </nav>
+    <nav class="sidebar"></nav>
 
     <div class="sidebar-backdrop"></div>
 
     <main class="main" id="main-content">
-        <header class="page-header">
-            <h1>(Optional) Deploy the Backend Yourself</h1>
-            <p>Manual deployment instructions for running the workshop in your own environment</p>
-        </header>
+
 
         <article class="content">
+            <h1>Deployment</h1>
+            <p class="page-question">Do you need to deploy your app? That depends on who needs to use it.</p>
             <div class="callout">
                 <div class="callout-header">
                     <div class="dot"></div>
-                    <span><strong>When do you need this?</strong> Follow these steps if you are running the workshop in your own environment, outside of a hosted event. If you're attending a hosted event, the backend is already deployed for you — skip this page and continue with the main setup instructions.</span>
+                    <span>The short answer</span>
                 </div>
+                <p>For a hackathon prototype or proof-of-concept, you probably <strong>don't need to deploy</strong>. Keep reading to understand when and why.</p>
             </div>
 
-            <h2>Overview</h2>
-            <p>To complete the workshop exercises, you need a running backend. The deployment script included in the project handles everything: installing dependencies, building serverless function packages, and deploying the full stack.</p>
+            <h2>Your Localhost is Enough (Usually)</h2>
+            <p>When you're building a prototype or proof-of-concept (POC) at an AI hackathon, running your app locally on your own machine is perfectly fine. Here's why:</p>
 
-            <p>This is a one-time setup step. The goal here is not to learn about deployment — it's to get the infrastructure in place so you can focus on building features with TRAE SOLO.</p>
-
-            <h2>Prerequisites</h2>
-            <p>Before running the deployment, make sure you have:</p>
             <ul class="checklist">
-                <li>Node.js 18+ installed</li>
-                <li>A package manager (npm, yarn, or pnpm)</li>
-                <li>A hosting environment for serverless functions (e.g., Vercel, Netlify, Railway, or your own server)</li>
-                <li>A database service (e.g., MongoDB, PostgreSQL, or MySQL)</li>
-                <li>An authentication provider (e.g., Auth0, Firebase Auth, or Cognito)</li>
-                <li>The <span class="inline-code">trae-solo-workshop</span> project open in TRAE SOLO</li>
+                <li><strong>It works immediately</strong> — No setup time, no waiting for deployment</li>
+                <li><strong>It's private</strong> — Your code and data stay on your machine</li>
+                <li><strong>It's fast</strong> — Direct access to your computer's resources</li>
+                <li><strong>It's free</strong> — No hosting costs or account setup needed</li>
             </ul>
 
-            <div class="callout">
-                <div class="callout-header">
-                    <div class="dot"></div>
-                    <span><strong>Environment requirements:</strong> You need a hosting environment that supports serverless functions or a Node.js runtime, a database, and an authentication service. The exact services don't matter — the key is having API endpoints, data storage, and user auth.</span>
-                </div>
-            </div>
+            <p>As long as you're coding, testing, and demoing from your own machine, <strong>localhost is all you need</strong>. Think of it like building something in your garage — you don't need to rent a workshop to tinker.</p>
 
-            <h2>Step 1: Configure Your Environment</h2>
-            <p>Set up the required environment variables for your backend deployment.</p>
+            <h2>When Should You Deploy?</h2>
+            <p>Deployment only becomes necessary when you need to <strong>share your app with others</strong>. Common scenarios:</p>
 
-            <h3>Create a .env file</h3>
-            <p>In the <span class="inline-code">backend/</span> directory, create a <span class="inline-code">.env</span> file with your configuration:</p>
-
-            <div class="code-block"><code>DATABASE_URL=your-database-connection-string
-AUTH_PROVIDER_URL=your-auth-provider-url
-AUTH_CLIENT_ID=your-auth-client-id
-API_BASE_URL=your-api-base-url</code></div>
-
-            <div class="callout">
-                <div class="callout-header">
-                    <div class="dot"></div>
-                    <span><strong>Configuration:</strong> Replace the placeholder values with your actual service credentials. The exact variable names may vary depending on your chosen services.</span>
-                </div>
-            </div>
-
-            <h2>Step 2: Install Dependencies and Deploy</h2>
-            <p>From the root of the <span class="inline-code">trae-solo-workshop</span> project, install dependencies and deploy:</p>
-
-            <h3>Install Dependencies</h3>
-            <div class="code-block"><code>cd backend
-npm install</code></div>
-
-            <h3>Deploy</h3>
-            <p>Use your hosting platform's deployment command. Common options:</p>
-
-            <div class="code-block"><code># Vercel
-vercel deploy --prod
-
-# Netlify
-netlify deploy --prod
-
-# Railway
-railway up
-
-# Docker (self-hosted)
-docker build -t workshop-backend .
-docker run -p 3000:3000 --env-file .env workshop-backend</code></div>
-
-            <div class="callout">
-                <div class="callout-header">
-                    <div class="dot"></div>
-                    <span><strong>Deployment time:</strong> This takes approximately 5–10 minutes depending on your hosting platform. Don't close the terminal or interrupt the process.</span>
-                </div>
-            </div>
-
-            <h2>Step 3: Save the Outputs</h2>
-            <p>When the deployment completes, note down your API endpoint and configuration values:</p>
-
-            <div class="code-block"><code>API_URL=https://your-app.your-hosting.com/api
-AUTH_USER_POOL_ID=your-user-pool-id
-AUTH_CLIENT_ID=your-client-id
-AUTH_IDENTITY_POOL_ID=your-identity-pool-id</code></div>
-
-            <p>Copy these four values — you'll need them to configure the frontend <span class="inline-code">.env</span> file in the next step of the main setup instructions.</p>
-
-            <h2>Troubleshooting</h2>
             <ul>
-                <li><strong>"Dependencies not found"</strong> — Make sure you ran <span class="inline-code">npm install</span> in the backend directory before deploying.</li>
-                <li><strong>"Environment variables missing"</strong> — Verify your <span class="inline-code">.env</span> file is properly configured and uploaded to your hosting platform.</li>
-                <li><strong>"Deployment failed"</strong> — Check your hosting platform's deployment logs for details. Common causes: missing environment variables, incorrect build commands, or resource limits.</li>
-                <li><strong>"API not responding"</strong> — Verify your API endpoint is correct and the server is running. Check the hosting platform's dashboard for status.</li>
+                <li>Your teammates need to access the app from their own computers</li>
+                <li>You want judges or mentors to try your app remotely</li>
+                <li>You're doing a live demo and need a shareable link</li>
+                <li>Someone outside your local network needs to use your app</li>
             </ul>
 
-            <div class="callout">
-                <div class="callout-header">
-                    <div class="dot"></div>
-                    <span>Once the deployment is complete, go back to the main <a href="understanding-application.html">Understanding the Application</a> page and continue from <strong>Part 2: Locate Your Backend Configuration</strong> — but instead of looking at the Event Dashboard, use the configuration values from your deployment.</span>
+            <p>Think of deployment like <strong>putting your app on the internet</strong> so anyone with the link can access it — not just people sitting at your computer.</p>
+
+            <h2>A Warning About Vercel</h2>
+            
+            <div class="callout" style="border-left-color: var(--error-color, #ef4444);">
+                <div class="callout-title">
+                    <span class="callout-bullet" style="background: var(--error-color, #ef4444);"></span>
+                    Important
                 </div>
+                <p>You may see Vercel recommended or built into your project setup, but <strong>Vercel is NOT ideal for this use case</strong>. The primary reason: Vercel suffered a significant <strong>security breach in March 2025</strong> that compromised build pipeline credentials and exposed user data. For a hackathon project where you may be using API keys or handling any form of data, this is a serious risk you should not ignore.</p>
+            </div>
+
+            <figure class="doc-image">
+                <img src="img/vercel.png" alt="Vercel Deploy button in the UI">
+                <figcaption>Above: the Vercel Deploy button — easy to click, but not the secure choice.</figcaption>
+            </figure>
+
+            <h2>Deploying with GitHub Codespaces</h2>
+            <p>If you've decided you need to deploy, GitHub Codespaces is the easiest path for hackathon projects. Here's how to do it in a few simple steps:</p>
+
+            <h3>Step 1: Push your code to GitHub</h3>
+            <p>You already have a GitHub account linked to the Google account on this computer — you're all set. No need to create a new account or sign up anywhere. Just use the GitHub account you already have when you signed in with Google earlier today.</p>
+
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">▶</span>
+                    <span>Click to reveal a prompt for your AI assistant</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <div class="code-block"><code>I need to deploy my project using GitHub Codespaces. I already have a GitHub account. Help me push my code to a new repo, create a codespace, and get a shareable public URL for my backend running on port 3000.</code></div>
+                </div>
+            </details>
+
+            <h3>Step 2: Create a Codespace</h3>
+            <p>Go to your repo on GitHub, click the <strong>"Code"</strong> button, then <strong>"Create codespace on main"</strong>.</p>
+
+            <h3>Step 3: Share your app</h3>
+            <p>Once the codespace loads:</p>
+            <ul>
+                <li>Open the <strong>"Ports"</strong> tab in the bottom panel</li>
+                <li>Find your running port (usually 3000)</li>
+                <li>Right-click and set it to <strong>Public</strong></li>
+                <li>Copy the forwarded URL — that's your shareable link!</li>
+            </ul>
+
+            <div class="callout" style="border-color: var(--blue-accent, #3b82f6);">
+                <div class="callout-header">
+                    <div class="dot" style="background-color: var(--blue-accent, #3b82f6);"></div>
+                    <span>Try this prompt with your AI assistant</span>
+                </div>
+                <div class="callout-content">
+                    <div class="code-block"><code>Help me deploy this project using GitHub Codespaces. I need a shareable public URL for my backend running on port 3000. Walk me through the steps to make my port public and get the shareable link.</code></div>
+                </div>
+            </div>
+
+            <div class="callout">
+                <div class="callout-title">
+                    <span class="callout-bullet"></span>
+                    Pro tip
+                </div>
+                <p>For hackathons, start with localhost. Only deploy if someone specifically needs remote access. GitHub Codespaces is usually the fastest path to a shareable link!</p>
             </div>
 
             <div class="navigation-buttons">
-                <a href="understanding-application.html" class="btn btn-secondary">← Previous: Understanding the Application</a>
-                <a href="steering.html" class="btn btn-primary">Next: Steering →</a>
+                <a href="tool-panel.html" class="btn btn-secondary">Previous: Tool Panel</a>
+                <a href="opencode.html" class="btn btn-primary">Next: OpenCode</a>
             </div>
         </article>
     </main>
 
     <script>
-        // Close sidebar when clicking outside on mobile
         document.addEventListener('click', function(e) {
             const sidebar = document.querySelector('.sidebar');
             const menuBtn = document.querySelector('.mobile-menu-btn');

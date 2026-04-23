@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Coding - TRAE SOLO Workshop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰</button>
+
+    <nav class="sidebar"></nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Vibe Coding</h1>
+            <p>The quick and easy</p>
+        </header>
+
+        <article class="content">
+            <h2>Overview</h2>
+            <div class="overview-grid">
+                <p>Vibe Coding is a conversational approach to building features quickly. Instead of writing detailed technical instructions, you simply describe what you want in everyday language. The AI agent reads your project files to understand the context, then turns your ideas into working code ??no coding expertise required.</p>
+                <div class="overview-image">
+                    <img src="img/Vibecoding.jpg" alt="Vibe Coding in action">
+                </div>
+            </div>
+
+            <h2>When to Use Vibe Mode</h2>
+            <p><strong>Vibe mode excels at:</strong></p>
+            <ul>
+                <li><strong>Quick UI additions</strong> - Adding buttons, forms, or visual elements</li>
+                <li><strong>Simple feature enhancements</strong> - Extending existing functionality</li>
+                <li><strong>Bug fixes</strong> - Addressing specific issues in isolated components</li>
+                <li><strong>Refactoring</strong> - Improving code structure in single files</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Key Principle</span>
+                </div>
+                <p>Vibe mode works best when you can describe the desired outcome in a single, focused prompt. If you find yourself writing multiple paragraphs of requirements, consider using Spec mode instead.</p>
+            </div>
+
+            <h2>How the AI Agent Understands Your Codebase</h2>
+            <p>Before you write a single prompt, the AI agent has already analysed your project:</p>
+            <ul>
+                <li><strong>Codebase scanning</strong> ??reads your file structure, dependencies, and architecture automatically</li>
+                <li><strong>Pattern recognition</strong> ??understands your tech stack, frameworks, and coding style from the actual code</li>
+                <li><strong>Documentation awareness</strong> ??picks up on README files, rules files like <span class="inline-code">AGENTS.md</span>, and any project docs</li>
+                <li><strong>Dynamic context building</strong> ??creates a mental model of your project as it explores</li>
+            </ul>
+
+            <p><strong>This means you don't need to explain:</strong></p>
+            <ul>
+                <li>"Use TypeScript"</li>
+                <li>"Follow React hooks patterns"</li>
+                <li>"Match the existing button styling"</li>
+                <li>"Put it in the right directory"</li>
+            </ul>
+
+            <p class="text-gold">The agent already knows. You just describe what you want, not how to build it.</p>
+
+            <h2>The Vibe Workflow</h2>
+            <div class="workflow-image-container">
+                <img src="img/vibeflow_dark.png" alt="Vibe Coding Workflow" class="workflow-image workflow-image-dark">
+                <img src="img/vibeflow_white.png" alt="Vibe Coding Workflow" class="workflow-image workflow-image-light">
+            </div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Pro Tip</span>
+                </div>
+                <p>Vibe mode is iterative. Your first prompt doesn't need to be perfect. Start with the core functionality, test it, then refine with follow-up prompts like "add colour coding to the scores" or "show improvement suggestions below the score."</p>
+            </div>
+
+            <h2>Example Prompts: Good vs. Poor</h2>
+            <p>Understanding what makes a good Vibe prompt helps you get better results faster. AI agents don't "see" your screen or read your mind ??they only know what you tell them. A clear, specific prompt gives the agent the context it needs to generate exactly what you want.</p>
+
+            <h3>Example 1: Adding LLM Integration</h3>
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">??/span>
+                    <span>Click to reveal prompts</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <div class="prompt-box bad">
+                        <p><strong>Poor prompt:</strong> "Add AI evaluation to the paraphrase page that looks nice"</p>
+                    </div>
+                    <div class="prompt-box good">
+                        <p><strong>Good prompt:</strong> "Add an evaluation panel next to the paraphrase output that calls the Ollama API at localhost:11434. Send the paraphrased text and display the quality score returned."</p>
+                    </div>
+                </div>
+            </details>
+
+            <h3>Example 2: UI Display Changes</h3>
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">??/span>
+                    <span>Click to reveal prompts</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <div class="prompt-box bad">
+                        <p><strong>Poor prompt:</strong> "Make the scores look better"</p>
+                    </div>
+                    <div class="prompt-box good">
+                        <p><strong>Good prompt:</strong> "Display the evaluation score with colour coding: green for scores above 7, yellow for 4-7, and red for below 4. Add a progress bar visual."</p>
+                    </div>
+                </div>
+            </details>
+
+            <h3>Example 3: Bug Fixes</h3>
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">??/span>
+                    <span>Click to reveal prompts</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <div class="prompt-box bad">
+                        <p><strong>Poor prompt:</strong> "Fix the evaluation"</p>
+                    </div>
+                    <div class="prompt-box good">
+                        <p><strong>Good prompt:</strong> "The evaluation panel shows an error when Ollama is not running. Add a friendly message explaining that Ollama needs to be started on localhost:11434."</p>
+                    </div>
+                </div>
+            </details>
+        </article>
+
+        <div class="navigation-buttons">
+            <a href="ai-coding-agents.html" class="btn btn-secondary">Previous: AI Coding Agents</a>
+            <a href="llm-eval-intro.html" class="btn btn-primary">Next: Add LLM Evaluation</a>
+        </div>
+    </main>
+<script src="scripts.js"></script>
+</body>
+</html>

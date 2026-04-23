@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo: Free Practice Feature</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰ Menu</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>TRAE SOLO Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
+        </div>
+
+        <div class="sidebar-search">
+            <input type="text" class="sidebar-search-input" placeholder="Search pages..." aria-label="Search pages">
+            <button class="sidebar-search-clear" aria-label="Clear search" style="display: none;">×</button>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="training-reference">
+            <div class="sidebar-section-title collapsible-header">
+                <span>📚 AI Hackathon Training Reference</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="training-reference.html" class="sidebar-link">AI Hackathon Training Reference</a>
+                <a href="ai-coding-agents.html" class="sidebar-link sub-item">AI Coding Agents</a>
+                <a href="vibe-coding-reference.html" class="sidebar-link sub-item">Vibe Coding</a>
+                <a href="spec-driven-reference.html" class="sidebar-link sub-item">Spec-Driven Development</a>
+                <a href="trae-solo-reference.html" class="sidebar-link sub-item">TRAE SOLO</a>
+                <a href="skills.html" class="sidebar-link sub-item">Skills</a>
+                <a href="advanced-topics-reference.html" class="sidebar-link sub-item">Advanced Topics</a>
+                <a href="best-practices-reference.html" class="sidebar-link sub-item">Best Practices</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="home">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with TRAE SOLO</a>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="core-concepts">
+            <div class="sidebar-section-title collapsible-header">
+                <span>💡 Core Concepts</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="trae-solo-overview.html" class="sidebar-link">TRAE SOLO Overview</a>
+                <a href="multitasking.html" class="sidebar-link sub-item">Multitasking</a>
+                <a href="dual-modes.html" class="sidebar-link">MTC vs Code Modes</a>
+                <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="hands-on">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🛠️ Hands-on Exercises</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="steering.html" class="sidebar-link">Steering - Teaching TRAE SOLO about your codebase</a>
+                <a href="generate-steering.html" class="sidebar-link sub-item">Generate Steering Documents</a>
+                <a href="vibe-coding.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+                <a href="llm-eval-intro.html" class="sidebar-link sub-item">Add LLM Evaluation</a>
+                <a href="cancel-button.html" class="sidebar-link sub-item">Cancel Button</a>
+                <a href="spec-driven.html" class="sidebar-link">Spec-Driven Development</a>
+                <a href="practice-mode-feature.html" class="sidebar-link sub-item">Exercise: Add Practice Mode</a>
+                <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="advanced">
+            <div class="sidebar-section-title collapsible-header">
+                <span>⚡ Advanced Topics</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="agent-hooks.html" class="sidebar-link">Agent Hooks</a>
+                <a href="hook-configuration.html" class="sidebar-link sub-item">Hook Configuration</a>
+                <a href="hook-examples.html" class="sidebar-link sub-item">Hook Examples</a>
+                <a href="mcp-integration.html" class="sidebar-link">MCP Integration</a>
+                <a href="advanced-steering.html" class="sidebar-link">Advanced Steering</a>
+                <a href="sub-agents.html" class="sidebar-link">Sub-Agents</a>
+                <a href="context-engineering.html" class="sidebar-link">Going Further: Context Engineering</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="wrap-up">
+            <div class="sidebar-section-title collapsible-header">
+                <span>✅ Wrap Up</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="resource-cleanup.html" class="sidebar-link">Resource cleanup</a>
+                <a href="wrapping-up.html" class="sidebar-link">Wrapping up: Next steps and feedback</a>
+            </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section collapsible toolkit-section" data-section="toolkit">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🧰 Hackathon Toolkit</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="opencode-web-ui.html" class="sidebar-link">OpenCode Web UI</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Demo: Free Practice Feature</h1>
+            <p>Build a self-practice tool where users can test their paraphrasing skills with AI feedback</p>
+        </header>
+
+        <article class="content">
+            <h2 id="demonstration-overview">Demonstration Overview</h2>
+            <p>In this demo, you'll use TRAE SOLO's Spec-Driven Development to add a free practice feature to the Paraphrasing Mentor app. This feature allows users to enter an original passage and their own paraphrase attempt, then receive AI-powered feedback on meaning preservation and originality.</p>
+
+            <h2>Why Spec-Driven Development?</h2>
+            <p>Spec-Driven Development (SDD) is ideal for complex tasks that require multiple modifications:</p>
+            <ul>
+                <li>Start with a specification that defines exactly what the feature should do</li>
+                <li>The AI agent generates code based on the spec, reducing ambiguity</li>
+                <li>Task breakdown ensures each modification is tracked and verified</li>
+                <li>AI will test by the checklist before marking items complete</li>
+            </ul>
+
+            <h2>Step 1: Start a New Task</h2>
+            <p>Start a new task by typing <span class="inline-code">/spec</span> in the chat. This activates the Spec-Driven Development workflow where the agent will help you define the feature specification before writing any code.</p>
+
+            <div class="step-video">
+                <video autoplay muted loop playsinline class="step-video-player">
+                    <source src="img/sdd_1.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="callout">
+                <div class="callout-title">
+                    <span class="callout-bullet"></span>
+                    Pro Tip: Ask for Clarification
+                </div>
+                <p>When writing your spec, include the phrase <strong>"ask me for clarification"</strong> in your prompt. This tells the agent to ask you questions about any ambiguous requirements before generating code, ensuring the implementation matches your exact needs.</p>
+            </div>
+
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">▶</span>
+                    <span>Click to reveal the prompt</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <div class="code-block">
+                        <code>Add a "Free Practice" feature where users can enter both an original passage and their own paraphrase attempt. Use the local LLM to evaluate the paraphrase on two criteria: meaning preservation and originality. Display scores with feedback. Ask me for clarification on any requirements before implementing.</code>
+                    </div>
+                </div>
+            </details>
+
+            <h2>Step 2: Review the Specification</h2>
+            <p>After you provide your requirements, the agent will generate three files for you to review:</p>
+
+            <div class="spec-files-grid">
+                <div class="spec-file-card">
+                    <h3>spec.md</h3>
+                    <p>The specification document defines what the feature should do, including requirements, user stories, and acceptance criteria.</p>
+                    <div class="step-image">
+                        <div class="workflow-image-zoomable" data-modal-image="img/spec.png" data-modal-alt="spec.md file showing the feature specification">
+                            <img src="img/spec.png" alt="spec.md file showing the feature specification">
+                            <span class="zoom-hint">Click to expand</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spec-file-card">
+                    <h3>task.md</h3>
+                    <p>The task breakdown lists all the individual steps needed to implement the feature, organized in a logical order.</p>
+                    <div class="step-image">
+                        <div class="workflow-image-zoomable" data-modal-image="img/tasks.png" data-modal-alt="task.md file showing the implementation tasks">
+                            <img src="img/tasks.png" alt="task.md file showing the implementation tasks">
+                            <span class="zoom-hint">Click to expand</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spec-file-card">
+                    <h3>checklist.md</h3>
+                    <p>The checklist provides verification criteria that the AI will use to test each task before marking it complete.</p>
+                    <div class="step-image">
+                        <div class="workflow-image-zoomable" data-modal-image="img/checklist.png" data-modal-alt="checklist.md file showing the verification checklist">
+                            <img src="img/checklist.png" alt="checklist.md file showing the verification checklist">
+                            <span class="zoom-hint">Click to expand</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>Review all three files carefully. If anything needs adjustment, ask the agent to revise before proceeding.</p>
+
+            <h2>Step 3: Test the Feature</h2>
+            <p>Once the agent completes the implementation, test the feature by entering an original passage and your paraphrase attempt, then clicking "Evaluate" to verify the feedback panel appears with both meaning preservation and originality scores.</p>
+
+            <div class="callout">
+                <div class="callout-title">
+                    <span class="callout-bullet"></span>
+                    Debugging Tip
+                </div>
+                <p>If something isn't working as expected, use <a href="vibe-coding.html">Vibe Coding</a> as a technique for quick debugging. Describe the issue in plain English and let the AI fix it — Vibe Coding is great for iterative troubleshooting and small fixes.</p>
+            </div>
+
+            <div class="callout">
+                <div class="callout-title">
+                    <span class="callout-bullet"></span>
+                    Key Takeaway
+                </div>
+                <p>The Free Practice feature shows how AI evaluation can be applied to user-generated content, not just system-generated output. This pattern — user input → AI evaluation → feedback — is widely applicable across educational tools, writing assistants, and quality control systems.</p>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="spec-driven-reference.html" class="btn btn-secondary">← Previous: SDD Basics</a>
+                <a href="skills.html" class="btn btn-primary">Next: Skills →</a>
+            </div>
+        </article>
+    </main>
+
+    <div class="image-modal" id="imageModal" onclick="closeImageModal()">
+        <span class="modal-close">&times;</span>
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img id="modalImage" src="" alt="" class="modal-image">
+        </div>
+    </div>
+
+    <script>
+        function openImageModal(src, alt) {
+            var modal = document.getElementById('imageModal');
+            var img = document.getElementById('modalImage');
+            img.src = src;
+            img.alt = alt || '';
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal() {
+            var modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var zoomables = document.querySelectorAll('.workflow-image-zoomable');
+            zoomables.forEach(function(el) {
+                el.addEventListener('click', function() {
+                    var src = this.getAttribute('data-modal-image');
+                    var alt = this.getAttribute('data-modal-alt');
+                    if (src) openImageModal(src, alt);
+                });
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    var modal = document.getElementById('imageModal');
+                    if (modal.classList.contains('active')) closeImageModal();
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.querySelector('.sidebar');
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 900 && !sidebar.contains(e.target) && !e.target.classList.contains('mobile-menu-btn')) {
+                    sidebar.classList.remove('open');
+                }
+            });
+        });
+    </script>
+<script src="scripts.js"></script>
+</body>
+</html>

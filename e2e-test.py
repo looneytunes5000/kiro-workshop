@@ -12,7 +12,7 @@ WORKSHOP_PAGES = [
     'desktop-client.html',
     'setup-account.html',
     'trae-solo-overview.html',
-    'dual-clients.html',
+    'multitasking.html',
     'dual-modes.html',
     'cloud-agent.html',
     'understanding-application.html',
@@ -43,9 +43,9 @@ NAVIGATION_CHAIN = [
     ('get-started.html', 'start-workshop.html', 'desktop-client.html'),
     ('desktop-client.html', 'get-started.html', 'setup-account.html'),
     ('setup-account.html', 'desktop-client.html', 'trae-solo-overview.html'),
-    ('trae-solo-overview.html', 'setup-account.html', 'dual-clients.html'),
-    ('dual-clients.html', 'trae-solo-overview.html', 'dual-modes.html'),
-    ('dual-modes.html', 'dual-clients.html', 'cloud-agent.html'),
+    ('trae-solo-overview.html', 'setup-account.html', 'multitasking.html'),
+    ('multitasking.html', 'trae-solo-overview.html', 'dual-modes.html'),
+    ('dual-modes.html', 'multitasking.html', 'cloud-agent.html'),
     ('cloud-agent.html', 'dual-modes.html', 'understanding-application.html'),
     ('understanding-application.html', 'cloud-agent.html', 'deploy-backend.html'),
     ('deploy-backend.html', 'understanding-application.html', 'steering.html'),
@@ -164,7 +164,7 @@ with sync_playwright() as p:
     print("\n📋 Test 8: New TRAE SOLO pages")
     new_pages = {
         'cloud-agent.html': 'cloud agent',
-        'dual-clients.html': 'web',
+        'multitasking.html': 'multitask',
         'dual-modes.html': 'MTC',
     }
     for pg, keyword in new_pages.items():

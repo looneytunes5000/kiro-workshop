@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multitasking - TRAE SOLO Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰ Menu</button>
+
+    <nav class="sidebar"></nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Multitasking</h1>
+            <p>Manage multiple tasks simultaneously within a single project</p>
+        </header>
+
+        <article class="content">
+            <h2 id="overview">Overview</h2>
+            <p>Multitasking breaks the limitations of traditional serial task execution, supporting the management of multiple tasks simultaneously within a single project, and enhancing overall development efficiency.</p>
+
+            <h2>Use Cases</h2>
+            
+            <h3>Simultaneously Conduct Chat and Development</h3>
+            <p>You can freely switch between different tasks. For example, you can focus on Supabase module development while asking additional questions (such as "Supabase configuration methods"). This approach prevents both your and AI's thinking flow from being confined to a single chat.</p>
+
+            <h3>Execute Multiple Development Tasks in Parallel</h3>
+            <p>You can create multiple independent tasks within the same project, each dedicated to the development of different functional modules (such as frontend and backend), enabling parallel advancement of multiple tasks.</p>
+
+            <h2>UI</h2>
+            <p>The task panel is located on the left side of the SOLO interface and displays all tasks in the current project as well as the status of each task.</p>
+
+            <div class="workflow-image-container">
+                <img src="img/multitasking.png" alt="Task panel interface showing multitasking view" class="workflow-image" style="max-width: 600px; margin: 0 auto; display: block;">
+            </div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Navigation</span>
+                </div>
+                <p>Use the task panel to quickly switch between active tasks, track progress, and manage your development workflow efficiently.</p>
+            </div>
+
+            <h2>Related Operations</h2>
+
+            <h3 id="create-tasks">Create New Tasks</h3>
+            <p>Create new tasks in the following ways:</p>
+            <ul class="checklist">
+                <li><strong>Task Panel Button</strong> - Click the New Task button at the top of the task panel</li>
+                <li><strong>Chat Panel Button</strong> - Click the New Task icon in the upper-right corner of the AI chat panel</li>
+            </ul>
+
+            <h3 id="manage-tasks">Rename or Delete Tasks</h3>
+            <p>Click the <span class="inline-code">···</span> button in the upper-right corner of the task card, select the desired option from the menu, and complete the required operation.</p>
+
+            <h3 id="toggle-panel">Hide or Show the Task Panel</h3>
+            <p>After entering SOLO mode, the task panel is displayed by default. You can hide the task panel by clicking the <strong>Hide Tasks</strong> icon in the upper right corner of the panel. After hiding, it can be reopened using the <strong>Show Tasks</strong> button.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Pro Tip</span>
+                </div>
+                <p>Use multitasking to keep your development context organized. Switch between feature work, bug fixes, and documentation without losing progress on any task.</p>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="trae-solo-overview.html" class="btn btn-secondary">← Previous: TRAE SOLO Overview</a>
+                <a href="dual-modes.html" class="btn btn-primary">Next: MTC vs Code Modes →</a>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        document.addEventListener('click', function(e) {
+            const sidebar = document.querySelector('.sidebar');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            if (window.innerWidth <= 900 && 
+                !sidebar.contains(e.target) && 
+                !menuBtn.contains(e.target) && 
+                sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
+<script src="scripts.js"></script>
+</body>
+</html>

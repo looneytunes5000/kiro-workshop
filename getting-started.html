@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started - TRAE SOLO Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
+
+    <nav class="sidebar"></nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Getting Started</h1>
+            <p>Start a new project in TRAE SOLO using spec-driven development</p>
+        </header>
+
+        <article class="content">
+            <h2>Overview</h2>
+            <p>This guide walks you through the fastest path from idea to running code in TRAE SOLO. The workflow is intentionally simple: open a folder, write a <code>/spec</code> prompt, review the output, and iterate.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Prerequisite</span>
+                </div>
+                <p>You should already have a project idea in mind. TRAE SOLO will ask clarifying questions if your description is vague, but a clear goal speeds things up.</p>
+            </div>
+
+            <h2>Step 1: Open a Folder</h2>
+            <p>Create a new project by opening a folder on your computer.</p>
+            <ol>
+                <li>Launch TRAE SOLO (web or desktop client).</li>
+                <li>Select <strong>Open Folder</strong> from the start screen.</li>
+                <li>Choose or create an empty directory for your project.</li>
+            </ol>
+
+            <div class="step-video" style="margin: 32px 0;">
+                <video autoplay muted loop playsinline class="step-video-player" style="width: 900px; max-width: 100%;">
+                    <source src="img/getting_started.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <h2>Step 2: Write Your First <code>/spec</code> Prompt</h2>
+            <p>With the folder open, start the chat and type your project idea as a <code>/spec</code> command. Include the clarifying phrase so TRAE SOLO confirms requirements before writing code.</p>
+
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">▶</span>
+                    <span>Click to reveal example prompt</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <div class="code-block">
+                        <code>/spec [describe your project idea], ask me for clarification on any requirements before implementing.</code>
+                    </div>
+
+                    <p>Example:</p>
+
+                    <div class="code-block">
+                        <code>/spec Build a personal task manager with categories, due dates, and priority levels. Ask me for clarification on any requirements before implementing.</code>
+                    </div>
+                </div>
+            </details>
+
+            <h2>Step 3: Review and Refine with Vibe Coding</h2>
+            <p>Once TRAE SOLO has clarified requirements, it generates code. Review the files, test the behavior, and give natural-language feedback to adjust or extend functionality.</p>
+            <ul>
+                <li>Read the generated files in the sidebar.</li>
+                <li>Run the app (TRAE SOLO usually provides the command).</li>
+                <li>Ask for changes in plain English: <em>"Make the button blue"</em> or <em>"Add a search bar."</em></li>
+            </ul>
+
+            <h2>Step 4: Iterate</h2>
+            <p>Repeat Step 3 until the project meets your needs. Common iteration patterns:</p>
+            <ul>
+                <li><strong>Feature additions:</strong> <em>"Add user authentication."</em></li>
+                <li><strong>UI polish:</strong> <em>"Use a card layout for the dashboard."</em></li>
+                <li><strong>Bug fixes:</strong> <em>"The form throws an error when I leave the date blank."</em></li>
+                <li><strong>Refactoring:</strong> <em>"Move the API calls into a separate service file."</em></li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Tips</span>
+                </div>
+                <ul>
+                    <li>Roll back to the previous version if the result is not satisfactory.</li>
+                    <li>Use <code>/spec</code> again for large pivots; use chat for small tweaks.</li>
+                    <li>Be mindful of the context usage and manage workflow with new tasks.</li>
+                </ul>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="skills-reference.html" class="btn btn-secondary">← Previous: Skills in Action</a>
+                <a href="index.html" class="btn btn-primary">Next: Workshop Overview →</a>
+            </div>
+        </article>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
