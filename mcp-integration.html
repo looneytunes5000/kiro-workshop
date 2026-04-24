@@ -20,6 +20,7 @@
         <header class="page-header">
             <h1>MCP Integration - Extending TRAE SOLO's capabilities</h1>
             <p>Connect TRAE SOLO to external tools, APIs, and services</p>
+            <p class="docs-link">For a comprehensive guide to MCP servers available in TRAE, see the <a href="https://docs.trae.ai/ide/01fzsij0?_lang=en" target="_blank" rel="noopener">official TRAE documentation on MCP servers</a>.</p>
         </header>
 
         <article class="content">
@@ -45,61 +46,54 @@
             </ul>
 
             <h2>Common MCP Integrations</h2>
+            <p>We've included several MCP servers in this workshop environment to help you get started:</p>
             <div class="integration-grid">
-                <div class="integration-card">
-                    <h4>Database Connectors</h4>
-                    <p>Connect to PostgreSQL, MySQL, MongoDB, and other databases to query and analyse data</p>
+                <div class="integration-card highlight">
+                    <span class="badge badge-included">Included</span>
+                    <h4>Context7</h4>
+                    <p>Access real-time official documentation and code samples for libraries and frameworks. Perfect for API development, configuration, and troubleshooting.</p>
                 </div>
-                <div class="integration-card">
-                    <h4>API Clients</h4>
-                    <p>Integrate with REST APIs, GraphQL endpoints, and third-party services</p>
+                <div class="integration-card highlight">
+                    <span class="badge badge-included">Included</span>
+                    <h4>Excel</h4>
+                    <p>Read and write data to Microsoft Excel files. Great for data analysis workflows and report generation.</p>
                 </div>
-                <div class="integration-card">
-                    <h4>Documentation Servers</h4>
-                    <p>Access real-time documentation for frameworks, libraries, and APIs</p>
-                </div>
-                <div class="integration-card">
-                    <h4>Version Control</h4>
-                    <p>Enhanced Git operations, PR management, and code review workflows</p>
-                </div>
-                <div class="integration-card">
-                    <h4>Testing Tools</h4>
-                    <p>Run tests, analyse coverage, and generate test reports</p>
-                </div>
-                <div class="integration-card">
-                    <h4>Custom Scripts</h4>
-                    <p>Execute custom scripts and tools specific to your workflow</p>
+                <div class="integration-card highlight">
+                    <span class="badge badge-included">Included</span>
+                    <h4>Playwright</h4>
+                    <p>Browser automation for web testing, content scraping, and UI interactions in a real browser environment.</p>
                 </div>
             </div>
+
+            <div class="callout tip">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Tip</span>
+                </div>
+                <p><strong>MCP is heavy on context window usage.</strong> Each MCP tool call adds data to your conversation context. Only enable MCP servers you actually need for your current task to avoid hitting context limits and unnecessary costs.</p>
+            </div>
+
+            <div class="callout warning">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>aiHackathon Warning</span>
+                </div>
+                <p><strong>MCP servers requiring premium subscriptions are not permitted in this event.</strong> Only free MCP servers included in this workshop may be used during the aiHackathon. Please check with the organizers if you have questions about specific MCP servers.</p>
+            </div>
+
+            <h2>Other MCP Servers</h2>
+            <p>Many additional MCP servers are available for specific use cases. These can be added as needed:</p>
 
             <h2>Setting Up MCP Servers</h2>
             <p>To configure MCP integration in TRAE SOLO:</p>
             <ol>
-                <li>Open TRAE SOLO's settings or configuration file</li>
+                <li>Open TRAE SOLO's MCP configuration panel in the settings UI</li>
                 <li>Navigate to the MCP servers section</li>
-                <li>Add the MCP server configuration (command, arguments, environment variables)</li>
+                <li>Add the MCP server configuration</li>
                 <li>Restart TRAE SOLO or reload the configuration</li>
                 <li>Verify the connection in the AI Chat panel</li>
             </ol>
 
-            <h2>MCP Configuration Example</h2>
-            <div class="code-block">
-                <code>{
-  "mcpServers": {
-    "database": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-postgres"],
-      "env": {
-        "DATABASE_URL": "postgresql://localhost:5432/mydb"
-      }
-    },
-    "docs": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-context7"]
-    }
-  }
-}</code>
-            </div>
 
             <h2>Using MCP Tools in TRAE SOLO</h2>
             <p>Once configured, you can use MCP tools through the AI Chat:</p>
@@ -118,23 +112,10 @@
                 <p>Be cautious when configuring MCP servers with access to sensitive data or production systems. Use appropriate access controls and environment variables for credentials.</p>
             </div>
 
-            <h2>Building Custom MCP Servers</h2>
-            <p>You can create your own MCP servers to integrate custom tools:</p>
-            <ol>
-                <li>Create a new project using the MCP SDK</li>
-                <li>Define the tools, resources, and prompts your server provides</li>
-                <li>Implement the tool handlers and resource providers</li>
-                <li>Test your server locally</li>
-                <li>Configure TRAE SOLO to connect to your custom server</li>
-            </ol>
-
             <h2>Best Practices</h2>
             <ul>
                 <li><strong>Start Simple:</strong> Begin with one or two MCP servers and expand gradually</li>
-                <li><strong>Use Environment Variables:</strong> Store sensitive configuration in environment variables</li>
                 <li><strong>Monitor Performance:</strong> Watch for slow MCP servers that impact TRAE SOLO's responsiveness</li>
-                <li><strong>Version Control:</strong> Keep MCP configurations in version control for team consistency</li>
-                <li><strong>Document Setup:</strong> Document MCP server setup for team members</li>
             </ul>
 
             <div class="callout">
@@ -142,13 +123,13 @@
                     <div class="dot"></div>
                     <span>Next Steps</span>
                 </div>
-                <p>Continue to "Advanced Steering" to learn about domain-specific guidance and custom steering patterns.</p>
+                <p>Continue to "Deployment" to learn about deploying your backend with TRAE SOLO.</p>
             </div>
         </article>
 
         <div class="navigation-buttons">
-            <a href="hook-examples.html" class="btn btn-secondary">?revious: Hook Examples</a>
-            <a href="advanced-steering.html" class="btn btn-primary">Next: Advanced Steering </a>
+            <a href="tool-panel.html" class="btn btn-secondary">← Previous: Tool Panel</a>
+            <a href="deploy-backend.html" class="btn btn-primary">Next: Deployment →</a>
         </div>
     </main>
 

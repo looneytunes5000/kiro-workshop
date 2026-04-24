@@ -14,8 +14,6 @@ WORKSHOP_PAGES = [
     'trae-solo-overview.html',
     'multitasking.html',
     'dual-modes.html',
-    'cloud-agent.html',
-    'understanding-application.html',
     'deploy-backend.html',
     'steering.html',
     'generate-steering.html',
@@ -45,10 +43,8 @@ NAVIGATION_CHAIN = [
     ('setup-account.html', 'desktop-client.html', 'trae-solo-overview.html'),
     ('trae-solo-overview.html', 'setup-account.html', 'multitasking.html'),
     ('multitasking.html', 'trae-solo-overview.html', 'dual-modes.html'),
-    ('dual-modes.html', 'multitasking.html', 'cloud-agent.html'),
-    ('cloud-agent.html', 'dual-modes.html', 'understanding-application.html'),
-    ('understanding-application.html', 'cloud-agent.html', 'deploy-backend.html'),
-    ('deploy-backend.html', 'understanding-application.html', 'steering.html'),
+    ('dual-modes.html', 'trae-solo-overview.html', 'deploy-backend.html'),
+    ('deploy-backend.html', 'dual-modes.html', 'steering.html'),
     ('steering.html', 'deploy-backend.html', 'generate-steering.html'),
     ('generate-steering.html', 'steering.html', 'vibe-coding.html'),
     ('vibe-coding.html', 'generate-steering.html', 'cancel-button.html'),
@@ -158,12 +154,10 @@ with sync_playwright() as p:
     body = page.evaluate('() => document.body.innerText')
     check('dual clients' in body.lower() or 'web' in body.lower(), "Homepage mentions dual clients")
     check('MTC' in body or 'Code' in body, "Homepage mentions dual modes")
-    check('Cloud Agent' in body or 'cloud agent' in body, "Homepage mentions cloud agent")
     
     # Test 8: New pages exist and have content
     print("\n📋 Test 8: New TRAE SOLO pages")
     new_pages = {
-        'cloud-agent.html': 'cloud agent',
         'multitasking.html': 'multitask',
         'dual-modes.html': 'MTC',
     }

@@ -1,0 +1,18 @@
+- [x] "Hands-on Exercises" section no longer appears in sidebar navigation on any page
+- [x] Sidebar displays correct section order: Training Session, Agents Toolkits, Advanced Topics, Wrap Up
+- [x] steering.html file has been deleted
+- [x] generate-steering.html file has been deleted
+- [-] vibe-coding.html file has been deleted — KEPT per user request
+- [x] cancel-button.html file has been deleted
+- [x] spec-driven.html file has been deleted
+- [x] practice-mode-feature.html file has been deleted
+- [-] No errors in browser console after deletion — requires manual verification via browser
+- [x] Breadcrumb navigation works correctly on pages adjacent to the removed section
+- [x] All prev/next navigation buttons on remaining pages link to valid, existing pages
+- [x] Hardcoded sidebars in free-practice-feature.html and llm-eval-intro.html cleaned up
+- [x] Test file all-pages.spec.js updated to remove deleted pages
+- [x] Broken links in deployment-troubleshooting.html fixed (plain text references)
+- [x] Broken nav button in commenting-feature.html fixed
+- [x] Broken nav button in skills-reference.html fixed
+- [x] Broken nav button in vibe-coding.html fixed
+- [x] Stale breadcrumb entries in scripts.js cleaned up

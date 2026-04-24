@@ -601,6 +601,20 @@ body {
     font-weight: 500;
 }
 
+.content a {
+    color: #60a5fa;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+[data-theme="light"] .content a {
+    color: #2563eb;
+}
+
+.content a:hover {
+    opacity: 0.85;
+}
+
 .content h2 {
     color: var(--text-primary);
 }
@@ -620,8 +634,16 @@ body {
 }
 
 .workflow-image-container {
-    margin: 24px 0;
+    margin: 24px auto;
     text-align: center;
+    max-width: 720px;
+}
+
+.workflow-image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .workflow-image {
@@ -1159,6 +1181,99 @@ body {
     color: #dc2626;
 }
 
+.callout.tip {
+    border-left-color: var(--code-green);
+}
+
+.callout.tip .callout-header .dot,
+.callout.tip .callout-bullet {
+    background: var(--code-green);
+}
+
+.callout.tip .callout-header span,
+.callout.tip .callout-title {
+    color: var(--code-green);
+}
+
+.callout.warning {
+    border-left-color: var(--gold-primary);
+}
+
+.callout.warning .callout-header .dot,
+.callout.warning .callout-bullet {
+    background: var(--gold-primary);
+}
+
+.callout.warning .callout-header span,
+.callout.warning .callout-title {
+    color: var(--gold-primary);
+}
+
+.integration-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 28px 0;
+}
+
+.integration-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+}
+
+.integration-card h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 10px 0;
+}
+
+.integration-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.integration-card.highlight {
+    background: rgba(232, 197, 71, 0.06);
+    border-color: rgba(232, 197, 71, 0.25);
+}
+
+.integration-card.highlight h4 {
+    color: var(--gold-primary);
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+}
+
+.badge-included {
+    background: var(--code-green);
+    color: var(--bg-primary);
+}
+
+.docs-link {
+    margin-top: 8px;
+    font-size: 0.9rem;
+}
+
+.docs-link a {
+    color: #60a5fa;
+    text-decoration: underline;
+}
+
 .doc-image {
     margin: 32px 0;
     max-width: 100%;
@@ -1631,6 +1746,63 @@ body {
 .prompt-accordion-content {
     padding: 16px 20px;
     border-top: 1px solid var(--blue-accent);
+}
+
+.opencode-command-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    border: 1px solid var(--blue-accent);
+    display: block;
+    margin: 16px auto;
+}
+
+.tool-comparison {
+    display: flex;
+    gap: 24px;
+    margin: 24px 0;
+}
+
+.tool-comparison > div {
+    flex: 1;
+    background: var(--surface-elevated);
+    border: 1px solid var(--blue-accent);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.tool-comparison h3 {
+    margin: 0 0 16px;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.tool-comparison .checklist {
+    margin-top: 0;
+}
+
+.tool-comparison .checklist li {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    padding-left: 20px;
+    position: relative;
+    list-style: none;
+    margin-bottom: 8px;
+}
+
+.tool-comparison .checklist li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--gold-primary);
+}
+
+@media (max-width: 768px) {
+    .tool-comparison {
+        flex-direction: column;
+    }
 }
 
 .prompt-accordion-content .prompt-box:last-child {

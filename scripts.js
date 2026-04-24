@@ -172,51 +172,11 @@ function generateSidebar() {
                         { file: 'trae-solo-overview.html', label: 'Overview' },
                         { file: 'multitasking.html', label: 'Multitasking' },
                         { file: 'tool-panel.html', label: 'Tool Panel' },
-                        { file: 'cloud-agent.html', label: 'Cloud Agent' },
-                        { file: 'understanding-application.html', label: 'Understanding Application' },
-                        { file: 'deploy-backend.html', label: 'Deployment' }
+                        { file: 'mcp-integration.html', label: 'MCP Integration' },
+                        { file: 'deploy-backend.html', label: 'Deployment' },
+                        { file: 'deployment-troubleshooting.html', label: 'Deployment Troubleshooting' }
                     ]
-                }
-            ]
-        },
-        {
-            id: 'hands-on-exercises',
-            title: 'Hands-on Exercises',
-            pages: [
-                { file: 'steering.html', label: 'Steering' },
-                { file: 'generate-steering.html', label: 'Generate Steering' },
-                { file: 'vibe-coding.html', label: 'Vibe Coding' },
-                { file: 'cancel-button.html', label: 'Cancel Button' },
-                { file: 'spec-driven.html', label: 'Spec-Driven' },
-                { file: 'practice-mode-feature.html', label: 'Practice Mode Feature' },
-                { file: 'deployment-troubleshooting.html', label: 'Deployment Troubleshooting' }
-            ]
-        },
-        {
-            id: 'advanced-topics',
-            title: 'Advanced Topics',
-            pages: [
-                { file: 'agent-hooks.html', label: 'Agent Hooks' },
-                { file: 'hook-configuration.html', label: 'Hook Configuration' },
-                { file: 'hook-examples.html', label: 'Hook Examples' },
-                { file: 'mcp-integration.html', label: 'MCP Integration' },
-                { file: 'advanced-steering.html', label: 'Advanced Steering' },
-                { file: 'sub-agents.html', label: 'Sub-Agents' },
-                { file: 'context-engineering.html', label: 'Context Engineering' }
-            ]
-        },
-        {
-            id: 'wrap-up',
-            title: 'Wrap Up',
-            pages: [
-                { file: 'resource-cleanup.html', label: 'Resource Cleanup' },
-                { file: 'wrapping-up.html', label: 'Wrapping Up' }
-            ]
-        },
-        {
-            id: 'toolkit',
-            title: 'Hackathon Toolkit',
-            pages: [
+                },
                 {
                     title: 'OpenCode',
                     subpages: [
@@ -225,12 +185,45 @@ function generateSidebar() {
                     ]
                 }
             ]
+        },
+        {
+            id: 'survival-kit',
+            title: 'Survival Kit',
+            pages: [
+                {
+                    title: 'Microsoft Copilot Studio',
+                    subpages: [
+                        { file: 'microsoft-copilot-studio.html', label: 'Overview' },
+                        { file: 'copilot-studio-reference.html', label: 'E-Tutorials' }
+                    ]
+                },
+                {
+                    title: 'GenAI Portal',
+                    subpages: [
+                        { file: 'genai-portal.html', label: 'Overview' },
+                        { file: 'genai-portal-reference.html', label: 'Reference' }
+                    ]
+                }
+            ]
+        },
+        {
+            id: 'wrap-up',
+            title: 'Wrap Up',
+            pages: [
+                { file: 'wrapping-up.html', label: 'Wrapping Up' }
+            ]
         }
     ];
 
     sections.forEach(function(section) {
         var isActiveSection = section.pages.some(function(page) {
-            return page.file === currentPage;
+            if (page.file === currentPage) return true;
+            if (page.subpages && page.subpages.length > 0) {
+                return page.subpages.some(function(sub) {
+                    return sub.file === currentPage;
+                });
+            }
+            return false;
         });
 
         sidebarHTML += `
@@ -447,6 +440,7 @@ function initCollapsibleSections() {
     document.querySelectorAll('.collapsible-header').forEach(function(header) {
         var section = header.closest('.collapsible');
         var sectionId = section.getAttribute('data-section');
+        var hasActiveLink = section.querySelector('.sidebar-link.active') !== null;
 
         if (savedState[sectionId] === true) {
             section.classList.add('collapsed');
@@ -615,29 +609,19 @@ function getSectionName(page) {
         'trae-solo-overview.html': { label: 'Core Concepts', link: 'index.html' },
         'multitasking.html': { label: 'Core Concepts', link: 'index.html' },
         'dual-modes.html': { label: 'Core Concepts', link: 'index.html' },
-        'cloud-agent.html': { label: 'Core Concepts', link: 'index.html' },
-        'cloud-agent.html': { label: 'Core Concepts', link: 'index.html' },
-        'understanding-application.html': { label: 'Core Concepts', link: 'index.html' },
+        'tool-panel.html': { label: 'Core Concepts', link: 'index.html' },
         'deploy-backend.html': { label: 'Core Concepts', link: 'index.html' },
-        'steering.html': { label: 'Hands-on Exercises', link: 'index.html' },
-        'generate-steering.html': { label: 'Hands-on Exercises', link: 'index.html' },
-        'vibe-coding.html': { label: 'Hands-on Exercises', link: 'index.html' },
+        'vibe-coding.html': { label: 'Hands-on Exercises', link: 'vibe-coding-reference.html' },
         'llm-eval-intro.html': { label: 'Vibe Coding', link: 'vibe-coding.html' },
-        'cancel-button.html': { label: 'Hands-on Exercises', link: 'index.html' },
-        'spec-driven.html': { label: 'Hands-on Exercises', link: 'index.html' },
-        'practice-mode-feature.html': { label: 'Hands-on Exercises', link: 'index.html' },
-        'deployment-troubleshooting.html': { label: 'Hands-on Exercises', link: 'index.html' },
-        'agent-hooks.html': { label: 'Advanced Topics', link: 'index.html' },
-        'hook-configuration.html': { label: 'Advanced Topics', link: 'index.html' },
-        'hook-examples.html': { label: 'Advanced Topics', link: 'index.html' },
-        'mcp-integration.html': { label: 'Advanced Topics', link: 'index.html' },
-        'advanced-steering.html': { label: 'Advanced Topics', link: 'index.html' },
-        'sub-agents.html': { label: 'Advanced Topics', link: 'index.html' },
-        'context-engineering.html': { label: 'Advanced Topics', link: 'index.html' },
-        'resource-cleanup.html': { label: 'Wrap Up', link: 'index.html' },
-        'wrapping-up.html': { label: 'Wrap Up', link: 'index.html' },
-        'opencode.html': { label: 'Hackathon Toolkit', link: 'index.html' },
-        'opencode-web-ui.html': { label: 'Hackathon Toolkit', link: 'index.html' }
+        'deployment-troubleshooting.html': { label: 'Agents Toolkits', link: 'index.html' },
+        'mcp-integration.html': { label: 'Agents Toolkits', link: 'index.html' },
+        'opencode.html': { label: 'Agents Toolkits', link: 'index.html' },
+        'opencode-web-ui.html': { label: 'Agents Toolkits', link: 'index.html' },
+        'microsoft-copilot-studio.html': { label: 'Survival Kit', link: 'index.html' },
+        'copilot-studio-reference.html': { label: 'Survival Kit', link: 'index.html' },
+        'genai-portal.html': { label: 'Survival Kit', link: 'index.html' },
+        'genai-portal-reference.html': { label: 'Survival Kit', link: 'index.html' },
+        'wrapping-up.html': { label: 'Wrap Up', link: 'index.html' }
     };
 
     return sectionMap[page] || null;
@@ -669,27 +653,17 @@ function getSectionChain(page) {
         'trae-solo-overview.html': { label: 'Core Concepts', link: 'index.html' },
         'multitasking.html': { label: 'Core Concepts', link: 'index.html' },
         'dual-modes.html': { label: 'Core Concepts', link: 'index.html' },
-        'cloud-agent.html': { label: 'Core Concepts', link: 'index.html' },
-        'understanding-application.html': { label: 'Core Concepts', link: 'index.html' },
+        'tool-panel.html': { label: 'Core Concepts', link: 'index.html' },
         'deploy-backend.html': { label: 'Core Concepts', link: 'index.html' },
-        'steering.html': { label: 'Hands-on Exercises', link: 'index.html' },
-        'generate-steering.html': { label: 'Hands-on Exercises', link: 'index.html' },
-        'vibe-coding.html': { label: 'Hands-on Exercises', link: 'index.html' },
-        'cancel-button.html': { label: 'Hands-on Exercises', link: 'index.html' },
-        'spec-driven.html': { label: 'Hands-on Exercises', link: 'index.html' },
-        'practice-mode-feature.html': { label: 'Hands-on Exercises', link: 'index.html' },
-        'deployment-troubleshooting.html': { label: 'Hands-on Exercises', link: 'index.html' },
-        'agent-hooks.html': { label: 'Advanced Topics', link: 'index.html' },
-        'hook-configuration.html': { label: 'Advanced Topics', link: 'index.html' },
-        'hook-examples.html': { label: 'Advanced Topics', link: 'index.html' },
-        'mcp-integration.html': { label: 'Advanced Topics', link: 'index.html' },
-        'advanced-steering.html': { label: 'Advanced Topics', link: 'index.html' },
-        'sub-agents.html': { label: 'Advanced Topics', link: 'index.html' },
-        'context-engineering.html': { label: 'Advanced Topics', link: 'index.html' },
-        'resource-cleanup.html': { label: 'Wrap Up', link: 'index.html' },
-        'wrapping-up.html': { label: 'Wrap Up', link: 'index.html' },
-        'opencode.html': { label: 'Hackathon Toolkit', link: 'index.html' },
-        'opencode-web-ui.html': { label: 'Hackathon Toolkit', link: 'index.html' }
+        'deployment-troubleshooting.html': { label: 'Agents Toolkits', link: 'index.html' },
+        'mcp-integration.html': { label: 'Agents Toolkits', link: 'index.html' },
+        'opencode.html': { label: 'Agents Toolkits', link: 'index.html' },
+        'opencode-web-ui.html': { label: 'Agents Toolkits', link: 'index.html' },
+        'microsoft-copilot-studio.html': { label: 'Survival Kit', link: 'index.html' },
+        'copilot-studio-reference.html': { label: 'Survival Kit', link: 'index.html' },
+        'genai-portal.html': { label: 'Survival Kit', link: 'index.html' },
+        'genai-portal-reference.html': { label: 'Survival Kit', link: 'index.html' },
+        'wrapping-up.html': { label: 'Wrap Up', link: 'index.html' }
     };
 
     var current = sectionMap[page];

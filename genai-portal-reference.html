@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAI Portal Reference - TRAE Workshop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰</button>
+
+    <nav class="sidebar"></nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>GenAI Portal Reference</h1>
+            <p>Quick reference guide for the GenAI Portal</p>
+        </header>
+
+        <article class="content">
+            <h2 id="accessing-the-portal">Accessing the Portal</h2>
+            <ol>
+                <li>Navigate to the GenAI Portal URL provided to contestants</li>
+                <li>Sign in with your hackathon account credentials</li>
+                <li>Dashboard shows available model categories: LLM, Image, and Video</li>
+                <li>Click on a category to access the model interface</li>
+            </ol>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Tip</span>
+                </div>
+                <p>Bookmark the portal URL for quick access during the hackathon. Session timeouts may occur, so keep your login details handy.</p>
+            </div>
+
+            <h2 id="llm-usage">LLM Usage Quick Guide</h2>
+
+            <h3>Prompt Best Practices</h3>
+            <ul>
+                <li><strong>Be specific:</strong> Include details about format, tone, length, and audience</li>
+                <li><strong>Provide context:</strong> Share background information so the model generates relevant output</li>
+                <li><strong>Use examples:</strong> Show a sample of the output style you want</li>
+                <li><strong>Iterate:</strong> Refine prompts based on results — small changes often produce better output</li>
+            </ul>
+
+            <div class="code-block">
+                <code>Good prompt:<br>"Write a 3-paragraph product description for a task management app.
+                Target audience: startup founders. Tone: professional but friendly.
+                Include key features: drag-and-drop boards, team chat, deadline reminders."</code>
+            </div>
+
+            <h3>Common Use Cases</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Use Case</th>
+                        <th>Prompt Tip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Documentation</td>
+                        <td>Paste code snippets and ask for comments/explanations</td>
+                    </tr>
+                    <tr>
+                        <td>Test Data</td>
+                        <td>Request JSON/CSV with specific fields and sample values</td>
+                    </tr>
+                    <tr>
+                        <td>API Schemas</td>
+                        <td>Describe your data model and ask for OpenAPI/Swagger format</td>
+                    </tr>
+                    <tr>
+                        <td>Summarization</td>
+                        <td>Paste long text and ask for key points in bullet format</td>
+                    </tr>
+                    <tr>
+                        <td>Translation</td>
+                        <td>Specify source and target languages clearly</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 id="image-generation">Image Generation Guide</h2>
+
+            <h3>Prompt Format</h3>
+            <p>Structure your image prompts with these elements:</p>
+            <ul>
+                <li><strong>Subject:</strong> What the image should depict</li>
+                <li><strong>Style:</strong> Photorealistic, illustration, 3D render, watercolour, etc.</li>
+                <li><strong>Composition:</strong> Close-up, wide shot, portrait, landscape</li>
+                <li><strong>Lighting:</strong> Natural light, studio lighting, dramatic shadows</li>
+                <li><strong>Color palette:</strong> Warm tones, monochrome, pastel, vibrant</li>
+            </ul>
+
+            <div class="code-block">
+                <code>Example:<br>"A modern mobile app dashboard for task management, flat illustration style,
+                clean white background with blue and green accents, showing boards,
+                team avatars, and progress bars — minimalist design, professional look"</code>
+            </div>
+
+            <h3>Resolution Settings</h3>
+            <ul>
+                <li><strong>Standard:</strong> 512x512 — fastest generation, good for previews</li>
+                <li><strong>High:</strong> 1024x1024 — recommended for project assets</li>
+                <li><strong>Ultra:</strong> 2048x2048 — best quality, longer generation time</li>
+            </ul>
+
+            <h2 id="video-generation">Video Generation Guide</h2>
+
+            <h3>Input Options</h3>
+            <ul>
+                <li><strong>Text Prompt:</strong> Describe the scene, setting, and motion you want</li>
+                <li><strong>Image Input:</strong> Upload a still image to animate or extend</li>
+                <li><strong>Script + Avatar:</strong> Provide text and select a talking-head avatar</li>
+            </ul>
+
+            <h3>Limits and Formats</h3>
+            <ul>
+                <li><strong>Duration:</strong> Maximum 15 seconds per generation</li>
+                <li><strong>Resolution:</strong> Up to 1080p (1920x1080)</li>
+                <li><strong>Output formats:</strong> MP4 (H.264) supported by most platforms</li>
+                <li><strong>Generation time:</strong> 2-5 minutes depending on length and quality</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span class="callout-emphasis">Important</span>
+                </div>
+                <p>Video generation consumes more compute resources. Generate early in the hackathon to avoid queues during final presentation prep.</p>
+            </div>
+
+            <h2 id="troubleshooting">Troubleshooting Tips</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Issue</th>
+                        <th>Solution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Generation is too slow</td>
+                        <td>Try a lower resolution or simpler prompt</td>
+                    </tr>
+                    <tr>
+                        <td>Output quality is poor</td>
+                        <td>Add more detail to your prompt; specify style and composition</td>
+                    </tr>
+                    <tr>
+                        <td>Session expired</td>
+                        <td>Refresh the page and log in again; your work is not saved automatically</td>
+                    </tr>
+                    <tr>
+                        <td>Image looks generic</td>
+                        <td>Specify unique stylistic elements, lighting, or perspective</td>
+                    </tr>
+                    <tr>
+                        <td>Video has artifacts</td>
+                        <td>Reduce complexity; avoid fast or extreme motion in prompts</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout" style="margin-top: 24px;">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Quick Reminder</span>
+                </div>
+                <p>Save or download all generated content immediately. The portal may not retain your outputs between sessions.</p>
+            </div>
+        </article>
+
+        <div class="navigation-buttons">
+            <a href="genai-portal.html" class="btn btn-secondary">Previous: GenAI Portal Overview</a>
+            <a href="microsoft-copilot-studio.html" class="btn btn-primary">Next: Copilot Studio Overview</a>
+        </div>
+    </main>
+<script src="scripts.js"></script>
+</body>
+</html>

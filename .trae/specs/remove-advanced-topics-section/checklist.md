@@ -1,0 +1,13 @@
+- [ ] "Advanced Topics" section no longer appears in sidebar navigation on any page
+- [ ] Sidebar displays correct section order: Training Session, Agents Toolkits, Hands-on Exercises, Wrap Up
+- [ ] agent-hooks.html file has been deleted
+- [ ] hook-configuration.html file has been deleted
+- [ ] hook-examples.html file has been deleted
+- [ ] advanced-steering.html file has been deleted
+- [ ] sub-agents.html file has been deleted
+- [ ] context-engineering.html file has been deleted
+- [ ] No broken links to deleted pages in remaining HTML files
+- [ ] No broken references in scripts.js breadcrumbs
+- [ ] All prev/next navigation buttons on remaining pages link to valid, existing pages
+- [ ] Hardcoded sidebars in static pages cleaned up
+- [ ] Test file all-pages.spec.js updated to remove deleted pages if present

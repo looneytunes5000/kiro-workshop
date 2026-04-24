@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fixing Deployment Scripts - TRAE SOLO Workshop</title>
+    <title>Fixing Deployment Issues - TRAE SOLO Workshop</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="progress-bar"></div>
     <a href="#main-content" class="skip-nav">Skip to main content</a>
-    <button class="mobile-menu-btn">?衽enu</button>
+    <button class="mobile-menu-btn"> Menu</button>
 
     <nav class="sidebar"></nav>
 
@@ -18,146 +18,106 @@
 
     <main class="main" id="main-content">
         <header class="page-header">
-            <h1>Exercise: Fixing Deployment Scripts</h1>
-            <p>Use Spec mode to diagnose and fix broken deployment configurations in a brownfield scenario</p>
+            <h1>Exercise: Fixing Deployment Issues</h1>
+            <p>Use Spec mode to figure out why your app won't deploy — and fix it step by step</p>
         </header>
 
         <article class="content">
-            <h2>Exercise Overview</h2>
-            <p>In this exercise, you'll use TRAE SOLO's Spec mode to troubleshoot and fix deployment issues for the paraphrasing mentoring app. Unlike the previous greenfield exercise (adding a practice mode), this is a brownfield scenario where something is broken and needs systematic diagnosis and repair.</p>
+            <h2>What We're Doing</h2>
+            <p>In the <a href="deploy-backend.html">previous page</a>, you learned how to deploy your app. But what happens when deployment fails? Error messages, missing files, things that work on your computer but break in the cloud — this is where things get interesting.</p>
 
-            <p>Spec mode is surprisingly effective for troubleshooting because it forces a structured approach: understand the problem, design the fix, and execute methodically.</p>
+            <p>In this exercise, you'll use TRAE SOLO's Spec mode to diagnose and fix deployment problems for the paraphrasing mentoring app. Unlike the Practice Mode exercise where you built something new from scratch, this is a "something is broken, let's fix it" scenario.</p>
 
-            <h2>Common Deployment Issues</h2>
-            <p>Deployment scripts can fail for many reasons. Some common issues include:</p>
+            <h2>Choosing Between Vibe Mode and Spec Mode</h2>
+            <p>Before we dive in, it's worth understanding when to use each mode for troubleshooting:</p>
+
             <ul>
-                <li><strong>Environment variable mismatches</strong> - Variables referenced in scripts don't match the deployment environment</li>
-                <li><strong>Missing dependencies</strong> - Required packages or services aren't installed or configured</li>
-                <li><strong>Incorrect resource paths</strong> - File paths or URLs that work locally but fail in production</li>
-                <li><strong>Permission errors</strong> - Service accounts or deployment credentials lacking required permissions</li>
-                <li><strong>Version conflicts</strong> - Incompatible dependency versions between development and production</li>
-                <li><strong>LLM connectivity issues</strong> - Ollama API endpoint not accessible from deployed environment</li>
+                <li><strong><a href="vibe-coding.html">Vibe Mode</a></strong> is great for quick, simple fixes — like "the button text is cut off" or "add an error message when the upload fails." You describe the problem, and the AI suggests a fix. Fast and iterative.</li>
+                <li><strong>Spec Mode (Spec-Driven Development)</strong> is better when the problem is deeper or you're not sure what's wrong. It forces a structured approach: understand the issue, design a fix plan, and execute systematically.</li>
             </ul>
 
-            <h2>Why Spec Mode for Troubleshooting?</h2>
-            <p>While Vibe mode might seem natural for quick fixes, deployment troubleshooting benefits from Spec mode's structured approach:</p>
-
-            <div class="comparison-grid">
-                <div class="outcome-item">
-                    <h4>Vibe Mode Approach</h4>
-                    <ul>
-                        <li>Describe the error, get a suggested fix</li>
-                        <li>Risk of addressing symptoms, not root causes</li>
-                        <li>No documentation of what was wrong</li>
-                        <li>May introduce new issues</li>
-                    </ul>
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>When to Spec vs. Vibe</span>
                 </div>
-                <div class="outcome-item">
-                    <h4>Spec Mode Approach</h4>
-                    <ul>
-                        <li>Systematic diagnosis of all failure points</li>
-                        <li>Documents root cause and fix strategy</li>
-                        <li>Creates a task list for methodical repair</li>
-                        <li>Leaves a paper trail for future reference</li>
-                    </ul>
-                </div>
+                <p>If you can describe the fix in one sentence, use Vibe. If you're staring at an error log and aren't sure what's causing it, use Spec.</p>
             </div>
 
-            <h2>Step 1: Describe the Problem</h2>
-            <p>Open TRAE SOLO and switch to Spec mode. Provide a description of the deployment issue:</p>
+            <h2>Common Deployment Problems (And Why They Happen)</h2>
+            <p>Deployment scripts can fail for many reasons. Here are the most common ones, explained in plain English:</p>
+            <ul>
+                <li><strong>Wrong passwords or keys</strong> — Your app uses "environment variables" (like secret passwords) to connect to services. If these don't match between your computer and the server, things break.</li>
+                <li><strong>Missing pieces</strong> — Your app needs certain tools or services installed. If the server doesn't have them, the app won't run.</li>
+                <li><strong>Wrong addresses</strong> — File paths or web addresses that work on your laptop might be different on the server.</li>
+                <li><strong>Permission issues</strong> — The server account running your app might not have the right to read certain files or write to certain folders.</li>
+                <li><strong>Version mismatches</strong> — Your computer has newer versions of software than the server does. What works locally might break in production.</li>
+                <li><strong>Connection problems</strong> — Your app might need to talk to other services (like Ollama for AI). If those services aren't reachable from the server, features fail.</li>
+            </ul>
 
-            <div class="code-block">
-                <code>The deployment pipeline for the paraphrasing app is failing. The build succeeds locally,
+            <h2>Step 1: Tell TRAE What's Wrong</h2>
+            <p>Open TRAE SOLO and switch to Spec mode. Describe what you're seeing:</p>
+
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">▶</span>
+                    <span>Click to reveal the deployment troubleshooting prompt</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <div class="code-block">
+                        <code>The deployment pipeline for the paraphrasing app is failing. The build succeeds locally,
 but the deployment to the cloud environment fails with errors.
 The LLM evaluation feature works locally with Ollama but fails in production.
 Please analyse the deployment scripts, identify the root causes,
 and create a plan to fix them.</code>
-            </div>
+                    </div>
+                </div>
+            </details>
 
             <div class="callout">
                 <div class="callout-header">
                     <div class="dot"></div>
                     <span>Tip</span>
                 </div>
-                <p>Include any error messages, logs, or symptoms you've observed. The more context you provide, the more accurate TRAE SOLO's diagnosis will be.</p>
+                <p>Include any error messages you've seen. The more detail you give TRAE, the better its diagnosis will be.</p>
             </div>
 
-            <h2>Step 2: Review the Diagnosis (Requirements)</h2>
-            <p>TRAE SOLO will generate a <span class="inline-code">requirements.md</span> that serves as a diagnosis document. It should include:</p>
+            <h2>Step 2: Read the Diagnosis</h2>
+            <p>TRAE will first analyse your problem and write up a diagnosis. Think of it like a doctor's diagnosis — it should cover:</p>
 
             <ul class="checklist">
-                <li>Identification of each failure point</li>
-                <li>Root cause analysis for each issue</li>
-                <li>Impact assessment (what breaks because of each issue)</li>
-                <li>Priority ranking (which issues must be fixed first)</li>
+                <li>What's broken (each failure point)</li>
+                <li>Why it's broken (root cause)</li>
+                <li>What else breaks because of it (ripple effects)</li>
+                <li>Which problems to fix first (priority order)</li>
             </ul>
 
-            <p>Review the diagnosis carefully. Does it match what you're seeing? Are there issues TRAE SOLO missed? Provide feedback to refine the analysis.</p>
+            <p>Read through the diagnosis. Does it match what you're seeing? Did TRAE miss anything? You can ask it to refine its analysis.</p>
 
-            <h2>Step 3: Review the Fix Strategy (Design)</h2>
-            <p>The <span class="inline-code">design.md</span> document outlines the fix strategy. Look for:</p>
+            <h2>Step 3: Review the Fix Strategy</h2>
+            <p>Next, TRAE designs a treatment plan — a strategy for how to fix everything. Look for:</p>
 
             <ul class="checklist">
-                <li>Specific changes needed for each deployment script</li>
-                <li>Environment configuration updates</li>
-                <li>Dependency version corrections</li>
-                <li>Testing strategy to verify fixes</li>
+                <li>What files need to change</li>
+                <li>What settings need updating</li>
+                <li>How to test that the fixes work</li>
             </ul>
 
-            <p>Pay special attention to whether the proposed fixes maintain compatibility with your existing infrastructure and don't introduce regressions.</p>
+            <p>Make sure the planned fixes won't break anything else. A good fix solves the problem without creating new ones.</p>
 
-            <h2>Step 4: Review the Fix Tasks</h2>
-            <p>The <span class="inline-code">tasks.md</span> should break the fixes into ordered, testable steps:</p>
-
-            <div class="code-block">
-                <code>Task 1: Fix environment variable references in deploy.sh
-Task 2: Update deployment configuration for correct region
-Task 3: Add missing permissions to deployment role
-Task 4: Fix storage bucket policy for static asset uploads
-Task 5: Update package.json dependencies to compatible versions
-Task 6: Configure cloud LLM service as fallback for local Ollama
-Task 7: Test deployment in staging environment
-Task 8: Update deployment documentation with new requirements</code>
-            </div>
-
-            <div class="callout">
-                <div class="callout-header">
-                    <div class="dot"></div>
-                    <span>Important</span>
-                </div>
-                <p>For deployment fixes, the order matters. Infrastructure changes (permissions, storage) should typically come before application changes. Make sure the task order reflects these dependencies.</p>
-            </div>
-
-            <h2>Step 5: Execute and Verify</h2>
-            <p>As TRAE SOLO executes each fix task:</p>
+            <h2>Step 5: Watch TRAE Execute the Fixes</h2>
+            <p>As TRAE works through each fix:</p>
             <ol>
-                <li>Review the changes to deployment scripts and configurations</li>
-                <li>Verify each fix addresses the identified root cause</li>
-                <li>Test the deployment after each significant change</li>
-                <li>Document any additional issues discovered during the fix process</li>
+                <li>Review the changes it makes to your files</li>
+                <li>Check that each fix addresses the original problem</li>
+                <li>Test the deployment after major changes</li>
+                <li>Note any new issues that come up</li>
             </ol>
-
-            <h2>Best Practices for Deployment Troubleshooting with TRAE SOLO</h2>
-            <ul>
-                <li><strong>Always test in a non-production environment first</strong> - Never apply deployment fixes directly to production</li>
-                <li><strong>Keep a rollback plan</strong> - Document how to revert each change if it causes new issues</li>
-                <li><strong>Update your steering documents</strong> - If the deployment issue revealed gaps in your <span class="inline-code">tech.md</span> or <span class="inline-code">structure.md</span>, update them to prevent future issues</li>
-                <li><strong>Document the fix</strong> - The generated spec documents serve as valuable troubleshooting references for your team</li>
-            </ul>
-
-            <h2>Key Takeaways</h2>
-            <ul>
-                <li>Spec mode brings structure to troubleshooting, preventing haphazard fixes</li>
-                <li>The diagnosis-design-tasks workflow ensures root causes are addressed, not just symptoms</li>
-                <li>Generated documentation helps the team understand what went wrong and how it was fixed</li>
-                <li>Updating steering documents after fixes prevents the same issues from recurring</li>
-                <li>Spec mode is valuable for both greenfield development and brownfield troubleshooting</li>
-            </ul>
         </article>
 
         <div class="navigation-buttons">
-            <a href="practice-mode-feature.html" class="btn btn-secondary">?revious: Add Practice Mode</a>
-            <a href="agent-hooks.html" class="btn btn-primary">Next: Agent Hooks </a>
+            <a href="deploy-backend.html" class="btn btn-secondary">Previous: Deployment</a>
+            <a href="mcp-integration.html" class="btn btn-primary">Next: MCP Integration</a>
         </div>
     </main>
 
