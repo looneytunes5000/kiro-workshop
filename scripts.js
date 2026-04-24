@@ -85,8 +85,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-
-
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -96,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.animate-outcome, .animate-callout').forEach((el) => {
+    document.querySelectorAll('.animate-outcome, .animate-callout, .animate-in').forEach((el) => {
         revealObserver.observe(el);
     });
 
@@ -131,6 +129,13 @@ function generateSidebar() {
         <div class="sidebar-nav">
     `;
 
+    var homePageActive = currentPage === 'home.html';
+    sidebarHTML += `
+        <a href="home.html" class="sidebar-home-link ${homePageActive ? 'active' : ''}">
+            Home
+        </a>
+    `;
+
     var sections = [
         {
             id: 'training-session',
@@ -159,7 +164,9 @@ function generateSidebar() {
                         { file: 'skills-reference.html', label: 'Skills in Action' }
                     ]
                 },
-                { file: 'getting-started.html', label: 'Getting Started' }
+                { file: 'getting-started.html', label: 'Getting Started' },
+                { file: 'desktop-client.html', label: 'Desktop Client' },
+                { file: 'setup-account.html', label: 'Setup Account' }
             ]
         },
         {
@@ -194,23 +201,25 @@ function generateSidebar() {
                     title: 'Microsoft Copilot Studio',
                     subpages: [
                         { file: 'microsoft-copilot-studio.html', label: 'Overview' },
-                        { file: 'copilot-studio-reference.html', label: 'E-Tutorials' }
+                        { file: 'copilot-studio-reference.html', label: 'E-Tutorials' },
+                        { file: 'agent-integration.html', label: 'Agent Integration' }
                     ]
                 },
                 {
                     title: 'GenAI Portal',
                     subpages: [
                         { file: 'genai-portal.html', label: 'Overview' },
-                        { file: 'genai-portal-reference.html', label: 'Reference' }
+                        { file: 'genai-portal-reference.html', label: 'Browser Automation' }
                     ]
-                }
+                },
+                { file: 'ollama.html', label: 'Ollama' }
             ]
         },
         {
             id: 'wrap-up',
             title: 'Wrap Up',
             pages: [
-                { file: 'wrapping-up.html', label: 'Wrapping Up' }
+                { file: 'wrapping-up.html', label: 'The Next Chapter' }
             ]
         }
     ];
@@ -619,8 +628,11 @@ function getSectionName(page) {
         'opencode-web-ui.html': { label: 'Agents Toolkits', link: 'index.html' },
         'microsoft-copilot-studio.html': { label: 'Survival Kit', link: 'index.html' },
         'copilot-studio-reference.html': { label: 'Survival Kit', link: 'index.html' },
+        'agent-integration.html': { label: 'Survival Kit', link: 'index.html' },
         'genai-portal.html': { label: 'Survival Kit', link: 'index.html' },
         'genai-portal-reference.html': { label: 'Survival Kit', link: 'index.html' },
+        'ollama.html': { label: 'Survival Kit', link: 'index.html' },
+        'ollama-reference.html': { label: 'Survival Kit', link: 'index.html' },
         'wrapping-up.html': { label: 'Wrap Up', link: 'index.html' }
     };
 
@@ -661,8 +673,11 @@ function getSectionChain(page) {
         'opencode-web-ui.html': { label: 'Agents Toolkits', link: 'index.html' },
         'microsoft-copilot-studio.html': { label: 'Survival Kit', link: 'index.html' },
         'copilot-studio-reference.html': { label: 'Survival Kit', link: 'index.html' },
+        'agent-integration.html': { label: 'Survival Kit', link: 'index.html' },
         'genai-portal.html': { label: 'Survival Kit', link: 'index.html' },
         'genai-portal-reference.html': { label: 'Survival Kit', link: 'index.html' },
+        'ollama.html': { label: 'Survival Kit', link: 'index.html' },
+        'ollama-reference.html': { label: 'Survival Kit', link: 'index.html' },
         'wrapping-up.html': { label: 'Wrap Up', link: 'index.html' }
     };
 

@@ -233,24 +233,26 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            var zoomables = document.querySelectorAll('.workflow-image-zoomable');
-            zoomables.forEach(function(el) {
-                el.addEventListener('click', function() {
-                    var src = this.getAttribute('data-modal-image');
-                    var alt = this.getAttribute('data-modal-alt');
+            document.addEventListener('click', function(e) {
+                var zoomable = e.target.closest('.workflow-image-zoomable');
+                if (zoomable) {
+                    var src = zoomable.getAttribute('data-modal-image');
+                    var alt = zoomable.getAttribute('data-modal-alt');
                     if (src) openImageModal(src, alt);
-                });
+                }
+
+                if (e.target.closest('.image-modal.active') && !e.target.closest('.modal-content')) {
+                    closeImageModal();
+                }
             });
 
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
                     var modal = document.getElementById('imageModal');
-                    if (modal.classList.contains('active')) closeImageModal();
+                    if (modal && modal.classList.contains('active')) closeImageModal();
                 }
             });
-        });
 
-        document.addEventListener('DOMContentLoaded', function() {
             const sidebar = document.querySelector('.sidebar');
             document.addEventListener('click', function(e) {
                 if (window.innerWidth <= 900 && !sidebar.contains(e.target) && !e.target.classList.contains('mobile-menu-btn')) {

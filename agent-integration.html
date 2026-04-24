@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Integration - TRAE Workshop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰</button>
+
+    <nav class="sidebar"></nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Integrate Agents into Your Projects</h1>
+            <p>Learn how to programmatically connect AI agents to your applications using Direct Line Speech Channel and token endpoints</p>
+        </header>
+
+        <article class="content">
+            <h2 id="connecting-agent-programmatically">Connecting Your Agent Programmatically</h2>
+            <p>Once you've built your AI agent in Copilot Studio, the next step is making it accessible from your own applications, websites, or devices. This is done programmatically — meaning your code "talks" to the agent without manual interaction.</p>
+            <p>Think of it like setting up a telephone line: your application dials the agent, and they can communicate back and forth automatically.</p>
+
+            <h2 id="enable-direct-line">Step 1: Enable Direct Line Speech Channel</h2>
+            <p>In Copilot Studio, your agent needs a communication channel — a pathway that defines how the outside world connects to it. For voice-enabled applications, you'll want to use <strong>Direct Line Speech</strong>.</p>
+            <p>This channel allows your apps to send voice input to your agent and receive voice or text responses in return. It's designed for real-time conversations, making it perfect for AI assistants.</p>
+
+            <div class="workflow-image-container">
+                <img src="img/studio_2.png" alt="Selecting Direct Line Speech Channel in Copilot Studio" class="workflow-image">
+                <p class="image-caption">Select Direct Line Speech Channel from the channel options in Copilot Studio settings</p>
+            </div>
+
+            <p>In the Copilot Studio settings, navigate to the Channels section and you'll see multiple options. Look for <strong>Direct Line Speech</strong> and select it to enable voice-based communication for your agent.</p>
+
+            <h2 id="token-endpoint">Step 2: Get Your Token Endpoint</h2>
+            <p>Once Direct Line Speech is enabled, you'll receive a <strong>token endpoint</strong> — this is a special URL your application calls to get a "token." Think of the token as a temporary key that unlocks access to your agent.</p>
+            <p>For security reasons, tokens expire after a short time. This means if someone intercepts an old token, it won't work anymore. Your application needs to request a fresh token at the start of each conversation session.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>How Tokens Work</span>
+                </div>
+                <p>Your app calls the token endpoint → receives a temporary key → uses that key to start a conversation → token expires when the session ends → repeat for the next session.</p>
+            </div>
+
+            <h2 id="using-token-code">Step 3: Using the Token in Your Code</h2>
+            <p>Here's a simple example of how your application would use the token endpoint to connect to your agent:</p>
+
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">▶</span>
+                    <span>Click to reveal: JavaScript token integration example</span>
+                </summary>
+                <div class="prompt-accordion-content">
+<pre><code>// Get a token from the endpoint
+const response = await fetch('YOUR_TOKEN_ENDPOINT_URL');
+const data = await response.json();
+const token = data.token;
+
+// Use the token to start a conversation
+const connection = new Microsoft.CognitiveServices.Speech.AudioConfig.fromDefaultMicrophoneInput();
+const connector = new Microsoft.CognitiveServices.Speech.SpeechConnector(token);
+connector.startConversation();</code></pre>
+                </div>
+            </details>
+
+            <p>For web applications, you can embed the agent directly into your HTML. Here's how a basic integration looks:</p>
+
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">▶</span>
+                    <span>Click to reveal: HTML embed example</span>
+                </summary>
+                <div class="prompt-accordion-content">
+<pre><code>&lt;!-- Add this to your website --&gt;
+&lt;script src="speech-sdk.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    const tokenEndpoint = "https://your-copilot-studio-token-url";
+    
+    async function startAgent() {
+        const response = await fetch(tokenEndpoint);
+        const { token } = await response.json();
+        
+        // Connect to your agent using the token
+        const connector = new SpeechConnector(token);
+        connector.listen();
+    }
+&lt;/script&gt;</code></pre>
+                </div>
+            </details>
+
+            <h2 id="use-cases">Common Use Cases</h2>
+            <ul>
+                <li>Embedding the agent in your mobile app for voice-based AI interactions</li>
+                <li>Adding an AI assistant to your website or web application to help visitors</li>
+                <li>Integrating with IoT devices or smart speakers for hands-free control</li>
+                <li>Building custom interfaces for your team's internal tools and workflows</li>
+            </ul>
+
+            <h2 id="security-notes">Important Notes</h2>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot" style="background: #ef4444;"></div>
+                    <span style="color: #ef4444;">Security</span>
+                </div>
+                <p>Token endpoints should be kept secure and <strong>not shared publicly</strong>. Never expose your token endpoint URL in client-side code that visitors can see. Instead, call the endpoint from your server and pass the token to your frontend.</p>
+            </div>
+
+            <ul>
+                <li>Tokens expire automatically — this is a safety feature, not a bug</li>
+                <li>Each conversation session requires a fresh token request</li>
+                <li>Store your endpoint URL securely in environment variables or server configuration</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Learn More</span>
+                </div>
+                <p>For more details on Copilot Studio capabilities, watch the <a href="copilot-studio-reference.html" class="callout-link">E-Tutorials series</a>.</p>
+            </div>
+        </article>
+
+        <div class="navigation-buttons">
+            <a href="copilot-studio-reference.html" class="btn btn-secondary">Previous: E-Tutorials</a>
+            <a href="genai-portal-reference.html" class="btn btn-primary">Next: Browser Automation</a>
+        </div>
+    </main>
+<script src="scripts.js"></script>
+</body>
+</html>

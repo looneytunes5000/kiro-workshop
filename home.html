@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAE SOLO Workshop - Central Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .unified-hero {
+            text-align: center;
+            padding: 80px var(--content-gap) 60px;
+            position: relative;
+            background: var(--bg-primary);
+        }
+
+        .unified-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: var(--content-gap);
+            right: var(--content-gap);
+            height: 1px;
+            background: var(--blue-accent);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            background: var(--gold-primary);
+            color: var(--bg-primary);
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        .hero-title span {
+            color: var(--gold-primary);
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            max-width: 65ch;
+            margin: 0 auto 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-meta {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-large {
+            padding: 14px 32px;
+            font-size: 1rem;
+            min-height: 52px;
+            border-radius: 8px;
+        }
+
+        .track-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .track-card {
+            display: block;
+            background: var(--surface);
+            border: 1px solid var(--blue-accent);
+            border-radius: 12px;
+            padding: 32px;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.25s var(--ease-out-quint), box-shadow 0.25s var(--ease-out-quint), border-color 0.25s var(--ease-out-quint);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .track-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(232, 197, 71, 0.15);
+            border-color: var(--gold-primary);
+        }
+
+        .track-card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .track-card-icon {
+            font-size: 2.5rem;
+            display: block;
+            flex-shrink: 0;
+        }
+
+        .track-card-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .track-card-tag.tag-training {
+            background: var(--code-green);
+            color: var(--bg-primary);
+        }
+
+        .track-card-tag.tag-toolkits {
+            background: var(--gold-primary);
+            color: var(--bg-primary);
+        }
+
+        .track-card-tag.tag-survival {
+            background: #f87171;
+            color: var(--bg-primary);
+        }
+
+        [data-theme="light"] .track-card-tag.tag-survival {
+            background: #dc2626;
+            color: white;
+        }
+
+        .track-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0 0 8px;
+            line-height: 1.3;
+        }
+
+        .track-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin: 0 0 16px;
+        }
+
+        .track-card-footer {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gold-primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .track-card-footer .arrow {
+            transition: transform 0.2s;
+        }
+
+        .track-card:hover .track-card-footer .arrow {
+            transform: translateX(4px);
+        }
+
+        .roadmap-section {
+            margin: 48px 0;
+        }
+
+        .roadmap-section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .roadmap-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+        }
+
+        .roadmap-timeline {
+            display: flex;
+            flex-direction: row;
+            gap: 0;
+            overflow-x: auto;
+            padding: 8px 0 16px;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .roadmap-timeline::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .roadmap-timeline::-webkit-scrollbar-track {
+            background: var(--bg-deep);
+            border-radius: 3px;
+        }
+
+        .roadmap-timeline::-webkit-scrollbar-thumb {
+            background: var(--gold-rich);
+            border-radius: 3px;
+        }
+
+        .timeline-node-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            flex-shrink: 0;
+            scroll-snap-align: start;
+            width: 220px;
+            padding: 0 8px;
+        }
+
+        .timeline-connector {
+            position: absolute;
+            top: 20px;
+            right: -12px;
+            width: 24px;
+            height: 2px;
+            background: var(--blue-accent);
+            z-index: 0;
+        }
+
+        .timeline-node-wrapper:last-child .timeline-connector {
+            display: none;
+        }
+
+        .timeline-dot {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gold-primary);
+            color: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            z-index: 1;
+            position: relative;
+        }
+
+        .timeline-card {
+            margin-top: 16px;
+            width: 100%;
+        }
+
+        .timeline-card details {
+            background: var(--surface);
+            border: 1px solid var(--blue-accent);
+            border-radius: 8px;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .timeline-summary {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 12px 16px;
+            cursor: pointer;
+            list-style: none;
+            min-height: 44px;
+            justify-content: center;
+            transition: background 0.2s var(--ease-out-quint);
+        }
+
+        .timeline-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .timeline-summary:hover {
+            background: var(--surface-hover);
+        }
+
+        .timeline-summary-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .timeline-summary-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            width: fit-content;
+        }
+
+        .timeline-summary-tag.tag-training {
+            background: var(--code-green);
+            color: var(--bg-primary);
+        }
+
+        .timeline-summary-tag.tag-toolkits {
+            background: var(--gold-primary);
+            color: var(--bg-primary);
+        }
+
+        .timeline-summary-tag.tag-survival {
+            background: #f87171;
+            color: var(--bg-primary);
+        }
+
+        [data-theme="light"] .timeline-summary-tag.tag-survival {
+            background: #dc2626;
+            color: white;
+        }
+
+        .timeline-detail {
+            padding: 12px 16px 16px;
+            border-top: 1px solid var(--blue-accent);
+        }
+
+        .timeline-detail p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .simplified-footer {
+            margin-top: 56px;
+            padding: 32px var(--content-gap) 48px;
+            border-top: 1px solid var(--blue-accent);
+            display: flex;
+            justify-content: center;
+        }
+
+        .simplified-footer .btn {
+            min-width: 200px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInHero {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            opacity: 0;
+        }
+
+        .animate-in.visible {
+            animation: fadeInUp 0.5s var(--ease-out-quint) forwards;
+        }
+
+        .animate-in-delay-1.visible {
+            animation-delay: 0.1s;
+        }
+
+        .animate-in-delay-2.visible {
+            animation-delay: 0.2s;
+        }
+
+        .animate-in-delay-3.visible {
+            animation-delay: 0.3s;
+        }
+
+        .hero-badge.visible,
+        .hero-title.visible,
+        .hero-description.visible,
+        .hero-meta.visible,
+        .cta-buttons.visible {
+            animation: fadeInHero 0.6s var(--ease-out-quint) forwards;
+        }
+
+        .hero-badge.visible { animation-delay: 0s; }
+        .hero-title.visible { animation-delay: 0.1s; }
+        .hero-description.visible { animation-delay: 0.2s; }
+        .hero-meta.visible { animation-delay: 0.3s; }
+        .cta-buttons.visible { animation-delay: 0.4s; }
+
+        @media (max-width: 768px) {
+            .unified-hero {
+                padding: 72px 24px 48px;
+            }
+
+            .unified-hero::after {
+                left: 24px;
+                right: 24px;
+            }
+
+            .hero-title {
+                font-size: 2.25rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .track-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-large {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+
+            .roadmap-timeline {
+                flex-direction: column;
+                gap: 0;
+                overflow-x: visible;
+                scroll-snap-type: none;
+            }
+
+            .timeline-node-wrapper {
+                flex-direction: row;
+                width: 100%;
+                padding: 8px 0;
+                gap: 16px;
+            }
+
+            .timeline-connector {
+                top: 40px;
+                right: auto;
+                left: 19px;
+                width: 2px;
+                height: 16px;
+                background: var(--blue-accent);
+            }
+
+            .timeline-node-wrapper:last-child .timeline-connector {
+                display: none;
+            }
+
+            .timeline-dot {
+                width: 36px;
+                height: 36px;
+                font-size: 0.8rem;
+                flex-shrink: 0;
+            }
+
+            .timeline-card {
+                margin-top: 0;
+                flex: 1;
+            }
+
+            .hero-badge.visible,
+            .hero-title.visible,
+            .hero-description.visible,
+            .hero-meta.visible,
+            .cta-buttons.visible {
+                animation-delay: 0s;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .track-card:hover {
+                transform: none;
+            }
+
+            .track-card:hover .track-card-footer .arrow {
+                transform: none;
+            }
+
+            .animate-in {
+                opacity: 1 !important;
+                transform: none !important;
+                animation: none !important;
+            }
+
+            .hero-badge.visible,
+            .hero-title.visible,
+            .hero-description.visible,
+            .hero-meta.visible,
+            .cta-buttons.visible {
+                opacity: 1 !important;
+                transform: none !important;
+                animation: none !important;
+            }
+
+            .roadmap-timeline {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn" aria-label="Open menu">&#9776;</button>
+
+    <nav class="sidebar"></nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <article class="content">
+            <section class="unified-hero animate-in">
+                <span class="hero-badge animate-in">VTC aiHackathon 2026</span>
+                <h1 class="hero-title animate-in"><span>TRAE SOLO</span> Workshop</h1>
+                <p class="hero-description animate-in">Learn the fundamentals of AI-native development, explore specialized agent toolkits, and gain the skills you need to succeed in hackathons and real-world projects.</p>
+                <p class="hero-meta animate-in">Designed to be completed in 3&#8209;4 hours &#183; Three progressive tracks</p>
+                <div class="cta-buttons animate-in">
+                    <a href="introduction.html" class="btn btn-primary btn-large">Start Workshop</a>
+                    <a href="#roadmap" class="btn btn-secondary btn-large">View Roadmap</a>
+                </div>
+            </section>
+
+            <section class="animate-in">
+                <h3>Choose Your Path</h3>
+                <div class="track-grid">
+                    <a href="introduction.html" class="track-card animate-in animate-in-delay-1">
+                        <div class="track-card-header">
+                            <span class="track-card-icon">&#128218;</span>
+                            <span class="track-card-tag tag-training">Training Session</span>
+                        </div>
+                        <h3>Training Session</h3>
+                        <p>Learn the fundamentals of TRAE's AI-driven development. From Vibe Coding to Spec-Driven Development and Skills activation.</p>
+                        <div class="track-card-footer">
+                            <span>View Track</span>
+                            <span class="arrow">&rarr;</span>
+                        </div>
+                    </a>
+
+                    <a href="skills.html" class="track-card animate-in animate-in-delay-2">
+                        <div class="track-card-header">
+                            <span class="track-card-icon">&#128736;&#65039;</span>
+                            <span class="track-card-tag tag-toolkits">Agents Toolkits</span>
+                        </div>
+                        <h3>Agents Toolkits</h3>
+                        <p>Discover specialized skills and build AI-powered features. Explore TRAE IDE, OpenCode, MCP integration, and deployment workflows.</p>
+                        <div class="track-card-footer">
+                            <span>View Toolkit</span>
+                            <span class="arrow">&rarr;</span>
+                        </div>
+                    </a>
+
+                    <a href="vibe-coding.html" class="track-card animate-in animate-in-delay-3">
+                        <div class="track-card-header">
+                            <span class="track-card-icon">&#128737;&#65039;</span>
+                            <span class="track-card-tag tag-survival">Survival Kit</span>
+                        </div>
+                        <h3>Survival Kit</h3>
+                        <p>Essential skills for hackathon survival and deployment. Enterprise tools like Copilot Studio and GenAI Portal for production-ready workflows.</p>
+                        <div class="track-card-footer">
+                            <span>Get Started</span>
+                            <span class="arrow">&rarr;</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="roadmap-section" id="roadmap">
+                <h3 class="roadmap-section-title animate-in">Workshop Roadmap</h3>
+                <p class="roadmap-subtitle animate-in">Eight steps from setup to production &#8212; click each step for details</p>
+                <div class="roadmap-timeline animate-in">
+                    <div class="timeline-node-wrapper">
+                        <div class="timeline-dot">1</div>
+                        <div class="timeline-connector"></div>
+                        <div class="timeline-card">
+                            <details>
+                                <summary class="timeline-summary">
+                                    <span class="timeline-summary-title">Getting Started</span>
+                                    <span class="timeline-summary-tag tag-training">Training Session</span>
+                                </summary>
+                                <div class="timeline-detail">
+                                    <p>Introduction to TRAE SOLO, environment setup, and understanding the dual-client architecture with MTC and Code modes.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node-wrapper">
+                        <div class="timeline-dot">2</div>
+                        <div class="timeline-connector"></div>
+                        <div class="timeline-card">
+                            <details>
+                                <summary class="timeline-summary">
+                                    <span class="timeline-summary-title">Vibe Coding</span>
+                                    <span class="timeline-summary-tag tag-training">Training Session</span>
+                                </summary>
+                                <div class="timeline-detail">
+                                    <p>Rapid feature development using natural language descriptions. Build real interfaces with conversational AI workflows.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node-wrapper">
+                        <div class="timeline-dot">3</div>
+                        <div class="timeline-connector"></div>
+                        <div class="timeline-card">
+                            <details>
+                                <summary class="timeline-summary">
+                                    <span class="timeline-summary-title">Spec-Driven Development</span>
+                                    <span class="timeline-summary-tag tag-training">Training Session</span>
+                                </summary>
+                                <div class="timeline-detail">
+                                    <p>Structured specifications for complex, multi-file features. Plan requirements and edge cases before writing code.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node-wrapper">
+                        <div class="timeline-dot">4</div>
+                        <div class="timeline-connector"></div>
+                        <div class="timeline-card">
+                            <details>
+                                <summary class="timeline-summary">
+                                    <span class="timeline-summary-title">Skills</span>
+                                    <span class="timeline-summary-tag tag-training">Training Session</span>
+                                </summary>
+                                <div class="timeline-detail">
+                                    <p>Access to 181+ specialized skills for frontend, backend, testing, security, and AI agent development.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node-wrapper">
+                        <div class="timeline-dot">5</div>
+                        <div class="timeline-connector"></div>
+                        <div class="timeline-card">
+                            <details>
+                                <summary class="timeline-summary">
+                                    <span class="timeline-summary-title">TRAE IDE</span>
+                                    <span class="timeline-summary-tag tag-toolkits">Agents Toolkits</span>
+                                </summary>
+                                <div class="timeline-detail">
+                                    <p>Multitasking, tool panel usage, MCP integration, and deployment for production applications.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node-wrapper">
+                        <div class="timeline-dot">6</div>
+                        <div class="timeline-connector"></div>
+                        <div class="timeline-card">
+                            <details>
+                                <summary class="timeline-summary">
+                                    <span class="timeline-summary-title">OpenCode</span>
+                                    <span class="timeline-summary-tag tag-toolkits">Agents Toolkits</span>
+                                </summary>
+                                <div class="timeline-detail">
+                                    <p>Explore OpenCode's terminal-based interface and web UI for AI-powered coding workflows.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node-wrapper">
+                        <div class="timeline-dot">7</div>
+                        <div class="timeline-connector"></div>
+                        <div class="timeline-card">
+                            <details>
+                                <summary class="timeline-summary">
+                                    <span class="timeline-summary-title">Microsoft Copilot Studio</span>
+                                    <span class="timeline-summary-tag tag-survival">Survival Kit</span>
+                                </summary>
+                                <div class="timeline-detail">
+                                    <p>Build and deploy custom AI agents using enterprise-grade tools and integrations.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node-wrapper">
+                        <div class="timeline-dot">8</div>
+                        <div class="timeline-card">
+                            <details>
+                                <summary class="timeline-summary">
+                                    <span class="timeline-summary-title">GenAI Portal</span>
+                                    <span class="timeline-summary-tag tag-survival">Survival Kit</span>
+                                </summary>
+                                <div class="timeline-detail">
+                                    <p>Browser automation and advanced AI interactions for scaling your development workflow.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="simplified-footer">
+                <a href="introduction.html" class="btn btn-primary">Start Workshop &rarr;</a>
+            </div>
+        </article>
+    </main>
+<script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ollama - TRAE Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰</button>
+
+    <nav class="sidebar"></nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Ollama</h1>
+            <p>Run AI models locally on your machine</p>
+        </header>
+
+        <article class="content">
+            <h2 id="what-is-ollama">What is Ollama?</h2>
+            <p>Ollama is a tool that lets you run large language models (LLMs) locally on your own machine. Instead of relying on cloud services or paid APIs, you can download and run open-source models directly — giving you full control over your AI development workflow during the hackathon.</p>
+
+            <h2 id="key-capabilities">Key Capabilities</h2>
+            <ul>
+                <li><strong>Run AI on your own computer</strong> — Download smart AI models and use them right on your laptop or desktop — no internet needed</li>
+                <li><strong>Easy one-line commands</strong> — Start any model with a simple text command, like telling it "open up"</li>
+                <li><strong>Works with popular models</strong> — Access thousands of free AI models from places like Hugging Face without any complicated setup</li>
+                <li><strong>Built-in connection for your projects</strong> — Your AI coding tools can talk to Ollama as if it were a cloud service, but everything stays on your machine</li>
+                <li><strong>Pick the right brain for the job</strong> — Use a coding-focused model for writing code, or switch to a creative model for writing content — your choice</li>
+                <li><strong>Use as much as you want</strong> — No limits, no paywalls, no "you've used up your credits" — run your model as many times as you like</li>
+            </ul>
+
+            <div class="callout" style="margin-top: 24px;">
+                <div class="callout-header">
+                    <div class="dot" style="background: #f59e0b;"></div>
+                    <span style="color: #f59e0b;">aiHackathon Resource</span>
+                </div>
+                <p><strong>Ollama is available for all aiHackathon contestants.</strong> Use it whenever your solution requires AI model integration but you don't want to rely on cloud-based APIs. All models run locally on your machine.</p>
+            </div>
+
+            <h2 id="sample-use-case">Sample Use Case</h2>
+            <p>Suppose you're building a web application that needs to summarise user-submitted text on the spot. Instead of connecting to a paid API, you can ask your AI coding agent in TRAE or OpenCode to integrate Ollama directly into your project.</p>
+
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">▶</span>
+                    <span>Click to reveal example prompt for AI coding agent</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <p>Copy and paste this prompt into your AI coding agent (SOLO Coder or OpenCode):</p>
+                    <pre><code class="language-text">Build a simple web app that lets users paste text and get a summary back.
+Use Ollama to run the summarisation — I want everything to run locally.</code></pre>
+                </div>
+            </details>
+
+        </article>
+
+        <div class="navigation-buttons">
+            <a href="genai-portal-reference.html" class="btn btn-secondary">Previous: Browser Automation</a>
+            <a href="ollama-reference.html" class="btn btn-primary">Next: Local Models</a>
+        </div>
+    </main>
+<script src="scripts.js"></script>
+</body>
+</html>

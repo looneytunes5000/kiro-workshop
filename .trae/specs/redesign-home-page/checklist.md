@@ -1,0 +1,22 @@
+# Checklist
+
+- [x] Unified hero section replaces both page-header and hero-section with single centered hero
+- [x] Hero contains title, description, and two CTA buttons (Start Workshop, View Roadmap)
+- [x] Track cards section appears below hero with three cards: Training Session, Agents Toolkits, Survival Kit
+- [x] Each track card has distinctive emoji icon, title, description, and color-coded tag
+- [x] Track cards have hover effects (translateY, border color change, arrow animation)
+- [x] Roadmap is displayed as horizontal timeline with scrollable container on desktop
+- [x] Roadmap collapses to vertical layout on mobile (max-width: 768px)
+- [x] Each roadmap step is collapsible with details/summary pattern
+- [x] Roadmap tags show correct category: Training Session (green), Agents Toolkits (gold), Survival Kit (red)
+- [x] Footer navigation only shows "Next: Start Workshop" button (no Previous button)
+- [x] Scroll-triggered fade-in animations work for hero, track cards, and roadmap sections
+- [x] prefers-reduced-motion media query disables all animations
+- [x] All interactive elements have minimum 44x44px touch targets
+- [x] Page renders correctly in both light and dark themes
+- [x] Skip navigation link is present for accessibility
+- [x] Mobile menu button is visible on screens < 900px
+- [x] Sidebar navigation loads correctly via scripts.js
+- [x] No console errors when page loads
+- [x] Horizontal timeline scrolls smoothly with CSS scroll-snap
+- [x] Content is centered and respects --content-max-width (960px)
