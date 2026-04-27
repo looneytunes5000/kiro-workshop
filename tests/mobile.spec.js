@@ -69,12 +69,12 @@ test.describe('Mobile Responsiveness Tests', () => {
     // Wait for sidebar to be visible
     await expect(kiroPage.sidebar).toBeVisible({ timeout: 5000 });
 
-    // Navigate directly to introduction page
-    await page.goto('http://localhost:8080/introduction.html');
+    // Navigate directly to desktop-client page
+    await page.goto('http://localhost:8080/desktop-client.html');
 
     // Verify navigation worked
     const currentPath = await kiroPage.getCurrentPath();
-    expect(currentPath).toBe('introduction.html');
+    expect(currentPath).toBe('desktop-client.html');
   });
 
   test('content is readable on mobile viewport', async ({ page }) => {
@@ -90,7 +90,7 @@ test.describe('Mobile Responsiveness Tests', () => {
 
   test('footer buttons stack on mobile', async ({ page }) => {
     await kiroPage.setMobileViewport();
-    await kiroPage.navigateTo('introduction.html');
+    await kiroPage.navigateTo('desktop-client.html');
 
     const footer = page.locator('.footer');
     await expect(footer).toBeVisible();

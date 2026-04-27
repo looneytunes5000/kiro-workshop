@@ -9,16 +9,16 @@
     <style>
         .etutorial-header {
             text-align: center;
-            margin-bottom: 24px;
+            margin-bottom: 32px;
             padding-bottom: 24px;
-            border-bottom: 1px solid var(--blue-accent);
+            border-bottom: 1px solid var(--gold-primary);
         }
         .etutorial-header p {
             color: var(--text-secondary);
-            font-size: 0.92rem;
-            max-width: 680px;
+            font-size: 0.95rem;
+            max-width: 65ch;
             margin: 0 auto;
-            line-height: 1.6;
+            line-height: 1.7;
         }
         .etutorial-layout {
             display: grid;
@@ -31,64 +31,64 @@
             display: flex;
             flex-direction: column;
             gap: 8px;
-            padding-left: 8px;
         }
         .etutorial-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 12px 14px;
+            gap: 14px;
+            padding: 14px 16px;
             background: var(--surface);
-            border: 1px solid transparent;
-            border-radius: 10px;
+            border: 1px solid var(--blue-accent);
+            border-radius: var(--radius-curved);
             cursor: pointer;
-            transition: all 0.2s var(--ease-out-quint);
+            transition: transform 0.2s var(--ease-out-quint),
+                        border-color 0.2s var(--ease-out-quint),
+                        box-shadow 0.2s var(--ease-out-quint);
             position: relative;
         }
         .etutorial-item:hover {
-            background: var(--surface-elevated);
-            border-color: var(--blue-accent);
+            border-color: var(--gold-primary);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(232, 197, 71, 0.12);
         }
         .etutorial-item.active {
             border-color: var(--gold-primary);
             background: var(--surface-elevated);
             box-shadow: 0 0 0 1px var(--gold-primary);
         }
-        .etutorial-icon {
+        .etutorial-badge {
             flex-shrink: 0;
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-standard);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 13px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--bg-deep);
+            background: var(--gold-primary);
         }
-        .etutorial-icon.blue { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
-        .etutorial-icon.green { background: rgba(52, 211, 153, 0.15); color: #34d399; }
-        .etutorial-icon.purple { background: rgba(167, 139, 250, 0.15); color: #a78bfa; }
-        .etutorial-icon.orange { background: rgba(251, 191, 36, 0.15); color: #fbbf24; }
-        .etutorial-icon.teal { background: rgba(45, 212, 191, 0.15); color: #2dd4bf; }
         .etutorial-meta {
             flex: 1;
             min-width: 0;
         }
         .etutorial-meta-title {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: var(--text-primary);
-            margin-bottom: 1px;
+            margin-bottom: 3px;
             line-height: 1.3;
         }
         .etutorial-meta-duration {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
         }
         .etutorial-player {
             min-width: 0;
-            border-radius: 12px;
+            border-radius: var(--radius-relaxed);
             overflow: hidden;
-            border: 1px solid var(--blue-accent);
+            border: 1px solid var(--gold-primary);
             background: var(--bg-deep);
             display: flex;
             flex-direction: column;
@@ -108,27 +108,33 @@
             height: 72px;
             border-radius: 50%;
             background: var(--surface);
-            border: 2px solid var(--blue-accent);
+            border: 2px solid var(--gold-primary);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
-            color: var(--text-muted);
-            padding-left: 4px;
+            font-size: 24px;
+            color: var(--gold-primary);
+            transition: transform 0.3s var(--ease-out-quint),
+                        border-color 0.3s var(--ease-out-quint),
+                        box-shadow 0.3s var(--ease-out-quint);
         }
-        .etutorial-player-placeholder p {
-            font-size: 1rem;
+        .etutorial-player-placeholder .play-icon:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 0 4px rgba(232, 197, 71, 0.1);
+        }
+        .etutorial-player-placeholder .heading {
+            font-size: 1.05rem;
             margin: 0;
             color: var(--text-primary);
             font-weight: 600;
             text-align: center;
         }
-        .etutorial-player-placeholder span {
-            font-size: 0.85rem;
+        .etutorial-player-placeholder .detail {
+            font-size: 0.9rem;
             color: var(--text-muted);
             text-align: center;
             max-width: 300px;
-            line-height: 1.5;
+            line-height: 1.7;
         }
         .etutorial-player iframe {
             width: 100%;
@@ -164,7 +170,7 @@
 <body>
     <div class="progress-bar"></div>
     <a href="#main-content" class="skip-nav">Skip to main content</a>
-    <button class="mobile-menu-btn">☰</button>
+    <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
 
     <nav class="sidebar"></nav>
 
@@ -172,58 +178,58 @@
 
     <main class="main" id="main-content">
         <header class="page-header">
-            <h1>Copilot Studio Self-learning Materials</h1>
+            <h1>Copilot Studio E-Tutorials</h1>
             <p>Through practical demonstrations led by AI pioneers, this video series equips educators with the skills to adopt and integrate Copilot Studio in teaching and learning.</p>
         </header>
 
         <article class="content">
             <div class="etutorial-header">
-                <p>The goal is to spark institutional change by bridging awareness with action.</p>
+                <p>Five short episodes to bridge awareness with action. Each one shows educators how to build, deploy, and embed a Copilot Studio agent in real teaching contexts.</p>
             </div>
 
             <div class="etutorial-layout">
-                <div class="etutorial-list">
-                    <div class="etutorial-item" data-video="32f75de5-57cf-4055-b40d-b3aa0090557d" onclick="playVideo(this)">
-                        <div class="etutorial-icon blue">▶</div>
+                <div class="etutorial-list" role="listbox" aria-label="Tutorial episodes">
+                    <div class="etutorial-item" data-video="32f75de5-57cf-4055-b40d-b3aa0090557d" onclick="playVideo(this)" role="option" tabindex="0" aria-selected="false">
+                        <div class="etutorial-badge">1</div>
                         <div class="etutorial-meta">
-                            <div class="etutorial-meta-title">1. Getting Started</div>
-                            <div class="etutorial-meta-duration">5 mins · Video</div>
+                            <div class="etutorial-meta-title">Getting Started</div>
+                            <div class="etutorial-meta-duration">5 min</div>
                         </div>
                     </div>
-                    <div class="etutorial-item" data-video="bb140ab2-c5d3-46a8-86b5-b3aa0090557e" onclick="playVideo(this)">
-                        <div class="etutorial-icon green">▶</div>
+                    <div class="etutorial-item" data-video="bb140ab2-c5d3-46a8-86b5-b3aa0090557e" onclick="playVideo(this)" role="option" tabindex="0" aria-selected="false">
+                        <div class="etutorial-badge">2</div>
                         <div class="etutorial-meta">
-                            <div class="etutorial-meta-title">2. Instruction and Knowledge</div>
-                            <div class="etutorial-meta-duration">4 mins · Video</div>
+                            <div class="etutorial-meta-title">Instruction and Knowledge</div>
+                            <div class="etutorial-meta-duration">4 min</div>
                         </div>
                     </div>
-                    <div class="etutorial-item" data-video="a7956d9e-bf9d-4f01-9016-b3aa0090558a" onclick="playVideo(this)">
-                        <div class="etutorial-icon blue">▶</div>
+                    <div class="etutorial-item" data-video="a7956d9e-bf9d-4f01-9016-b3aa0090558a" onclick="playVideo(this)" role="option" tabindex="0" aria-selected="false">
+                        <div class="etutorial-badge">3</div>
                         <div class="etutorial-meta">
-                            <div class="etutorial-meta-title">3. Settings, Testing, and Publishing</div>
-                            <div class="etutorial-meta-duration">6 mins · Video</div>
+                            <div class="etutorial-meta-title">Settings, Testing, and Publishing</div>
+                            <div class="etutorial-meta-duration">6 min</div>
                         </div>
                     </div>
-                    <div class="etutorial-item" data-video="4ec1605e-248d-4a2d-a38e-b3aa00905587" onclick="playVideo(this)">
-                        <div class="etutorial-icon orange">▶</div>
+                    <div class="etutorial-item" data-video="4ec1605e-248d-4a2d-a38e-b3aa00905587" onclick="playVideo(this)" role="option" tabindex="0" aria-selected="false">
+                        <div class="etutorial-badge">4</div>
                         <div class="etutorial-meta">
-                            <div class="etutorial-meta-title">4. Embedding Agents in Moodle</div>
-                            <div class="etutorial-meta-duration">5 mins · Video</div>
+                            <div class="etutorial-meta-title">Embedding Agents in Moodle</div>
+                            <div class="etutorial-meta-duration">5 min</div>
                         </div>
                     </div>
-                    <div class="etutorial-item" data-video="0d63c37a-3b2e-4281-898e-b3aa00905a97" onclick="playVideo(this)">
-                        <div class="etutorial-icon teal">▶</div>
+                    <div class="etutorial-item" data-video="0d63c37a-3b2e-4281-898e-b3aa00905a97" onclick="playVideo(this)" role="option" tabindex="0" aria-selected="false">
+                        <div class="etutorial-badge">5</div>
                         <div class="etutorial-meta">
-                            <div class="etutorial-meta-title">5. Embedding Agents in Teams</div>
-                            <div class="etutorial-meta-duration">5 mins · Video</div>
+                            <div class="etutorial-meta-title">Embedding Agents in Teams</div>
+                            <div class="etutorial-meta-duration">5 min</div>
                         </div>
                     </div>
                 </div>
-                <div class="etutorial-player" id="etutorialPlayer">
+                <div class="etutorial-player" id="etutorialPlayer" aria-label="Video player">
                     <div class="etutorial-player-placeholder" id="etutorialPlaceholder">
-                        <div class="play-icon">▶</div>
-                        <p>Select an episode from the list</p>
-                        <span>Copilot Studio e-tutorials will play here.</span>
+                        <div class="play-icon" aria-hidden="true">▶</div>
+                        <p class="heading">Select an episode to begin</p>
+                        <span class="detail">Each video shows how to build and deploy a Copilot Studio agent in under six minutes.</span>
                     </div>
                 </div>
             </div>
@@ -242,8 +248,10 @@
 
             document.querySelectorAll('.etutorial-item').forEach(function(item) {
                 item.classList.remove('active');
+                item.setAttribute('aria-selected', 'false');
             });
             el.classList.add('active');
+            el.setAttribute('aria-selected', 'true');
 
             var iframe = player.querySelector('iframe');
             if (!iframe) {
@@ -251,6 +259,8 @@
                 iframe = document.createElement('iframe');
                 iframe.setAttribute('allowfullscreen', '');
                 iframe.setAttribute('allow', 'autoplay');
+                iframe.setAttribute('title', 'Panopto video');
+                iframe.setAttribute('loading', 'lazy');
                 iframe.setAttribute('style', 'width:100%;height:100%;min-height:360px;border:none;');
                 iframe.setAttribute('src', 'https://vtc.ap.panopto.com/Panopto/Pages/Embed.aspx?id=' + videoId);
                 player.appendChild(iframe);
@@ -258,6 +268,14 @@
                 iframe.setAttribute('src', 'https://vtc.ap.panopto.com/Panopto/Pages/Embed.aspx?id=' + videoId);
             }
         }
+        document.querySelectorAll('.etutorial-item').forEach(function(item) {
+            item.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    playVideo(item);
+                }
+            });
+        });
     </script>
 <script src="scripts.js"></script>
 </body>

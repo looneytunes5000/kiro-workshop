@@ -11,16 +11,16 @@ test.describe('Navigation Tests', () => {
     await kiroPage.navigateTo('index.html');
   });
 
-  test('click Introduction in sidebar navigates to introduction.html', async () => {
-    await kiroPage.clickSidebarLink('Introduction');
+  test('click Trae Solo Workshop in sidebar navigates to home.html', async () => {
+    await kiroPage.clickSidebarLink('Trae Solo Workshop');
 
     const currentPath = await kiroPage.getCurrentPath();
-    expect(currentPath).toBe('introduction.html');
+    expect(currentPath).toBe('home.html');
 
     await kiroPage.verifyPageLoaded();
 
     const pageTitle = await kiroPage.getPageTitleText();
-    expect(pageTitle).toContain('Introduction');
+    expect(pageTitle).toContain('Trae Solo Workshop');
   });
 
   test('click Install Kiro in sidebar navigates to install-kiro.html', async () => {
@@ -32,54 +32,50 @@ test.describe('Navigation Tests', () => {
     await kiroPage.verifyPageLoaded();
   });
 
-  test('navigate from homepage to introduction via footer Next button', async () => {
-    await kiroPage.btnPrimary.click();
+  test('navigate from index.html to home.html via sidebar link', async () => {
+    await kiroPage.clickSidebarLink('Trae Solo Workshop');
     await kiroPage.page.waitForLoadState('domcontentloaded');
 
     const currentPath = await kiroPage.getCurrentPath();
-    expect(currentPath).toBe('introduction.html');
+    expect(currentPath).toBe('home.html');
   });
 
-  test('introduction page has Previous and Next buttons in footer', async () => {
-    await kiroPage.clickSidebarLink('Introduction');
+  test('home.html has Next button in footer', async () => {
+    await kiroPage.clickSidebarLink('Trae Solo Workshop');
 
-    await expect(kiroPage.btnSecondary).toBeVisible();
     await expect(kiroPage.btnPrimary).toBeVisible();
-
-    const prevText = await kiroPage.btnSecondary.textContent();
-    expect(prevText).toContain('Previous');
 
     const nextText = await kiroPage.btnPrimary.textContent();
     expect(nextText).toContain('Next');
   });
 
   test('navigation through multiple pages maintains sidebar', async () => {
-    // Go to Introduction
-    await kiroPage.clickSidebarLink('Introduction');
+    // Go to Desktop Client
+    await kiroPage.clickSidebarLink('Desktop Client');
     await expect(kiroPage.sidebar).toBeVisible();
 
-    // Go to Install Kiro
-    await kiroPage.clickSidebarLink('Install Kiro');
+    // Go to Home
+    await kiroPage.clickSidebarLink('Trae Solo Workshop');
     await expect(kiroPage.sidebar).toBeVisible();
 
     // Go back to index
-    await kiroPage.clickSidebarLink('AI-Driven Development with Kiro');
+    await kiroPage.clickSidebarLink('AI-Driven Development with Trae Solo');
     const currentPath = await kiroPage.getCurrentPath();
     expect(currentPath).toBe('index.html');
   });
 
   test('sidebar highlights active page', async ({ page }) => {
-    await kiroPage.clickSidebarLink('Introduction');
+    await kiroPage.clickSidebarLink('Desktop Client');
 
     const activeLink = page.locator('.sidebar-link.active');
     await expect(activeLink).toBeVisible();
 
     const activeText = await activeLink.textContent();
-    expect(activeText).toContain('Introduction');
+    expect(activeText).toContain('Desktop Client');
   });
 
   test('all sidebar links are clickable and not broken', async ({ page }) => {
-    await kiroPage.clickSidebarLink('Introduction');
+    await kiroPage.clickSidebarLink('Desktop Client');
 
     const links = page.locator('.sidebar-link[href$=".html"]');
     const count = await links.count();

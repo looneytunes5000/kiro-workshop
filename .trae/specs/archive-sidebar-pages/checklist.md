@@ -1,0 +1,11 @@
+- [x] 5 HTML files moved to archive/ folder (start-workshop.html, get-started.html, introduction.html, vibe-coding.html, trae-solo-reference.html)
+- [x] home.html does not link to any archived pages
+- [x] desktop-client.html "Previous" button links to getting-started.html
+- [x] spec-driven-reference.html "Next" button links to trae-solo-overview.html
+- [x] llm-eval-intro.html sidebar and navigation buttons updated to active pages
+- [x] free-practice-feature.html sidebar and content links updated to active pages
+- [x] deployment-troubleshooting.html content links updated to active pages
+- [x] ai-coding-agents.html agent card link updated to trae-solo-overview.html
+- [x] scripts.js no longer references any of the 5 archived pages
+- [x] No broken links remain in any active HTML page
+- [x] Server loads without errors after all changes

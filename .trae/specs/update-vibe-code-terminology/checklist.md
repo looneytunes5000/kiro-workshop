@@ -1,0 +1,7 @@
+- [x] 14-skills.html — no instances of "Vibe mode" remain
+- [x] spec-driven-reference.html — no instances of "Vibe mode" remain
+- [x] llm-eval-intro.html — no instances of "Vibe mode" remain
+- [x] vibe-coding-reference.html — no instances of "Vibe mode" remain
+- [x] deployment-troubleshooting.html — no instances of "Vibe Mode/mode" remain
+- [x] archive/vibe-coding.html — no instances of "Vibe Mode/mode" remain
+- [x] Grep for "vibe mode" across project returns zero results

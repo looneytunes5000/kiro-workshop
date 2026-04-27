@@ -2,17 +2,14 @@
 const { test, expect } = require('@playwright/test');
 const { KiroWorkshopPage } = require('./pages/KiroWorkshopPage');
 
-// All 26 production pages to test
+// All 21 production pages to test (5 archived pages removed)
 const ALL_PAGES = [
   'index.html',
-  'introduction.html',
-  'start-workshop.html',
   'install-kiro.html',
   'take-kiro-home.html',
   'authenticate-builder-id.html',
   'kiro-overview.html',
   'deploy-backend.html',
-  'vibe-coding.html',
   'commenting-feature.html',
   'deployment-troubleshooting.html',
   'mcp-integration.html',

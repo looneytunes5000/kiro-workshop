@@ -8,10 +8,10 @@ test.describe('Design System Component Tests', () => {
 
   test.beforeEach(async ({ page }) => {
     kiroPage = new KiroWorkshopPage(page);
-    await kiroPage.navigateTo('introduction.html');
+    await kiroPage.navigateTo('desktop-client.html');
   });
 
-  test('callout elements are visible on introduction page', async () => {
+  test('callout elements are visible on desktop-client page', async () => {
     await kiroPage.verifyCalloutsVisible();
 
     const count = await kiroPage.callouts.count();
@@ -45,7 +45,7 @@ test.describe('Design System Component Tests', () => {
     await kiroPage.verifyProgressBar();
   });
 
-  test('page header has accent-line on introduction page', async () => {
+  test('page header has accent-line on desktop-client page', async () => {
     await kiroPage.verifyAccentLine();
   });
 
@@ -70,12 +70,12 @@ test.describe('Design System Component Tests', () => {
     }
   });
 
-  test('introduction page screenshot captured', async () => {
-    await kiroPage.takeScreenshot('introduction-page');
+  test('desktop-client page screenshot captured', async () => {
+    await kiroPage.takeScreenshot('desktop-client-page');
   });
 
   test('callouts page screenshot captured', async () => {
-    await kiroPage.takeScreenshot('callouts-introduction');
+    await kiroPage.takeScreenshot('callouts-desktop-client');
   });
 
   test('sidebar links have proper hover states', async ({ page }) => {
@@ -110,7 +110,7 @@ test.describe('Design System Component Tests', () => {
     expect(padding).not.toBe('0px');
   });
 
-  test('outcome items are visible on introduction page', async ({ page }) => {
+  test('outcome items are visible on desktop-client page', async ({ page }) => {
     const outcomeItems = page.locator('.outcome-item');
     const count = await outcomeItems.count();
     expect(count).toBeGreaterThanOrEqual(4);

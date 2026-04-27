@@ -1,17 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>TRAE SOLO Workshop - Central Hub</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=2">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+    <script>document.documentElement.classList.remove('no-js');</script>
     <style>
+        .progress-bar {
+            height: 3px;
+            background: var(--gold-rich);
+            transform: scaleX(0.02);
+            transform-origin: left center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            transition: transform 0.1s linear;
+            width: 100%;
+        }
+
         .unified-hero {
-            text-align: center;
-            padding: 80px var(--content-gap) 60px;
+            padding: 72px var(--content-gap) 80px;
             position: relative;
             background: var(--bg-primary);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-height: 70vh;
+        }
+
+        .unified-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, oklch(30% 0.06 350 / 0.08) 100%);
+            pointer-events: none;
         }
 
         .unified-hero::after {
@@ -28,47 +60,56 @@
             display: inline-block;
             padding: 6px 16px;
             border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            font-size: 0.75rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            background: var(--gold-primary);
+            letter-spacing: 0.1em;
+            background: oklch(85% 0.12 85);
             color: var(--bg-primary);
-            margin-bottom: 24px;
+            margin-bottom: 32px;
+            width: fit-content;
         }
 
         .hero-title {
-            font-size: 3rem;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 16px;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.04em;
+            line-height: 1.05;
+            max-width: 14ch;
         }
 
         .hero-title span {
             color: var(--gold-primary);
+            display: block;
         }
 
         .hero-description {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             line-height: 1.7;
             color: var(--text-secondary);
-            max-width: 65ch;
-            margin: 0 auto 12px;
-            position: relative;
-            z-index: 1;
+            max-width: 55ch;
+            margin: 0 0 16px;
         }
 
         .hero-meta {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
             margin-bottom: 40px;
         }
 
+        .hero-meta code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--code-green);
+            background: var(--bg-deep);
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
         .cta-buttons {
             display: flex;
-            justify-content: center;
             gap: 16px;
             flex-wrap: wrap;
         }
@@ -82,9 +123,9 @@
 
         .track-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 24px;
-            margin: 40px 0;
+            margin: 32px 0;
         }
 
         .track-card {
@@ -92,7 +133,7 @@
             background: var(--surface);
             border: 1px solid var(--blue-accent);
             border-radius: 12px;
-            padding: 32px;
+            padding: 28px 32px;
             text-decoration: none;
             color: inherit;
             transition: transform 0.25s var(--ease-out-quint), box-shadow 0.25s var(--ease-out-quint), border-color 0.25s var(--ease-out-quint);
@@ -100,10 +141,23 @@
             overflow: hidden;
         }
 
+        .track-card:first-child {
+            grid-row: 1 / 3;
+        }
+
         .track-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(232, 197, 71, 0.15);
+            box-shadow: 0 8px 24px oklch(85% 0.18 85 / 0.15);
             border-color: var(--gold-primary);
+        }
+
+        .track-card-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--code-green);
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
         }
 
         .track-card-header {
@@ -111,60 +165,23 @@
             align-items: flex-start;
             justify-content: space-between;
             gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .track-card-icon {
-            font-size: 2.5rem;
-            display: block;
-            flex-shrink: 0;
-        }
-
-        .track-card-tag {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            white-space: nowrap;
-            flex-shrink: 0;
-        }
-
-        .track-card-tag.tag-training {
-            background: var(--code-green);
-            color: var(--bg-primary);
-        }
-
-        .track-card-tag.tag-toolkits {
-            background: var(--gold-primary);
-            color: var(--bg-primary);
-        }
-
-        .track-card-tag.tag-survival {
-            background: #f87171;
-            color: var(--bg-primary);
-        }
-
-        [data-theme="light"] .track-card-tag.tag-survival {
-            background: #dc2626;
-            color: white;
+            margin-bottom: 16px;
         }
 
         .track-card h3 {
-            font-size: 1.25rem;
+            font-size: 1.4rem;
             font-weight: 600;
             color: var(--text-primary);
-            margin: 0 0 8px;
-            line-height: 1.3;
+            margin: 0 0 12px;
+            line-height: 1.25;
+            letter-spacing: -0.02em;
         }
 
         .track-card p {
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 0.92rem;
+            line-height: 1.65;
             color: var(--text-secondary);
-            margin: 0 0 16px;
+            margin: 0 0 20px;
         }
 
         .track-card-footer {
@@ -173,7 +190,8 @@
             gap: 8px;
             color: var(--gold-primary);
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
         }
 
         .track-card-footer .arrow {
@@ -181,7 +199,53 @@
         }
 
         .track-card:hover .track-card-footer .arrow {
-            transform: translateX(4px);
+            transform: translateX(6px);
+        }
+
+        .track-card-features {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0 0;
+        }
+
+        .track-card-features li {
+            padding: 6px 0 6px 20px;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            position: relative;
+        }
+
+        .track-card-features li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold-primary);
+        }
+
+        .track-card.featured {
+            background: var(--surface);
+            border-color: var(--blue-accent);
+            padding: 36px 32px;
+        }
+
+        .track-card.featured .track-card-title-large {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0 0 16px;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .track-card.featured .track-card-desc {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin: 0 0 24px;
         }
 
         .roadmap-section {
@@ -202,152 +266,99 @@
         }
 
         .roadmap-timeline {
-            display: flex;
-            flex-direction: row;
-            gap: 0;
-            overflow-x: auto;
-            padding: 8px 0 16px;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .roadmap-timeline::-webkit-scrollbar {
-            height: 6px;
-        }
-
-        .roadmap-timeline::-webkit-scrollbar-track {
-            background: var(--bg-deep);
-            border-radius: 3px;
-        }
-
-        .roadmap-timeline::-webkit-scrollbar-thumb {
-            background: var(--gold-rich);
-            border-radius: 3px;
-        }
-
-        .timeline-node-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            flex-shrink: 0;
-            scroll-snap-align: start;
-            width: 220px;
-            padding: 0 8px;
-        }
-
-        .timeline-connector {
-            position: absolute;
-            top: 20px;
-            right: -12px;
-            width: 24px;
-            height: 2px;
-            background: var(--blue-accent);
-            z-index: 0;
-        }
-
-        .timeline-node-wrapper:last-child .timeline-connector {
-            display: none;
-        }
-
-        .timeline-dot {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--gold-primary);
-            color: var(--bg-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.9rem;
-            flex-shrink: 0;
-            z-index: 1;
-            position: relative;
-        }
-
-        .timeline-card {
-            margin-top: 16px;
-            width: 100%;
-        }
-
-        .timeline-card details {
-            background: var(--surface);
-            border: 1px solid var(--blue-accent);
-            border-radius: 8px;
-            overflow: hidden;
-            width: 100%;
-        }
-
-        .timeline-summary {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            padding: 12px 16px;
-            cursor: pointer;
             list-style: none;
-            min-height: 44px;
+            padding: 0;
+            margin: 32px auto 0;
+            max-width: 720px;
+            position: relative;
+        }
+
+        .roadmap-timeline::before {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 12px;
+            bottom: 12px;
+            width: 2px;
+            background: var(--blue-accent);
+            opacity: 0.3;
+        }
+
+        .roadmap-step {
+            position: relative;
+            padding: 20px 0 20px 56px;
+            border-bottom: 1px solid oklch(85% 0.18 85 / 0.08);
+        }
+
+        .roadmap-step:last-child {
+            border-bottom: none;
+        }
+
+        .roadmap-step::before {
+            content: attr(data-step);
+            position: absolute;
+            left: 4px;
+            top: 22px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--bg-deep);
+            border: 1.5px solid var(--blue-accent);
+            display: flex;
+            align-items: center;
             justify-content: center;
-            transition: background 0.2s var(--ease-out-quint);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+            z-index: 1;
         }
 
-        .timeline-summary::-webkit-details-marker {
-            display: none;
+        .roadmap-step details {
+            cursor: pointer;
+            transition: outline-color 0.15s;
         }
 
-        .timeline-summary:hover {
-            background: var(--surface-hover);
+        .roadmap-step details[open] {
+            outline: 1px solid oklch(85% 0.18 85 / 0.12);
+            border-radius: 6px;
         }
 
-        .timeline-summary-title {
-            font-size: 0.95rem;
+        .roadmap-step summary {
+            font-size: 0.98rem;
             font-weight: 600;
             color: var(--text-primary);
-            margin: 0;
+            outline: none;
+            list-style: none;
+            transition: color 0.2s;
         }
 
-        .timeline-summary-tag {
-            display: inline-block;
-            padding: 3px 8px;
-            border-radius: 20px;
+        .roadmap-step summary::-webkit-details-marker { display: none; }
+
+        .roadmap-step summary:hover {
+            color: var(--gold-primary);
+        }
+
+        .roadmap-step details[open] summary {
+            color: var(--gold-primary);
+        }
+
+        .roadmap-step .step-tag {
+            font-family: 'JetBrains Mono', monospace;
             font-size: 0.65rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            width: fit-content;
+            font-weight: 600;
+            color: var(--code-green);
+            letter-spacing: 0.06em;
+            margin-left: 10px;
+            opacity: 0.65;
         }
 
-        .timeline-summary-tag.tag-training {
-            background: var(--code-green);
-            color: var(--bg-primary);
-        }
-
-        .timeline-summary-tag.tag-toolkits {
-            background: var(--gold-primary);
-            color: var(--bg-primary);
-        }
-
-        .timeline-summary-tag.tag-survival {
-            background: #f87171;
-            color: var(--bg-primary);
-        }
-
-        [data-theme="light"] .timeline-summary-tag.tag-survival {
-            background: #dc2626;
-            color: white;
-        }
-
-        .timeline-detail {
-            padding: 12px 16px 16px;
-            border-top: 1px solid var(--blue-accent);
-        }
-
-        .timeline-detail p {
-            font-size: 0.85rem;
-            line-height: 1.6;
+        .roadmap-step .step-content {
+            padding: 10px 0 4px;
+            font-size: 0.9rem;
             color: var(--text-secondary);
-            margin: 0;
+            line-height: 1.6;
+            max-width: 560px;
         }
 
         .simplified-footer {
@@ -385,7 +396,7 @@
         }
 
         .animate-in {
-            opacity: 0;
+            opacity: 1;
         }
 
         .animate-in.visible {
@@ -451,43 +462,8 @@
                 text-align: center;
             }
 
-            .roadmap-timeline {
-                flex-direction: column;
-                gap: 0;
-                overflow-x: visible;
-                scroll-snap-type: none;
-            }
-
-            .timeline-node-wrapper {
-                flex-direction: row;
-                width: 100%;
-                padding: 8px 0;
-                gap: 16px;
-            }
-
-            .timeline-connector {
-                top: 40px;
-                right: auto;
-                left: 19px;
-                width: 2px;
-                height: 16px;
-                background: var(--blue-accent);
-            }
-
-            .timeline-node-wrapper:last-child .timeline-connector {
-                display: none;
-            }
-
-            .timeline-dot {
-                width: 36px;
-                height: 36px;
-                font-size: 0.8rem;
-                flex-shrink: 0;
-            }
-
-            .timeline-card {
-                margin-top: 0;
-                flex: 1;
+            .roadmap-section-title {
+                font-size: 1.25rem;
             }
 
             .hero-badge.visible,
@@ -523,10 +499,6 @@
                 transform: none !important;
                 animation: none !important;
             }
-
-            .roadmap-timeline {
-                scroll-behavior: auto;
-            }
         }
     </style>
 </head>
@@ -547,190 +519,104 @@
                 <p class="hero-description animate-in">Learn the fundamentals of AI-native development, explore specialized agent toolkits, and gain the skills you need to succeed in hackathons and real-world projects.</p>
                 <p class="hero-meta animate-in">Designed to be completed in 3&#8209;4 hours &#183; Three progressive tracks</p>
                 <div class="cta-buttons animate-in">
-                    <a href="introduction.html" class="btn btn-primary btn-large">Start Workshop</a>
+                    <a href="training-reference.html" class="btn btn-primary btn-large">Start Workshop</a>
                     <a href="#roadmap" class="btn btn-secondary btn-large">View Roadmap</a>
                 </div>
             </section>
 
             <section class="animate-in">
-                <h3>Choose Your Path</h3>
+                <h2>Choose Your Path</h2>
                 <div class="track-grid">
-                    <a href="introduction.html" class="track-card animate-in animate-in-delay-1">
-                        <div class="track-card-header">
-                            <span class="track-card-icon">&#128218;</span>
-                            <span class="track-card-tag tag-training">Training Session</span>
-                        </div>
-                        <h3>Training Session</h3>
-                        <p>Learn the fundamentals of TRAE's AI-driven development. From Vibe Coding to Spec-Driven Development and Skills activation.</p>
-                        <div class="track-card-footer">
-                            <span>View Track</span>
-                            <span class="arrow">&rarr;</span>
-                        </div>
-                    </a>
-
-                    <a href="skills.html" class="track-card animate-in animate-in-delay-2">
-                        <div class="track-card-header">
-                            <span class="track-card-icon">&#128736;&#65039;</span>
-                            <span class="track-card-tag tag-toolkits">Agents Toolkits</span>
-                        </div>
-                        <h3>Agents Toolkits</h3>
-                        <p>Discover specialized skills and build AI-powered features. Explore TRAE IDE, OpenCode, MCP integration, and deployment workflows.</p>
-                        <div class="track-card-footer">
-                            <span>View Toolkit</span>
-                            <span class="arrow">&rarr;</span>
-                        </div>
-                    </a>
-
-                    <a href="vibe-coding.html" class="track-card animate-in animate-in-delay-3">
-                        <div class="track-card-header">
-                            <span class="track-card-icon">&#128737;&#65039;</span>
-                            <span class="track-card-tag tag-survival">Survival Kit</span>
-                        </div>
-                        <h3>Survival Kit</h3>
-                        <p>Essential skills for hackathon survival and deployment. Enterprise tools like Copilot Studio and GenAI Portal for production-ready workflows.</p>
-                        <div class="track-card-footer">
-                            <span>Get Started</span>
-                            <span class="arrow">&rarr;</span>
-                        </div>
-                    </a>
-                </div>
+                <a href="training-reference.html" class="track-card featured" data-track="1">
+                    <div class="track-card-number">01 // TRAINING SESSION</div>
+                    <div class="track-card-header">
+                        <div class="track-card-tag tag-training">TRAINING SESSION</div>
+                    </div>
+                    <h3 class="track-card-title-large">Training Session</h3>
+                    <p class="track-card-desc">Learn the fundamentals of TRAE's AI-driven development. From Vibe Coding to Spec-Driven Development and Skills activation.</p>
+                    <div class="track-card-footer">
+                        <span>Start Learning</span>
+                        <span class="arrow">&rarr;</span>
+                    </div>
+                </a>
+                <a href="skills.html" class="track-card" data-track="2">
+                    <div class="track-card-number">02 // AGENTS TOOLKITS</div>
+                    <h3>Agents Toolkits</h3>
+                    <p>Discover specialized skills and build AI-powered features. Explore TRAE IDE, OpenCode, MCP integration, and deployment workflows.</p>
+                    <div class="track-card-footer">
+                        <span>View Toolkit</span>
+                        <span class="arrow">&rarr;</span>
+                    </div>
+                </a>
+                <a href="skills.html" class="track-card" data-track="3">
+                    <div class="track-card-number">03 // SURVIVAL KIT</div>
+                    <h3>Survival Kit</h3>
+                    <p>Essential skills for hackathon survival and deployment. Enterprise tools like Copilot Studio and GenAI Portal for production-ready workflows.</p>
+                    <div class="track-card-footer">
+                        <span>Get Started</span>
+                        <span class="arrow">&rarr;</span>
+                    </div>
+                </a>
+            </div>
             </section>
 
             <section class="roadmap-section" id="roadmap">
-                <h3 class="roadmap-section-title animate-in">Workshop Roadmap</h3>
+                <h2 class="roadmap-section-title animate-in">Workshop Roadmap</h2>
                 <p class="roadmap-subtitle animate-in">Eight steps from setup to production &#8212; click each step for details</p>
                 <div class="roadmap-timeline animate-in">
-                    <div class="timeline-node-wrapper">
-                        <div class="timeline-dot">1</div>
-                        <div class="timeline-connector"></div>
-                        <div class="timeline-card">
-                            <details>
-                                <summary class="timeline-summary">
-                                    <span class="timeline-summary-title">Getting Started</span>
-                                    <span class="timeline-summary-tag tag-training">Training Session</span>
-                                </summary>
-                                <div class="timeline-detail">
-                                    <p>Introduction to TRAE SOLO, environment setup, and understanding the dual-client architecture with MTC and Code modes.</p>
-                                </div>
-                            </details>
-                        </div>
+                    <div class="roadmap-step" data-step="1">
+                        <details>
+                            <summary>Getting Started <span class="step-tag">Training</span></summary>
+                            <div class="step-content">Introduction to TRAE SOLO, environment setup, and understanding the dual&#8209;client architecture with MTC and Code modes.</div>
+                        </details>
                     </div>
-
-                    <div class="timeline-node-wrapper">
-                        <div class="timeline-dot">2</div>
-                        <div class="timeline-connector"></div>
-                        <div class="timeline-card">
-                            <details>
-                                <summary class="timeline-summary">
-                                    <span class="timeline-summary-title">Vibe Coding</span>
-                                    <span class="timeline-summary-tag tag-training">Training Session</span>
-                                </summary>
-                                <div class="timeline-detail">
-                                    <p>Rapid feature development using natural language descriptions. Build real interfaces with conversational AI workflows.</p>
-                                </div>
-                            </details>
-                        </div>
+                    <div class="roadmap-step" data-step="2">
+                        <details>
+                            <summary>Vibe Coding <span class="step-tag">Training</span></summary>
+                            <div class="step-content">Rapid feature development using natural language descriptions. Build real interfaces with conversational AI workflows.</div>
+                        </details>
                     </div>
-
-                    <div class="timeline-node-wrapper">
-                        <div class="timeline-dot">3</div>
-                        <div class="timeline-connector"></div>
-                        <div class="timeline-card">
-                            <details>
-                                <summary class="timeline-summary">
-                                    <span class="timeline-summary-title">Spec-Driven Development</span>
-                                    <span class="timeline-summary-tag tag-training">Training Session</span>
-                                </summary>
-                                <div class="timeline-detail">
-                                    <p>Structured specifications for complex, multi-file features. Plan requirements and edge cases before writing code.</p>
-                                </div>
-                            </details>
-                        </div>
+                    <div class="roadmap-step" data-step="3">
+                        <details>
+                            <summary>Spec&#8209;Driven Development <span class="step-tag">Training</span></summary>
+                            <div class="step-content">Structured specifications for complex, multi&#8209;file features. Plan requirements and edge cases before writing code.</div>
+                        </details>
                     </div>
-
-                    <div class="timeline-node-wrapper">
-                        <div class="timeline-dot">4</div>
-                        <div class="timeline-connector"></div>
-                        <div class="timeline-card">
-                            <details>
-                                <summary class="timeline-summary">
-                                    <span class="timeline-summary-title">Skills</span>
-                                    <span class="timeline-summary-tag tag-training">Training Session</span>
-                                </summary>
-                                <div class="timeline-detail">
-                                    <p>Access to 181+ specialized skills for frontend, backend, testing, security, and AI agent development.</p>
-                                </div>
-                            </details>
-                        </div>
+                    <div class="roadmap-step" data-step="4">
+                        <details>
+                            <summary>Skills <span class="step-tag">Training</span></summary>
+                            <div class="step-content">Access to 14 curated essential skills covering development, design, data analysis, and content creation.</div>
+                        </details>
                     </div>
-
-                    <div class="timeline-node-wrapper">
-                        <div class="timeline-dot">5</div>
-                        <div class="timeline-connector"></div>
-                        <div class="timeline-card">
-                            <details>
-                                <summary class="timeline-summary">
-                                    <span class="timeline-summary-title">TRAE IDE</span>
-                                    <span class="timeline-summary-tag tag-toolkits">Agents Toolkits</span>
-                                </summary>
-                                <div class="timeline-detail">
-                                    <p>Multitasking, tool panel usage, MCP integration, and deployment for production applications.</p>
-                                </div>
-                            </details>
-                        </div>
+                    <div class="roadmap-step" data-step="5">
+                        <details>
+                            <summary>TRAE IDE <span class="step-tag">Toolkits</span></summary>
+                            <div class="step-content">Multitasking, tool panel usage, MCP integration, and deployment for production applications.</div>
+                        </details>
                     </div>
-
-                    <div class="timeline-node-wrapper">
-                        <div class="timeline-dot">6</div>
-                        <div class="timeline-connector"></div>
-                        <div class="timeline-card">
-                            <details>
-                                <summary class="timeline-summary">
-                                    <span class="timeline-summary-title">OpenCode</span>
-                                    <span class="timeline-summary-tag tag-toolkits">Agents Toolkits</span>
-                                </summary>
-                                <div class="timeline-detail">
-                                    <p>Explore OpenCode's terminal-based interface and web UI for AI-powered coding workflows.</p>
-                                </div>
-                            </details>
-                        </div>
+                    <div class="roadmap-step" data-step="6">
+                        <details>
+                            <summary>OpenCode <span class="step-tag">Toolkits</span></summary>
+                            <div class="step-content">Explore OpenCode's terminal&#8209;based interface and web UI for AI&#8209;powered coding workflows.</div>
+                        </details>
                     </div>
-
-                    <div class="timeline-node-wrapper">
-                        <div class="timeline-dot">7</div>
-                        <div class="timeline-connector"></div>
-                        <div class="timeline-card">
-                            <details>
-                                <summary class="timeline-summary">
-                                    <span class="timeline-summary-title">Microsoft Copilot Studio</span>
-                                    <span class="timeline-summary-tag tag-survival">Survival Kit</span>
-                                </summary>
-                                <div class="timeline-detail">
-                                    <p>Build and deploy custom AI agents using enterprise-grade tools and integrations.</p>
-                                </div>
-                            </details>
-                        </div>
+                    <div class="roadmap-step" data-step="7">
+                        <details>
+                            <summary>Microsoft Copilot Studio <span class="step-tag">Survival</span></summary>
+                            <div class="step-content">Build and deploy custom AI agents using enterprise&#8209;grade tools and integrations.</div>
+                        </details>
                     </div>
-
-                    <div class="timeline-node-wrapper">
-                        <div class="timeline-dot">8</div>
-                        <div class="timeline-card">
-                            <details>
-                                <summary class="timeline-summary">
-                                    <span class="timeline-summary-title">GenAI Portal</span>
-                                    <span class="timeline-summary-tag tag-survival">Survival Kit</span>
-                                </summary>
-                                <div class="timeline-detail">
-                                    <p>Browser automation and advanced AI interactions for scaling your development workflow.</p>
-                                </div>
-                            </details>
-                        </div>
+                    <div class="roadmap-step" data-step="8">
+                        <details>
+                            <summary>GenAI Portal <span class="step-tag">Survival</span></summary>
+                            <div class="step-content">Browser automation and advanced AI interactions for scaling your development workflow.</div>
+                        </details>
                     </div>
                 </div>
             </section>
 
             <div class="simplified-footer">
-                <a href="introduction.html" class="btn btn-primary">Start Workshop &rarr;</a>
+                <a href="training-reference.html" class="btn btn-primary">Start Workshop &rarr;</a>
             </div>
         </article>
     </main>

@@ -3,8 +3,9 @@ window.addEventListener('scroll', () => {
     if (progressBar) {
         const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrollPercent = (scrollTop / scrollHeight) * 100;
-        progressBar.style.width = scrollPercent + '%';
+        const scrollPercent = (scrollTop / scrollHeight);
+        const clampedPercent = Math.max(0.02, scrollPercent);
+        progressBar.style.transform = `scaleX(${clampedPercent})`;
     }
 });
 
@@ -161,12 +162,11 @@ function generateSidebar() {
                     title: 'Skills',
                     subpages: [
                         { file: 'skills.html', label: 'Skills Basics' },
+                        { file: '14-skills.html', label: '14 Must-Install Skills' },
                         { file: 'skills-reference.html', label: 'Skills in Action' }
                     ]
                 },
-                { file: 'getting-started.html', label: 'Getting Started' },
-                { file: 'desktop-client.html', label: 'Desktop Client' },
-                { file: 'setup-account.html', label: 'Setup Account' }
+                { file: 'getting-started.html', label: 'Getting Started' }
             ]
         },
         {
@@ -605,34 +605,30 @@ function generateBreadcrumbs() {
 
 function getSectionName(page) {
     var sectionMap = {
-        'training-reference.html': { label: 'AI Hackathon Training Reference', link: 'index.html' },
-        'ai-coding-agents.html': { label: 'AI Hackathon Training Reference', link: 'training-reference.html' },
-        'vibe-coding-reference.html': { label: 'AI Hackathon Training Reference', link: 'training-reference.html' },
-        'spec-driven-reference.html': { label: 'AI Hackathon Training Reference', link: 'training-reference.html' },
-        'trae-solo-reference.html': { label: 'AI Hackathon Training Reference', link: 'training-reference.html' },
-        'introduction.html': { label: 'Getting Started', link: 'index.html' },
-        'start-workshop.html': { label: 'Getting Started', link: 'index.html' },
-        'get-started.html': { label: 'Getting Started', link: 'index.html' },
-        'desktop-client.html': { label: 'Getting Started', link: 'index.html' },
-        'setup-account.html': { label: 'Getting Started', link: 'index.html' },
-        'trae-solo-overview.html': { label: 'Core Concepts', link: 'index.html' },
-        'multitasking.html': { label: 'Core Concepts', link: 'index.html' },
-        'dual-modes.html': { label: 'Core Concepts', link: 'index.html' },
-        'tool-panel.html': { label: 'Core Concepts', link: 'index.html' },
-        'deploy-backend.html': { label: 'Core Concepts', link: 'index.html' },
-        'vibe-coding.html': { label: 'Hands-on Exercises', link: 'vibe-coding-reference.html' },
-        'llm-eval-intro.html': { label: 'Vibe Coding', link: 'vibe-coding.html' },
-        'deployment-troubleshooting.html': { label: 'Agents Toolkits', link: 'index.html' },
-        'mcp-integration.html': { label: 'Agents Toolkits', link: 'index.html' },
+        'training-reference.html': { label: 'Training Session', link: 'index.html' },
+        'ai-coding-agents.html': { label: 'Training Session', link: 'training-reference.html' },
+        'vibe-coding-reference.html': { label: 'Training Session', link: 'training-reference.html' },
+        'llm-eval-intro.html': { label: 'Training Session', link: 'training-reference.html' },
+        'spec-driven-reference.html': { label: 'Training Session', link: 'training-reference.html' },
+        'free-practice-feature.html': { label: 'Training Session', link: 'training-reference.html' },
+        'skills.html': { label: 'Training Session', link: 'training-reference.html' },
+        '14-skills.html': { label: 'Training Session', link: 'trae-solo-overview.html' },
+        'skills-reference.html': { label: 'Training Session', link: 'training-reference.html' },
+        'getting-started.html': { label: 'Training Session', link: 'training-reference.html' },
+        'trae-solo-overview.html': { label: 'Agents Toolkits', link: 'index.html' },
+        'multitasking.html': { label: 'Agents Toolkits', link: 'trae-solo-overview.html' },
+        'tool-panel.html': { label: 'Agents Toolkits', link: 'trae-solo-overview.html' },
+        'mcp-integration.html': { label: 'Agents Toolkits', link: 'trae-solo-overview.html' },
+        'deploy-backend.html': { label: 'Agents Toolkits', link: 'trae-solo-overview.html' },
+        'deployment-troubleshooting.html': { label: 'Agents Toolkits', link: 'trae-solo-overview.html' },
         'opencode.html': { label: 'Agents Toolkits', link: 'index.html' },
-        'opencode-web-ui.html': { label: 'Agents Toolkits', link: 'index.html' },
+        'opencode-web-ui.html': { label: 'Agents Toolkits', link: 'opencode.html' },
         'microsoft-copilot-studio.html': { label: 'Survival Kit', link: 'index.html' },
-        'copilot-studio-reference.html': { label: 'Survival Kit', link: 'index.html' },
-        'agent-integration.html': { label: 'Survival Kit', link: 'index.html' },
+        'copilot-studio-reference.html': { label: 'Survival Kit', link: 'microsoft-copilot-studio.html' },
+        'agent-integration.html': { label: 'Survival Kit', link: 'microsoft-copilot-studio.html' },
         'genai-portal.html': { label: 'Survival Kit', link: 'index.html' },
-        'genai-portal-reference.html': { label: 'Survival Kit', link: 'index.html' },
+        'genai-portal-reference.html': { label: 'Survival Kit', link: 'genai-portal.html' },
         'ollama.html': { label: 'Survival Kit', link: 'index.html' },
-        'ollama-reference.html': { label: 'Survival Kit', link: 'index.html' },
         'wrapping-up.html': { label: 'Wrap Up', link: 'index.html' }
     };
 
@@ -641,9 +637,74 @@ function getSectionName(page) {
 
 function getSectionChain(page) {
     var nestedChains = {
+        'vibe-coding-reference.html': [
+            { label: 'Training Session', link: 'training-reference.html' }
+        ],
         'llm-eval-intro.html': [
-            { label: 'AI Hackathon Training Reference', link: 'training-reference.html' },
-            { label: 'Vibe Coding', link: 'vibe-coding.html' }
+            { label: 'Training Session', link: 'training-reference.html' },
+            { label: 'Vibe Coding', link: 'vibe-coding-reference.html' }
+        ],
+        'spec-driven-reference.html': [
+            { label: 'Training Session', link: 'training-reference.html' }
+        ],
+        'free-practice-feature.html': [
+            { label: 'Training Session', link: 'training-reference.html' },
+            { label: 'Spec-Driven Development', link: 'spec-driven-reference.html' }
+        ],
+        'skills.html': [
+            { label: 'Training Session', link: 'training-reference.html' }
+        ],
+        '14-skills.html': [
+            { label: 'Training Session', link: 'training-reference.html' },
+            { label: 'Skills', link: 'skills.html' }
+        ],
+        'skills-reference.html': [
+            { label: 'Training Session', link: 'training-reference.html' },
+            { label: 'Skills', link: 'skills.html' }
+        ],
+        'trae-solo-overview.html': [
+            { label: 'Agents Toolkits', link: 'index.html' }
+        ],
+        'multitasking.html': [
+            { label: 'Agents Toolkits', link: 'trae-solo-overview.html' }
+        ],
+        'tool-panel.html': [
+            { label: 'Agents Toolkits', link: 'trae-solo-overview.html' },
+            { label: 'TRAE IDE', link: 'trae-solo-overview.html' }
+        ],
+        'mcp-integration.html': [
+            { label: 'Agents Toolkits', link: 'trae-solo-overview.html' },
+            { label: 'TRAE IDE', link: 'tool-panel.html' }
+        ],
+        'deploy-backend.html': [
+            { label: 'Agents Toolkits', link: 'trae-solo-overview.html' },
+            { label: 'TRAE IDE', link: 'mcp-integration.html' }
+        ],
+        'deployment-troubleshooting.html': [
+            { label: 'Agents Toolkits', link: 'trae-solo-overview.html' },
+            { label: 'TRAE IDE', link: 'deploy-backend.html' }
+        ],
+        'opencode-web-ui.html': [
+            { label: 'Agents Toolkits', link: 'opencode.html' }
+        ],
+        'copilot-studio-reference.html': [
+            { label: 'Survival Kit', link: 'microsoft-copilot-studio.html' }
+        ],
+        'agent-integration.html': [
+            { label: 'Survival Kit', link: 'microsoft-copilot-studio.html' },
+            { label: 'Microsoft Copilot Studio', link: 'microsoft-copilot-studio.html' }
+        ],
+        'genai-portal-reference.html': [
+            { label: 'Survival Kit', link: 'genai-portal.html' }
+        ],
+        'microsoft-copilot-studio.html': [
+            { label: 'Survival Kit', link: 'index.html' }
+        ],
+        'ollama.html': [
+            { label: 'Survival Kit', link: 'index.html' }
+        ],
+        'wrapping-up.html': [
+            { label: 'Wrap Up', link: 'index.html' }
         ]
     };
 
@@ -652,32 +713,29 @@ function getSectionChain(page) {
     }
 
     var sectionMap = {
-        'training-reference.html': { label: 'AI Hackathon Training Reference', link: 'index.html' },
-        'ai-coding-agents.html': { label: 'AI Hackathon Training Reference', link: 'training-reference.html' },
-        'vibe-coding-reference.html': { label: 'AI Hackathon Training Reference', link: 'training-reference.html' },
-        'spec-driven-reference.html': { label: 'AI Hackathon Training Reference', link: 'training-reference.html' },
-        'trae-solo-reference.html': { label: 'AI Hackathon Training Reference', link: 'training-reference.html' },
-        'introduction.html': { label: 'Getting Started', link: 'index.html' },
-        'start-workshop.html': { label: 'Getting Started', link: 'index.html' },
-        'get-started.html': { label: 'Getting Started', link: 'index.html' },
-        'desktop-client.html': { label: 'Getting Started', link: 'index.html' },
-        'setup-account.html': { label: 'Getting Started', link: 'index.html' },
-        'trae-solo-overview.html': { label: 'Core Concepts', link: 'index.html' },
-        'multitasking.html': { label: 'Core Concepts', link: 'index.html' },
-        'dual-modes.html': { label: 'Core Concepts', link: 'index.html' },
-        'tool-panel.html': { label: 'Core Concepts', link: 'index.html' },
-        'deploy-backend.html': { label: 'Core Concepts', link: 'index.html' },
-        'deployment-troubleshooting.html': { label: 'Agents Toolkits', link: 'index.html' },
-        'mcp-integration.html': { label: 'Agents Toolkits', link: 'index.html' },
+        'trae-solo-overview.html': { label: 'Agents Toolkits', link: 'index.html' },
+        'training-reference.html': { label: 'Training Session', link: 'index.html' },
+        'ai-coding-agents.html': { label: 'Training Session', link: 'training-reference.html' },
+        'getting-started.html': { label: 'Training Session', link: 'training-reference.html' },
+        'free-practice-feature.html': { label: 'Training Session', link: 'training-reference.html' },
+        'skills.html': { label: 'Training Session', link: 'training-reference.html' },
+        'skills-reference.html': { label: 'Training Session', link: 'training-reference.html' },
+        'spec-driven-reference.html': { label: 'Training Session', link: 'training-reference.html' },
+        'llm-eval-intro.html': { label: 'Training Session', link: 'training-reference.html' },
+        'vibe-coding-reference.html': { label: 'Training Session', link: 'training-reference.html' },
+        'deploy-backend.html': { label: 'Agents Toolkits', link: 'trae-solo-overview.html' },
+        'deployment-troubleshooting.html': { label: 'Agents Toolkits', link: 'trae-solo-overview.html' },
+        'mcp-integration.html': { label: 'Agents Toolkits', link: 'trae-solo-overview.html' },
+        'tool-panel.html': { label: 'Agents Toolkits', link: 'trae-solo-overview.html' },
+        'multitasking.html': { label: 'Agents Toolkits', link: 'trae-solo-overview.html' },
         'opencode.html': { label: 'Agents Toolkits', link: 'index.html' },
-        'opencode-web-ui.html': { label: 'Agents Toolkits', link: 'index.html' },
+        'opencode-web-ui.html': { label: 'Agents Toolkits', link: 'opencode.html' },
         'microsoft-copilot-studio.html': { label: 'Survival Kit', link: 'index.html' },
-        'copilot-studio-reference.html': { label: 'Survival Kit', link: 'index.html' },
-        'agent-integration.html': { label: 'Survival Kit', link: 'index.html' },
+        'copilot-studio-reference.html': { label: 'Survival Kit', link: 'microsoft-copilot-studio.html' },
+        'agent-integration.html': { label: 'Survival Kit', link: 'microsoft-copilot-studio.html' },
         'genai-portal.html': { label: 'Survival Kit', link: 'index.html' },
-        'genai-portal-reference.html': { label: 'Survival Kit', link: 'index.html' },
+        'genai-portal-reference.html': { label: 'Survival Kit', link: 'genai-portal.html' },
         'ollama.html': { label: 'Survival Kit', link: 'index.html' },
-        'ollama-reference.html': { label: 'Survival Kit', link: 'index.html' },
         'wrapping-up.html': { label: 'Wrap Up', link: 'index.html' }
     };
 

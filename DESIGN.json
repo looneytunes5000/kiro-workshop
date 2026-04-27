@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-04-25T12:30:00Z",
+  "title": "Design System: AI-Driven Development with TRAE SOLO",
+  "extensions": {
+    "colorMeta": {
+      "warm-workshop-gold": {
+        "role": "primary",
+        "displayName": "Warm Workshop Gold",
+        "canonical": "oklch(85% 0.18 85°)",
+        "tonalRamp": [
+          "#3D2E0A",
+          "#574B0F",
+          "#7A6A15",
+          "#A68F1D",
+          "#C9B02F",
+          "#E8C547",
+          "#F2D970",
+          "#FAED9E",
+          "#FDF6CF"
+        ]
+      },
+      "burnished-gold": {
+        "role": "primary-hover",
+        "displayName": "Burnished Gold",
+        "canonical": "oklch(72% 0.16 80°)",
+        "tonalRamp": [
+          "#332609",
+          "#4B3F0D",
+          "#6B5B10",
+          "#8F7A16",
+          "#B89A1E",
+          "#D4A017",
+          "#E2BB43",
+          "#EDD26B",
+          "#F6EAAA"
+        ]
+      },
+      "midnight-void": {
+        "role": "neutral-bg",
+        "displayName": "Midnight Void",
+        "canonical": "oklch(8% 0.02 260°)",
+        "tonalRamp": ["#080E1A", "#121A2B", "#232E42", "#3A4A65", "#556885", "#7A8FA8", "#A5B9CC", "#D0DDE8", "#F0F4F8"]
+      },
+      "deep-night-surface": {
+        "role": "neutral-bg-deep",
+        "displayName": "Deep Night Surface",
+        "canonical": "oklch(10% 0.02 260°)",
+        "tonalRamp": ["#0B1120", "#142138", "#24334F", "#3A4D68", "#546C86", "#7991A8", "#A4B7CA", "#CFDCE6", "#F0F5F9"]
+      },
+      "night-panel": {
+        "role": "neutral-surface",
+        "displayName": "Night Panel",
+        "canonical": "oklch(14% 0.025 260°)",
+        "tonalRamp": ["#111C30", "#253249", "#3E4F68", "#5A6F88", "#7C90A4", "#A0B2C3", "#C1D0DD", "#DCE5ED", "#F2F6F9"]
+      },
+      "cream-text": {
+        "role": "neutral-text",
+        "displayName": "Cream Text",
+        "canonical": "oklch(94% 0.008 85°)",
+        "tonalRamp": ["#A39F94", "#C2BFB5", "#D6D3CA", "#E3E0D8", "#EAE8E0", "#F0EDE6", "#F5F3ED", "#F8F7F3", "#FCFCFB"]
+      },
+      "bright-mint": {
+        "role": "secondary",
+        "displayName": "Bright Mint",
+        "canonical": "oklch(83% 0.18 160°)",
+        "tonalRamp": ["#003D25", "#005F3A", "#008A54", "#00B870", "#00E59B", "#3AEBB0", "#6FF0C5", "#A5F5DA", "#DAFAEE"]
+      },
+      "deep-ocean-border": {
+        "role": "neutral-border",
+        "displayName": "Deep Ocean Border",
+        "canonical": "oklch(22% 0.04 240°)",
+        "tonalRamp": ["#1E3A5F", "#2A4D73", "#3B6289", "#517EAD", "#6D9BBF", "#8FB5D0", "#B3CEE2", "#D2E2EE", "#EAF1F7"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Page Display",
+        "purpose": "Page header h1 titles. Gold accent span for product branding."
+      },
+      "headline": {
+        "displayName": "Section Headline",
+        "purpose": "h3 section headings within article content. Clear weight contrast (600) from body."
+      },
+      "body": {
+        "displayName": "Body Copy",
+        "purpose": "All paragraph text. Line-height 1.7, max-width constrained to 75ch."
+      },
+      "mono": {
+        "displayName": "Code Mono",
+        "purpose": "Inline code snippets and code blocks. Bright mint for syntax context."
+      },
+      "accent": {
+        "displayName": "Caveat Accent",
+        "purpose": "Callout headers only. Handwritten cursive emphasis, warm gold color."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card-hover-glow",
+        "value": "0 8px 24px rgba(232, 197, 71, 0.15)",
+        "purpose": "Gold-tinted hover glow on agent cards, outcome items, integration cards. Signals interactivity without lifting from plane."
+      },
+      {
+        "name": "doc-image-shadow",
+        "value": "0 4px 12px rgba(0, 0, 0, 0.3)",
+        "purpose": "Applied to documentation images (screenshots). Subtle ambient drop shadow to distinguish from content surface."
+      },
+      {
+        "name": "card-lift",
+        "value": "0 4px 16px rgba(0, 0, 0, 0.2)",
+        "purpose": "Subtle hover lift on mode cards and tool comparison blocks. Standard dark shadow."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-quint",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Default easing for all transitions — sidebar, buttons, hover states, animations."
+      },
+      {
+        "name": "transition-standard",
+        "value": "0.2s var(--ease-out-quint)",
+        "purpose": "Standard transition duration for hover/focus state changes."
+      },
+      {
+        "name": "transition-identity",
+        "value": "0.25s var(--ease-out-quint)",
+        "purpose": "Longer transition for identity-changing transforms (card hover lift with shadow)."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "768px", "purpose": "Mobile breakpoint — sidebar collapses, full-width content, stacked buttons" },
+      { "name": "md", "value": "900px", "purpose": "Tablet breakpoint — mode comparison collapses to single column, spec grid 1-col" },
+      { "name": "lg", "value": "1200px", "purpose": "Overview sidebar disappears, content wrapper goes full-width" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Warm gold action button for next-step navigation and primary CTAs.",
+      "html": "<button class=\"ds-btn-primary\">GET STARTED</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; background: #E8C547; color: #0B1120; padding: 10px 20px; min-height: 44px; font-size: 0.9rem; font-weight: 600; font-family: 'Space Grotesk', sans-serif; border-radius: 6px; border: none; cursor: pointer; text-decoration: none; transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), filter 0.2s cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-primary:hover { transform: translateY(-2px); filter: brightness(1.05); } .ds-btn-primary:focus-visible { outline: 2px solid #E8C547; outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ghost button with border for alternative navigation actions.",
+      "html": "<button class=\"ds-btn-secondary\">BACK</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; background: transparent; color: #B8B5AC; padding: 10px 20px; min-height: 44px; font-size: 0.9rem; font-weight: 600; font-family: 'Space Grotesk', sans-serif; border-radius: 6px; border: 1px solid #1E3A5F; cursor: pointer; text-decoration: none; transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.2s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-secondary:hover { transform: translateY(-2px); border-color: #D4A017; color: #F0EDE6; } .ds-btn-secondary:focus-visible { outline: 2px solid #E8C547; outline-offset: 2px; }"
+    },
+    {
+      "name": "Sidebar Navigation Link",
+      "kind": "nav",
+      "refersTo": "sidebar-link",
+      "description": "Sidebar navigation link with active state showing left-border indicator.",
+      "html": "<nav class=\"ds-sidebar-nav\"><a class=\"ds-sidebar-link\" href=\"#\">Workshop Overview</a><a class=\"ds-sidebar-link active\" href=\"#\">Getting Started</a><a class=\"ds-sidebar-link\" href=\"#\">Vibe Coding</a></nav>",
+      "css": ".ds-sidebar-nav { display: flex; flex-direction: column; gap: 2px; font-family: 'Space Grotesk', sans-serif; } .ds-sidebar-link { display: block; padding: 6px 12px; color: #B8B5AC; text-decoration: none; font-size: 0.85rem; border-radius: 6px; border-left: 2px solid transparent; transition: color 0.1s ease, background 0.1s ease, border-color 0.2s ease; } .ds-sidebar-link:hover { color: #F0EDE6; background: rgba(255,255,255,0.03); } .ds-sidebar-link.active { color: #F0EDE6; background: #111C30; border-left-color: #F0EDE6; font-weight: 500; }"
+    },
+    {
+      "name": "Default Card",
+      "kind": "card",
+      "refersTo": "card-default",
+      "description": "Content card with flat surface styling and gold hover glow response.",
+      "html": "<article class=\"ds-card-default\"><h4>Module Title</h4><p>Learning description with brief overview of what the module covers.</p></article>",
+      "css": ".ds-card-default { background: #111C30; border: 1px solid #1E3A5F; border-radius: 12px; padding: 24px; font-family: 'Space Grotesk', sans-serif; transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1); } .ds-card-default h4 { font-size: 1.1rem; font-weight: 600; color: #F0EDE6; margin: 0 0 10px; } .ds-card-default p { font-size: 0.95rem; line-height: 1.6; color: #B8B5AC; margin: 0; } .ds-card-default:hover { transform: translateY(-2px); border-color: #E8C547; box-shadow: 0 8px 24px rgba(232, 197, 71, 0.15); }"
+    },
+    {
+      "name": "Code Block",
+      "kind": "custom",
+      "refersTo": "code-block",
+      "description": "Terminal-style code block with midnight void background and deep ocean border.",
+      "html": "<pre class=\"ds-code-block\"><code class=\"ds-code-content\">npm create @openai/agent</code></pre>",
+      "css": ".ds-code-block { background: #080E1A; padding: 20px; border-radius: 8px; border: 1px solid #1E3A5F; overflow-x: auto; margin: 20px 0; } .ds-code-content { font-family: 'JetBrains Mono', monospace; font-size: 0.85em; color: #00E59B; background: none; padding: 0; border: none; }"
+    },
+    {
+      "name": "Default Callout",
+      "kind": "custom",
+      "refersTo": "callout-default",
+      "description": "Gold-bordered callout with Caveat accent font for attention moments.",
+      "html": "<aside class=\"ds-callout\"><div class=\"ds-callout-header\"><span class=\"ds-dot\"></span><span class=\"ds-callout-title\">Important</span></div><p>Make sure you have Node.js 18+ installed before running the setup command.</p></aside>",
+      "css": ".ds-callout { border-left: 3px solid #E8C547; padding: 24px 28px; background: transparent; font-family: 'Space Grotesk', sans-serif; } .ds-callout-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; } .ds-callout .ds-dot { width: 8px; height: 8px; border-radius: 50%; background: #E8C547; flex-shrink: 0; } .ds-callout .ds-callout-title { font-family: 'Caveat', cursive; font-size: 1.4rem; font-weight: 600; color: #E8C547; } .ds-callout p { font-size: 1rem; line-height: 1.7; color: #B8B5AC; max-width: 65ch; margin: 0; }"
+    },
+    {
+      "name": "Included Badge",
+      "kind": "chip",
+      "refersTo": "badge-included",
+      "description": "Bright mint pill badge indicating feature inclusion.",
+      "html": "<span class=\"ds-badge-included\">included</span>",
+      "css": ".ds-badge-included { display: inline-block; padding: 4px 10px; background: #00E59B; color: #0B1120; border-radius: 20px; font-size: 0.75rem; font-weight: 600; font-family: 'Space Grotesk', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Workshop Console",
+    "overview": "The Workshop Console is a dark command center where learning happens through doing. It channels the feeling of sitting at a focused workstation — deep navy surfaces recede into the background, letting content and code take center stage. Warm gold accents aren't decorative; they're signals pointing toward the next action, the next step, the thing that matters right now. The aesthetic is premium but never ostentatious. It respects the learner's intelligence: clear hierarchy, functional typography, interactive feedback that feels measured rather than theatrical.",
+    "keyCharacteristics": [
+      "Dark-first with a polished light theme — both feel intentional, not inverted",
+      "Single warm gold accent carrying all emphasis and interactivity signals",
+      "Tonal layering without shadows — depth through color shifts and precise borders",
+      "Three typefaces, each earning its place: sans for structure, mono for code, handwritten for moments of human warmth",
+      "Refined motion with exponential easing — subtle transforms, no choreography"
+    ],
+    "rules": [
+      {
+        "name": "The One Signal Rule",
+        "body": "Warm Workshop Gold is the sole accent. It appears on ≤10% of any screen. When gold is everywhere, it means nothing.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mint Boundary",
+        "body": "Bright Mint (#00E59B) is code and tip indicators only. Never for buttons, links, or general emphasis.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tonal Depth Rule",
+        "body": "Depth is conveyed through background color progression (#0B1120 → #111C30 → #162540) and 1px borders in deep ocean blue. Shadows are secondary.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Grotesk Commitment",
+        "body": "Space Grotesk carries structure end-to-end. Weight (400→500→600→700) and size create hierarchy — no additional families for headings.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "No shadows at rest. The interface reads as a flat plane with color zones defining structure. Shadows emerge only as interactive feedback.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use Warm Workshop Gold (#E8C547) as the sole accent, limited to ≤10% of any screen area.",
+      "Do convey depth through tonal layering with 1px borders before reaching for shadows.",
+      "Do apply 2px gold outline offset by 2px on all interactive focus states.",
+      "Do use Space Grotesk weight contrast as the primary hierarchy mechanism.",
+      "Do reserve Caveat font exclusively for callout titles.",
+      "Do use ease-out-quint for all transitions at 0.2–0.3s duration.",
+      "Do provide a complete light-theme counterpart — both themes equally intentional."
+    ],
+    "donts": [
+      "Don't use corporate enterprise templates with generic stock imagery and dry formatting (PRODUCT.md anti-reference).",
+      "Don't include playful or childish interfaces with cartoonish elements or casual styling (PRODUCT.md anti-reference).",
+      "Don't create dense wall-of-text documentation with poor visual hierarchy (PRODUCT.md anti-reference).",
+      "Don't use Bright Mint for general UI elements outside code syntax and tip callouts.",
+      "Don't introduce additional font families — Space Grotesk carries structure with weight and size.",
+      "Don't apply shadows at rest on surfaces or cards.",
+      "Don't use pure black or pure white as text or background in dark theme.",
+      "Don't apply gold to more than ~10% of any screen.",
+      "Don't animate CSS layout properties — use transforms and opacity only.",
+      "Don't use border-left greater than 3px as a colored stripe."
+    ]
+  }
+}
