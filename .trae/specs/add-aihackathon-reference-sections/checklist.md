@@ -1,0 +1,15 @@
+- [x] Event tagline card displays collapsed summary "The aiHackathon Event" on initial load - CSS line 373 defines collapsed default; HTML line 979 uses native <details> without open attribute
+- [x] Tagline card expands on click showing: event name, subtitle, description, and 5 stats - HTML lines 986-1013: h3 title with gold accent, p subtitle, p description, div event-stats with 5 event-stat items
+- [x] Judging criteria section displays collapsed with "Judging Criteria" summary and "(4)" badge - HTML line 1020: span.summary-badge with text "4"
+- [x] Criteria section expands showing 4 cards in 2x2 grid with proper English translations - HTML lines 1023-1054: criteria-grid div with 4 criterion-card children, all text in English
+- [x] Each criterion card has icon circle, title, and description text - CSS lines 541-555 define .criterion-icon (40px circle), .criterion-title, .criterion-desc
+- [x] Schedule section displays collapsed with "Schedule — 5 June 2026" summary - HTML line 1059: summary with summary-sub "&#8212; 5 June 2026"
+- [x] Schedule expands showing all 12 time slots from 09:00 to 17:15 - HTML lines 1065-1111: 11 schedule-item <li> elements from 09:00 to 17:15 (corrected count: 11 items)
+- [x] Key schedule events have gold left-border accent highlighting - CSS lines 624-631: .schedule-item.highlight with border-left: 3px solid var(--gold-primary); 5 highlight items at lines 1070, 1082, 1090, 1102, 1106
+- [x] All three sections use native <details>/<summary> — no JavaScript required - All three are <details class="prompt-accordion"> elements with no JS
+- [x] Sections are positioned between "Choose Your Path" and "Reference Roadmap" - event-accordions section inserted at line 907, before roadmap-section at line 1114
+- [x] At 768px breakpoint: criteria grid becomes single column, schedule times wrap cleanly - CSS lines 817-820: grid-template-columns: 1fr; gap: 12px
+- [x] Reduced-motion mode disables any transition animations on new elements - CSS lines 882-894: global .animate-in override applies to all new elements with animate-in class
+- [x] Light theme toggle renders all new sections consistently with correct colors - body.light theme swaps CSS custom properties; all new elements use token variables (--gold-primary, --text-primary, --bg-deep, --blue-accent, --code-green, --text-secondary)
+- [x] Flat style maintained — no shadows or gradients on containers (only gold top-bar on tagline card) - .prompt-accordion uses border only; .event-tagline-card uses border-top: 3px solid var(--gold-primary)
+- [x] All text is in English only (no Chinese) - All text content verified: titles, descriptions, stats, schedule events — all English

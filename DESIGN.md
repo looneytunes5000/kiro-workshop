@@ -1,33 +1,26 @@
 ---
-name: AI-Driven Development with TRAE SOLO
-description: Workshop documentation site with a premium dark console aesthetic — deep navy surfaces with warm gold accents and refined interactive precision.
+name: Trae Solo Workshop
+description: A self-paced AI coding workshop for beginners — calm, clear, like a patient mentor at the drafting table.
 colors:
-  midnight-void: "#080E1A"
-  deep-night-surface: "#0B1120"
-  night-panel: "#111C30"
-  raised-panel: "#162540"
-  warm-workshop-gold: "#E8C547"
-  burnished-gold: "#D4A017"
-  deep-ocean-border: "#1E3A5F"
-  cream-text: "#F0EDE6"
-  warm-gray-text: "#B8B5AC"
-  slate-muted: "#7A8090"
-  bright-mint: "#00E59B"
-  cloud-bg: "#F8F9FA"
-  light-mist-bg: "#E9ECEF"
-  white-surface: "#FFFFFF"
-  light-frost-elevated: "#F1F3F5"
-  dark-gold-primary: "#B8860B"
-  dark-gold-rich: "#996515"
-  charcoal-text: "#212529"
-  silver-border: "#e5e7eb"
+  ink: "#0B1120"
+  deep-ink: "#080E1A"
+  surface: "#111C30"
+  surface-elevated: "#162540"
+  parchment: "#F0EDE6"
+  parchment-secondary: "#B8B5AC"
+  parchment-muted: "#7A8090"
+  gold: "#E8C547"
+  gold-rich: "#D4A017"
+  structure: "#1E3A5F"
+  code-green: "#00E59B"
+  link-blue: "#60A5FA"
 typography:
   display:
     fontFamily: "Space Grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif"
-    fontSize: "1.625rem"
-    fontWeight: 500
-    lineHeight: 1.2
-    letterSpacing: "-0.02em"
+    fontSize: "3.5rem"
+    fontWeight: 700
+    lineHeight: 1.15
+    letterSpacing: "-0.04em"
   headline:
     fontFamily: "Space Grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif"
     fontSize: "1.35rem"
@@ -39,233 +32,241 @@ typography:
     fontSize: "1.05rem"
     fontWeight: 400
     lineHeight: 1.7
-    letterSpacing: "normal"
   label:
-    fontFamily: "Space Grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif"
-    fontSize: "0.75rem"
-    fontWeight: 600
-    lineHeight: 1.5
-    letterSpacing: "0.06em"
-  mono:
-    fontFamily: "JetBrains Mono, monospace"
-    fontSize: "0.85rem"
-    fontWeight: 400
-  accent:
     fontFamily: "Caveat, Comic Sans MS, Segoe Print, cursive"
     fontSize: "1.4rem"
     fontWeight: 600
+  mono:
+    fontFamily: "JetBrains Mono, monospace"
+    fontSize: "0.85em"
+    fontWeight: 400
 rounded:
-  tight: "4px"
-  standard: "6px"
-  curved: "8px"
-  relaxed: "12px"
+  sm: "4px"
+  md: "8px"
+  lg: "12px"
+  pill: "20px"
 spacing:
-  content: "32px"
-  sidebar: "240px"
+  xs: "8px"
   sm: "12px"
-  md: "20px"
-  lg: "24px"
-  xl: "32px"
+  md: "16px"
+  lg: "20px"
+  xl: "24px"
+  xxl: "32px"
+  section: "48px"
+  hero: "56px"
 components:
   button-primary:
-    backgroundColor: "{colors.warm-workshop-gold}"
-    textColor: "{colors.deep-night-surface}"
-    rounded: "{rounded.standard}"
+    backgroundColor: "{colors.gold}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.sm}"
     padding: "10px 20px"
   button-primary-hover:
-    backgroundColor: "{colors.burnished-gold}"
+    backgroundColor: "{colors.gold}"
   button-secondary:
     backgroundColor: "transparent"
-    textColor: "{colors.warm-gray-text}"
-    rounded: "{rounded.standard}"
-    border: "1px solid {colors.deep-ocean-border}"
+    textColor: "{colors.parchment-secondary}"
+    rounded: "{rounded.sm}"
     padding: "10px 20px"
   button-secondary-hover:
-    textColor: "{colors.cream-text}"
-    border: "1px solid {colors.burnished-gold}"
-  sidebar-link:
-    backgroundColor: "transparent"
-    textColor: "{colors.warm-gray-text}"
-    rounded: "{rounded.standard}"
-    padding: "6px 12px"
-  sidebar-link-active:
-    backgroundColor: "{colors.night-panel}"
-    textColor: "{colors.cream-text}"
-  code-block:
-    backgroundColor: "{colors.midnight-void}"
-    rounded: "{rounded.curved}"
-    padding: "20px"
-    border: "1px solid {colors.deep-ocean-border}"
-  card-default:
-    backgroundColor: "{colors.night-panel}"
-    rounded: "{rounded.relaxed}"
-    border: "1px solid {colors.deep-ocean-border}"
-    padding: "24px"
-  callout-default:
-    backgroundColor: "transparent"
-    rounded: "{rounded.relaxed}"
-    border: "3px solid {colors.warm-workshop-gold}"
+    textColor: "{colors.parchment}"
+  callout:
+    backgroundColor: "rgba(232, 197, 71, 0.03)"
+    rounded: "{rounded.md}"
     padding: "24px 28px"
 ---
 
-# Design System: AI-Driven Development with TRAE SOLO
+# Design System: Trae Solo Workshop
 
 ## 1. Overview
 
-**Creative North Star: "The Workshop Console"**
+**Creative North Star: "The Drafting Table"**
 
-The Workshop Console is a dark command center where learning happens through doing. It channels the feeling of sitting at a focused workstation — deep navy surfaces recede into the background, letting content and code take center stage. Warm gold accents aren't decorative; they're signals pointing toward the next action, the next step, the thing that matters right now.
+The Trae Solo Workshop visual system embodies a maker's workspace — precise tools, clean surfaces, blueprints and annotations. Every element is crafted, intentional, hands-on. Users are beginners to AI coding, and the interface should feel like a patient mentor: generous whitespace, measured pacing, minimal noise. The system rejects SaaS-dashboard clichés, heavy animations, and generic AI marketing tropes.
 
-The aesthetic is premium but never ostentatious. It respects the learner's intelligence: clear hierarchy, functional typography, interactive feedback that feels measured rather than theatrical. The dual-theme system honors both preference and context — dark by default for focused work, light for daytime readability and print.
-
-This system explicitly rejects the corporate enterprise template, the playful cartoonish interface, and the dense wall-of-text documentation layout. It believes in showing over telling, in hierarchy over decoration, and in respecting the learner's time at every interaction.
+The aesthetic philosophy is calm over clever. Content leads, decoration recedes. When visual elements appear, they serve comprehension — never the reverse. The draft, not the frame, earns attention.
 
 **Key Characteristics:**
-- Dark-first with a polished light theme — both feel intentional, not inverted
-- Single warm gold accent carrying all emphasis and interactivity signals
-- Tonal layering without shadows — depth through color shifts and precise borders
-- Three typefaces, each earning its place: sans for structure, mono for code, handwritten for moments of human warmth
-- Refined motion with exponential easing — subtle transforms, no choreography
+- Dark-first by default — deep navy surfaces reduce eye strain during long reading sessions
+- Gold is the sole accent, used with precision for emphasis and interactivity
+- Flat surfaces with border-defined structure — no shadows, no glass effects
+- Monospace code on dark grounds, handwriting accent for human callout warmth
+- Motion only for state feedback — no scroll choreography, no entrance drama
 
-## 2. Colors
+## 2. Colors: The Deep Ink Palette
 
-A restrained palette where deep navy surfaces carry the body and warm gold speaks with emphasis — a premium console that signals without shouting.
+The palette characterizes gold ink on dark drafting paper — warm, scholarly, archival. Less corporate premium, more artisan documentation.
 
 ### Primary
-- **Warm Workshop Gold** (#E8C547 / oklch(85% 0.18 85°)): The single accent that carries emphasis, interactive focus, active states, and visual signals throughout the system. Used on ≤10% of any given screen — its rarity is the point.
-
-### Secondary
-- **Bright Mint** (#00E59B): Reserved exclusively for code syntax highlighting and tip callout indicators. Never used for general UI elements.
+- **Drafting Gold** (#E8C547): The single accent color. Used for active states, primary buttons, emphasis in headings, navigation highlights, and any interactive element that must signal "this is available" or "this is current." Never more than 10% of any given screen's surface area.
+- **Rich Gold** (#D4A017): A deeper, warmer variant used for hover borders, gradient stops, decorative accents, and the gold scrollbar thumb. Provides depth without introducing a second hue.
 
 ### Neutral
-- **Midnight Void** (#080E1A): Background for code blocks and deep surfaces. Darker than the body background to create tonal depth.
-- **Deep Night Surface** (#0B1120): Primary body background. Deep navy that reads as dark without being pure black.
-- **Night Panel** (#111C30): Card and surface backgrounds. Elevated above the body to distinguish content areas.
-- **Raised Panel** (#162540): Further elevated surfaces, modal-like content, or raised interactive elements.
-- **Deep Ocean Border** (#1E3A5F): Border and divider color. Subtle enough to step back, visible enough to define structure.
-- **Cream Text** (#F0EDE6): Primary body text. Warm off-white, never pure white.
-- **Warm Gray Text** (#B8B5AC): Secondary text for body paragraphs and descriptions.
-- **Slate Muted** (#7A8090): Tertiary text for breadcrumbs, captions, and less prominent labels.
+- **Ink** (#0B1120): The primary page background. A deep navy that reads as warm charcoal under screen light, not cold black.
+- **Deep Ink** (#080E1A): Darker navy for code blocks, the sidebar, and the deepest layer of surfaces. Creates a sense of content sinking below the page.
+- **Surface** (#111C30): Card and list-item background. A subtle step up from the page, providing a container for grouped information without lifting it.
+- **Surface Elevated** (#162540): The lightest dark surface. Used for callout backgrounds, elevated panels, and secondary containers.
 
-### Light Theme Neutrals
-- **Cloud BG** (#F8F9FA) → Light body background
-- **Light Mist** (#E9ECEF) → Deep light surfaces
-- **White Surface** (#FFFFFF) → Card and elevated surfaces
-- **Silver Border** (#e5e7eb) → Light theme borders
-- **Charcoal Text** (#212529) → Light theme primary text
-- **Dark Gold Primary** (#B8860B) → Light theme gold (darker for contrast on light backgrounds)
+### Secondary
+- **Parchment** (#F0EDE6): Primary text color. Warm off-white with gold undertones — never a cold gray or pure white.
+- **Parchment Secondary** (#B8B5AC): Body text and list items. Muted but still legible on the navy ground at WCAG AA.
+- **Parchment Muted** (#7A8090): Tertiary text, placeholder labels, section subtitles.
+
+**The One Voice Rule.** Gold carries no more than 10% of any surface. Its rarity is the point. If gold is everywhere, nothing is emphasized.
+
+### Functional
+- **Code Green** (#00E59B): Inline code blocks, terminal text, and outcome markers. The brightest color on the page by design — code needs to stand out instantly.
+- **Structure** (#1E3A5F): The structural blue used exclusively for borders, dividers, sidebar separators, and code block outlines. It defines layout without competing for attention.
+- **Link Blue** (#60A5FA): Hyperlink color in body text. Changes to a deeper blue (#2563EB) in light theme for better contrast.
+
+### Theme: Light vs. Dark
+
+Dark by default, not light by safety. The physical scene: a developer reading workshop content on a monitor during focused work sessions, often in reduced ambient light. Dark first reduces eye strain and creates a sense of immersion appropriate for technical documentation.
+
+Light theme exists as a toggle preference. All tokens invert with the same structural relationships preserved — navy becomes warm gray, gold deepens to brass, structure becomes light divider gray.
 
 ### Named Rules
 
-**The One Signal Rule.** Warm Workshop Gold is the sole accent. It appears on ≤10% of any screen. When gold is everywhere, it means nothing.
+**The One Voice Rule.** The primary accent (gold) is used on ≤10% of any given screen. Its rarity is the point.
 
-**The Mint Boundary.** Bright Mint (#00E59B) is code and tip indicators only. Never for buttons, links, or general emphasis.
+**The Ink-and-Structure Rule.** Borders and dividers use the muted blue (`#1E3A5F`), never gold. Gold is for emphasis, structure is for layout.
 
-**The Tonal Depth Rule.** Depth is conveyed through background color progression (#0B1120 → #111C30 → #162540) and 1px borders in deep ocean blue. Shadows are secondary.
+**The No-Glass Doctrine.** No backdrop-filter, no frosted panels, no semi-transparent overlays as a design pattern. Every surface is opaque.
 
 ## 3. Typography
 
-**Body Font:** Space Grotesk (with -apple-system, BlinkMacSystemFont fallbacks)
-**Mono Font:** JetBrains Mono (with standard mono fallbacks)
-**Accent Font:** Caveat (with cursive fallbacks)
+**Display Font:** Space Grotesk (with -apple-system, BlinkMacSystemFont, Segoe UI, Roboto fallbacks)
+**Body Font:** Space Grotesk (same family — unified voice)
+**Label/Accent Font:** Caveat (with Comic Sans MS, Segoe Print fallbacks)
+**Label/Mono Font:** JetBrains Mono
 
-A committed single-family sans system where Space Grotesk carries body, headings, and UI labels with deliberate weight contrast. JetBrains Mono provides authority in code contexts. Caveat appears sparingly for callout titles — a handwritten signal that breaks the digital monotony for emphasis moments.
+**Character:** A single geometric sans-serif carries both body and headings, creating a unified, modern technical voice. Space Grotesk's slightly irregular geometry (noticeable in the lowercase 'a', 'g', and numerals) gives it warmth without losing professionalism. Caveat adds handwriting warmth for human-authored callout headers only — a reminder that there's a person behind these instructions. JetBrains Mono provides clear code distinction with ligatures.
 
 ### Hierarchy
-- **Display** (500, 1.625rem / 2.25rem mobile, 1.2 line-height, -0.02em tracking): Page header titles. The only place gold accent text appears in large form.
-- **Headline** (600, 1.35rem, 1.3 line-height, -0.02em tracking): Section headings (h3). Clear weight contrast from body, same negative tracking.
-- **Title** (600, 1.25rem, 1.3 line-height): Component titles within cards and feature blocks.
-- **Body** (400, 1.05rem, 1.7 line-height): Main reading text. Color shifts from cream-text (primary) to warm-gray-text (secondary paragraphs). Max 75ch line length through content gap constraints.
-- **Label** (600, 0.75rem, 0.06em tracking, uppercase): Overview section titles, badges, metadata. Small but commanding through weight and letter-spacing.
-- **Mono** (400, 0.85em): Inline code and code blocks. Bright mint syntax color within a bright-mint context. Padded 2px 8px inline, 20px for blocks.
-- **Accent** (600, 1.4rem, cursive): Callout headers only. Warm gold on dark.
+- **Display** (700, 3.5rem, 1.15): Page H1 — only for page-level headers. Tight letter-spacing (-0.04em) creates a strong, authoritative presence. Used once per page.
+- **Headline** (600, 1.35rem, 1.3): H2 and H3 section headers within content. The weight difference from normal body (600 vs 400) creates clear hierarchy even at similar sizes.
+- **Title** (600, 1.25rem, 1.3): Card headers, navigation items, callout titles. Slightly smaller H3, used in constrained spaces.
+- **Body** (400, 1.05rem, 1.7): Primary reading text. Constrained to max-width 65ch for comfortable line lengths. The 1.7 line-height provides generous vertical rhythm.
+- **Label** (600, 1.4rem, normal): Callout header text in Caveat. Handwritten warmth for human-authored tips and warnings, used sparingly.
+- **Mono** (400, 0.85em, normal): Code snippets, inline code, terminal text. Tighter than body to fit code on screen without scrolling.
+
+### Light Theme Typography Mapping
+- Display scales from 3.5rem → 2.25rem at responsive breakpoint (900px)
+- Body scales from 1.05rem → 1rem at mobile breakpoint
+- All sizes maintain the same weight and line-height ratios across breakpoints
 
 ### Named Rules
 
-**The Grotesk Commitment.** Space Grotesk carries structure end-to-end. Weight (400→500→600→700) and size create hierarchy — no additional families for headings.
+**The 65-Character Rule.** Body text never exceeds 65ch max-width. Wide containers mean more than wide text. Every paragraph paragraph constrained.
 
-**The Accent Exception.** Caveat appears only in callout titles. It's a deliberate break from digital precision, signaling "pay attention here" in handwriting.
+**The Single Voice Doctrine.** Space Grotesk for everything editorial. No secondary body font, no serif/sans pairing. Caveat exists only for callout titles — it's a label, never body text.
 
 ## 4. Elevation
 
-This system is flat-by-default with tonal layering as the primary depth mechanism. Surfaces are differentiated through background color progression (deep night → night panel → raised panel) paired with precise 1px borders in deep ocean blue. Shadows appear only as targeted hover response on cards — a subtle gold-tinted glow at 0.15 opacity that signals interactivity without lifting from the plane.
+This system is **flat by default, borders define depth**. No shadows are used anywhere in the component library. Depth is conveyed through three mechanisms: tonal layering (surface → surface-elevated → deep-ink), border presence (1px solid structure color), and spatial positioning (padding gaps, grid layouts). The physical drafting table has no shadows between papers — they sit on the surface, defined by their edges and relative position.
 
-### Elevation Layers (dark theme)
-- **Level 0 — Body** (#0B1120): The floor. All content sits above this.
-- **Level 1 — Cards/Surfaces** (#111C30): Content containers with deep ocean border.
-- **Level 2 — Elevated** (#162540): Interactive elements, modals, raised components with matching border.
-- **Level 3 — Hover Response**: Cards receive `box-shadow: 0 8px 24px rgba(232, 197, 71, 0.15)` on hover — a faint gold glow, 0.2s ease-out-quint transition.
+### Tonal Layering Vocabulary
+- **Ink** (#0B1120): Base page — the surface everything sits on
+- **Surface** (#111C30): Container level — cards, list items, active navigation
+- **Surface Elevated** (#162540): Secondary container level — callouts, elevated panels
+- **Deep Ink** (#080E1A): Sunken level — code blocks, sidebar background
+
+### Border System
+- **1px solid Structure** (#1E3A5F): Default border. Sidebar right edge, code block outlines, callout borders, component edges, dividers.
+- **1px solid Gold** (#E8C547): Emphasis border. Active state borders, callout accent borders on specific types.
+- **2px solid Parchment** (#F0EDE6): Sidebar active link left border — the single interactive border that signals "you are here."
+- **3px solid Gold**: Callout left accent border for emphasis types (replacing side-stripe; callout has full border + left accent).
 
 ### Named Rules
 
-**The Flat-By-Default Rule.** No shadows at rest. The interface reads as a flat plane with color zones defining structure. Shadows emerge only as interactive feedback.
+**The Flat-By-Default Rule.** Surfaces never lift. No box-shadow, no translateZ, no hardware-accelerated shadows. The only "lift" is a 2px translateY on card hover — purely positional, never shadowed.
 
-**The Hover Glow Rule.** Elevated shadows are gold-tinted, not black. `rgba(232, 197, 71, 0.15)` — the warm glow confirms the element responds to the user.
+**The Border-Only Doctrine.** Every container has an outline. If content needs to be visually distinct from the background, it gets a border, not a shadow or backdrop-filter.
 
 ## 5. Components
 
-Interactive components respond with measured precision. Transitions use the ease-out-quint curve (cubic-bezier(0.22, 1, 0.36, 1)) at 0.2–0.3s duration — noticeable but never theatrical.
-
 ### Buttons
-- **Shape:** Standard radius (6px) — gently softened corners, not rounded.
-- **Primary:** Warm Workshop Gold (#E8C547) background on Deep Night Surface (#0B1120) text. 10px 20px padding, 600 weight. Solid, confident.
-- **Hover:** Transform translateY(-2px) with brightness increase (1.05). The button lifts and intensifies.
-- **Secondary:** Transparent background, 1px Deep Ocean Border (#1E3A5F), warm gray text. Ghost variant that becomes solid on hover.
-- **Hover:** Border shifts to Burnished Gold (#D4A017), text shifts to cream. Clear state without color fill.
-- **Focus:** 2px gold outline with 2px offset, applied globally via `:focus-visible`.
+- **Shape:** Slightly rounded corners (6px). Not pill-shaped, not sharp — a moderate radius that feels purposeful without softness.
+- **Primary:** Gold background (#E8C547), ink text (#0B1120). No border. Padding `10px 20px`, min-height `44px` for accessibility. Font weight 600 at 0.9rem.
+- **Hover / Focus:** Primary buttons brighten slightly (brightness 1.05) and lift 2px upward on hover. Focus-visible receives a 2px gold outline offset by 2px.
+- **Secondary:** Transparent background, parchment-secondary text, 1px structure border. On hover: border becomes gold-rich (#D4A017), text becomes parchment-primary.
 
-### Navigation (Sidebar)
-- **Style:** Fixed 240px width, full viewport height, sticky positioning. Night panel background with subtle right border.
-- **Links:** 6px radius, transparent background, warm gray text (600 weight for active). Transition on hover to lighter text.
-- **Active State:** Night panel background, cream text, 600 weight, left border in cream-text (2px). Clear visual lock to current page.
-- **Sub-items:** Increased padding-left (36px and 52px for nested levels), smaller font (0.82rem).
-- **Search Input:** 6px radius, 1px sidebar-input-border, 36px min-height. Focus shifts border to blue (#3b82f6) with 2px ring.
-- **Mobile:** Sidebar slides off-screen left with `translateX(-100%)`. Hamburger button fixed at top-left, gold text on midnight void background.
+### Callout Boxes
+- **Corner Style:** Rounded (8px radius)
+- **Background:** `rgba(232, 197, 71, 0.03)` — a barely-perceptible gold wash. Just enough to distinguish from the surrounding surface without competing with content.
+- **Border:** 1px gold border on all sides, creating a complete outline rather than just a left accent stripe.
+- **Internal Padding:** `24px 28px` — taller vertical than horizontal to match reading rhythm.
+- **Header:** Caveat font at 1.4rem for title, small gold dot (8px circle) as leading marker.
+- **Body:** 1rem body text, max-width 65ch, secondary parchment color.
+- **Variants:** `.callout.tip` uses code-green (#00E59B) for header and left border. `.callout.warning` uses gold as normal.
 
-### Callouts
-- **Shape:** Relaxed radius (12px implied by content structure, though default is flat with gold left border).
-- **Default/Warning:** 3px Warm Workshop Gold left border, 24px 28px padding, transparent background.
-- **Tip Variant:** 3px Bright Mint left border. Header and bullet switch to mint.
-- **Header:** Caveat font at 1.4rem, 600 weight, gold or mint depending on variant. Gold dot bullet marker.
-- **Content:** Body text size (1.05rem), warm gray text, max 65ch width constraint.
+### Outcome Items
+- **Corner Style:** Slightly rounded (6px radius).
+- **Background:** Surface (#111C30) — subtle separation from page.
+- **Border:** 1px solid structure color.
+- **Hover / Focus:** Lifts 2px up, border color changes to gold-rich (#D4A017), adds subtle gold shadow (0 4px 12px rgba(201, 168, 76, 0.1)). The shadow is the ONLY shadow in the system — it's a tiny gold glow, not a lift effect.
 
-### Cards
-- **Corner Style:** Relaxed radius (12px) — the softest corner treatment in the system.
-- **Background:** Night Panel (#111C30) with Deep Ocean Border (1px).
-- **Agent Card Variant:** Same structure with image area at 220px height. Hover receives gold glow shadow.
-- **Integration Card:** Transparent background with 3% white overlay and 10% white border. Highlighted variant gets 6% warm gold tint background and 25% gold border.
+### Cards (Agent Cards, Integration Cards, Skill Cards)
+- **Corner Style:** Rounded (12px radius) — the largest radius, reserved for primary content containers.
+- **Background:** Surface (#111C30) for agent cards; `rgba(255, 255, 255, 0.03)` for integration cards.
+- **Border:** 1px solid structure color.
+- **Hover / Focus:** Lifts 4px up, border changes to gold-primary, adds gold drop shadow (0 8px 24px rgba(232, 197, 71, 0.15) for agent cards).
+- **Internal Padding:** `20px` standard for content areas.
+- **Image Area:** Full-width top section with background `surface-elevated`, `220px` height, `16px` internal padding.
 
-### Code Blocks
-- **Style:** Midnight Void (#080E1A) background, Deep Ocean Border (1px), 8px radius, 20px padding.
-- **Inline Code:** Same colors, 2px 8px padding, 4px radius, 0.85em font size.
-- **Text:** Bright Mint (#00E59B) for syntax within blocks. Cream text for inline code without syntax context.
+### Navigation — Sidebar
+- **Width:** 240px fixed, sticky positioning on desktop.
+- **Typography:** 0.85rem body links, gold header at 0.9rem/700 weight.
+- **Default State:** Transparent background, secondary parchment text.
+- **Hover State:** `rgba(255, 255, 255, 0.03)` background, text becomes primary parchment color.
+- **Active State:** Surface background, primary text, left border 2px solid parchment.
+- **Light Theme Inversion:** Gold text on dark background, warm ash background on light.
 
-### Badges
-- **Included Badge:** Bright Mint (#00E59B) background, Deep Night text. 20px radius (pill shape). 4px 10px padding, 0.75rem, 600 weight, uppercase with 0.05em tracking.
-- **Mode Tags:** Warm Workshop Gold background, Deep Night text. Same pill shape.
+### Navigation — Breadcrumb
+- **Background:** Deep Ink (#080E1A), full-width bar below page header.
+- **Typography:** 0.85rem links, muted text default, becomes gold on hover.
+- **Separator:** Small chevron (›) in muted text.
+
+### Accordions / Prompt Reveals
+- **Border:** 1px solid structure.
+- **Header Background:** Surface-elevated.
+- **Content Top Border:** 1px solid structure.
+- **Icon:** Gold chevron that rotates 90° when open.
+
+### Image Containers (Workflow Images, Doc Images)
+- **Border:** 1px solid structure, 8px radius.
+- **Shadow on doc images:** `0 4px 12px rgba(0, 0, 0, 0.3)` — the only significant shadow, used to create depth for documentation screenshots.
 
 ### Progress Bar
-- **Style:** 3px height, fixed at top, Warm Workshop Gold background. Width transitions linearly based on scroll position (minimum 2% width).
+- **Position:** Fixed top of viewport, 3px height.
+- **Color:** Gold-primary, left-aligned transform origin.
+
+### Theme Toggle
+- **Style:** Transparent background, 1px structure border, 6px radius.
+- **Size:** 36px minimum for touch target accessibility.
+- **Hover:** Gold text, gold-rich border, subtle gold background wash.
 
 ## 6. Do's and Don'ts
 
 ### Do:
-- **Do** use Warm Workshop Gold (#E8C547) as the sole accent, limited to ≤10% of any screen area (The One Signal Rule).
-- **Do** convey depth through tonal layering (#0B1120 → #111C30 → #162540) with 1px Deep Ocean Border before reaching for shadows.
-- **Do** apply 2px gold outline offset by 2px on all interactive focus states — global `*:focus-visible` rule.
-- **Do** use Space Grotesk weight contrast (400 body, 600 headline, 700 label) as the primary hierarchy mechanism.
-- **Do** reserve Caveat font exclusively for callout titles — a handwritten break in digital precision.
-- **Do** use ease-out-quint cubic-bezier(0.22, 1, 0.36, 1) for all transitions at 0.2–0.3s duration.
-- **Do** provide a complete light-theme counterpart — both themes should feel equally intentional, not inverted.
+- **Do** use gold on ≤10% of any screen surface. Its rarity gives it meaning.
+- **Do** keep all body text at max-width 65ch — wide containers are not wide reading lines.
+- **Do** use the flat-surface, border-only elevation strategy for all containers. Surfaces sit on the table; they don't float.
+- **Do** use Space Grotesk as the single editorial voice. Caveat exists only for callout titles.
+- **Do** provide 44px minimum touch targets for all interactive elements (buttons, links, toggles).
+- **Do** respect `prefers-reduced-motion` — all animations reduce to 0.01ms effectively.
+- **Do** maintain the warm undertone in text colors — parchment over pure white, never cold grays.
+- **Do** use code-green for inline code, terminal snippets, and outcome markers — it needs to stand out instantly.
+- **Do** include dark/light theme support with the same structural relationships preserved.
 
 ### Don't:
-- **Don't** use corporate enterprise templates with generic stock imagery, dry formatting, and generic iconography (PRODUCT.md anti-reference).
-- **Don't** include playful or childish interfaces with cartoonish elements, excessive illustration, or casual/sticker styling (PRODUCT.md anti-reference).
-- **Don't** create dense wall-of-text documentation with poor visual hierarchy, overwhelming information blocks, or no breathing room between sections (PRODUCT.md anti-reference).
-- **Don't** use Bright Mint (#00E59B) for general UI elements outside of code syntax and tip callouts (The Mint Boundary).
-- **Don't** introduce additional font families for headings or labels — Space Grotesk carries the entire structure with weight and size (The Grotesk Commitment).
-- **Don't** apply shadows at rest on surfaces or cards. Shadows are hover/active response only (The Flat-By-Default Rule).
-- **Don't** use pure black (#000000) or pure white (#FFFFFF) as text or background in the dark theme.
-- **Don't** apply gold to more than ~10% of any screen. When gold is everywhere, nothing is important (The One Signal Rule).
-- **Don't** animate CSS layout properties. Use transforms and opacity only.
-- **Don't** use border-left greater than 3px as a colored stripe — the callout uses exactly 3px in gold or mint.
+- **Don't** use `#000` or `#fff` anywhere in the system. Tint toward the brand hue.
+- **Don't** use border-left greater than 1px as a colored accent stripe on cards, list items, callouts, or alerts. Rewrite with full borders or background tints.
+- **Don't** use gradient text (`background-clip: text` with gradient). Use solid gold for emphasis, weight and size for hierarchy.
+- **Don't** use glassmorphism, backdrop-filter, or frosted panels. Every surface is opaque.
+- **Don't** use heavy animations, bouncing elements, or attention-grabbing effects. Motion only for state feedback.
+- **Don't** use generic SaaS dashboard visual patterns, blue gradients and stock illustration clichés, or overly colorful or playful consumer app patterns.
+- **Don't** use dense documentation walls with no visual breathing room. Generous whitespace, consistent rhythm, muted backgrounds.
+- **Don't** rely on color alone to convey meaning. Use labels, icons, or patterns alongside color for accessibility.
+- **Don't** add box-shadows to create depth. Use tonal layering and borders instead. The only exceptions are tiny gold hover glows on cards and documentation image shadow.
+- **Don't** use gold for structural lines, borders, or dividers. Structure color (`#1E3A5F`) defines layout; gold emphasizes within it.
+- **Don't** nest cards within cards. A card inside a card inside a card is always wrong.

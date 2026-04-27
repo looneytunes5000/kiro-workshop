@@ -171,7 +171,7 @@ function generateSidebar() {
         },
         {
             id: 'core-concepts',
-            title: 'Agents Toolkits',
+            title: 'AI Coding Agents',
             pages: [
                 {
                     title: 'TRAE IDE',
@@ -195,7 +195,7 @@ function generateSidebar() {
         },
         {
             id: 'survival-kit',
-            title: 'Survival Kit',
+            title: 'AI-Powered Systems',
             pages: [
                 {
                     title: 'Microsoft Copilot Studio',

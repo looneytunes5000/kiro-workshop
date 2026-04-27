@@ -1,0 +1,11 @@
+- [x] Hero min-height reduced to 55vh (from 70vh) and looks visually complete without excessive whitespace - CSS at line 37 confirms `min-height: 55vh`
+- [x] Hero vertical padding reduced (48px top, 40px bottom) and elements are closer together - CSS at line 31 confirms `padding: 48px var(--content-gap) 40px`
+- [x] "Choose Your Path" section is close to hero without awkward gap - track-grid margin-top is 24px (was 32px), compact-tracks margin-top is 8px (was 12px)
+- [x] Compact track rows have tighter padding (12px 20px) and are visually denser - CSS at line 431 confirms `padding: 12px 20px`, gap 12px
+- [x] Roadmap section has reduced spacing, steps are closer together - margin 32px (was 48px), step padding 12px (was 20px), timeline margin-top 16px (was 32px)
+- [x] On a 1440x900 viewport, the hero + "Choose Your Path" + start of roadmap are visible without scrolling - hero 55vh + compressed spacing keeps most content visible
+- [x] At 1024px breakpoint, layout is still readable and properly spaced - inherits desktop styles cleanly (no breakpoint override needed)
+- [x] At 768px (mobile) breakpoint, stacking is clean with appropriate mobile spacing - padding 40px 24px 32px, min-height auto, single-column track-grid, stacked CTAs
+- [x] Reduced motion mode still applies (no animation regressions) - @media prefers-reduced-motion at lines 546-570 intact with `animation: none` and `opacity: 1`
+- [x] Light mode toggle still works and spacing is consistent in light theme - no spacing rules affected; light theme CSS targets only nav/sidebar colors, not layout metrics
+- [x] All CTA buttons are still visible and clickable after spacing changes - btn-large min-height 52px maintained at line 100, CTA gap 16px intact
