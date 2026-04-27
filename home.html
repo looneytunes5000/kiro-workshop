@@ -28,17 +28,17 @@
         }
 
         .unified-hero {
-            padding: 48px var(--content-gap) 40px;
+            padding: 48px var(--content-gap) 24px;
             position: relative;
             background: var(--bg-primary);
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            min-height: 55vh;
+            min-height: 30vh;
         }
 
         .hero-logo {
-            margin-bottom: 24px;
+            margin-bottom: 8px;
             width: 100%;
             max-width: 560px;
             margin-left: auto;
@@ -57,15 +57,15 @@
             font-size: clamp(2rem, 4.5vw, 3rem);
             font-weight: 700;
             color: var(--text-primary);
+            margin-top: 4px;
             margin-bottom: 16px;
             letter-spacing: -0.04em;
             line-height: 1.05;
-            max-width: 14ch;
+            text-align: center;
         }
 
         .hero-title span {
             color: var(--gold-primary);
-            display: block;
         }
 
         .hero-description {
@@ -125,7 +125,7 @@
         }
 
         .track-card:first-child {
-            grid-row: 1 / 3;
+            grid-column: 1 / 3;
         }
 
         .track-card:hover {
@@ -951,45 +951,50 @@ body.light .nav-sidebar {
             <section class="unified-hero animate-in">
                 <div class="hero-logo animate-in">
                     <img src="img/aiHackathon logo.png" alt="aiHackathon 2026" width="560" height="160">
+                    <h2 class="hero-title animate-in">Your <span>aiHackathon Survival Kit</span></h2>
                 </div>
-                <h2 class="hero-title animate-in">Your <span>aiHackathon Survival Kit</span></h2>
             </section>
 
             <section class="animate-in">
                 <h2>Choose Your Path</h2>
                 <div class="track-grid">
-                <a href="training-reference.html" class="track-card featured" data-track="1">
-                    <div class="track-card-number">01 // TRAINING SESSION</div>
-                    <div class="track-card-header">
-                        <div class="track-card-tag tag-training">TRAINING SESSION</div>
-                    </div>
-                    <h3 class="track-card-title-large">Training Session</h3>
-                    <p class="track-card-desc">Learn the fundamentals of TRAE's AI-driven development. From Vibe Coding to Spec-Driven Development and Skills activation.</p>
-                    <div class="track-card-footer">
-                        <span>Start Learning</span>
-                        <span class="arrow">&rarr;</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="compact-tracks animate-in">
-                <a href="trae-solo-overview.html" class="compact-track">
-                    <span class="compact-track-num">02 // AI CODING AGENTS</span>
-                    <div class="compact-track-body">
-                        <h3 class="compact-track-title">AI Coding Agents</h3>
-                        <p class="compact-track-desc">Discover specialized skills and build AI-powered features. Explore TRAE IDE, OpenCode, MCP integration, and deployment workflows.</p>
-                    </div>
-                    <span class="compact-track-arrow">&rarr;</span>
-                </a>
-                <a href="microsoft-copilot-studio.html" class="compact-track">
-                    <span class="compact-track-num">03 // SURVIVAL KIT</span>
-                    <div class="compact-track-body">
-                        <h3 class="compact-track-title">AI-Powered Systems</h3>
-                        <p class="compact-track-desc">Essential skills for hackathon survival and deployment. Enterprise tools like Copilot Studio and GenAI Portal for production-ready workflows.</p>
-                    </div>
-                    <span class="compact-track-arrow">&rarr;</span>
-                </a>
-            </div>
+                    <a href="training-reference.html" class="track-card featured" data-track="1">
+                        <div class="track-card-number">01 // TRAINING SESSION</div>
+                        <div class="track-card-header">
+                            <div class="track-card-tag tag-training">TRAINING SESSION</div>
+                        </div>
+                        <h3 class="track-card-title-large">Training Session</h3>
+                        <p class="track-card-desc">Learn the fundamentals of TRAE's AI-driven development. From Vibe Coding to Spec-Driven Development and Skills activation.</p>
+                        <div class="track-card-footer">
+                            <span>Start Learning</span>
+                            <span class="arrow">&rarr;</span>
+                        </div>
+                    </a>
+                    <a href="trae-solo-overview.html" class="track-card" data-track="2">
+                        <div class="track-card-number">02 // AI CODING AGENTS</div>
+                        <div class="track-card-header">
+                            <div class="track-card-tag tag-toolkits">TOOLKITS</div>
+                        </div>
+                        <h3 class="track-card-title-large">AI Coding Agents</h3>
+                        <p class="track-card-desc">Discover specialized skills and build AI-powered features. Explore TRAE IDE, OpenCode, MCP integration, and deployment workflows.</p>
+                        <div class="track-card-footer">
+                            <span>Explore Toolkits</span>
+                            <span class="arrow">&rarr;</span>
+                        </div>
+                    </a>
+                    <a href="microsoft-copilot-studio.html" class="track-card" data-track="3">
+                        <div class="track-card-number">03 // SURVIVAL KIT</div>
+                        <div class="track-card-header">
+                            <div class="track-card-tag tag-survival">SURVIVAL</div>
+                        </div>
+                        <h3 class="track-card-title-large">AI-Powered Systems</h3>
+                        <p class="track-card-desc">Essential skills for hackathon survival and deployment. Enterprise tools like Copilot Studio and GenAI Portal for production-ready workflows.</p>
+                        <div class="track-card-footer">
+                            <span>Get Survival Kit</span>
+                            <span class="arrow">&rarr;</span>
+                        </div>
+                    </a>
+                </div>
             </section>
 
             <section class="roadmap-section" id="roadmap">

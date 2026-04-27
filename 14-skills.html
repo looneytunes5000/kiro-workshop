@@ -24,7 +24,461 @@
 
         <article class="content">
             <h2 id="overview">Overview</h2>
-            <p>Content for this page is coming soon. This page will introduce the 14 must-install skills for the TRAE Solo workshop.</p>
+            <p>Below is a complete list of the 14 essential skills you should install in TRAE Solo. Each skill is grouped by what it helps you with. Click on any skill name to jump to its detailed section.</p>
+
+            <table class="skills-overview-table">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Category</th>
+                        <th>What It Does</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-git-commit">git-commit</a></td>
+                        <td><span class="skill-badge">Development Tools</span></td>
+                        <td>Automatically generates properly formatted commit messages and handles file staging for you</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-react-best-practices">react-best-practices</a></td>
+                        <td><span class="skill-badge">Development Tools</span></td>
+                        <td>Reviews React/Next.js code for quality issues and suggests performance improvements</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-webapp-testing">webapp-testing</a></td>
+                        <td><span class="skill-badge">Development Tools</span></td>
+                        <td>Creates automated browser tests to verify your website works correctly</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-composition-patterns">composition-patterns</a></td>
+                        <td><span class="skill-badge">Development Tools</span></td>
+                        <td>Helps reorganize complex React components into clean, reusable patterns</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-agent-browser">agent-browser</a></td>
+                        <td><span class="skill-badge">Productivity Enhancement</span></td>
+                        <td>Automates browser tasks like filling forms, clicking buttons, and extracting data from websites</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-brainstorming">brainstorming</a></td>
+                        <td><span class="skill-badge">Productivity Enhancement</span></td>
+                        <td>Works with you to clarify ideas and create structured plans before you start building</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-figma">figma</a></td>
+                        <td><span class="skill-badge">UI Design</span></td>
+                        <td>Converts Figma design files directly into working frontend code</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-frontend-design">frontend-design</a></td>
+                        <td><span class="skill-badge">UI Design</span></td>
+                        <td>Builds visually striking interfaces from scratch with professional layouts and animations</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-frontend-skill">frontend-skill</a></td>
+                        <td><span class="skill-badge">UI Design</span></td>
+                        <td>Creates clean, well-structured interfaces with proper visual hierarchy</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-chart-visualization">chart-visualization</a></td>
+                        <td><span class="skill-badge">Data & Content</span></td>
+                        <td>Picks the right chart type for your data and generates visual comparisons and trends</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-data-analysis">data-analysis</a></td>
+                        <td><span class="skill-badge">Data & Content</span></td>
+                        <td>Queries and analyzes Excel/CSV data using SQL, handles multi-table joins and summaries</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-canvas-design">canvas-design</a></td>
+                        <td><span class="skill-badge">Data & Content</span></td>
+                        <td>Creates original visual content like posters and covers with professional composition</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-doc-coauthoring">doc-coauthoring</a></td>
+                        <td><span class="skill-badge">Data & Content</span></td>
+                        <td>Helps write and refine structured documents through collaborative editing workflows</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 id="skill-git-commit">git-commit</h2>
+            <div class="skill-card" id="skill-git-commit-card">
+                <div class="skill-card-header">
+                    <h3>git-commit</h3>
+                    <span class="skill-badge">Development Tools</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill writes commit messages for you. When you have made changes to your project, it looks at what you changed and creates a correctly formatted commit message automatically. It also stages your files properly so you do not need to figure out which files belong together.</p>
+                    <details class="use-case">
+                        <summary>Use Case: Commit Your Changes Without Typing a Message</summary>
+                        <div class="use-case-content">
+                            <p>After editing several files, simply tell TRAE to commit. The skill reads your changes, groups them logically, and generates a message like <code>feat(auth): add login form validation</code> — all without you typing anything.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Keep Your Git History Clean and Consistent</summary>
+                        <div class="use-case-content">
+                            <p>The skill follows conventional commit standards. It automatically picks the right type (fix, feat, chore, refactor, etc.) and scopes your changes so your project history stays organized and easy to read, even after months of work.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Stage Only the Files That Belong Together</summary>
+                        <div class="use-case-content">
+                            <p>If you have edited both a button component and a database query, the skill intelligently splits them into separate commits instead of bundling everything into one messy commit. Each commit stays focused on a single change.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h2 id="skill-react-best-practices">react-best-practices</h2>
+            <div class="skill-card" id="skill-react-best-practices-card">
+                <div class="skill-card-header">
+                    <h3>react-best-practices</h3>
+                    <span class="skill-badge">Development Tools</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill reviews your React and Next.js code and tells you what could be better. It catches common mistakes, suggests faster ways to write components, and makes sure your code follows the best patterns used by professional developers.</p>
+                    <details class="use-case">
+                        <summary>Use Case: Find Performance Problems Before They Slow Down Your App</summary>
+                        <div class="use-case-content">
+                            <p>The skill spots issues like unnecessary re-renders, missing dependencies in hooks, and heavy components that should be split. It tells you exactly what to change and why the change makes your app faster.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Keep Your Code Quality High as the Project Grows</summary>
+                        <div class="use-case-content">
+                            <p>As your project gets bigger, it gets easier to write code that works but is hard to maintain. This skill catches those patterns early and suggests cleaner approaches — like extracting logic into custom hooks or memoizing expensive calculations.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Learn React Best Practices as You Build</summary>
+                        <div class="use-case-content">
+                            <p>Every suggestion the skill makes comes with an explanation. Over time, you learn why certain patterns are better and start writing stronger React code on your own. It is like having a senior developer review your code in real time.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h2 id="skill-webapp-testing">webapp-testing</h2>
+            <div class="skill-card" id="skill-webapp-testing-card">
+                <div class="skill-card-header">
+                    <h3>webapp-testing</h3>
+                    <span class="skill-badge">Development Tools</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill creates tests that open your website in a real browser and check that everything works. It can click buttons, fill in forms, and confirm that the right content appears on screen — all automatically.</p>
+                    <details class="use-case">
+                        <summary>Use Case: Verify Your Form Actually Works</summary>
+                        <div class="use-case-content">
+                            <p>The skill can test a sign-up form by entering a name, email, and password, clicking submit, and checking that the confirmation message appears. If something breaks, you find out immediately instead of relying on users to report it.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Catch Broken Pages After an Update</summary>
+                        <div class="use-case-content">
+                            <p>After making changes to your code, the skill runs through your key pages and confirms nothing is broken. It checks that navigation links work, images load, and interactive elements respond correctly.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Take Screenshots at Key Steps</summary>
+                        <div class="use-case-content">
+                            <p>The tool can capture screenshots during tests so you have visual proof that each step worked correctly. This is helpful for debugging when a test fails — you can see exactly what the browser showed at each stage.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h2 id="skill-composition-patterns">composition-patterns</h2>
+            <div class="skill-card" id="skill-composition-patterns-card">
+                <div class="skill-card-header">
+                    <h3>composition-patterns</h3>
+                    <span class="skill-badge">Development Tools</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill helps you restructure overly complex React components into smaller, reusable pieces. If a component has grown too large or has too many options, it suggests cleaner ways to split things up so your code stays easy to understand.</p>
+                    <details class="use-case">
+                        <summary>Use Case: Split a Huge Component Into Manageable Pieces</summary>
+                        <div class="use-case-content">
+                            <p>When a single component handles too many responsibilities — like rendering a form, validating input, and submitting data — the skill breaks it into focused sub-components. Each piece does one thing well, making future changes much simpler.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Create Reusable Component Libraries</summary>
+                        <div class="use-case-content">
+                            <p>The skill helps you design components that work well across your entire project. Instead of rewriting a card layout for every page, you create one flexible component that adapts to different content using composition patterns.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Clean Up Boolean Props That Have Gotten Out of Hand</summary>
+                        <div class="use-case-content">
+                            <p>If a component has grown to accept a dozen boolean props like <code>isLarge</code>, <code>showDetails</code>, <code>enableAnimation</code>, the skill suggests using compound components or render props instead. This makes your component easier to use and harder to misuse.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h2 id="skill-agent-browser">agent-browser</h2>
+            <div class="skill-card" id="skill-agent-browser-card">
+                <div class="skill-card-header">
+                    <h3>agent-browser</h3>
+                    <span class="skill-badge">Productivity Enhancement</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill lets TRAE control a web browser for you. It can open websites, fill out forms, click buttons, scroll pages, and extract data — all without you touching the browser manually.</p>
+                    <details class="use-case">
+                        <summary>Use Case: Scrape Data From a Website</summary>
+                        <div class="use-case-content">
+                            <p>Tell the skill to visit a page and collect information like prices, titles, or links. It navigates the site, finds the content you need, and brings the data back so you can use it in your project or analysis.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Fill Out Repetitive Web Forms</summary>
+                        <div class="use-case-content">
+                            <p>If you need to submit the same form with different data many times, the skill handles it end to end. It types into fields, selects dropdowns, clicks submit, and waits for the response — all automatically.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Check How a Web Page Looks or Behaves</summary>
+                        <div class="use-case-content">
+                            <p>The skill can take a screenshot of any page so you can see exactly how it renders. It can also click through navigation menus and verify that pages load correctly, making it useful for both development and testing.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h2 id="skill-brainstorming">brainstorming</h2>
+            <div class="skill-card" id="skill-brainstorming-card">
+                <div class="skill-card-header">
+                    <h3>brainstorming</h3>
+                    <span class="skill-badge">Productivity Enhancement</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill works with you as a thinking partner before you start coding. You share your rough idea, and it helps you organize your thoughts, identify what is missing, and build a clear plan you can hand off to other skills.</p>
+                    <details class="use-case">
+                        <summary>Use Case: Turn a Vague Idea Into a Concrete Plan</summary>
+                        <div class="use-case-content">
+                            <p>Say you want to build "a dashboard for student attendance" but are not sure where to start. The skill asks the right questions, suggests features, and builds a step-by-step plan so you know exactly what to build and in what order.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Explore Different Approaches Before Committing</summary>
+                        <div class="use-case-content">
+                            <p>The skill helps you weigh options — like comparing two databases, two UI layouts, or two ways to handle authentication. You get a balanced view of trade-offs before wasting time building the wrong thing.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Create a Structured Spec for Complex Features</summary>
+                        <div class="use-case-content">
+                            <p>For bigger features that involve multiple components and data flows, the skill helps you write a clear specification document. This becomes your blueprint that other skills can follow when building the actual code.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h2 id="skill-figma">figma</h2>
+            <div class="skill-card" id="skill-figma-card">
+                <div class="skill-card-header">
+                    <h3>figma</h3>
+                    <span class="skill-badge">UI Design</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill takes a Figma design and turns it into real, working code. You give it a Figma file link, and it reads the design layout, colors, typography, and spacing to produce frontend code you can use directly in your project.</p>
+                    <details class="use-case">
+                        <summary>Use Case: Convert a Designer's Figma File Into a Working Page</summary>
+                        <div class="use-case-content">
+                            <p>Your designer shares a Figma mockup. Instead of manually recreating it, you pass the link to this skill. It reads the design layers, extracts styles, and generates clean React components that match the visual layout pixel by pixel.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Extract Design Tokens From Figma</summary>
+                        <div class="use-case-content">
+                            <p>The skill pulls out colors, spacing values, font sizes, and other design tokens from your Figma file. You get a consistent set of variables you can use across your entire project, keeping your code aligned with the design system.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Spot Troublesome Figma Setup Before Implementation</summary>
+                        <div class="use-case-content">
+                            <p>When a Figma file is not organized well — missing component structure, inconsistent spacing, unnamed layers — the skill flags the problems and helps you decide the best way to handle them before writing code. This saves time and prevents messy implementations.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h2 id="skill-frontend-design">frontend-design</h2>
+            <div class="skill-card" id="skill-frontend-design-card">
+                <div class="skill-card-header">
+                    <h3>frontend-design</h3>
+                    <span class="skill-badge">UI Design</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill builds beautiful, production-ready interfaces from scratch. If you describe what you want — like "a landing page for a fitness app" — it creates visually striking layouts with professional typography, spacing, animations, and color choices.</p>
+                    <details class="use-case">
+                        <summary>Use Case: Build a Landing Page From a Text Description</summary>
+                        <div class="use-case-content">
+                            <p>Describe the sections you need — hero, features, pricing, testimonials — and the skill generates a complete, styled page. It picks appropriate layouts, creates visual hierarchy, and applies tasteful animations that make the page feel polished.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Redesign an Existing Page to Look More Professional</summary>
+                        <div class="use-case-content">
+                            <p>If your current page works but looks dull, the skill reviews the layout and suggests improvements. It rearranges elements, adjusts spacing, adds visual accents, and applies animations that elevate the design without changing the content.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Create Responsive Components That Look Great Everywhere</summary>
+                        <div class="use-case-content">
+                            <p>The skill builds components that adapt to different screen sizes automatically. Your dashboard, form, or card layout works beautifully on mobile, tablet, and desktop without extra effort from you.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h2 id="skill-frontend-skill">frontend-skill</h2>
+            <div class="skill-card" id="skill-frontend-skill-card">
+                <div class="skill-card-header">
+                    <h3>frontend-skill</h3>
+                    <span class="skill-badge">UI Design</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill creates clean, well-organized interfaces with good visual hierarchy. It focuses on restraint and clarity — making sure the most important content stands out, the layout feels balanced, and nothing feels cluttered or overwhelming.</p>
+                    <details class="use-case">
+                        <summary>Use Case: Build a Simple, Clean App Interface</summary>
+                        <div class="use-case-content">
+                            <p>When you need an app shell with a sidebar, header, and content area, the skill creates a clean structure with proper spacing and clear visual hierarchy. The result feels calm and organized, not busy or distracting.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Polish a Rough UI That Needs Tightening</summary>
+                        <div class="use-case-content">
+                            <p>If your interface works but feels uneven — inconsistent paddings, misaligned buttons, unclear content priority — the skill reviews it and makes targeted adjustments. It tightens spacing, fixes alignment, and ensures the most important elements draw the eye first.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Add Subtle Motion Without Overdoing It</summary>
+                        <div class="use-case-content">
+                            <p>The skill knows when to add transitions, hover effects, and micro-interactions. It adds just enough motion to make the interface feel alive and responsive, without making it feel flashy or distracting.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h2 id="skill-chart-visualization">chart-visualization</h2>
+            <div class="skill-card" id="skill-chart-visualization-card">
+                <div class="skill-card-header">
+                    <h3>chart-visualization</h3>
+                    <span class="skill-badge">Data & Content</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill looks at your data and picks the best chart type to show it. Bar chart, line chart, pie chart, scatter plot — it knows which one makes your data easiest to understand for the viewer.</p>
+                    <details class="use-case">
+                        <summary>Use Case: Show Monthly Revenue Trends at a Glance</summary>
+                        <div class="use-case-content">
+                            <p>Give the skill your monthly revenue numbers, and it automatically selects a line chart because line charts show trends over time clearly. It generates a visual where you can instantly see whether revenue is going up, down, or staying flat.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Compare Multiple Items Side by Side</summary>
+                        <div class="use-case-content">
+                            <p>If you need to compare product sales across regions, the skill picks a grouped bar chart that lets you compare values at a glance. You see which product is leading in which region without having to read through a table of numbers.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Find Patterns or Outliers in Data</summary>
+                        <div class="use-case-content">
+                            <p>When exploring data without a specific question, the skill scans your numbers and recommends charts that reveal patterns. A scatter plot might show a correlation between two variables, or a histogram might highlight unusual outliers you did not notice.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h2 id="skill-data-analysis">data-analysis</h2>
+            <div class="skill-card" id="skill-data-analysis-card">
+                <div class="skill-card-header">
+                    <h3>data-analysis</h3>
+                    <span class="skill-badge">Data & Content</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill lets you ask questions about your Excel or CSV data in plain language. It reads your files, runs queries against them using SQL, and gives you answers — whether that is a total, an average, a filtered list, or a complex multi-table report.</p>
+                    <details class="use-case">
+                        <summary>Use Case: Summarize a Large Spreadsheet Without Manual Work</summary>
+                        <div class="use-case-content">
+                            <p>Upload a spreadsheet with hundreds of rows and ask something like "What is the total revenue per product?" The skill reads the file, writes the right query, and returns the summarized results — no formulas or pivot tables needed from you.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Join Data From Multiple Sheets or Files</summary>
+                        <div class="use-case-content">
+                            <p>If your data is spread across multiple tabs — like one tab with customers and another with orders — the skill connects them together. You can ask questions that involve both tables, like "Which customers made more than 3 orders?"</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Filter and Sort Data to Find Specific Records</summary>
+                        <div class="use-case-content">
+                            <p>Ask the skill to find records matching specific criteria — like all orders over $500 from last month, sorted by date. It applies the filters and returns exactly the rows you need, already organized.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h2 id="skill-canvas-design">canvas-design</h2>
+            <div class="skill-card" id="skill-canvas-design-card">
+                <div class="skill-card-header">
+                    <h3>canvas-design</h3>
+                    <span class="skill-badge">Data & Content</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill creates original visual designs like posters, covers, and promotional graphics. It handles composition, typography, color choices, and spacing to produce professional-looking visuals that are always original — never copied from existing designs.</p>
+                    <details class="use-case">
+                        <summary>Use Case: Create a Workshop or Event Poster</summary>
+                        <div class="use-case-content">
+                            <p>Describe your event — title, date, venue — and the style you want (minimal, bold, retro, modern). The skill generates a poster image with balanced composition, appropriate typography, and colors that match your brand or theme.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Design Social Media Graphics</summary>
+                        <div class="use-case-content">
+                            <p>Need a cover image for a blog post, a banner for LinkedIn, or a visual quote to share? The skill creates original compositions sized correctly for each platform, using design principles that make the content stand out in a crowded feed.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Generate Printable Materials Like Covers and Booklets</summary>
+                        <div class="use-case-content">
+                            <p>The skill can produce PDF output for print-ready materials. Whether it is a report cover, a booklet front page, or a certificate, the output uses professional typography and layout standards suitable for printing.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h2 id="skill-doc-coauthoring">doc-coauthoring</h2>
+            <div class="skill-card" id="skill-doc-coauthoring-card">
+                <div class="skill-card-header">
+                    <h3>doc-coauthoring</h3>
+                    <span class="skill-badge">Data & Content</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill helps you write and refine documents like technical specs, proposals, and guides. You provide your ideas and context, and it helps structure them into clear, well-organized documents through an iterative process of writing, reviewing, and revising.</p>
+                    <details class="use-case">
+                        <summary>Use Case: Write a Technical Specification Document</summary>
+                        <div class="use-case-content">
+                            <p>Share your rough notes about a feature you want to build. The skill organizes them into sections — overview, requirements, architecture, timeline — and iteratively refines each section with you until the document is complete and ready to share with your team.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Create a Project Proposal</summary>
+                        <div class="use-case-content">
+                            <p>The skill guides you through writing a proposal piece by piece. It asks for the right context, helps structure your arguments, and ensures the final document clearly communicates the project scope, benefits, and resource needs.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Use Case: Review and Improve an Existing Document</summary>
+                        <div class="use-case-content">
+                            <p>If you already have a draft document, the skill reviews it for clarity, structure, and completeness. It identifies gaps in the content, suggests reorganizations, and helps polish the language so the document reads professionally.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
 
             <div class="navigation-buttons">
                 <a href="skills.html" class="btn btn-secondary">← Previous: SKILLS</a>
