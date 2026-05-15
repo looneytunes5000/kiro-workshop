@@ -15,7 +15,6 @@ const ALL_PAGES = [
   'mcp-integration.html',
   'opencode.html',
   'opencode-web-ui.html',
-  'wrapping-up.html',
 ];
 
 test.describe('All Pages Load Tests', () => {

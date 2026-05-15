@@ -10,7 +10,6 @@
     <meta name="description" content="Your all-in-one reference for aiHackathon 2026. Track progress, resources, and tools you need to succeed.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="home-override.css">
     <script>document.documentElement.classList.remove('no-js');</script>
     <style>
         .progress-bar {
@@ -27,22 +26,35 @@
             width: 100%;
         }
 
-        .unified-hero {
-            padding: 48px var(--content-gap) 24px;
-            position: relative;
-            background: var(--bg-primary);
+        /* ?�?�?�?�?� hero ?�?�?�?�?� */
+
+        .hero-section {
+            padding: 72px var(--content-gap) 56px;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            min-height: 30vh;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background:
+                radial-gradient(ellipse 70% 50% at 50% 0%, oklch(from var(--gold-primary) l c h / 0.06) 0%, transparent 100%);
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            opacity: 0.3;
         }
 
         .hero-logo {
-            margin-bottom: 8px;
+            margin-bottom: 24px;
             width: 100%;
-            max-width: 560px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 400px;
         }
 
         .hero-logo img {
@@ -50,628 +62,249 @@
             height: auto;
             display: block;
             object-fit: contain;
-            filter: drop-shadow(0 4px 24px rgba(255, 201, 25, 0.25));
+            filter: drop-shadow(0 4px 32px rgba(232, 197, 71, 0.15));
         }
 
-        .hero-title {
+        .hero-text {
+            max-width: 560px;
+        }
+
+        .hero-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--code-green);
+            margin-bottom: 14px;
+        }
+
+        .hero-title-main {
             font-size: clamp(2rem, 4.5vw, 3rem);
             font-weight: 700;
             color: var(--text-primary);
-            margin-top: 4px;
-            margin-bottom: 16px;
+            margin: 0 0 14px;
             letter-spacing: -0.04em;
-            line-height: 1.05;
-            text-align: center;
+            line-height: 1.08;
         }
 
-        .hero-title span {
+        .hero-title-main .accent {
             color: var(--gold-primary);
         }
 
-        .hero-description {
+        .hero-intro {
             font-size: 1.05rem;
-            line-height: 1.65;
+            line-height: 1.7;
             color: var(--text-secondary);
-            max-width: 55ch;
-            margin: 0 0 12px;
+            margin: 0 auto;
+            max-width: 58ch;
         }
 
-        .hero-meta {
+        /* ?�?�?�?�?� path selector cards ?�?�?�?�?� */
+
+        #path-selector {
+            padding: 64px var(--content-gap) 0;
+        }
+
+        #path-selector h2 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin: 0 0 6px;
+            letter-spacing: -0.01em;
+        }
+
+        .path-selector-subtitle {
             font-size: 0.85rem;
             color: var(--text-muted);
-            margin-bottom: 28px;
+            margin: 0 0 40px;
         }
 
-        .hero-meta code {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            color: var(--code-green);
-            background: var(--bg-deep);
-            padding: 2px 6px;
-            border-radius: 3px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .btn-large {
-            padding: 14px 32px;
-            font-size: 1rem;
-            min-height: 52px;
-            border-radius: 8px;
-        }
-
-        .track-grid {
+        .path-cards-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin: 24px 0 28px;
+            gap: 24px;
+            margin-bottom: 56px;
         }
 
-        .track-card {
-            display: block;
+        .path-card {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
             background: var(--surface);
             border: 1px solid var(--blue-accent);
-            border-radius: 12px;
-            padding: 20px 24px;
-            text-decoration: none;
-            color: inherit;
-            transition: transform 0.25s var(--ease-out-quint), box-shadow 0.25s var(--ease-out-quint), border-color 0.25s var(--ease-out-quint);
-            position: relative;
-            overflow: hidden;
+            border-radius: 10px;
+            padding: 28px;
+            transition: border-color 0.2s var(--ease-out-quint);
         }
 
-        .track-card:first-child {
-            grid-column: 1 / 3;
-        }
-
-        .track-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(232, 197, 71, 0.15);
+        .path-card:hover {
             border-color: var(--gold-primary);
         }
 
-        .track-card-number {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--code-green);
-            letter-spacing: 0.1em;
-            margin-bottom: 20px;
+        /* ?� One font everywhere ?�?� */
+        .path-card,
+        .path-card *,
+        .path-card *::before,
+        .path-card *::after,
+        .path-card a {
+            font-family: inherit !important;
         }
 
-        .track-card-header {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 12px;
-            margin-bottom: 16px;
+        .path-card-label {
+            font-size: 0.72rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: var(--text-muted);
+            margin-bottom: 8px;
         }
 
-        .track-card-tag {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            padding: 4px 10px;
-            border-radius: 4px;
-            border: 1px solid var(--blue-accent);
-            color: var(--text-secondary);
-        }
-
-        .tag-training { color: var(--code-green); border-color: var(--code-green); }
-        .tag-toolkits { color: var(--link-blue); border-color: var(--link-blue); }
-        .tag-survival { color: var(--gold-primary); border-color: var(--gold-primary); }
-
-        .track-card h3 {
-            font-size: 1.4rem;
+        .path-card h3 {
+            font-size: 1.25rem;
             font-weight: 600;
             color: var(--text-primary);
-            margin: 0 0 12px;
-            line-height: 1.25;
-            letter-spacing: -0.02em;
-        }
-
-        .track-card p {
-            font-size: 0.92rem;
-            line-height: 1.65;
-            color: var(--text-secondary);
-            margin: 0 0 20px;
-        }
-
-        .track-card-footer {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--gold-primary);
-            font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 0.03em;
-        }
-
-        .track-card-footer .arrow {
-            transition: transform 0.2s;
-        }
-
-        .track-card:hover .track-card-footer .arrow {
-            transform: translateX(6px);
-        }
-
-        .track-card-features {
-            list-style: none;
-            padding: 0;
-            margin: 16px 0 0;
-        }
-
-        .track-card-features li {
-            padding: 6px 0 6px 20px;
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            position: relative;
-        }
-
-        .track-card-features li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 14px;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--gold-primary);
-        }
-
-        .track-card.featured {
-            background: var(--surface);
-            border-color: var(--blue-accent);
-            padding: 36px 32px;
-        }
-
-        .track-card.featured .track-card-title-large {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin: 0 0 16px;
+            margin: 0 0 6px;
             line-height: 1.2;
             letter-spacing: -0.02em;
         }
 
-        .track-card.featured .track-card-desc {
-            font-size: 1rem;
-            line-height: 1.7;
+        .path-card > p {
+            font-size: 0.84rem;
+            line-height: 1.55;
             color: var(--text-secondary);
-            margin: 0 0 24px;
+            margin: 0 0 22px;
         }
 
-        .roadmap-section {
-            margin: 32px 0;
+        .path-card-nav {
+            border-top: 1px solid var(--blue-accent);
+            padding-top: 18px;
+            margin-top: auto;
         }
 
-        .roadmap-section-title {
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 4px;
-        }
-
-        .roadmap-subtitle {
-            font-size: 0.9rem;
+        .path-card-nav-label {
+            font-size: 0.72rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
             color: var(--text-muted);
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
-        .roadmap-timeline {
-            list-style: none;
-            padding: 0;
-            margin: 16px auto 0;
-            max-width: 640px;
-            position: relative;
+        /* ?�?� Nav list: completely flat, one style for every item ?�?� */
+        .path-card-nav ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
         }
 
-        .roadmap-timeline::before {
-            content: '';
-            position: absolute;
-            left: 19px;
-            top: 12px;
-            bottom: 12px;
-            width: 2px;
-            background: var(--blue-accent);
-            opacity: 0.3;
+        .path-card-nav li,
+        .path-card-nav li::before,
+        .path-card-nav li::after,
+        .path-card-nav ul li,
+        .path-card-nav ul li::before,
+        .path-card-nav ul li::after,
+        #path-selector .path-card-nav li,
+        #path-selector .path-card-nav li::before,
+        #path-selector .path-card-nav li::after,
+        #path-selector .path-card-nav ul li,
+        #path-selector .path-card-nav ul li::before,
+        #path-selector .path-card-nav ul li::after,
+        .path-cards-grid .path-card-nav li,
+        .path-cards-grid .path-card-nav li::before,
+        .path-cards-grid .path-card-nav li::after,
+        .path-cards-grid .path-card-nav ul li,
+        .path-cards-grid .path-card-nav ul li::before,
+        .path-cards-grid .path-card-nav ul li::after {
+            content: none !important;
+            display: none !important;
+            background: none !important;
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            position: static !important;
+            width: auto !important;
+            height: auto !important;
         }
 
-        .roadmap-step {
-            position: relative;
-            padding: 12px 0 12px 56px;
-            border-bottom: 1px solid var(--blue-accent);
+        .path-card-nav li,
+        .path-card-nav ul li,
+        #path-selector .path-card-nav li,
+        #path-selector .path-card-nav ul li,
+        .path-cards-grid .path-card-nav li,
+        .path-cards-grid .path-card-nav ul li {
+            display: block !important;
+            font-size: 0.84rem !important;
+            font-weight: 400 !important;
+            color: var(--text-secondary) !important;
+            padding: 6px 0 !important;
+            line-height: 1.4 !important;
+            flex: none !important;
+            min-height: auto !important;
+            border: none !important;
         }
 
-        .roadmap-step:last-child {
-            border-bottom: none;
-        }
-
-        .roadmap-step::before {
-            content: attr(data-step);
-            position: absolute;
-            left: 4px;
-            top: 14px;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: var(--bg-deep);
-            border: 1.5px solid var(--blue-accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--gold-primary);
-            z-index: 1;
-        }
-
-        .roadmap-step details {
-            cursor: pointer;
-            transition: outline-color 0.15s;
-        }
-
-        .roadmap-step details[open] {
-            outline: 1px solid var(--gold-primary);
-            border-radius: 6px;
-        }
-
-        .roadmap-step summary {
-            font-size: 0.98rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            outline: none;
-            list-style: none;
-            transition: color 0.2s;
-        }
-
-        .roadmap-step summary::-webkit-details-marker { display: none; }
-
-        .roadmap-step summary:hover {
-            color: var(--gold-primary);
-        }
-
-        .roadmap-step details[open] summary {
-            color: var(--gold-primary);
-        }
-
-        .roadmap-step .step-tag {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65rem;
-            font-weight: 600;
-            color: var(--code-green);
-            letter-spacing: 0.06em;
-            margin-left: 10px;
-            opacity: 0.65;
-        }
-
-        .roadmap-step .step-content {
-            padding: 10px 0 4px;
-            font-size: 0.9rem;
+        .path-card-nav li a,
+        .path-card-nav ul li a,
+        #path-selector .path-card-nav li a,
+        #path-selector .path-card-nav ul li a,
+        .path-cards-grid .path-card-nav li a,
+        .path-cards-grid .path-card-nav ul li a {
+            display: inline !important;
             color: var(--text-secondary);
-            line-height: 1.6;
-            max-width: 560px;
+            text-decoration: none !important;
+            transition: color 0.15s var(--ease-out-quint);
+            border: none !important;
+            background: none !important;
+            padding: 0 !important;
+            font-size: inherit !important;
+            font-weight: inherit !important;
         }
+
+        .path-card-nav li a:hover,
+        .path-card-nav ul li a:hover {
+            color: var(--text-primary) !important;
+        }
+
+        .path-card-nav li.current a,
+        .path-card-nav ul li.current a {
+            color: var(--text-primary) !important;
+            font-weight: 500 !important;
+        }
+
+        /*  footer  */
 
         .simplified-footer {
-    margin-top: 32px;
-    padding: 24px var(--content-gap) 32px;
-    border-top: 1px solid var(--blue-accent);
-    display: flex;
-    justify-content: center;
-}
-
-.simplified-footer .btn {
-    min-width: 200px;
-}
-
-/* Prompt Accordion Pattern */
-.prompt-accordion {
-    border: 1px solid var(--blue-accent);
-    border-radius: 12px;
-    background: var(--bg-primary);
-    margin-bottom: 16px;
-    overflow: hidden;
-    transition: border-color 0.2s;
-}
-
-.prompt-accordion:hover {
-    border-color: var(--gold-primary);
-}
-
-.prompt-accordion summary {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 20px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    cursor: pointer;
-    list-style: none;
-    transition: background 0.15s;
-}
-
-.prompt-accordion summary:hover {
-    background: var(--surface-hover);
-}
-
-.prompt-accordion summary::-webkit-details-marker { display: none; }
-
-.prompt-accordion summary .accordion-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    border: 1.5px solid var(--gold-primary);
-    color: var(--gold-primary);
-    font-size: 0.7rem;
-    flex-shrink: 0;
-    transition: transform 0.25s var(--ease-out-quint);
-}
-
-.prompt-accordion[open] summary .accordion-icon {
-    transform: rotate(90deg);
-}
-
-.prompt-accordion summary .summary-badge {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--code-green);
-    background: var(--bg-deep);
-    padding: 2px 8px;
-    border-radius: 10px;
-    margin-left: auto;
-}
-
-.prompt-accordion summary .summary-sub {
-    font-size: 0.85rem;
-    font-weight: 400;
-    color: var(--text-muted);
-    margin-left: 4px;
-}
-
-.prompt-accordion-content {
-    padding: 20px;
-    border-top: 1px solid var(--blue-accent);
-}
-
-/* Event Tagline Card */
-.event-tagline-card {
-    border-top: 3px solid var(--gold-primary);
-}
-
-.event-tagline-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 24px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-.event-header-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: var(--gold-primary);
-    color: var(--bg-deep);
-    font-size: 0.8rem;
-    flex-shrink: 0;
-}
-
-.event-tagline-inner {
-    text-align: center;
-    padding: 24px 20px;
-}
-
-.event-tagline-title {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    font-weight: 700;
-    color: var(--text-primary);
-    margin: 0 0 8px;
-    letter-spacing: -0.04em;
-    line-height: 1.1;
-}
-
-.event-tagline-title .gold {
-    color: var(--gold-primary);
-}
-
-.event-tagline-subtitle {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--gold-primary);
-    margin: 0 0 16px;
-    letter-spacing: 0.02em;
-}
-
-.event-tagline-desc {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--text-secondary);
-    max-width: 65ch;
-    margin: 0 auto 24px;
-}
-
-.event-stats {
-    display: flex;
-    gap: 24px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 24px;
-    padding-top: 24px;
-    border-top: 1px solid var(--blue-accent);
-}
-
-.event-stat {
-    text-align: center;
-    min-width: 100px;
-}
-
-.event-stat-value {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--gold-primary);
-    letter-spacing: -0.03em;
-    line-height: 1.2;
-}
-
-.event-stat-label {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    margin-top: 4px;
-    line-height: 1.3;
-}
-
-/* Judging Criteria */
-.criteria-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-
-.criterion-card {
-    display: flex;
-    gap: 16px;
-    padding: 18px 20px;
-    border: 1px solid var(--blue-accent);
-    border-radius: 10px;
-    background: var(--surface);
-    transition: border-color 0.2s;
-}
-
-.criterion-card:hover {
-    border-color: var(--gold-primary);
-}
-
-.criterion-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--gold-primary);
-    color: var(--bg-deep);
-    font-size: 1.1rem;
-    font-weight: 700;
-    flex-shrink: 0;
-}
-
-.criterion-card:nth-child(1) .criterion-icon { background: var(--gold-primary); color: var(--bg-deep); }
-.criterion-card:nth-child(2) .criterion-icon { background: var(--link-blue); color: var(--bg-deep); }
-.criterion-card:nth-child(3) .criterion-icon { background: var(--code-green); color: var(--bg-deep); }
-.criterion-card:nth-child(4) .criterion-icon { background: var(--gold-rich); color: var(--bg-deep); }
-
-.criterion-content { flex: 1; }
-
-.criterion-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin: 0 0 6px;
-    line-height: 1.25;
-    letter-spacing: -0.02em;
-}
-
-.criterion-desc {
-    font-size: 0.88rem;
-    line-height: 1.55;
-    color: var(--text-secondary);
-    margin: 0;
-}
-
-/* Schedule */
-.schedule-venue {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    color: var(--gold-primary);
-    margin: 0 0 16px;
-    font-weight: 500;
-}
-
-.schedule-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.schedule-item {
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--blue-accent);
-    transition: background 0.15s;
-}
-
-.schedule-item:last-child {
-    border-bottom: none;
-}
-
-.schedule-item.highlight {
-    padding: 12px 0 12px 14px;
-    border-left: 3px solid var(--gold-primary);
-    background: var(--surface);
-    border-radius: 0 8px 8px 0;
-    margin-left: -14px;
-    margin-right: -14px;
-}
-
-.schedule-time {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--code-green);
-    white-space: nowrap;
-    min-width: 56px;
-}
-
-.schedule-item.highlight .schedule-time {
-    color: var(--gold-primary);
-}
-
-.schedule-event {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text-primary);
-    line-height: 1.3;
-}
-
-.schedule-item.highlight .schedule-event {
-    font-weight: 600;
-}
-body.light .nav-sidebar {
-            background: var(--bg-elevated);
-            border-right: 1px solid var(--blue-accent);
-            box-shadow: 2px 0 8px var(--shadow-sm);
+            margin-top: 8px;
+            padding: 40px var(--content-gap) 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            text-align: center;
+            position: relative;
         }
 
-        body.light .nav-sidebar a:hover {
-            background: var(--surface-hover);
+        .simplified-footer::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: var(--gold-primary);
+            border-radius: 2px;
+            margin-bottom: 40px;
+            opacity: 0.4;
         }
 
-        body.light .hero-logo img {
-    filter: brightness(0);
-}
+        .footer-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .simplified-footer .btn {
+            min-width: 180px;
+        }
+
+        /* ?�?�?�?�?� animations ?�?�?�?�?� */
 
         @keyframes fadeInHero {
             from {
@@ -682,10 +315,6 @@ body.light .nav-sidebar {
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-
-        .animate-in {
-            opacity: 1;
         }
 
         .animate-in.visible {
@@ -718,202 +347,37 @@ body.light .nav-sidebar {
         .hero-meta.visible { animation-delay: 0.3s; }
         .cta-buttons.visible { animation-delay: 0.4s; }
 
-        .compact-track {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 12px 20px;
-            border: 1px solid var(--blue-accent);
-            border-radius: 8px;
-            background: var(--bg-primary);
-            color: inherit;
-            text-decoration: none;
-            transition: border-color 0.2s ease-out, transform 0.15s var(--ease-out-quint);
+        /* ?�?�?�?�?� light theme tweaks ?�?�?�?�?� */
+
+        [data-theme="light"] .hero-section {
+            background:
+                radial-gradient(ellipse 70% 50% at 50% 0%, oklch(from var(--gold-primary) l c h / 0.05) 0%, transparent 100%);
         }
 
-        .compact-track:hover {
-            border-color: var(--gold-rich);
-            transform: translateY(-2px);
-        }
-
-        .compact-tracks {
-            margin-top: 8px;
-        }
-
-        .compact-track:focus-visible {
-            outline: 2px solid var(--gold-primary);
-            outline-offset: 2px;
-        }
-
-        .compact-track-num {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            white-space: nowrap;
-            min-width: 140px;
-            padding-top: 2px;
-        }
-
-        .compact-track-body {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .compact-track-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin: 0 0 8px;
-            line-height: 1.25;
-            letter-spacing: -0.02em;
-        }
-
-        .compact-track-desc {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin: 0;
-            line-height: 1.6;
-            max-width: 65ch;
-        }
-
-        .compact-track-arrow {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            transition: transform 0.15s var(--ease-out-quint), color 0.15s ease-out;
-            flex-shrink: 0;
-            padding-top: 2px;
-        }
-
-        .compact-track:hover .compact-track-arrow {
-            transform: translateX(4px);
-            color: var(--gold-primary);
+        [data-theme="light"] .hero-logo img {
+            filter: brightness(0);
         }
 
         @media (max-width: 768px) {
-            .unified-hero {
-                padding: 40px 24px 32px;
-                min-height: auto;
+            #path-selector {
+                padding: 0 24px;
             }
 
-            .hero-logo {
-                max-width: 360px;
-                margin-bottom: 16px;
-            }
-
-            .hero-title {
-                font-size: 2.25rem;
-            }
-
-            .hero-description {
-                font-size: 1rem;
-            }
-
-            .track-grid {
+            .path-cards-grid {
                 grid-template-columns: 1fr;
+                gap: 14px;
             }
 
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
+            .path-card {
+                padding: 24px 22px 22px;
             }
 
-            .btn-large {
-                width: 100%;
-                max-width: 300px;
-                text-align: center;
-            }
-
-            .roadmap-section-title {
-                font-size: 1.25rem;
-            }
-
-            .hero-logo.visible,
-            .hero-title.visible,
-            .hero-description.visible,
-            .hero-meta.visible,
-            .cta-buttons.visible {
-                animation-delay: 0s;
-            }
-
-            .event-accordions {
-                margin: 24px 0 32px !important;
-            }
-
-            .criteria-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-
-            .criterion-card {
-                padding: 14px 16px;
-                gap: 12px;
-            }
-
-            .criterion-icon {
-                width: 36px;
-                height: 36px;
-                font-size: 1rem;
-            }
-
-            .event-tagline-inner {
-                padding: 20px 12px;
-            }
-
-            .event-stats {
-                gap: 16px;
-                margin-top: 20px;
-                padding-top: 20px;
-            }
-
-            .event-stat {
-                min-width: 80px;
-            }
-
-            .event-stat-value {
-                font-size: 1.25rem;
-            }
-
-            .schedule-item {
-                gap: 12px;
-                padding: 8px 0;
-            }
-
-            .schedule-item.highlight {
-                padding-left: 12px;
-                margin-left: -12px;
-                margin-right: -12px;
-            }
-
-            .schedule-venue {
-                font-size: 0.75rem;
-                margin-bottom: 12px;
-            }
-
-            .prompt-accordion summary {
-                font-size: 1.05rem;
-                padding: 12px 16px;
-            }
-
-            .event-tagline-header {
-                font-size: 1.1rem;
-                padding: 14px 16px;
-            }
-
-            .prompt-accordion-content {
-                padding: 16px;
+            .path-card-nav ul li {
+                font-size: 0.82rem;
             }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .track-card:hover {
-                transform: none;
-            }
-
-            .track-card:hover .track-card-footer .arrow {
-                transform: none;
-            }
-
             .animate-in {
                 opacity: 1 !important;
                 transform: none !important;
@@ -921,10 +385,7 @@ body.light .nav-sidebar {
             }
 
             .hero-logo.visible,
-            .hero-title.visible,
-            .hero-description.visible,
-            .hero-meta.visible,
-            .cta-buttons.visible {
+            .hero-text.visible {
                 opacity: 1 !important;
                 transform: none !important;
                 animation: none !important;
@@ -942,118 +403,56 @@ body.light .nav-sidebar {
     <div class="sidebar-backdrop"></div>
 
     <main class="main" id="main-content">
-        <header class="page-header">
-            <h1>aiHackathon 2026</h1>
-            <p>Everything you need, organized. Your all-in-one contestant reference.</p>
-        </header>
-
         <article class="content">
-            <section class="unified-hero animate-in">
+            <section class="hero-section animate-in">
                 <div class="hero-logo animate-in">
-                    <img src="img/aiHackathon logo.png" alt="aiHackathon 2026" width="560" height="160">
-                    <h2 class="hero-title animate-in">Your <span>aiHackathon Survival Kit</span></h2>
+                    <img src="img/aiHackathon logo.png" alt="aiHackathon 2026" width="440" height="120">
+                </div>
+                <div class="hero-text animate-in">
+                    <h2 class="hero-title-main">Survival Kit</h2>
                 </div>
             </section>
 
-            <section class="animate-in">
+            <section id="path-selector" class="animate-in">
                 <h2>Choose Your Path</h2>
-                <div class="track-grid">
-                    <a href="training-reference.html" class="track-card featured" data-track="1">
-                        <div class="track-card-number">01 // TRAINING SESSION</div>
-                        <div class="track-card-header">
-                            <div class="track-card-tag tag-training">TRAINING SESSION</div>
+                <p class="path-selector-subtitle">Two suggested reading paths &mdash; follow the one closest to your goals, or skip between them freely.</p>
+                <div class="path-cards-grid">
+                    <div class="path-card">
+                        <div class="path-card-label">Path A &mdash; Suggested</div>
+                        <h3>Workflow Automation</h3>
+                        <p>Batch-process documents, extract structured data, and replace repetitive admin tasks.</p>
+                        <div class="path-card-nav">
+                            <div class="path-card-nav-label">Pages in this path</div>
+                            <ul>
+                                <li class="current"><a href="getting-started.html">Getting Started</a></li>
+                                <li><a href="trae-solo-overview.html">TRAE</a></li>
+                                <li><a href="vibe-coding-reference.html">Vibe Coding</a></li>
+                                <li><a href="spec-driven-reference.html">Spec-Driven Development</a></li>
+                                <li><a href="deploy-backend.html">Deployment</a></li>
+                            </ul>
                         </div>
-                        <h3 class="track-card-title-large">Training Session</h3>
-                        <p class="track-card-desc">Learn the fundamentals of TRAE's AI-driven development. From Vibe Coding to Spec-Driven Development and Skills activation.</p>
-                        <div class="track-card-footer">
-                            <span>Start Learning</span>
-                            <span class="arrow">&rarr;</span>
+                    </div>
+                    <div class="path-card">
+                        <div class="path-card-label">Path B &mdash; Suggested</div>
+                        <h3>AI-Powered Solutions</h3>
+                        <p>Build systems that use generative AI for automation, judgment, and adaptation.</p>
+                        <div class="path-card-nav">
+                            <div class="path-card-nav-label">Pages in this path</div>
+                            <ul>
+                                <li class="current"><a href="microsoft-copilot-studio.html">Microsoft Copilot Studio</a></li>
+                                <li><a href="ollama.html">Ollama</a></li>
+                                <li><a href="agent-integration.html">Agent Integration</a></li>
+                                <li><a href="genai-portal-reference.html">VTC GenAI Portal Browser Automation</a></li>
+                                <li><a href="trae-solo-overview.html">TRAE</a></li>
+                            </ul>
                         </div>
-                    </a>
-                    <a href="trae-solo-overview.html" class="track-card" data-track="2">
-                        <div class="track-card-number">02 // AI CODING AGENTS</div>
-                        <div class="track-card-header">
-                            <div class="track-card-tag tag-toolkits">TOOLKITS</div>
-                        </div>
-                        <h3 class="track-card-title-large">AI Coding Agents</h3>
-                        <p class="track-card-desc">Discover specialized skills and build AI-powered features. Explore TRAE IDE, OpenCode, MCP integration, and deployment workflows.</p>
-                        <div class="track-card-footer">
-                            <span>Explore Toolkits</span>
-                            <span class="arrow">&rarr;</span>
-                        </div>
-                    </a>
-                    <a href="microsoft-copilot-studio.html" class="track-card" data-track="3">
-                        <div class="track-card-number">03 // SURVIVAL KIT</div>
-                        <div class="track-card-header">
-                            <div class="track-card-tag tag-survival">SURVIVAL</div>
-                        </div>
-                        <h3 class="track-card-title-large">AI-Powered Systems</h3>
-                        <p class="track-card-desc">Essential skills for hackathon survival and deployment. Enterprise tools like Copilot Studio and GenAI Portal for production-ready workflows.</p>
-                        <div class="track-card-footer">
-                            <span>Get Survival Kit</span>
-                            <span class="arrow">&rarr;</span>
-                        </div>
-                    </a>
-                </div>
-            </section>
-
-            <section class="roadmap-section" id="roadmap">
-                <h2 class="roadmap-section-title animate-in">Reference Roadmap</h2>
-                <p class="roadmap-subtitle animate-in">Eight steps from setup to production &#8212; click each step for details</p>
-                <div class="roadmap-timeline animate-in">
-                    <div class="roadmap-step" data-step="1">
-                        <details>
-                            <summary>Getting Started <span class="step-tag">Training</span></summary>
-                            <div class="step-content">Introduction to TRAE SOLO, environment setup, and understanding the dual&#8209;client architecture with MTC and Code modes.</div>
-                        </details>
-                    </div>
-                    <div class="roadmap-step" data-step="2">
-                        <details>
-                            <summary>Vibe Coding <span class="step-tag">Training</span></summary>
-                            <div class="step-content">Rapid feature development using natural language descriptions. Build real interfaces with conversational AI workflows.</div>
-                        </details>
-                    </div>
-                    <div class="roadmap-step" data-step="3">
-                        <details>
-                            <summary>Spec&#8209;Driven Development <span class="step-tag">Training</span></summary>
-                            <div class="step-content">Structured specifications for complex, multi&#8209;file features. Plan requirements and edge cases before writing code.</div>
-                        </details>
-                    </div>
-                    <div class="roadmap-step" data-step="4">
-                        <details>
-                            <summary>Skills <span class="step-tag">Training</span></summary>
-                            <div class="step-content">Access to 14 curated essential skills covering development, design, data analysis, and content creation.</div>
-                        </details>
-                    </div>
-                    <div class="roadmap-step" data-step="5">
-                        <details>
-                            <summary>TRAE IDE <span class="step-tag">Toolkits</span></summary>
-                            <div class="step-content">Multitasking, tool panel usage, MCP integration, and deployment for production applications.</div>
-                        </details>
-                    </div>
-                    <div class="roadmap-step" data-step="6">
-                        <details>
-                            <summary>OpenCode <span class="step-tag">Toolkits</span></summary>
-                            <div class="step-content">Explore OpenCode's terminal&#8209;based interface and web UI for AI&#8209;powered coding workflows.</div>
-                        </details>
-                    </div>
-                    <div class="roadmap-step" data-step="7">
-                        <details>
-                            <summary>Microsoft Copilot Studio <span class="step-tag">Survival</span></summary>
-                            <div class="step-content">Build and deploy custom AI agents using enterprise&#8209;grade tools and integrations.</div>
-                        </details>
-                    </div>
-                    <div class="roadmap-step" data-step="8">
-                        <details>
-                            <summary>GenAI Portal <span class="step-tag">Survival</span></summary>
-                            <div class="step-content">Browser automation and advanced AI interactions for scaling your development workflow.</div>
-                        </details>
                     </div>
                 </div>
             </section>
 
             <div class="simplified-footer">
-                <a href="training-reference.html" class="btn btn-primary">Get Started &rarr;</a>
+                <p class="footer-label">Ready to start?</p>
+                <a href="getting-started.html" class="btn btn-primary">Open Reading Paths</a>
             </div>
         </article>
     </main>

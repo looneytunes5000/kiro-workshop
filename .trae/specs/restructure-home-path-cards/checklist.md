@@ -1,0 +1,7 @@
+- [ ] Path A card shows 8 pages in correct order: Getting Started, Vibe Coding Basics, Spec-Driven Basics, Skills Basics, TRAEO Agent Overview, Tool Panel, Multitasking, Deploy Backend
+- [ ] Path A does NOT include "14 Must-Install Skills" or "Deployment Troubleshooting"
+- [ ] Path B card shows 6 pages in correct order: Copilot Studio Overview, Ollama, Agent Integration, GenAI Portal Overview, GenAI Portal Browser Automation, TRAE Overview
+- [ ] No .section-label class present in the HTML
+- [ ] No .section-label CSS rules present in home.html style block
+- [ ] All nav links across both cards use identical font family, size, weight, and color
+- [ ] All links point to real .html files that exist in kiro-workshop directory

@@ -1107,9 +1107,6 @@ function injectChatbotHTML() {
                     </div>
                 </div>
             </div>
-            <div class="chatbot-api-warning" id="chatbot-api-warning" style="display:none;">
-                No API key configured. Click ⚙️ to set one.
-            </div>
         </div>
     `;
 

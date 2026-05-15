@@ -1,80 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenCode Overview - AI Hackathon</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="progress-bar"></div>
-    <a href="#main-content" class="skip-nav">Skip to main content</a>
-    <button class="mobile-menu-btn">Menu</button>
-
-    <nav class="sidebar"></nav>
-
-    <div class="sidebar-backdrop"></div>
-
-    <main class="main" id="main-content">
-        <header class="page-header">
-            <h1>OpenCode Overview</h1>
-            <p>An open-source AI coding tool available for the hackathon — choose freely</p>
-        </header>
-
-        <article class="content">
-            <h2>Choose Your Tool</h2>
-            <p>For this hackathon, you are free to choose any development tool you prefer. OpenCode is one of the allowed options — it is a free, open-source AI coding assistant that runs locally on your machine. But you are welcome to use whatever tool makes you most productive.</p>
-
-            <h2>TRAE vs OpenCode</h2>
-            <div class="tool-comparison">
-                <div class="trae-column">
-                    <h3>TRAE</h3>
-                    <ul class="checklist">
-                        <li>Subscription required</li>
-                        <li>Easy to use with power/simplicity</li>
-                        <li>Safe sandbox</li>
-                        <li>Managed harness engineering</li>
-                    </ul>
-                </div>
-                <div class="opencode-column">
-                    <h3>OpenCode</h3>
-                    <ul class="checklist">
-                        <li>Free and open-sourced</li>
-                        <li>Best for coding/terminal users</li>
-                        <li>Full control on own computer</li>
-                        <li>DIY harness engineering</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="callout">
-                <div class="callout-header">
-                    <div class="dot"></div>
-                    <span>What is harness engineering?</span>
-                </div>
-                <p>Harness engineering is the underlying framework controlling how the AI agent behaves, makes decisions, and interacts with your codebase. With TRAE, you get a managed and curated harness with guardrails out of the box. With OpenCode, the harness is DIY and customizable — requiring more technical comfort but giving you full control.</p>
-            </div>
-
-            <div class="navigation-buttons">
-                <a href="deployment-troubleshooting.html" class="btn btn-secondary">Previous: Exercise: Fixing Deployment Issues</a>
-                <a href="opencode-web-ui.html" class="btn btn-primary">Next: OpenCode Quick Start →</a>
-            </div>
-        </article>
-    </main>
-
-    <script>
-        document.addEventListener('click', function(e) {
-            const sidebar = document.querySelector('.sidebar');
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            if (window.innerWidth <= 900 && 
-                !sidebar.contains(e.target) && 
-                !menuBtn.contains(e.target) && 
-                sidebar.classList.contains('open')) {
-                sidebar.classList.remove('open');
-            }
-        });
-    </script>
-<script src="scripts.js"></script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenCode Overview - AI Hackathon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">Menu</button>
+
+    <nav class="sidebar"></nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>OpenCode Overview</h1>
+            <p>An open-source AI coding tool available for the hackathon —choose freely</p>
+        </header>
+
+        <article class="content">
+            <h2>Choose Your Tool</h2>
+            <p>For this hackathon, you are free to choose any development tool you prefer. OpenCode is one of the allowed options —it is a free, open-source AI coding assistant that runs locally on your machine. But you are welcome to use whatever tool makes you most productive.</p>
+
+            <h2>TRAE vs OpenCode</h2>
+            <div class="tool-comparison">
+                <div class="trae-column">
+                    <h3>TRAE</h3>
+                    <ul class="checklist">
+                        <li>Subscription required</li>
+                        <li>Easy to use with power/simplicity</li>
+                        <li>Safe sandbox</li>
+                        <li>Managed harness engineering</li>
+                    </ul>
+                </div>
+                <div class="opencode-column">
+                    <h3>OpenCode</h3>
+                    <ul class="checklist">
+                        <li>Free and open-sourced</li>
+                        <li>Best for coding/terminal users</li>
+                        <li>Full control on own computer</li>
+                        <li>DIY harness engineering</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>What is harness engineering?</span>
+                </div>
+                <p>Harness engineering is the underlying framework controlling how the AI agent behaves, makes decisions, and interacts with your codebase. With TRAE, you get a managed and curated harness with guardrails out of the box. With OpenCode, the harness is DIY and customisable —requiring more technical comfort but giving you full control.</p>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="deployment-troubleshooting.html" class="btn btn-secondary">Previous: Exercise: Fixing Deployment Issues</a>
+                <a href="opencode-web-ui.html" class="btn btn-primary">Next: OpenCode Quick Start </a>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        document.addEventListener('click', function(e) {
+            const sidebar = document.querySelector('.sidebar');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            if (window.innerWidth <= 900 && 
+                !sidebar.contains(e.target) && 
+                !menuBtn.contains(e.target) && 
+                sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
+<script src="scripts.js"></script>
+</body>
+</html>

@@ -1,136 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fixing Deployment Issues - TRAE SOLO Workshop</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="progress-bar"></div>
-    <a href="#main-content" class="skip-nav">Skip to main content</a>
-    <button class="mobile-menu-btn"> Menu</button>
-
-    <nav class="sidebar"></nav>
-
-    <div class="sidebar-backdrop"></div>
-
-    <main class="main" id="main-content">
-        <header class="page-header">
-            <h1>Exercise: Fixing Deployment Issues</h1>
-            <p>Use Spec mode to figure out why your app won't deploy — and fix it step by step</p>
-        </header>
-
-        <article class="content">
-            <h2>What We're Doing</h2>
-            <p>In the <a href="deploy-backend.html">previous page</a>, you learned how to deploy your app. But what happens when deployment fails? Error messages, missing files, things that work on your computer but break in the cloud — this is where things get interesting.</p>
-
-            <p>In this exercise, you'll use TRAE SOLO's Spec mode to diagnose and fix deployment problems for the paraphrasing mentoring app. Unlike the Practice Mode exercise where you built something new from scratch, this is a "something is broken, let's fix it" scenario.</p>
-
-            <h2>Choosing Between Vibe Coding and Spec Mode</h2>
-            <p>Before we dive in, it's worth understanding when to use each mode for troubleshooting:</p>
-
-            <ul>
-                <li><strong><a href="vibe-coding-reference.html">Vibe Coding</a></strong> is great for quick, simple fixes — like "the button text is cut off" or "add an error message when the upload fails." You describe the problem, and the AI suggests a fix. Fast and iterative.</li>
-                <li><strong>Spec Mode (Spec-Driven Development)</strong> is better when the problem is deeper or you're not sure what's wrong. It forces a structured approach: understand the issue, design a fix plan, and execute systematically.</li>
-            </ul>
-
-            <div class="callout">
-                <div class="callout-header">
-                    <div class="dot"></div>
-                    <span>When to Spec vs. Vibe</span>
-                </div>
-                <p>If you can describe the fix in one sentence, use Vibe. If you're staring at an error log and aren't sure what's causing it, use Spec.</p>
-            </div>
-
-            <h2>Common Deployment Problems (And Why They Happen)</h2>
-            <p>Deployment scripts can fail for many reasons. Here are the most common ones, explained in plain English:</p>
-            <ul>
-                <li><strong>Wrong passwords or keys</strong> — Your app uses "environment variables" (like secret passwords) to connect to services. If these don't match between your computer and the server, things break.</li>
-                <li><strong>Missing pieces</strong> — Your app needs certain tools or services installed. If the server doesn't have them, the app won't run.</li>
-                <li><strong>Wrong addresses</strong> — File paths or web addresses that work on your laptop might be different on the server.</li>
-                <li><strong>Permission issues</strong> — The server account running your app might not have the right to read certain files or write to certain folders.</li>
-                <li><strong>Version mismatches</strong> — Your computer has newer versions of software than the server does. What works locally might break in production.</li>
-                <li><strong>Connection problems</strong> — Your app might need to talk to other services (like Ollama for AI). If those services aren't reachable from the server, features fail.</li>
-            </ul>
-
-            <h2>Step 1: Tell TRAE What's Wrong</h2>
-            <p>Open TRAE SOLO and switch to Spec mode. Describe what you're seeing:</p>
-
-            <details class="prompt-accordion">
-                <summary class="prompt-accordion-header">
-                    <span class="prompt-accordion-icon">▶</span>
-                    <span>Click to reveal the deployment troubleshooting prompt</span>
-                </summary>
-                <div class="prompt-accordion-content">
-                    <div class="code-block">
-                        <code>The deployment pipeline for the paraphrasing app is failing. The build succeeds locally,
-but the deployment to the cloud environment fails with errors.
-The LLM evaluation feature works locally with Ollama but fails in production.
-Please analyse the deployment scripts, identify the root causes,
-and create a plan to fix them.</code>
-                    </div>
-                </div>
-            </details>
-
-            <div class="callout">
-                <div class="callout-header">
-                    <div class="dot"></div>
-                    <span>Tip</span>
-                </div>
-                <p>Include any error messages you've seen. The more detail you give TRAE, the better its diagnosis will be.</p>
-            </div>
-
-            <h2>Step 2: Read the Diagnosis</h2>
-            <p>TRAE will first analyse your problem and write up a diagnosis. Think of it like a doctor's diagnosis — it should cover:</p>
-
-            <ul class="checklist">
-                <li>What's broken (each failure point)</li>
-                <li>Why it's broken (root cause)</li>
-                <li>What else breaks because of it (ripple effects)</li>
-                <li>Which problems to fix first (priority order)</li>
-            </ul>
-
-            <p>Read through the diagnosis. Does it match what you're seeing? Did TRAE miss anything? You can ask it to refine its analysis.</p>
-
-            <h2>Step 3: Review the Fix Strategy</h2>
-            <p>Next, TRAE designs a treatment plan — a strategy for how to fix everything. Look for:</p>
-
-            <ul class="checklist">
-                <li>What files need to change</li>
-                <li>What settings need updating</li>
-                <li>How to test that the fixes work</li>
-            </ul>
-
-            <p>Make sure the planned fixes won't break anything else. A good fix solves the problem without creating new ones.</p>
-
-            <h2>Step 5: Watch TRAE Execute the Fixes</h2>
-            <p>As TRAE works through each fix:</p>
-            <ol>
-                <li>Review the changes it makes to your files</li>
-                <li>Check that each fix addresses the original problem</li>
-                <li>Test the deployment after major changes</li>
-                <li>Note any new issues that come up</li>
-            </ol>
-        </article>
-
-        <div class="navigation-buttons">
-            <a href="deploy-backend.html" class="btn btn-secondary">Previous: Deployment</a>
-            <a href="opencode.html" class="btn btn-primary">Next: OpenCode Overview</a>
-        </div>
-    </main>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const sidebar = document.querySelector('.sidebar');
-            document.addEventListener('click', function(e) {
-                if (window.innerWidth <= 900 && !sidebar.contains(e.target) && !e.target.classList.contains('mobile-menu-btn')) {
-                    sidebar.classList.remove('open');
-                }
-            });
-        });
-    </script>
-<script src="scripts.js"></script>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixing Deployment Issues - TRAE Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn"> Menu</button>
+
+    <nav class="sidebar"></nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>Deployment Troubleshooting</h1>
+            <p>Use Spec mode to figure out why your app won't deploy —and fix it step by step</p>
+        </header>
+
+        <article class="content">
+            <h2>What We're Doing</h2>
+            <p>In the <a href="deploy-backend.html">previous page</a>, you learned how to deploy your app. But what happens when deployment fails? Error messages, missing files, things that work on your computer but break in the cloud —this is where things get interesting.</p>
+
+            <p>In this exercise, you'll use TRAE's Spec mode to diagnose and fix deployment problems for the paraphrasing mentoring app. Unlike the Practice Mode exercise where you built something new from scratch, this is a "something is broken, let's fix it" scenario.</p>
+
+            <h2>Choosing Between Vibe Coding and Spec Mode</h2>
+            <p>Before we dive in, it's worth understanding when to use each mode for troubleshooting:</p>
+
+            <ul>
+                <li><strong><a href="vibe-coding-reference.html">Vibe Coding</a></strong> is great for quick, simple fixes —like "the button text is cut off" or "add an error message when the upload fails." You describe the problem, and the AI suggests a fix. Fast and iterative.</li>
+                <li><strong>Spec Mode (Spec-Driven Development)</strong> is better when the problem is deeper or you're not sure what's wrong. It forces a structured approach: understand the issue, design a fix plan, and execute systematically.</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>When to Spec vs. Vibe</span>
+                </div>
+                <p>If you can describe the fix in one sentence, use Vibe. If you're staring at an error log and aren't sure what's causing it, use Spec.</p>
+            </div>
+
+            <h2>Common Deployment Problems (And Why They Happen)</h2>
+            <p>Deployment scripts can fail for many reasons. Here are the most common ones, explained in plain English:</p>
+            <ul>
+                <li><strong>Wrong passwords or keys</strong> —Your app uses "environment variables" (like secret passwords) to connect to services. If these don't match between your computer and the server, things break.</li>
+                <li><strong>Missing pieces</strong> —Your app needs certain tools or services installed. If the server doesn't have them, the app won't run.</li>
+                <li><strong>Wrong addresses</strong> —File paths or web addresses that work on your laptop might be different on the server.</li>
+                <li><strong>Permission issues</strong> —The server account running your app might not have the right to read certain files or write to certain folders.</li>
+                <li><strong>Version mismatches</strong> —Your computer has newer versions of software than the server does. What works locally might break in production.</li>
+                <li><strong>Connection problems</strong> —Your app might need to talk to other services (like Ollama for AI). If those services aren't reachable from the server, features fail.</li>
+            </ul>
+
+            <h2>Step 1: Tell TRAE What's Wrong</h2>
+            <p>Open TRAE and switch to Spec mode. Describe what you're seeing:</p>
+
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon"></span>
+                    <span>Click to reveal the deployment troubleshooting prompt</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <div class="code-block">
+                        <code>The deployment pipeline for the paraphrasing app is failing. The build succeeds locally,
+but the deployment to the cloud environment fails with errors.
+The LLM evaluation feature works locally with Ollama but fails in production.
+Please analyse the deployment scripts, identify the root causes,
+and create a plan to fix them.</code>
+                    </div>
+                </div>
+            </details>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Tip</span>
+                </div>
+                <p>Include any error messages you've seen. The more detail you give TRAE, the better its diagnosis will be.</p>
+            </div>
+
+            <h2>Step 2: Read the Diagnosis</h2>
+            <p>TRAE will first analyse your problem and write up a diagnosis. Think of it like a doctor's diagnosis —it should cover:</p>
+
+            <ul class="checklist">
+                <li>What's broken (each failure point)</li>
+                <li>Why it's broken (root cause)</li>
+                <li>What else breaks because of it (ripple effects)</li>
+                <li>Which problems to fix first (priority order)</li>
+            </ul>
+
+            <p>Read through the diagnosis. Does it match what you're seeing? Did TRAE miss anything? You can ask it to refine its analysis.</p>
+
+            <h2>Step 3: Review the Fix Strategy</h2>
+            <p>Next, TRAE designs a treatment plan —a strategy for how to fix everything. Look for:</p>
+
+            <ul class="checklist">
+                <li>What files need to change</li>
+                <li>What settings need updating</li>
+                <li>How to test that the fixes work</li>
+            </ul>
+
+            <p>Make sure the planned fixes won't break anything else. A good fix solves the problem without creating new ones.</p>
+
+            <h2>Step 5: Watch TRAE Execute the Fixes</h2>
+            <p>As TRAE works through each fix:</p>
+            <ol>
+                <li>Review the changes it makes to your files</li>
+                <li>Check that each fix addresses the original problem</li>
+                <li>Test the deployment after major changes</li>
+                <li>Note any new issues that come up</li>
+            </ol>
+        </article>
+
+        <div class="navigation-buttons">
+            <a href="deploy-backend.html" class="btn btn-secondary">Previous: Deployment</a>
+            <a href="opencode.html" class="btn btn-primary">Next: OpenCode Overview</a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.querySelector('.sidebar');
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 900 && !sidebar.contains(e.target) && !e.target.classList.contains('mobile-menu-btn')) {
+                    sidebar.classList.remove('open');
+                }
+            });
+        });
+    </script>
+<script src="scripts.js"></script>
+</body>
 </html>

@@ -1,139 +1,139 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deployment Guide - AI Hackathon</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="progress-bar"></div>
-    <a href="#main-content" class="skip-nav">Skip to main content</a>
-    <button class="mobile-menu-btn">Menu</button>
-
-    <nav class="sidebar"></nav>
-
-    <div class="sidebar-backdrop"></div>
-
-    <main class="main" id="main-content">
-
-
-        <article class="content">
-            <h1>Deployment</h1>
-            <p class="page-question">Do you need to deploy your app? That depends on who needs to use it.</p>
-            <div class="callout">
-                <div class="callout-header">
-                    <div class="dot"></div>
-                    <span>The short answer</span>
-                </div>
-                <p>For a hackathon prototype or proof-of-concept, you probably <strong>don't need to deploy</strong>. Keep reading to understand when and why.</p>
-            </div>
-
-            <h2>Your Localhost is Enough (Usually)</h2>
-            <p>When you're building a prototype or proof-of-concept (POC) at an AI hackathon, running your app locally on your own machine is perfectly fine. Here's why:</p>
-
-            <ul class="checklist">
-                <li><strong>It works immediately</strong> — No setup time, no waiting for deployment</li>
-                <li><strong>It's private</strong> — Your code and data stay on your machine</li>
-                <li><strong>It's fast</strong> — Direct access to your computer's resources</li>
-                <li><strong>It's free</strong> — No hosting costs or account setup needed</li>
-            </ul>
-
-            <p>As long as you're coding, testing, and demoing from your own machine, <strong>localhost is all you need</strong>. Think of it like building something in your garage — you don't need to rent a workshop to tinker.</p>
-
-            <h2>When Should You Deploy?</h2>
-            <p>Deployment only becomes necessary when you need to <strong>share your app with others</strong>. Common scenarios:</p>
-
-            <ul>
-                <li>Your teammates need to access the app from their own computers</li>
-                <li>You want judges or mentors to try your app remotely</li>
-                <li>You're doing a live demo and need a shareable link</li>
-                <li>Someone outside your local network needs to use your app</li>
-            </ul>
-
-            <p>Think of deployment like <strong>putting your app on the internet</strong> so anyone with the link can access it — not just people sitting at your computer.</p>
-
-            <h2>A Warning About Vercel</h2>
-            
-            <div class="callout" style="border-left-color: var(--error-color, #ef4444);">
-                <div class="callout-title">
-                    <span class="callout-bullet" style="background: var(--error-color, #ef4444);"></span>
-                    Important
-                </div>
-                <p>You may see Vercel recommended or built into your project setup, but <strong>Vercel is NOT ideal for this use case</strong>. The primary reason: Vercel suffered a significant <strong>security breach in March 2025</strong> that compromised build pipeline credentials and exposed user data. For a hackathon project where you may be using API keys or handling any form of data, this is a serious risk you should not ignore.</p>
-            </div>
-
-            <figure class="doc-image">
-                <img src="img/vercel.png" alt="Vercel Deploy button in the UI">
-                <figcaption>Above: the Vercel Deploy button — easy to click, but not the secure choice.</figcaption>
-            </figure>
-
-            <h2>Deploying with GitHub Codespaces</h2>
-            <p>If you've decided you need to deploy, GitHub Codespaces is the easiest path for hackathon projects. Here's how to do it in a few simple steps:</p>
-
-            <h3>Step 1: Push your code to GitHub</h3>
-            <p>You already have a GitHub account linked to the Google account on this computer — you're all set. No need to create a new account or sign up anywhere. Just use the GitHub account you already have when you signed in with Google earlier today.</p>
-
-            <details class="prompt-accordion">
-                <summary class="prompt-accordion-header">
-                    <span class="prompt-accordion-icon">▶</span>
-                    <span>Click to reveal a prompt for your AI assistant</span>
-                </summary>
-                <div class="prompt-accordion-content">
-                    <div class="code-block"><code>I need to deploy my project using GitHub Codespaces. I already have a GitHub account. Help me push my code to a new repo, create a codespace, and get a shareable public URL for my backend running on port 3000.</code></div>
-                </div>
-            </details>
-
-            <h3>Step 2: Create a Codespace</h3>
-            <p>Go to your repo on GitHub, click the <strong>"Code"</strong> button, then <strong>"Create codespace on main"</strong>.</p>
-
-            <h3>Step 3: Share your app</h3>
-            <p>Once the codespace loads:</p>
-            <ul>
-                <li>Open the <strong>"Ports"</strong> tab in the bottom panel</li>
-                <li>Find your running port (usually 3000)</li>
-                <li>Right-click and set it to <strong>Public</strong></li>
-                <li>Copy the forwarded URL — that's your shareable link!</li>
-            </ul>
-
-            <div class="callout" style="border-color: var(--blue-accent, #3b82f6);">
-                <div class="callout-header">
-                    <div class="dot" style="background-color: var(--blue-accent, #3b82f6);"></div>
-                    <span>Try this prompt with your AI assistant</span>
-                </div>
-                <div class="callout-content">
-                    <div class="code-block"><code>Help me deploy this project using GitHub Codespaces. I need a shareable public URL for my backend running on port 3000. Walk me through the steps to make my port public and get the shareable link.</code></div>
-                </div>
-            </div>
-
-            <div class="callout">
-                <div class="callout-title">
-                    <span class="callout-bullet"></span>
-                    Pro tip
-                </div>
-                <p>For hackathons, start with localhost. Only deploy if someone specifically needs remote access. GitHub Codespaces is usually the fastest path to a shareable link!</p>
-            </div>
-
-            <div class="navigation-buttons">
-                <a href="mcp-integration.html" class="btn btn-secondary">Previous: MCP Integration</a>
-                <a href="deployment-troubleshooting.html" class="btn btn-primary">Next: Exercise: Fixing Deployment Issues</a>
-            </div>
-        </article>
-    </main>
-
-    <script>
-        document.addEventListener('click', function(e) {
-            const sidebar = document.querySelector('.sidebar');
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            if (window.innerWidth <= 900 && 
-                !sidebar.contains(e.target) && 
-                !menuBtn.contains(e.target) && 
-                sidebar.classList.contains('open')) {
-                sidebar.classList.remove('open');
-            }
-        });
-    </script>
-<script src="scripts.js"></script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deployment Guide - AI Hackathon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">Menu</button>
+
+    <nav class="sidebar"></nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+
+
+        <article class="content">
+            <h1>Deployment</h1>
+            <p class="page-question">Do you need to deploy your app? That depends on who needs to use it.</p>
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>The short answer</span>
+                </div>
+                <p>For a hackathon prototype or proof-of-concept, you probably <strong>don't need to deploy</strong>. Keep reading to understand when and why.</p>
+            </div>
+
+            <h2>Your Localhost is Enough (Usually)</h2>
+            <p>When you're building a prototype or proof-of-concept (POC) at an AI hackathon, running your app locally on your own machine is perfectly fine. Here's why:</p>
+
+            <ul class="checklist">
+                <li><strong>It works immediately</strong> —No setup time, no waiting for deployment</li>
+                <li><strong>It's private</strong> —Your code and data stay on your machine</li>
+                <li><strong>It's fast</strong> —Direct access to your computer's resources</li>
+                <li><strong>It's free</strong> —No hosting costs or account setup needed</li>
+            </ul>
+
+            <p>As long as you're coding, testing, and demoing from your own machine, <strong>localhost is all you need</strong>. Think of it like building something in your garage —you don't need to rent a workshop to tinker.</p>
+
+            <h2>When Should You Deploy?</h2>
+            <p>Deployment only becomes necessary when you need to <strong>share your app with others</strong>. Common scenarios:</p>
+
+            <ul>
+                <li>Your teammates need to access the app from their own computers</li>
+                <li>You want judges or mentors to try your app remotely</li>
+                <li>You're doing a live demo and need a shareable link</li>
+                <li>Someone outside your local network needs to use your app</li>
+            </ul>
+
+            <p>Think of deployment like <strong>putting your app on the internet</strong> so anyone with the link can access it —not just people sitting at your computer.</p>
+
+            <h2>A Warning About Vercel</h2>
+            
+            <div class="callout" style="border-left-color: var(--error-color, #ef4444);">
+                <div class="callout-title">
+                    <span class="callout-bullet" style="background: var(--error-color, #ef4444);"></span>
+                    Important
+                </div>
+                <p>You may see Vercel recommended or built into your project setup, but <strong>Vercel is NOT ideal for this use case</strong>. The primary reason: Vercel suffered a significant <strong>security breach in March 2025</strong> that compromised build pipeline credentials and exposed user data. For a hackathon project where you may be using API keys or handling any form of data, this is a serious risk you should not ignore.</p>
+            </div>
+
+            <figure class="doc-image">
+                <img src="img/vercel.png" alt="Vercel Deploy button in the UI" loading="lazy">
+                <figcaption>Above: the Vercel Deploy button —easy to click, but not the secure choice.</figcaption>
+            </figure>
+
+            <h2>Deploying with GitHub Codespaces</h2>
+            <p>If you've decided you need to deploy, GitHub Codespaces is the easiest path for hackathon projects. Here's how to do it in a few simple steps:</p>
+
+            <h3>Step 1: Push your code to GitHub</h3>
+            <p>You already have a GitHub account linked to the Google account on this computer —you're all set. No need to create a new account or sign up anywhere. Just use the GitHub account you already have when you signed in with Google earlier today.</p>
+
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon"></span>
+                    <span>Click to reveal a prompt for your AI assistant</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <div class="code-block"><code>I need to deploy my project using GitHub Codespaces. I already have a GitHub account. Help me push my code to a new repo, create a codespace, and get a shareable public URL for my backend running on port 3000.</code></div>
+                </div>
+            </details>
+
+            <h3>Step 2: Create a Codespace</h3>
+            <p>Go to your repo on GitHub, click the <strong>"Code"</strong> button, then <strong>"Create codespace on main"</strong>.</p>
+
+            <h3>Step 3: Share your app</h3>
+            <p>Once the codespace loads:</p>
+            <ul>
+                <li>Open the <strong>"Ports"</strong> tab in the bottom panel</li>
+                <li>Find your running port (usually 3000)</li>
+                <li>Right-click and set it to <strong>Public</strong></li>
+                <li>Copy the forwarded URL —that's your shareable link!</li>
+            </ul>
+
+            <div class="callout" style="border-color: var(--blue-accent, #3b82f6);">
+                <div class="callout-header">
+                    <div class="dot" style="background-color: var(--blue-accent, #3b82f6);"></div>
+                    <span>Try this prompt with your AI assistant</span>
+                </div>
+                <div class="callout-content">
+                    <div class="code-block"><code>Help me deploy this project using GitHub Codespaces. I need a shareable public URL for my backend running on port 3000. Walk me through the steps to make my port public and get the shareable link.</code></div>
+                </div>
+            </div>
+
+            <div class="callout">
+                <div class="callout-title">
+                    <span class="callout-bullet"></span>
+                    Pro tip
+                </div>
+                <p>For hackathons, start with localhost. Only deploy if someone specifically needs remote access. GitHub Codespaces is usually the fastest path to a shareable link!</p>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="mcp-integration.html" class="btn btn-secondary">Previous: MCP Integration</a>
+                <a href="deployment-troubleshooting.html" class="btn btn-primary">Next: Exercise: Fixing Deployment Issues</a>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        document.addEventListener('click', function(e) {
+            const sidebar = document.querySelector('.sidebar');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            if (window.innerWidth <= 900 && 
+                !sidebar.contains(e.target) && 
+                !menuBtn.contains(e.target) && 
+                sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
+<script src="scripts.js"></script>
+</body>
+</html>

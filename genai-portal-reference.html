@@ -1,108 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VTC GenAI Portal Browser Automation - TRAE Workshop</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="progress-bar"></div>
-    <a href="#main-content" class="skip-nav">Skip to main content</a>
-    <button class="mobile-menu-btn">&#9776;</button>
-
-    <nav class="sidebar"></nav>
-
-    <div class="sidebar-backdrop"></div>
-
-    <main class="main" id="main-content">
-        <header class="page-header">
-            <h1>VTC GenAI Portal Browser Automation</h1>
-            <p>Automating VTC GenAI Portal interactions with Playwright</p>
-        </header>
-
-        <article class="content">
-            <h2 id="when-to-use-automation">When Do You Need Page Automation?</h2>
-            <p>If your hackathon solution involves automatically generating images or videos from the VTC GenAI Portal — for example, a pipeline that produces visual assets on demand, or a bot that creates demo content — you may want to automate the portal with Playwright. This page explains the concepts so you can prompt TRAE to write the automation scripts for you.</p>
-            <p>If your project does not need automated image or video generation, you can skip this page entirely.</p>
-
-            <h2 id="what-is-playwright">What is Playwright?</h2>
-            <p>Playwright is a browser automation library that can control a browser programmatically — clicking elements, filling forms, waiting for content, and downloading files, all without human interaction. Playwright is one of the MCP tools available and pre-installed in TRAE, so you can start using it immediately without any setup. <a href="mcp-integration.html">Learn more about MCP tools in TRAE</a>.</p>
-
-            <div class="callout">
-                <div class="callout-header">
-                    <div class="dot"></div>
-                    <span>Important</span>
-                </div>
-                <p><strong>Playwright is pre-installed and available in TRAE.</strong> You don't need to install anything. Just ask TRAE to write a Playwright script and it will be ready to run.</p>
-            </div>
-
-            <h2 id="automation-overview">Automating the VTC GenAI Portal</h2>
-            <p>The VTC GenAI Portal is a web application with text-to-image and text-to-video features. Automating it with Playwright typically involves:</p>
-            <ul>
-                <li><strong>Navigating</strong> to <a href="https://genai.vtc.edu.hk/" target="_blank">https://genai.vtc.edu.hk/</a> and logging in</li>
-                <li><strong>Selecting</strong> the model type (image or video generation)</li>
-                <li><strong>Filling</strong> in the prompt text and any settings (resolution, format, aspect ratio)</li>
-                <li><strong>Waiting</strong> for the model to finish generating content</li>
-                <li><strong>Downloading</strong> the generated file to your project directory</li>
-            </ul>
-
-            <div class="callout">
-                <div class="callout-header">
-                    <div class="dot"></div>
-                    <span class="callout-emphasis">You Don't Need to Code From Scratch!</span>
-                </div>
-                <p>AI coding agents like TRAE can write Playwright automation scripts for you. Just describe what you want — for example, "write a Playwright script that navigates to the VTC GenAI Portal, generates an image with DALL-E 3, and saves it" — and TRAE will produce the code. This page helps you understand the concepts so you can describe your requirements more clearly when prompting.</p>
-            </div>
-
-            <h2 id="example-prompts">Example Prompts for TRAE</h2>
-            <p>Here are examples of prompts you can use with TRAE to generate automation scripts:</p>
-
-            <details class="prompt-accordion">
-                <summary class="prompt-accordion-header">
-                    <span class="prompt-accordion-icon">&#9654;</span>
-                    <span>Image Generation Script</span>
-                </summary>
-                <div class="prompt-accordion-content">
-                    <p>Write a Playwright script that opens the VTC GenAI Portal, navigates to Image Generation, selects the NANO BANANA model, enters a prompt describing a futuristic city skyline, sets the aspect ratio to 16:9, clicks Generate, waits for the image to appear, and downloads it to <code>./generated-images/</code>.</p>
-                </div>
-            </details>
-
-            <details class="prompt-accordion">
-                <summary class="prompt-accordion-header">
-                    <span class="prompt-accordion-icon">&#9654;</span>
-                    <span>Batch Image Generation</span>
-                </summary>
-                <div class="prompt-accordion-content">
-                    <p>Write a Playwright script that reads a list of image descriptions from a JSON file and generates one image for each description from the VTC GenAI Portal using DALL-E 3. Save each image with a filename based on its index and wait 2 minutes between each generation to allow time for processing.</p>
-                </div>
-            </details>
-
-            <details class="prompt-accordion">
-                <summary class="prompt-accordion-header">
-                    <span class="prompt-accordion-icon">&#9654;</span>
-                    <span>Video Generation Script</span>
-                </summary>
-                <div class="prompt-accordion-content">
-                    <p>Write a Playwright script that opens the VTC GenAI Portal, navigates to Video Generation, enters a text prompt describing a sunrise over a mountain, sets the duration to 5 seconds and resolution to 720p, clicks Generate, waits for the video to be ready, and downloads the MP4 file to <code>./generated-videos/</code>.</p>
-                </div>
-            </details>
-
-            <div class="callout" style="margin-top: 24px;">
-                <div class="callout-header">
-                    <div class="dot" style="background: #ef4444;"></div>
-                    <span style="color: #ef4444;">aiHackathon Notice</span>
-                </div>
-                <p><strong>GenAI Portal usage is optional.</strong> Only use browser automation if your project specifically needs automated image or video generation. For projects that don't need this, you can skip this page.</p>
-            </div>
-        </article>
-
-        <div class="navigation-buttons">
-            <a href="genai-portal.html" class="btn btn-secondary">Previous: GenAI Portal Overview</a>
-            <a href="ollama.html" class="btn btn-primary">Next: Ollama →</a>
-        </div>
-    </main>
-<script src="scripts.js"></script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTC GenAI Portal Browser Automation - TRAE Workshop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">&#9776;</button>
+
+    <nav class="sidebar"></nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>VTC GenAI Portal Browser Automation</h1>
+            <p>Automating VTC GenAI Portal interactions with Playwright</p>
+        </header>
+
+        <article class="content">
+            <h2 id="when-to-use-automation">When Do You Need Page Automation?</h2>
+            <p>If your hackathon solution involves automatically generating images or videos from the VTC GenAI Portal —for example, a pipeline that produces visual assets on demand, or a bot that creates demo content —you may want to automate the portal with Playwright. This page explains the concepts so you can prompt TRAE to write the automation scripts for you.</p>
+            <p>If your project does not need automated image or video generation, you can skip this page entirely.</p>
+
+            <h2 id="what-is-playwright">What is Playwright?</h2>
+            <p>Playwright is a browser automation library that can control a browser programmatically —clicking elements, filling forms, waiting for content, and downloading files, all without human interaction. Playwright is one of the MCP tools available and pre-installed in TRAE, so you can start using it immediately without any setup. <a href="mcp-integration.html">Learn more about MCP tools in TRAE</a>.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Important</span>
+                </div>
+                <p><strong>Playwright is pre-installed and available in TRAE.</strong> You don't need to install anything. Just ask TRAE to write a Playwright script and it will be ready to run.</p>
+            </div>
+
+            <h2 id="automation-overview">Automating the VTC GenAI Portal</h2>
+            <p>The VTC GenAI Portal is a web application with text-to-image and text-to-video features. Automating it with Playwright typically involves:</p>
+            <ul>
+                <li><strong>Navigating</strong> to <a href="https://genai.vtc.edu.hk/" target="_blank">https://genai.vtc.edu.hk/</a> and logging in</li>
+                <li><strong>Selecting</strong> the model type (image or video generation)</li>
+                <li><strong>Filling</strong> in the prompt text and any settings (resolution, format, aspect ratio)</li>
+                <li><strong>Waiting</strong> for the model to finish generating content</li>
+                <li><strong>Downloading</strong> the generated file to your project directory</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span class="callout-emphasis">You Don't Need to Code From Scratch!</span>
+                </div>
+                <p>AI coding agents like TRAE can write Playwright automation scripts for you. Just describe what you want —for example, "write a Playwright script that navigates to the VTC GenAI Portal, generates an image with DALL-E 3, and saves it" —and TRAE will produce the code. This page helps you understand the concepts so you can describe your requirements more clearly when prompting.</p>
+            </div>
+
+            <h2 id="example-prompts">Example Prompts for TRAE</h2>
+            <p>Here are examples of prompts you can use with TRAE to generate automation scripts:</p>
+
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">&#9654;</span>
+                    <span>Image Generation Script</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <p>Write a Playwright script that opens the VTC GenAI Portal, navigates to Image Generation, selects the NANO BANANA model, enters a prompt describing a futuristic city skyline, sets the aspect ratio to 16:9, clicks Generate, waits for the image to appear, and downloads it to <code>./generated-images/</code>.</p>
+                </div>
+            </details>
+
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">&#9654;</span>
+                    <span>Batch Image Generation</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <p>Write a Playwright script that reads a list of image descriptions from a JSON file and generates one image for each description from the VTC GenAI Portal using DALL-E 3. Save each image with a filename based on its index and wait 2 minutes between each generation to allow time for processing.</p>
+                </div>
+            </details>
+
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">&#9654;</span>
+                    <span>Video Generation Script</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <p>Write a Playwright script that opens the VTC GenAI Portal, navigates to Video Generation, enters a text prompt describing a sunrise over a mountain, sets the duration to 5 seconds and resolution to 720p, clicks Generate, waits for the video to be ready, and downloads the MP4 file to <code>./generated-videos/</code>.</p>
+                </div>
+            </details>
+
+            <div class="callout" style="margin-top: 24px;">
+                <div class="callout-header">
+                    <div class="dot" style="background: #ef4444;"></div>
+                    <span style="color: #ef4444;">aiHackathon Notice</span>
+                </div>
+                <p><strong>GenAI Portal usage is optional.</strong> Only use browser automation if your project specifically needs automated image or video generation. For projects that don't need this, you can skip this page.</p>
+            </div>
+        </article>
+
+        <div class="navigation-buttons">
+            <a href="genai-portal.html" class="btn btn-secondary">Previous: GenAI Portal Overview</a>
+            <a href="ollama.html" class="btn btn-primary">Next: Ollama</a>
+        </div>
+    </main>
+<script src="scripts.js"></script>
+</body>
+</html>

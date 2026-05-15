@@ -1,148 +1,148 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCP Integration - Extending TRAE SOLO's capabilities - TRAE SOLO Workshop</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="progress-bar"></div>
-    <a href="#main-content" class="skip-nav">Skip to main content</a>
-    <button class="mobile-menu-btn">&#9776;</button>
-
-    <nav class="sidebar"></nav>
-
-    <div class="sidebar-backdrop"></div>
-
-    <main class="main" id="main-content">
-        <header class="page-header">
-            <h1>MCP Integration - Extending TRAE SOLO's capabilities</h1>
-            <p>Connect TRAE SOLO to external tools, APIs, and services</p>
-            <p class="docs-link">For a comprehensive guide to MCP servers available in TRAE, see the <a href="https://docs.trae.ai/ide/01fzsij0?_lang=en" target="_blank" rel="noopener">official TRAE documentation on MCP servers</a>.</p>
-        </header>
-
-        <article class="content">
-            <h2>What is MCP?</h2>
-            <p>MCP (Model Context Protocol) is an open standard that allows AI assistants like TRAE SOLO to connect to external tools, data sources, and services. It provides a standardized way for AI models to interact with the world beyond the code editor.</p>
-
-            <div class="callout">
-                <div class="callout-header">
-                    <div class="dot"></div>
-                    <span>Key Concept</span>
-                </div>
-                <p>MCP acts as a bridge between TRAE SOLO's AI capabilities and external systems, enabling TRAE SOLO to perform actions like querying databases, calling APIs, accessing documentation, and more.</p>
-            </div>
-
-            <h2>Why Use MCP Integration?</h2>
-            <p>MCP integration extends TRAE SOLO's capabilities beyond code generation and editing:</p>
-            <ul>
-                <li><strong>Database Access:</strong> Query databases directly from TRAE SOLO</li>
-                <li><strong>API Interaction:</strong> Call external APIs and process responses</li>
-                <li><strong>Documentation Lookup:</strong> Access up-to-date library and framework docs</li>
-                <li><strong>File System Operations:</strong> Perform complex file operations across your project</li>
-                <li><strong>Custom Tools:</strong> Build and integrate your own specialized tools</li>
-            </ul>
-
-            <h2>Common MCP Integrations</h2>
-            <p>We've included several MCP servers in this workshop environment to help you get started:</p>
-            <div class="integration-grid">
-                <div class="integration-card highlight">
-                    <span class="badge badge-included">Included</span>
-                    <h4>Context7</h4>
-                    <p>Access real-time official documentation and code samples for libraries and frameworks. Perfect for API development, configuration, and troubleshooting.</p>
-                </div>
-                <div class="integration-card highlight">
-                    <span class="badge badge-included">Included</span>
-                    <h4>Excel</h4>
-                    <p>Read and write data to Microsoft Excel files. Great for data analysis workflows and report generation.</p>
-                </div>
-                <div class="integration-card highlight">
-                    <span class="badge badge-included">Included</span>
-                    <h4>Playwright</h4>
-                    <p>Browser automation for web testing, content scraping, and UI interactions in a real browser environment.</p>
-                </div>
-            </div>
-
-            <div class="callout tip">
-                <div class="callout-header">
-                    <div class="dot"></div>
-                    <span>Tip</span>
-                </div>
-                <p><strong>MCP is heavy on context window usage.</strong> Each MCP tool call adds data to your conversation context. Only enable MCP servers you actually need for your current task to avoid hitting context limits and unnecessary costs.</p>
-            </div>
-
-            <div class="callout warning">
-                <div class="callout-header">
-                    <div class="dot"></div>
-                    <span>aiHackathon Warning</span>
-                </div>
-                <p><strong>MCP servers requiring premium subscriptions are not permitted in this event.</strong> Only free MCP servers included in this workshop may be used during the aiHackathon. Please check with the organizers if you have questions about specific MCP servers.</p>
-            </div>
-
-            <h2>Other MCP Servers</h2>
-            <p>Many additional MCP servers are available for specific use cases. These can be added as needed:</p>
-
-            <h2>Setting Up MCP Servers</h2>
-            <p>To configure MCP integration in TRAE SOLO:</p>
-            <ol>
-                <li>Open TRAE SOLO's MCP configuration panel in the settings UI</li>
-                <li>Navigate to the MCP servers section</li>
-                <li>Add the MCP server configuration</li>
-                <li>Restart TRAE SOLO or reload the configuration</li>
-                <li>Verify the connection in the AI Chat panel</li>
-            </ol>
-
-
-            <h2>Using MCP Tools in TRAE SOLO</h2>
-            <p>Once configured, you can use MCP tools through the AI Chat:</p>
-            <ul>
-                <li><strong>Ask Questions:</strong> "Query the users table for active users"</li>
-                <li><strong>Request Data:</strong> "Show me the API response from /api/posts"</li>
-                <li><strong>Lookup Docs:</strong> "Show me the latest React hooks documentation"</li>
-                <li><strong>Run Tools:</strong> "Run the test suite and show me the coverage report"</li>
-            </ul>
-
-            <div class="callout">
-                <div class="callout-header">
-                    <div class="dot"></div>
-                    <span>Security Note</span>
-                </div>
-                <p>Be cautious when configuring MCP servers with access to sensitive data or production systems. Use appropriate access controls and environment variables for credentials.</p>
-            </div>
-
-            <h2>Best Practices</h2>
-            <ul>
-                <li><strong>Start Simple:</strong> Begin with one or two MCP servers and expand gradually</li>
-                <li><strong>Monitor Performance:</strong> Watch for slow MCP servers that impact TRAE SOLO's responsiveness</li>
-            </ul>
-
-            <div class="callout">
-                <div class="callout-header">
-                    <div class="dot"></div>
-                    <span>Next Steps</span>
-                </div>
-                <p>Continue to "Deployment" to learn about deploying your backend with TRAE SOLO.</p>
-            </div>
-        </article>
-
-        <div class="navigation-buttons">
-            <a href="tool-panel.html" class="btn btn-secondary">← Previous: Tool Panel</a>
-            <a href="deploy-backend.html" class="btn btn-primary">Next: Deployment →</a>
-        </div>
-    </main>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const sidebar = document.querySelector('.sidebar');
-            document.addEventListener('click', function(e) {
-                if (window.innerWidth <= 900 && !sidebar.contains(e.target) && !e.target.classList.contains('mobile-menu-btn')) {
-                    sidebar.classList.remove('open');
-                }
-            });
-        });
-    </script>
-<script src="scripts.js"></script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Integration - Extending TRAE's capabilities - TRAE Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">&#9776;</button>
+
+    <nav class="sidebar"></nav>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>MCP Integration - Extending TRAE's capabilities</h1>
+            <p>Connect TRAE to external tools, APIs, and services</p>
+            <p class="docs-link">For a comprehensive guide to MCP servers available in TRAE, see the <a href="https://docs.trae.ai/ide/01fzsij0?_lang=en" target="_blank" rel="noopener">official TRAE documentation on MCP servers</a>.</p>
+        </header>
+
+        <article class="content">
+            <h2>What is MCP?</h2>
+            <p>MCP (Model Context Protocol) is an open standard that allows AI assistants like TRAE to connect to external tools, data sources, and services. It provides a standardised way for AI models to interact with the world beyond the code editor.</p>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Key Concept</span>
+                </div>
+                <p>MCP acts as a bridge between TRAE's AI capabilities and external systems, enabling TRAE to perform actions like querying databases, calling APIs, accessing documentation, and more.</p>
+            </div>
+
+            <h2>Why Use MCP Integration?</h2>
+            <p>MCP integration extends TRAE's capabilities beyond code generation and editing:</p>
+            <ul>
+                <li><strong>Database Access:</strong> Query databases directly from TRAE</li>
+                <li><strong>API Interaction:</strong> Call external APIs and process responses</li>
+                <li><strong>Documentation Lookup:</strong> Access up-to-date library and framework docs</li>
+                <li><strong>File System Operations:</strong> Perform complex file operations across your project</li>
+                <li><strong>Custom Tools:</strong> Build and integrate your own specialised tools</li>
+            </ul>
+
+            <h2>Common MCP Integrations</h2>
+            <p>We've included several MCP servers in this workshop environment to help you get started:</p>
+            <div class="integration-grid">
+                <div class="integration-card highlight">
+                    <span class="badge badge-included">Included</span>
+                    <h4>Context7</h4>
+                    <p>Access real-time official documentation and code samples for libraries and frameworks. Perfect for API development, configuration, and troubleshooting.</p>
+                </div>
+                <div class="integration-card highlight">
+                    <span class="badge badge-included">Included</span>
+                    <h4>Excel</h4>
+                    <p>Read and write data to Microsoft Excel files. Great for data analysis workflows and report generation.</p>
+                </div>
+                <div class="integration-card highlight">
+                    <span class="badge badge-included">Included</span>
+                    <h4>Playwright</h4>
+                    <p>Browser automation for web testing, content scraping, and UI interactions in a real browser environment.</p>
+                </div>
+            </div>
+
+            <div class="callout tip">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Tip</span>
+                </div>
+                <p><strong>MCP is heavy on context window usage.</strong> Each MCP tool call adds data to your conversation context. Only enable MCP servers you actually need for your current task to avoid hitting context limits and unnecessary costs.</p>
+            </div>
+
+            <div class="callout warning">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>aiHackathon Warning</span>
+                </div>
+                <p><strong>MCP servers requiring premium subscriptions are not permitted in this event.</strong> Only free MCP servers included in this workshop may be used during the aiHackathon. Please check with the organisers if you have questions about specific MCP servers.</p>
+            </div>
+
+            <h2>Other MCP Servers</h2>
+            <p>Many additional MCP servers are available for specific use cases. These can be added as needed:</p>
+
+            <h2>Setting Up MCP Servers</h2>
+            <p>To configure MCP integration in TRAE:</p>
+            <ol>
+                <li>Open TRAE's MCP configuration panel in the settings UI</li>
+                <li>Navigate to the MCP servers section</li>
+                <li>Add the MCP server configuration</li>
+                <li>Restart TRAE or reload the configuration</li>
+                <li>Verify the connection in the AI Chat panel</li>
+            </ol>
+
+
+            <h2>Using MCP Tools in TRAE</h2>
+            <p>Once configured, you can use MCP tools through the AI Chat:</p>
+            <ul>
+                <li><strong>Ask Questions:</strong> "Query the users table for active users"</li>
+                <li><strong>Request Data:</strong> "Show me the API response from /api/posts"</li>
+                <li><strong>Lookup Docs:</strong> "Show me the latest React hooks documentation"</li>
+                <li><strong>Run Tools:</strong> "Run the test suite and show me the coverage report"</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Security Note</span>
+                </div>
+                <p>Be cautious when configuring MCP servers with access to sensitive data or production systems. Use appropriate access controls and environment variables for credentials.</p>
+            </div>
+
+            <h2>Best Practices</h2>
+            <ul>
+                <li><strong>Start Simple:</strong> Begin with one or two MCP servers and expand gradually</li>
+                <li><strong>Monitor Performance:</strong> Watch for slow MCP servers that impact TRAE's responsiveness</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Next Steps</span>
+                </div>
+                <p>Continue to "Deployment" to learn about deploying your backend with TRAE.</p>
+            </div>
+        </article>
+
+        <div class="navigation-buttons">
+            <a href="tool-panel.html" class="btn btn-secondary">——Previous: Tool Panel</a>
+            <a href="deploy-backend.html" class="btn btn-primary">Next: Deployment </a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.querySelector('.sidebar');
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 900 && !sidebar.contains(e.target) && !e.target.classList.contains('mobile-menu-btn')) {
+                    sidebar.classList.remove('open');
+                }
+            });
+        });
+    </script>
+<script src="scripts.js"></script>
+</body>
+</html>
