@@ -3,109 +3,449 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Available Skills - TRAE Workshop</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>14 Essential Skills - TRAE Workshop</title>
     <link rel="icon" type="image/png" sizes="32x32" href="img/aiHackathon_icon-02.png?v=1">
     <link rel="shortcut icon" href="img/aiHackathon_icon-02.png?v=1">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="progress-bar" id="progress-bar"></div>
-    <a href="#main-content" class="skip-nav">Skip to main content</a>
     <button class="mobile-menu-btn hamburger" id="mobile-menu-btn" aria-label="Open menu">
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
     </button>
-
-    <nav class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <h2>TRAE SOLO Workshop</h2>
-            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
-        </div>
-
-        <div class="sidebar-section collapsible" data-section="training-reference">
-            <div class="sidebar-section-title collapsible-header">
-                <span>📚 AI Hackathon Training Reference</span>
-                <span class="collapse-icon">▾</span>
-            </div>
-            <div class="sidebar-section-content">
-                <a href="training-reference.html" class="sidebar-link">AI Hackathon Training Reference</a>
-                <a href="ai-coding-agents.html" class="sidebar-link sub-item">AI Coding Agents</a>
-                <a href="vibe-coding-reference.html" class="sidebar-link sub-item">Vibe Coding</a>
-                <a href="spec-driven-reference.html" class="sidebar-link sub-item">Spec-Driven Development</a>
-                <a href="trae-solo-overview.html" class="sidebar-link sub-item">TRAE SOLO</a>
-                <a href="skills.html" class="sidebar-link sub-item">Skills</a>
-                <a href="14-skills.html" class="sidebar-link active sub-item">Available Skills</a>
-                <a href="advanced-topics-reference.html" class="sidebar-link sub-item">Advanced Topics</a>
-                <a href="best-practices-reference.html" class="sidebar-link sub-item">Best Practices</a>
-            </div>
-        </div>
-
-        <div class="sidebar-section collapsible" data-section="home">
-            <a href="index.html" class="sidebar-link">AI-Driven Development with TRAE SOLO</a>
-        </div>
-
-        <div class="sidebar-section collapsible" data-section="core-concepts">
-            <div class="sidebar-section-title collapsible-header">
-                <span>💡 Core Concepts</span>
-                <span class="collapse-icon">▾</span>
-            </div>
-            <div class="sidebar-section-content">
-                <a href="trae-solo-overview.html" class="sidebar-link">TRAE SOLO Overview</a>
-                <a href="multitasking.html" class="sidebar-link sub-item">Multitasking</a>
-                <a href="dual-modes.html" class="sidebar-link">MTC vs Code Modes</a>
-                <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
-            </div>
-        </div>
-
-        <div class="sidebar-section collapsible" data-section="hands-on">
-            <div class="sidebar-section-title collapsible-header">
-                <span>🛠️ Hands-on Exercises</span>
-                <span class="collapse-icon">▾</span>
-            </div>
-            <div class="sidebar-section-content">
-                <a href="vibe-coding-reference.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
-                <a href="llm-eval-intro.html" class="sidebar-link sub-item">Add LLM Evaluation</a>
-                <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
-            </div>
-        </div>
-
-        <div class="sidebar-section collapsible" data-section="wrap-up">
-            <div class="sidebar-section-title collapsible-header">
-                <span>✅ Wrap Up</span>
-                <span class="collapse-icon">▾</span>
-            </div>
-            <div class="sidebar-section-content">
-                <a href="wrapping-up.html" class="sidebar-link">Wrapping up</a>
-            </div>
-        </div>
-
-        <div class="sidebar-divider"></div>
-
-        <div class="sidebar-section collapsible toolkit-section" data-section="toolkit">
-            <div class="sidebar-section-title collapsible-header">
-                <span>🧰 Hackathon Toolkit</span>
-                <span class="collapse-icon">▾</span>
-            </div>
-            <div class="sidebar-section-content">
-                <a href="opencode-web-ui.html" class="sidebar-link">OpenCode Web UI</a>
-            </div>
-        </div>
-    </nav>
-
+    <nav class="sidebar" id="sidebar"></nav>
     <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+    <main class="main" id="main-content">
+        <header class="page-header">
+            <h1>14 Essential Skills</h1>
+            <p>TRAE Solo comes with 14 built-in skills — specialized AI agents that handle specific tasks with expert-level proficiency</p>
+        </header>
+        <article class="content">
+            <section class="content-section">
+                <h2>Overview</h2>
+                <p>Skills are pre-configured AI sub-agents that specialize in specific development tasks. Instead of asking the general-purpose AI to do everything, you can delegate to specialized skills that follow proven methodologies. Each skill comes with its own set of rules, prompts, and best practices.</p>
+                <div class="callout">
+                    <div class="callout-header">
+                        <div class="dot"></div>
+                        <span>How to activate a skill</span>
+                    </div>
+                    <p>Type <code>/skill-name</code> in your TRAE chat or use the skill menu in the UI. Skills appear as sub-agents that you can invoke directly or let TRAE auto-suggest when appropriate.</p>
+                </div>
+            </section>
 
-    <main class="main">
-        <div class="content" id="main-content"></div>
+            <section class="content-section">
+                <h2>Complete Skill Reference</h2>
 
+                <!-- brainstorming -->
+                <details class="skill-category">
+                    <summary class="skill-category-header">
+                        <span class="skill-category-name">brainstorming</span>
+                        <span class="skill-category-icon">+</span>
+                    </summary>
+                    <div class="skill-category-content">
+                        <p><strong>Purpose:</strong> Ideation and creative exploration before implementation.</p>
+                        <ul class="skill-features">
+                            <li>Generates multiple approaches to a problem</li>
+                            <li>Explores trade-offs between different solutions</li>
+                            <li>Helps clarify requirements and user stories</li>
+                            <li>Creates user journey maps and flow diagrams</li>
+                        </ul>
+                        <div class="prompt-accordion">
+                            <summary class="prompt-accordion-header">
+                                <span class="prompt-accordion-icon">▶</span>
+                                <span>Example prompt</span>
+                            </summary>
+                            <div class="prompt-accordion-content">
+                                <code>/brainstorming Brainstorm different ways to implement user authentication for a React app. Consider security, UX, and developer experience trade-offs.</code>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- canvas-design -->
+                <details class="skill-category">
+                    <summary class="skill-category-header">
+                        <span class="skill-category-name">canvas-design</span>
+                        <span class="skill-category-icon">+</span>
+                    </summary>
+                    <div class="skill-category-content">
+                        <p><strong>Purpose:</strong> Create beautiful visual art in .png and .pdf documents using design philosophy.</p>
+                        <ul class="skill-features">
+                            <li>Create original visual designs and posters</li>
+                            <li>Generate art, designs, and static visual pieces</li>
+                            <li>Avoids copying existing artists' work</li>
+                            <li>Outputs production-ready image files</li>
+                        </ul>
+                        <div class="prompt-accordion">
+                            <summary class="prompt-accordion-header">
+                                <span class="prompt-accordion-icon">▶</span>
+                                <span>Example prompt</span>
+                            </summary>
+                            <div class="prompt-accordion-content">
+                                <code>/canvas-design Create a poster for a tech conference with a modern, minimalist design using gradients and geometric shapes.</code>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- chart-visualization -->
+                <details class="skill-category">
+                    <summary class="skill-category-header">
+                        <span class="skill-category-name">chart-visualization</span>
+                        <span class="skill-category-icon">+</span>
+                    </summary>
+                    <div class="skill-category-content">
+                        <p><strong>Purpose:</strong> Intelligently select and generate the most suitable chart type from 26 available options.</p>
+                        <ul class="skill-features">
+                            <li>Auto-selects best chart type based on data structure</li>
+                            <li>Supports 26 chart types (bar, line, pie, scatter, heatmap, etc.)</li>
+                            <li>Extracts parameters based on detailed specifications</li>
+                            <li>Generates chart images using JavaScript</li>
+                        </ul>
+                        <div class="prompt-accordion">
+                            <summary class="prompt-accordion-header">
+                                <span class="prompt-accordion-icon">▶</span>
+                                <span>Example prompt</span>
+                            </summary>
+                            <div class="prompt-accordion-content">
+                                <code>/chart-visualization Create a visualization showing monthly revenue growth over the past year with a target line overlay.</code>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- data-analysis -->
+                <details class="skill-category">
+                    <summary class="skill-category-header">
+                        <span class="skill-category-name">data-analysis</span>
+                        <span class="skill-category-icon">+</span>
+                    </summary>
+                    <div class="skill-category-content">
+                        <p><strong>Purpose:</strong> Analyze Excel (.xlsx/.xls) or CSV files for statistics, summaries, and insights.</p>
+                        <ul class="skill-features">
+                            <li>Supports multi-sheet Excel workbooks</li>
+                            <li>Performs aggregation, filtering, and joins</li>
+                            <li>Creates pivot tables and statistical summaries</li>
+                            <li>Exports results to CSV/JSON/Markdown</li>
+                            <li>SQL query generation for complex analysis</li>
+                        </ul>
+                        <div class="prompt-accordion">
+                            <summary class="prompt-accordion-header">
+                                <span class="prompt-accordion-icon">▶</span>
+                                <span>Example prompt</span>
+                            </summary>
+                            <div class="prompt-accordion-content">
+                                <code>/data-analysis Analyze this sales dataset to find the top 5 products by revenue per region, and export the results as a summary table.</code>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- doc-coauthoring -->
+                <details class="skill-category">
+                    <summary class="skill-category-header">
+                        <span class="skill-category-name">doc-coauthoring</span>
+                        <span class="skill-category-icon">+</span>
+                    </summary>
+                    <div class="skill-category-content">
+                        <p><strong>Purpose:</strong> Guide users through a structured workflow for co-authoring documentation.</p>
+                        <ul class="skill-features">
+                            <li>Walks through documentation writing step-by-step</li>
+                            <li>Supports PRDs, technical specs, decision docs</li>
+                            <li>Helps transfer context efficiently</li>
+                            <li>Iterative content refinement</li>
+                            <li>Verifies docs work for intended readers</li>
+                        </ul>
+                        <div class="prompt-accordion">
+                            <summary class="prompt-accordion-header">
+                                <span class="prompt-accordion-icon">▶</span>
+                                <span>Example prompt</span>
+                            </summary>
+                            <div class="prompt-accordion-content">
+                                <code>/doc-coauthoring Help me write a technical specification for our new API endpoint authentication.</code>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- figma -->
+                <details class="skill-category">
+                    <summary class="skill-category-header">
+                        <span class="skill-category-name">figma</span>
+                        <span class="skill-category-icon">+</span>
+                    </summary>
+                    <div class="skill-category-content">
+                        <p><strong>Purpose:</strong> Figma MCP integration for design-to-code workflow.</p>
+                        <ul class="skill-features">
+                            <li>Fetches design context, screenshots, variables from Figma</li>
+                            <li>Translates Figma nodes into production code</li>
+                            <li>Handles Figma URL/node-ID references</li>
+                            <li>Supports Figma MCP setup and troubleshooting</li>
+                        </ul>
+                        <div class="prompt-accordion">
+                            <summary class="prompt-accordion-header">
+                                <span class="prompt-accordion-icon">▶</span>
+                                <span>Example prompt</span>
+                            </summary>
+                            <div class="prompt-accordion-content">
+                                <code>/figma Fetch the design from https://figma.com/file/xxx?node-id=123:45 and implement it as a React component.</code>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- frontend-design -->
+                <details class="skill-category">
+                    <summary class="skill-category-header">
+                        <span class="skill-category-name">frontend-design</span>
+                        <span class="skill-category-icon">+</span>
+                    </summary>
+                    <div class="skill-category-content">
+                        <p><strong>Purpose:</strong> Create distinctive, production-grade frontend interfaces with high design quality.</p>
+                        <ul class="skill-features">
+                            <li>Builds web components, pages, dashboards, React components</li>
+                            <li>Generates creative, polished code and UI</li>
+                            <li>Avoids generic AI aesthetics</li>
+                            <li>Handles HTML/CSS layouts, styling, and beautification</li>
+                        </ul>
+                        <div class="prompt-accordion">
+                            <summary class="prompt-accordion-header">
+                                <span class="prompt-accordion-icon">▶</span>
+                                <span>Example prompt</span>
+                            </summary>
+                            <div class="prompt-accordion-content">
+                                <code>/frontend-design Build a landing page for our product with a hero section, feature cards, testimonials, and a CTA footer.</code>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- frontend-skill -->
+                <details class="skill-category">
+                    <summary class="skill-category-header">
+                        <span class="skill-category-name">frontend-skill</span>
+                        <span class="skill-category-icon">+</span>
+                    </summary>
+                    <div class="skill-category-content">
+                        <p><strong>Purpose:</strong> Build visually strong landing pages, websites, apps, prototypes, demos, or game UIs.</p>
+                        <ul class="skill-features">
+                            <li>Enforces restrained composition and image-led hierarchy</li>
+                            <li>Focuses on cohesive content structure</li>
+                            <li>Uses tasteful motion and animation</li>
+                            <li>Avoids generic cards, weak branding, and UI clutter</li>
+                        </ul>
+                        <div class="prompt-accordion">
+                            <summary class="prompt-accordion-header">
+                                <span class="prompt-accordion-icon">▶</span>
+                                <span>Example prompt</span>
+                            </summary>
+                            <div class="prompt-accordion-content">
+                                <code>/frontend-skill Create a product demo page with a strong visual hierarchy and immersive scroll-based animations.</code>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- git-commit -->
+                <details class="skill-category">
+                    <summary class="skill-category-header">
+                        <span class="skill-category-name">git-commit</span>
+                        <span class="skill-category-icon">+</span>
+                    </summary>
+                    <div class="skill-category-content">
+                        <p><strong>Purpose:</strong> Generate meaningful, conventional commit messages from code changes.</p>
+                        <ul class="skill-features">
+                            <li>Analyzes git diff to understand changes</li>
+                            <li>Generates conventional commit messages (feat, fix, refactor, etc.)</li>
+                            <li>Provides clear, descriptive commit summaries</li>
+                            <li>Follows best practices for version control hygiene</li>
+                        </ul>
+                        <div class="prompt-accordion">
+                            <summary class="prompt-accordion-header">
+                                <span class="prompt-accordion-icon">▶</span>
+                                <span>Example prompt</span>
+                            </summary>
+                            <div class="prompt-accordion-content">
+                                <code>/git-commit Generate a commit message for the current staged changes following conventional commit format.</code>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- impeccable -->
+                <details class="skill-category">
+                    <summary class="skill-category-header">
+                        <span class="skill-category-name">impeccable</span>
+                        <span class="skill-category-icon">+</span>
+                    </summary>
+                    <div class="skill-category-content">
+                        <p><strong>Purpose:</strong> Design, critique, polish, and optimize frontend interfaces across websites, dashboards, components, and UI systems.</p>
+                        <ul class="skill-features">
+                            <li>UX review and visual hierarchy analysis</li>
+                            <li>Information architecture and cognitive load assessment</li>
+                            <li>Accessibility, performance, and responsive behavior</li>
+                            <li>Theming, typography, spacing, layout, alignment, color</li>
+                            <li>Motion, micro-interactions, and UX copy</li>
+                            <li>Error states, edge cases, and reusable design tokens</li>
+                        </ul>
+                        <div class="prompt-accordion">
+                            <summary class="prompt-accordion-header">
+                                <span class="prompt-accordion-icon">▶</span>
+                                <span>Example prompt</span>
+                            </summary>
+                            <div class="prompt-accordion-content">
+                                <code>/impeccable Review the dashboard design and suggest improvements for better visual hierarchy and accessibility.</code>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- skill-creator -->
+                <details class="skill-category">
+                    <summary class="skill-category-header">
+                        <span class="skill-category-name">skill-creator</span>
+                        <span class="skill-category-icon">+</span>
+                    </summary>
+                    <div class="skill-category-content">
+                        <p><strong>Purpose:</strong> MANDATORY tool for creating new skills.</p>
+                        <ul class="skill-features">
+                            <li>Creates new skill definitions and configurations</li>
+                            <li>Must be invoked immediately when user wants to add any skill</li>
+                            <li>Handles skill scaffolding and registration</li>
+                        </ul>
+                        <div class="prompt-accordion">
+                            <summary class="prompt-accordion-header">
+                                <span class="prompt-accordion-icon">▶</span>
+                                <span>Example prompt</span>
+                            </summary>
+                            <div class="prompt-accordion-content">
+                                <code>/skill-creator Create a new skill for automated accessibility testing of React components.</code>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- vercel-composition-patterns -->
+                <details class="skill-category">
+                    <summary class="skill-category-header">
+                        <span class="skill-category-name">vercel-composition-patterns</span>
+                        <span class="skill-category-icon">+</span>
+                    </summary>
+                    <div class="skill-category-content">
+                        <p><strong>Purpose:</strong> React composition patterns that scale — compound components, render props, context providers.</p>
+                        <ul class="skill-features">
+                            <li>Addresses boolean prop proliferation</li>
+                            <li>Builds flexible component libraries</li>
+                            <li>Designs reusable component APIs</li>
+                            <li>Includes React 19 API changes</li>
+                            <li>Triggers on compound components and render props tasks</li>
+                        </ul>
+                        <div class="prompt-accordion">
+                            <summary class="prompt-accordion-header">
+                                <span class="prompt-accordion-icon">▶</span>
+                                <span>Example prompt</span>
+                            </summary>
+                            <div class="prompt-accordion-content">
+                                <code>/vercel-composition-patterns Refactor this Modal component to use the compound component pattern with proper context.</code>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- vercel-react-best-practices -->
+                <details class="skill-category">
+                    <summary class="skill-category-header">
+                        <span class="skill-category-name">vercel-react-best-practices</span>
+                        <span class="skill-category-icon">+</span>
+                    </summary>
+                    <div class="skill-category-content">
+                        <p><strong>Purpose:</strong> React and Next.js performance optimization guidelines from Vercel Engineering.</p>
+                        <ul class="skill-features">
+                            <li>Optimal React component patterns</li>
+                            <li>Next.js page optimization</li>
+                            <li>Data fetching best practices</li>
+                            <li>Bundle optimization techniques</li>
+                            <li>Performance patterns and anti-patterns</li>
+                        </ul>
+                        <div class="prompt-accordion">
+                            <summary class="prompt-accordion-header">
+                                <span class="prompt-accordion-icon">▶</span>
+                                <span>Example prompt</span>
+                            </summary>
+                            <div class="prompt-accordion-content">
+                                <code>/vercel-react-best-practices Review this dashboard page for performance issues and suggest optimizations.</code>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- webapp-testing -->
+                <details class="skill-category">
+                    <summary class="skill-category-header">
+                        <span class="skill-category-name">webapp-testing</span>
+                        <span class="skill-category-icon">+</span>
+                    </summary>
+                    <div class="skill-category-content">
+                        <p><strong>Purpose:</strong> Toolkit for testing local web applications using Playwright.</p>
+                        <ul class="skill-features">
+                            <li>Interacts with and tests web applications</li>
+                            <li>Verifies frontend functionality</li>
+                            <li>Debugs UI behavior</li>
+                            <li>Captures browser screenshots</li>
+                            <li>Views browser logs and console output</li>
+                            <li>Supports navigation, clicks, form fills, and assertions</li>
+                        </ul>
+                        <div class="prompt-accordion">
+                            <summary class="prompt-accordion-header">
+                                <span class="prompt-accordion-icon">▶</span>
+                                <span>Example prompt</span>
+                            </summary>
+                            <div class="prompt-accordion-content">
+                                <code>/webapp-testing Navigate to http://localhost:3000/login, fill in the form with test credentials, click submit, and verify the dashboard loads.</code>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </section>
+
+            <section class="content-section">
+                <h2>Quick Reference Table</h2>
+                <table class="skills-table">
+                    <thead>
+                        <tr>
+                            <th>Skill</th>
+                            <th>Category</th>
+                            <th>Use When...</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>brainstorming</code></td><td>Ideation</td><td>Exploring options before building</td></tr>
+                        <tr><td><code>canvas-design</code></td><td>Visual Design</td><td>Creating posters, art, or static visuals</td></tr>
+                        <tr><td><code>chart-visualization</code></td><td>Data Viz</td><td>Generating charts from data</td></tr>
+                        <tr><td><code>data-analysis</code></td><td>Data</td><td>Analyzing Excel/CSV files</td></tr>
+                        <tr><td><code>doc-coauthoring</code></td><td>Documentation</td><td>Writing specs, PRDs, or decision docs</td></tr>
+                        <tr><td><code>figma</code></td><td>Design Integration</td><td>Translating Figma designs to code</td></tr>
+                        <tr><td><code>frontend-design</code></td><td>UI</td><td>Building web pages, dashboards, or components</td></tr>
+                        <tr><td><code>frontend-skill</code></td><td>UI</td><td>Creating visually impressive interfaces</td></tr>
+                        <tr><td><code>git-commit</code></td><td>Version Control</td><td>Generating conventional commit messages</td></tr>
+                        <tr><td><code>impeccable</code></td><td>UI Polish</td><td>Reviewing and refining interface design</td></tr>
+                        <tr><td><code>skill-creator</code></td><td>Meta</td><td>Creating new custom skills</td></tr>
+                        <tr><td><code>vercel-composition-patterns</code></td><td>React</td><td>Refactoring component architecture</td></tr>
+                        <tr><td><code>vercel-react-best-practices</code></td><td>React</td><td>Optimizing React/Next.js performance</td></tr>
+                        <tr><td><code>webapp-testing</code></td><td>Testing</td><td>Testing web apps with Playwright</td></tr>
+                    </tbody>
+                </table>
+            </section>
+        </article>
         <div class="navigation-buttons">
             <a href="skills.html" class="btn btn-secondary">← Previous: SKILLS</a>
             <a href="skills-reference.html" class="btn btn-primary">Next: Skills in Action →</a>
         </div>
-
-        <footer>
-            <p>&copy; 2025 aiHackathon</p>
-        </footer>
     </main>
     <script src="scripts.js"></script>
 </body>
