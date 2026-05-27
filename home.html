@@ -7,6 +7,8 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>aiHackathon 2026 - Contestant Reference</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/aiHackathon_icon-02.png?v=1">
+    <link rel="shortcut icon" href="img/aiHackathon_icon-02.png?v=1">
     <meta name="description" content="Your all-in-one reference for aiHackathon 2026. Track progress, resources, and tools you need to succeed.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
@@ -134,13 +136,15 @@
             width: 100%;
             background: var(--surface);
             border: 1px solid var(--blue-accent);
-            border-radius: 10px;
-            padding: 28px;
-            transition: border-color 0.2s var(--ease-out-quint);
+            border-radius: 12px;
+            padding: 24px;
+            transition: transform 0.2s var(--ease-out-quint), border-color 0.2s var(--ease-out-quint), box-shadow 0.2s var(--ease-out-quint);
         }
 
         .path-card:hover {
+            transform: translateY(-2px);
             border-color: var(--gold-primary);
+            box-shadow: 0 4px 12px rgba(201, 168, 76, 0.1);
         }
 
         /* ?� One font everywhere ?�?� */
@@ -370,7 +374,7 @@
             }
 
             .path-card {
-                padding: 24px 22px 22px;
+                padding: 20px;
             }
 
             .path-card-nav ul li {
@@ -392,12 +396,14 @@
                 animation: none !important;
             }
         }
+
+
     </style>
 </head>
 <body>
     <div class="progress-bar"></div>
     <a href="#main-content" class="skip-nav">Skip to main content</a>
-    <button class="mobile-menu-btn" aria-label="Open menu">&#9776;</button>
+    <button class="mobile-menu-btn hamburger" aria-label="Open menu"><span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span></button>
 
     <nav class="sidebar"></nav>
 
@@ -410,7 +416,7 @@
                     <img src="img/aiHackathon logo.png" alt="aiHackathon 2026" width="440" height="120">
                 </div>
                 <div class="hero-text animate-in">
-                    <h2 class="hero-title-main">Survival Kit</h2>
+                    <h2 class="hero-title-main">aiHackathon Survival Kit</h2>
                 </div>
             </section>
 
@@ -440,8 +446,8 @@
                         <div class="path-card-nav">
                             <div class="path-card-nav-label">Pages in this path</div>
                             <ul>
-                                <li class="current"><a href="microsoft-copilot-studio.html">Microsoft Copilot Studio</a></li>
-                                <li><a href="ollama.html">Ollama</a></li>
+                                <li class="current"><a href="microsoft-copilot-studio.html">AI Agent Builder</a></li>
+                                <li><a href="ollama.html">Local LLM Engine</a></li>
                                 <li><a href="agent-integration.html">Agent Integration</a></li>
                                 <li><a href="genai-portal-reference.html">VTC GenAI Portal Browser Automation</a></li>
                                 <li><a href="trae-solo-overview.html">TRAE</a></li>
@@ -451,9 +457,9 @@
                 </div>
             </section>
 
-            <div class="simplified-footer">
-                <p class="footer-label">Ready to start?</p>
-                <a href="getting-started.html" class="btn btn-primary">Open Reading Paths</a>
+            <div class="navigation-buttons">
+                <a href="training-reference.html" class="btn btn-primary">Get Started</a>
+                <a href="faq.html" class="btn btn-secondary">FAQ</a>
             </div>
         </article>
     </main>

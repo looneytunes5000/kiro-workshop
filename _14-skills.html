@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Skills - TRAE Workshop</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/aiHackathon_icon-02.png?v=1">
+    <link rel="shortcut icon" href="img/aiHackathon_icon-02.png?v=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="progress-bar" id="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn hamburger" id="mobile-menu-btn" aria-label="Open menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+    </button>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>TRAE SOLO Workshop</h2>
+            <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="training-reference">
+            <div class="sidebar-section-title collapsible-header">
+                <span>📚 AI Hackathon Training Reference</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="training-reference.html" class="sidebar-link">AI Hackathon Training Reference</a>
+                <a href="ai-coding-agents.html" class="sidebar-link sub-item">AI Coding Agents</a>
+                <a href="vibe-coding-reference.html" class="sidebar-link sub-item">Vibe Coding</a>
+                <a href="spec-driven-reference.html" class="sidebar-link sub-item">Spec-Driven Development</a>
+                <a href="trae-solo-overview.html" class="sidebar-link sub-item">TRAE SOLO</a>
+                <a href="skills.html" class="sidebar-link sub-item">Skills</a>
+                <a href="14-skills.html" class="sidebar-link active sub-item">Available Skills</a>
+                <a href="advanced-topics-reference.html" class="sidebar-link sub-item">Advanced Topics</a>
+                <a href="best-practices-reference.html" class="sidebar-link sub-item">Best Practices</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="home">
+            <a href="index.html" class="sidebar-link">AI-Driven Development with TRAE SOLO</a>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="core-concepts">
+            <div class="sidebar-section-title collapsible-header">
+                <span>💡 Core Concepts</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="trae-solo-overview.html" class="sidebar-link">TRAE SOLO Overview</a>
+                <a href="multitasking.html" class="sidebar-link sub-item">Multitasking</a>
+                <a href="dual-modes.html" class="sidebar-link">MTC vs Code Modes</a>
+                <a href="deploy-backend.html" class="sidebar-link sub-item">(Optional) Deploy Backend</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="hands-on">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🛠️ Hands-on Exercises</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="vibe-coding-reference.html" class="sidebar-link">Vibe Coding: Rapid Feature Development</a>
+                <a href="llm-eval-intro.html" class="sidebar-link sub-item">Add LLM Evaluation</a>
+                <a href="deployment-troubleshooting.html" class="sidebar-link sub-item">Exercise: Fix Deployment</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section collapsible" data-section="wrap-up">
+            <div class="sidebar-section-title collapsible-header">
+                <span>✅ Wrap Up</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="wrapping-up.html" class="sidebar-link">Wrapping up</a>
+            </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section collapsible toolkit-section" data-section="toolkit">
+            <div class="sidebar-section-title collapsible-header">
+                <span>🧰 Hackathon Toolkit</span>
+                <span class="collapse-icon">▾</span>
+            </div>
+            <div class="sidebar-section-content">
+                <a href="opencode-web-ui.html" class="sidebar-link">OpenCode Web UI</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+    <main class="main">
+        <div class="content" id="main-content"></div>
+
+        <div class="navigation-buttons">
+            <a href="skills.html" class="btn btn-secondary">← Previous: SKILLS</a>
+            <a href="skills-reference.html" class="btn btn-primary">Next: Skills in Action →</a>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 aiHackathon</p>
+        </footer>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>

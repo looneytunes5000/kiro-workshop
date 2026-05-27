@@ -10,6 +10,9 @@
 
     <title>Agent Integration - TRAE Workshop</title>
 
+    <link rel="icon" type="image/png" sizes="32x32" href="img/aiHackathon_icon-02.png?v=1">
+    <link rel="shortcut icon" href="img/aiHackathon_icon-02.png?v=1">
+
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
@@ -22,7 +25,7 @@
 
     <a href="#main-content" class="skip-nav">Skip to main content</a>
 
-    <button class="mobile-menu-btn"></button>
+    <button class="mobile-menu-btn hamburger" aria-label="Open menu"><span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span></button>
 
 
 
@@ -50,7 +53,7 @@
 
             <h2 id="connecting-agent-programmatically">Connecting Your Agent Programmatically</h2>
 
-            <p>Once you've built your AI agent in Copilot Studio, the next step is making it accessible from your own applications, websites, or devices. This is done programmatically —meaning your code "talks" to the agent without manual interaction.</p>
+            <p>Once you've built your AI agent in Copilot Studio, the next step is making it accessible from your own applications, websites, or devices. This is done programmatically :meaning your code "talks" to the agent without manual interaction.</p>
 
             <p>Think of it like setting up a telephone line: your application dials the agent, and they can communicate back and forth automatically.</p>
 
@@ -62,7 +65,7 @@
 
 
             <h2 id="token-endpoint">Step 2: Get Your Token Endpoint</h2>
-            <p>Once Direct Line Speech is enabled, you'll receive a <strong>token endpoint</strong> —this is a special URL your application uses to connect to your agent.</p>
+            <p>Once Direct Line Speech is enabled, you'll receive a <strong>token endpoint</strong> :this is a special URL your application uses to connect to your agent.</p>
             <p>The token provides secure access to your agent and remains active for your integration needs.</p>
 
             <div class="callout">
@@ -70,22 +73,22 @@
                     <div class="dot"></div>
                     <span>How Tokens Work</span>
                 </div>
-                <p>Your app uses the token endpoint —receives a token —uses that token to start conversations —the token stays active for continued access.</p>
+                <p>Your app uses the token endpoint :receives a token :uses that token to start conversations :the token stays active for continued access.</p>
             </div>
 
 
 
             <h2 id="using-token-code">Step 3: Integrate with TRAE</h2>
-            <p>Simply provide the token endpoint to TRAE, and the coding agent will handle the rest of the integration for you. No need to worry about the technical details —just share your endpoint and let TRAE do the work.</p>
+            <p>Simply provide the token endpoint to TRAE, and the coding agent will handle the rest of the integration for you. No need to worry about the technical details :just share your endpoint and let TRAE do the work.</p>
 
 
 
             <h2 id="security-notes">Important Notes</h2>
 
-            <div class="callout">
+            <div class="callout danger">
                 <div class="callout-header">
-                    <div class="dot" style="background: #ef4444;"></div>
-                    <span style="color: #ef4444;">Security</span>
+                    <div class="dot"></div>
+                    <span>Security</span>
                 </div>
                 <p>Token endpoints should be kept secure and <strong>not shared publicly</strong>. Never expose your token endpoint URL in client-side code that visitors can see. Instead, call the endpoint from your server and pass the token to your frontend.</p>
             </div>

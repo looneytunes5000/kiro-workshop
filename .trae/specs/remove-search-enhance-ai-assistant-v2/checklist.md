@@ -1,0 +1,22 @@
+# Checklist
+
+- [x] Sidebar search input, clear button, and keyboard shortcut (Ctrl+K) are completely removed; no `sidebar-search` elements exist in the DOM
+- [x] `initSidebarSearch()` function is removed from `scripts.js` and not called on page load
+- [x] Sidebar search-related CSS (`.sidebar-search`, `.sidebar-search-input`, `.sidebar-search-clear`, `.search-highlight`) is removed from `styles.css`
+- [x] Sidebar still renders and displays correctly without the search component (via `generateSidebar()` which no longer includes search HTML)
+- [x] The chatbot header displays "New Chat" instead of "Clear" (`<button id="chatbot-new-chat">New Chat</button>`)
+- [x] Clicking "New Chat" shows a confirmation prompt before clearing the conversation (`confirm('Start a new chat?...')`)
+- [x] After confirming, the conversation is cleared and the welcome screen is restored (`clearChatbotSession()` called on confirm)
+- [x] Conversation history sent to the API is capped at the last 10 messages (`chatbotConversationHistory.slice(-10)`)
+- [x] When the conversation exceeds 10 messages, the oldest messages are trimmed from the API payload
+- [x] Full conversation may still be saved in `localStorage` (only API payload is capped)
+- [x] `[text](url)` markdown in bot responses renders as clickable `<a>` links in the chat bubble (renderMarkdown linkPlaceholders approach)
+- [x] Links within chat bubbles are styled with the gold accent color and are visually distinct (`.chatbot-link` CSS with `var(--gold-primary)`)
+- [x] The system prompt instructs the AI to include relevant `file.html#section-id` links in responses (LINKING RULES section added to buildSystemPrompt)
+- [x] Clicking a cross-page link (e.g., `trae-solo-overview.html#key-features`) navigates to the correct page and scrolls to the target section (`bindChatbotLinks` with `window.location.href`)
+- [x] Clicking a same-page anchor link smooth-scrolls to the target element (`scrollIntoView({ behavior: 'smooth' })`)
+- [x] After navigating to a new page with a URL hash, the page scrolls to the target element on load (`scrollToHashOnLoad()`)
+- [x] The homepage displays an AI assistant CTA card below the path cards (`.ai-cta-card` in `home.html`)
+- [x] The CTA card contains a heading, description, and button that opens the AI chatbot
+- [x] Clicking the CTA button opens the chatbot and pre-fills a "not sure which path" prompt (`bindAiCtaButton()`)
+- [x] The chatbot loads and displays correctly on all pages without breaking
