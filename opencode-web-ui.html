@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenCode Quick Start - TRAE SOLO Workshop</title>
+    <title>OpenCode Quick Start - TRAE Workshop</title>
     <link rel="icon" type="image/png" sizes="32x32" href="img/aiHackathon_icon-02.png?v=1">
     <link rel="shortcut icon" href="img/aiHackathon_icon-02.png?v=1">
     <link rel="stylesheet" href="styles.css">
@@ -25,83 +25,30 @@
         </header>
 
         <article class="content">
-            <h2 id="initialize">Initialize</h2>
-            <p>Before you start building, configure OpenCode to work with your preferred AI provider and initialize your project.</p>
+            <h2 id="initialize">Initialise</h2>
+            <p>Before you start building, configure OpenCode to work with your preferred AI provider and initialise your project.</p>
 
-            <h3>Connect a Provider</h3>
-            <p>OpenCode works with any LLM provider. Run the <code>/connect</code> command in the TUI, select your provider, and configure your API key. You can use OpenCode Zen (a curated list of tested models) or any other provider you prefer.</p>
-
-            <div class="callout">
-                <div class="callout-header">
-                    <div class="dot"></div>
-                    <span>aiHackathon Note</span>
-                </div>
-                <p>For this event, <strong>Qwen3.6</strong> has already been set up and is the designated model. Other models are not permitted during the aiHackathon.</p>
-            </div>
-
-            <h3>Initialize Your Project</h3>
-            <p>Once you've configured a provider, navigate to your project folder and run OpenCode:</p>
-
-            <div class="step-video" style="margin: 32px 0;">
-                <video autoplay muted loop playsinline class="step-video-player" style="width: 900px; max-width: 100%;">
-                    <source src="img/opencode.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <p>Initialize your project by running the <code>/init</code> command. This tells OpenCode to analyze your codebase and create an <code>AGENTS.md</code> file in the project root.</p>
-
-            <p>The <code>AGENTS.md</code> file helps OpenCode understand your project structure, coding patterns, and conventions so it can make better suggestions and generate more accurate code.</p>
-
-            <div class="callout">
-                <div class="callout-header">
-                    <div class="dot"></div>
-                    <span>Remember</span>
-                </div>
-                <p>Run <code>/init</code> whenever you open a new project or make significant structural changes. Keeping <code>AGENTS.md</code> up to date improves the quality of OpenCode's suggestions.</p>
-            </div>
-
-            <h2 id="usage">Usage</h2>
-            <p>Now you're ready to use OpenCode. Talk to it like you would a junior developer on your team : provide enough detail so it understands what you want.</p>
-
-            <h3 id="ask-questions">Ask Questions</h3>
-            <p>You can ask OpenCode to explain parts of your codebase. This is especially helpful for areas you didn't write yourself:</p>
-
-            <pre><code>How is authentication handled in @packages/functions/src/api/index.ts</code></pre>
-
-            <p>Using the <code>@</code> syntax lets you reference specific files so OpenCode has the right context for its answer.</p>
-
-            <h3 id="add-features">Add Features</h3>
-            <p>You can ask OpenCode to add new features to your project. For complex features, we recommend using Plan mode first:</p>
-
-            <ol>
-                <li>Switch to <strong>Plan mode</strong> using the <kbd>Tab</kbd> key (you'll see an indicator in the lower right corner)</li>
-                <li>Describe what you want to build in detail</li>
-                <li>Review the plan and provide feedback</li>
-            </ol>
-
-            <details class="prompt-accordion">
-                <summary class="prompt-accordion-header">
-                    <span class="prompt-accordion-icon">▶</span>
-                    <span>Click to reveal example feature prompt</span>
-                </summary>
-                <div class="prompt-accordion-content">
-                    <pre><code>When a user deletes a note, we'd like to flag it as deleted in the database.
-Then create a screen that shows all the recently deleted notes.
-From this screen, the user can undelete a note or permanently delete it.</code></pre>
-
-                    <p>Provide enough details so OpenCode understands the full scope. Talk to it like you're delegating work to a teammate.</p>
-                </div>
-            </details>
+            <video controls width="100%" style="margin-top: 16px; margin-bottom: 24px; border-radius: 8px;">
+                <source src="img/opencode.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
 
             <h2 id="iterate-on-plan">Iterate on the Plan</h2>
             <p>Once OpenCode gives you a plan, you can provide feedback, ask for changes, or add more detail before implementation begins.</p>
 
             <p>You can also include visual references by dragging and dropping images into the terminal. OpenCode will scan the image and use it as a design reference:</p>
 
-            <pre><code>We'd like to design this new screen using a layout I've used before.
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">▶</span>
+                    <span>Click to reveal example prompt</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <pre><code>We'd like to design this new screen using a layout I've used before.
 [Drag and drop image here]
 Take a look at this image and use it as a reference.</code></pre>
+                </div>
+            </details>
 
             <div class="callout">
                 <div class="callout-header">
@@ -114,16 +61,32 @@ Take a look at this image and use it as a reference.</code></pre>
             <h2 id="build-feature">Build the Feature</h2>
             <p>Once you're comfortable with the plan, switch back to <strong>Build mode</strong> by hitting the <kbd>Tab</kbd> key again, then ask OpenCode to implement the changes:</p>
 
-            <pre><code>Sounds good! Go ahead and make the changes.</code></pre>
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">▶</span>
+                    <span>Click to reveal example prompt</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <pre><code>Sounds good! Go ahead and make the changes.</code></pre>
+                </div>
+            </details>
 
-            <p>OpenCode will analyze the plan and start writing code, creating files, and making changes across your project.</p>
+            <p>OpenCode will analyse the plan and start writing code, creating files, and making changes across your project.</p>
 
             <h2 id="make-changes">Make Changes</h2>
             <p>For more straightforward changes, you can ask OpenCode to build directly without reviewing a plan first:</p>
 
-            <pre><code>We need to add authentication to the /settings route. Take a look at how this is
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">▶</span>
+                    <span>Click to reveal example prompt</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <pre><code>We need to add authentication to the /settings route. Take a look at how this is
 handled in the /notes route in @packages/functions/src/notes.ts and implement
 the same logic in @packages/functions/src/settings.ts</code></pre>
+                </div>
+            </details>
 
             <p>Again, provide good detail. Reference existing files with the <code>@</code> syntax so OpenCode understands patterns to follow.</p>
 
@@ -138,15 +101,39 @@ the same logic in @packages/functions/src/settings.ts</code></pre>
             <h2 id="undo-changes">Undo Changes</h2>
             <p>Let's say you ask OpenCode to refactor a function, but the result isn't what you wanted. You can undo the changes using the <code>/undo</code> command:</p>
 
-            <pre><code>/undo</code></pre>
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">▶</span>
+                    <span>Click to reveal example prompt</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <pre><code>/undo</code></pre>
+                </div>
+            </details>
 
             <p>OpenCode will revert the changes and show your original message again. From here you can tweak your prompt and ask OpenCode to try again:</p>
 
-            <pre><code>Can you refactor the function in @packages/functions/src/api/index.ts using a simpler approach?</code></pre>
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">▶</span>
+                    <span>Click to reveal example prompt</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <pre><code>Can you refactor the function in @packages/functions/src/api/index.ts using a simpler approach?</code></pre>
+                </div>
+            </details>
 
             <p>You can also <strong>redo</strong> changes using the <code>/redo</code> command if you change your mind:</p>
 
-            <pre><code>/redo</code></pre>
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">▶</span>
+                    <span>Click to reveal example prompt</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <pre><code>/redo</code></pre>
+                </div>
+            </details>
 
             <div class="callout">
                 <div class="callout-header">

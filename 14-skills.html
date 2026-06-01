@@ -3,450 +3,490 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>14 Essential Skills - TRAE Workshop</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="img/aiHackathon_icon-02.png?v=1">
-    <link rel="shortcut icon" href="img/aiHackathon_icon-02.png?v=1">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>Available Skills - TRAE Workshop</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <button class="mobile-menu-btn hamburger" id="mobile-menu-btn" aria-label="Open menu">
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-    </button>
-    <nav class="sidebar" id="sidebar"></nav>
-    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+    <div class="progress-bar"></div>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <button class="mobile-menu-btn">☰</button>
+
+    <nav class="sidebar"></nav>
+
+    <div class="sidebar-backdrop"></div>
+
     <main class="main" id="main-content">
         <header class="page-header">
-            <h1>14 Essential Skills</h1>
-            <p>TRAE Solo comes with 14 built-in skills — specialized AI agents that handle specific tasks with expert-level proficiency</p>
+            <h1>Available Skills</h1>
+            <p>Skills preinstalled for contestants to use during the event</p>
         </header>
+
         <article class="content">
-            <section class="content-section">
-                <h2>Overview</h2>
-                <p>Skills are pre-configured AI sub-agents that specialize in specific development tasks. Instead of asking the general-purpose AI to do everything, you can delegate to specialized skills that follow proven methodologies. Each skill comes with its own set of rules, prompts, and best practices.</p>
-                <div class="callout">
-                    <div class="callout-header">
-                        <div class="dot"></div>
-                        <span>How to activate a skill</span>
-                    </div>
-                    <p>Type <code>/skill-name</code> in your TRAE chat or use the skill menu in the UI. Skills appear as sub-agents that you can invoke directly or let TRAE auto-suggest when appropriate.</p>
+            <h2 id="overview">Overview</h2>
+            <p>Below is a list of the skills the organisers have preinstalled in TRAE for contestants. Each skill is grouped by what it helps you with. Click on any skill name to jump to its detailed section.</p>
+
+            <table class="skills-overview-table">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Category</th>
+                        <th>What It Does</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-git-commit">git-commit</a></td>
+                        <td><span class="skill-badge">Development Tools</span></td>
+                        <td>Writes commit messages for you and stages files automatically</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-react-best-practices">react-best-practices</a></td>
+                        <td><span class="skill-badge">Development Tools</span></td>
+                        <td>React is a popular framework for building website interfaces. This skill checks your React code for problems and suggests fixes</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-webapp-testing">webapp-testing</a></td>
+                        <td><span class="skill-badge">Development Tools</span></td>
+                        <td>Tests your website automatically by clicking around like a real user</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-composition-patterns">composition-patterns</a></td>
+                        <td><span class="skill-badge">Development Tools</span></td>
+                        <td>React is a popular framework for building website interfaces. This skill breaks big React components into smaller, reusable pieces</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-agent-browser">agent-browser</a></td>
+                        <td><span class="skill-badge">Productivity</span></td>
+                        <td>Surfs the web for you — fills forms, clicks buttons, grabs data</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-brainstorming">brainstorming</a></td>
+                        <td><span class="skill-badge">Productivity</span></td>
+                        <td>Helps you plan ideas before you start building</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-figma">figma</a></td>
+                        <td><span class="skill-badge">UI Design</span></td>
+                        <td>Turns Figma designs into working code</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-frontend-design">frontend-design</a></td>
+                        <td><span class="skill-badge">UI Design</span></td>
+                        <td>Builds beautiful web pages with animations and style</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-frontend-skill">frontend-skill</a></td>
+                        <td><span class="skill-badge">UI Design</span></td>
+                        <td>Creates clean, professional-looking interfaces</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-chart-visualization">chart-visualization</a></td>
+                        <td><span class="skill-badge">Data &amp; Content</span></td>
+                        <td>Picks the right chart type and creates visual graphs from your data</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-data-analysis">data-analysis</a></td>
+                        <td><span class="skill-badge">Data &amp; Content</span></td>
+                        <td>Reads Excel and CSV files, finds patterns, and answers questions about your data</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-canvas-design">canvas-design</a></td>
+                        <td><span class="skill-badge">Data &amp; Content</span></td>
+                        <td>Creates posters, covers, and visual art as images or PDFs</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-name"><a href="#skill-doc-coauthoring">doc-coauthoring</a></td>
+                        <td><span class="skill-badge">Data &amp; Content</span></td>
+                        <td>Helps you write and polish documents step by step</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 id="skill-git-commit">git-commit</h2>
+            <div class="skill-card" id="skill-git-commit-card">
+                <div class="skill-card-header">
+                    <h3>git-commit</h3>
+                    <span class="skill-badge">Development Tools</span>
                 </div>
-            </section>
-
-            <section class="content-section">
-                <h2>Complete Skill Reference</h2>
-
-                <!-- brainstorming -->
-                <details class="skill-category">
-                    <summary class="skill-category-header">
-                        <span class="skill-category-name">brainstorming</span>
-                        <span class="skill-category-icon">+</span>
-                    </summary>
-                    <div class="skill-category-content">
-                        <p><strong>Purpose:</strong> Ideation and creative exploration before implementation.</p>
-                        <ul class="skill-features">
-                            <li>Generates multiple approaches to a problem</li>
-                            <li>Explores trade-offs between different solutions</li>
-                            <li>Helps clarify requirements and user stories</li>
-                            <li>Creates user journey maps and flow diagrams</li>
-                        </ul>
-                        <div class="prompt-accordion">
-                            <summary class="prompt-accordion-header">
-                                <span class="prompt-accordion-icon">▶</span>
-                                <span>Example prompt</span>
-                            </summary>
-                            <div class="prompt-accordion-content">
-                                <code>/brainstorming Brainstorm different ways to implement user authentication for a React app. Consider security, UX, and developer experience trade-offs.</code>
-                            </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill writes save-point messages (called "commits") to track your code changes. It only matters if you are updating a code repository to a version control system, such as GitHub.</p>
+                    <details class="use-case">
+                        <summary>Example: Commit changes without writing a message</summary>
+                        <div class="use-case-content">
+                            <p>After editing files, tell TRAE to commit. The skill reads the changes and generates a message like <code>feat(auth): add login form validation</code>.</p>
                         </div>
-                    </div>
-                </details>
-
-                <!-- canvas-design -->
-                <details class="skill-category">
-                    <summary class="skill-category-header">
-                        <span class="skill-category-name">canvas-design</span>
-                        <span class="skill-category-icon">+</span>
-                    </summary>
-                    <div class="skill-category-content">
-                        <p><strong>Purpose:</strong> Create beautiful visual art in .png and .pdf documents using design philosophy.</p>
-                        <ul class="skill-features">
-                            <li>Create original visual designs and posters</li>
-                            <li>Generate art, designs, and static visual pieces</li>
-                            <li>Avoids copying existing artists' work</li>
-                            <li>Outputs production-ready image files</li>
-                        </ul>
-                        <div class="prompt-accordion">
-                            <summary class="prompt-accordion-header">
-                                <span class="prompt-accordion-icon">▶</span>
-                                <span>Example prompt</span>
-                            </summary>
-                            <div class="prompt-accordion-content">
-                                <code>/canvas-design Create a poster for a tech conference with a modern, minimalist design using gradients and geometric shapes.</code>
-                            </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Keep commit history consistent</summary>
+                        <div class="use-case-content">
+                            <p>The skill picks the right type (fix, feat, chore, refactor) and scopes changes so the project history stays organised.</p>
                         </div>
-                    </div>
-                </details>
-
-                <!-- chart-visualization -->
-                <details class="skill-category">
-                    <summary class="skill-category-header">
-                        <span class="skill-category-name">chart-visualization</span>
-                        <span class="skill-category-icon">+</span>
-                    </summary>
-                    <div class="skill-category-content">
-                        <p><strong>Purpose:</strong> Intelligently select and generate the most suitable chart type from 26 available options.</p>
-                        <ul class="skill-features">
-                            <li>Auto-selects best chart type based on data structure</li>
-                            <li>Supports 26 chart types (bar, line, pie, scatter, heatmap, etc.)</li>
-                            <li>Extracts parameters based on detailed specifications</li>
-                            <li>Generates chart images using JavaScript</li>
-                        </ul>
-                        <div class="prompt-accordion">
-                            <summary class="prompt-accordion-header">
-                                <span class="prompt-accordion-icon">▶</span>
-                                <span>Example prompt</span>
-                            </summary>
-                            <div class="prompt-accordion-content">
-                                <code>/chart-visualization Create a visualization showing monthly revenue growth over the past year with a target line overlay.</code>
-                            </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Split unrelated changes into separate commits</summary>
+                        <div class="use-case-content">
+                            <p>If you edited both a button component and a database query, the skill separates them into two commits so each one stays focused on a single change.</p>
                         </div>
-                    </div>
-                </details>
+                    </details>
+                </div>
+            </div>
 
-                <!-- data-analysis -->
-                <details class="skill-category">
-                    <summary class="skill-category-header">
-                        <span class="skill-category-name">data-analysis</span>
-                        <span class="skill-category-icon">+</span>
-                    </summary>
-                    <div class="skill-category-content">
-                        <p><strong>Purpose:</strong> Analyze Excel (.xlsx/.xls) or CSV files for statistics, summaries, and insights.</p>
-                        <ul class="skill-features">
-                            <li>Supports multi-sheet Excel workbooks</li>
-                            <li>Performs aggregation, filtering, and joins</li>
-                            <li>Creates pivot tables and statistical summaries</li>
-                            <li>Exports results to CSV/JSON/Markdown</li>
-                            <li>SQL query generation for complex analysis</li>
-                        </ul>
-                        <div class="prompt-accordion">
-                            <summary class="prompt-accordion-header">
-                                <span class="prompt-accordion-icon">▶</span>
-                                <span>Example prompt</span>
-                            </summary>
-                            <div class="prompt-accordion-content">
-                                <code>/data-analysis Analyze this sales dataset to find the top 5 products by revenue per region, and export the results as a summary table.</code>
-                            </div>
+            <h2 id="skill-react-best-practices">react-best-practices</h2>
+            <div class="skill-card" id="skill-react-best-practices-card">
+                <div class="skill-card-header">
+                    <h3>react-best-practices</h3>
+                    <span class="skill-badge">Development Tools</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">React is a popular framework for building website interfaces — it controls what the user sees and how the page responds to clicks. This skill reviews React and Next.js code for common issues, identifies re-rendering problems, missing hook dependencies, and structural patterns. The agent will likely activate this skill itself when it detects you're working with React.</p>
+                    <details class="use-case">
+                        <summary>Example: Identify rendering issues</summary>
+                        <div class="use-case-content">
+                            <p>The skill spots unnecessary re-renders, missing dependencies in hooks, and components that could be split. It explains what to change and why.</p>
                         </div>
-                    </div>
-                </details>
-
-                <!-- doc-coauthoring -->
-                <details class="skill-category">
-                    <summary class="skill-category-header">
-                        <span class="skill-category-name">doc-coauthoring</span>
-                        <span class="skill-category-icon">+</span>
-                    </summary>
-                    <div class="skill-category-content">
-                        <p><strong>Purpose:</strong> Guide users through a structured workflow for co-authoring documentation.</p>
-                        <ul class="skill-features">
-                            <li>Walks through documentation writing step-by-step</li>
-                            <li>Supports PRDs, technical specs, decision docs</li>
-                            <li>Helps transfer context efficiently</li>
-                            <li>Iterative content refinement</li>
-                            <li>Verifies docs work for intended readers</li>
-                        </ul>
-                        <div class="prompt-accordion">
-                            <summary class="prompt-accordion-header">
-                                <span class="prompt-accordion-icon">▶</span>
-                                <span>Example prompt</span>
-                            </summary>
-                            <div class="prompt-accordion-content">
-                                <code>/doc-coauthoring Help me write a technical specification for our new API endpoint authentication.</code>
-                            </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Refactor growing codebases</summary>
+                        <div class="use-case-content">
+                            <p>As projects expand, code that works can become hard to maintain. The skill suggests extracting logic into custom hooks or memoising expensive calculations.</p>
                         </div>
-                    </div>
-                </details>
-
-                <!-- figma -->
-                <details class="skill-category">
-                    <summary class="skill-category-header">
-                        <span class="skill-category-name">figma</span>
-                        <span class="skill-category-icon">+</span>
-                    </summary>
-                    <div class="skill-category-content">
-                        <p><strong>Purpose:</strong> Figma MCP integration for design-to-code workflow.</p>
-                        <ul class="skill-features">
-                            <li>Fetches design context, screenshots, variables from Figma</li>
-                            <li>Translates Figma nodes into production code</li>
-                            <li>Handles Figma URL/node-ID references</li>
-                            <li>Supports Figma MCP setup and troubleshooting</li>
-                        </ul>
-                        <div class="prompt-accordion">
-                            <summary class="prompt-accordion-header">
-                                <span class="prompt-accordion-icon">▶</span>
-                                <span>Example prompt</span>
-                            </summary>
-                            <div class="prompt-accordion-content">
-                                <code>/figma Fetch the design from https://figma.com/file/xxx?node-id=123:45 and implement it as a React component.</code>
-                            </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Learn patterns through feedback</summary>
+                        <div class="use-case-content">
+                            <p>Each suggestion includes an explanation of why a pattern is preferred, helping you build familiarity with React conventions over time.</p>
                         </div>
-                    </div>
-                </details>
+                    </details>
+                </div>
+            </div>
 
-                <!-- frontend-design -->
-                <details class="skill-category">
-                    <summary class="skill-category-header">
-                        <span class="skill-category-name">frontend-design</span>
-                        <span class="skill-category-icon">+</span>
-                    </summary>
-                    <div class="skill-category-content">
-                        <p><strong>Purpose:</strong> Create distinctive, production-grade frontend interfaces with high design quality.</p>
-                        <ul class="skill-features">
-                            <li>Builds web components, pages, dashboards, React components</li>
-                            <li>Generates creative, polished code and UI</li>
-                            <li>Avoids generic AI aesthetics</li>
-                            <li>Handles HTML/CSS layouts, styling, and beautification</li>
-                        </ul>
-                        <div class="prompt-accordion">
-                            <summary class="prompt-accordion-header">
-                                <span class="prompt-accordion-icon">▶</span>
-                                <span>Example prompt</span>
-                            </summary>
-                            <div class="prompt-accordion-content">
-                                <code>/frontend-design Build a landing page for our product with a hero section, feature cards, testimonials, and a CTA footer.</code>
-                            </div>
+            <h2 id="skill-webapp-testing">webapp-testing</h2>
+            <div class="skill-card" id="skill-webapp-testing-card">
+                <div class="skill-card-header">
+                    <h3>webapp-testing</h3>
+                    <span class="skill-badge">Development Tools</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill creates browser tests using Playwright. It can click buttons, fill in forms, and confirm that expected content appears on screen.</p>
+                    <details class="use-case">
+                        <summary>Example: Test a sign-up form</summary>
+                        <div class="use-case-content">
+                            <p>The skill enters a name, email, and password, clicks submit, and checks that the confirmation message appears. If something breaks, the test reports the failure.</p>
                         </div>
-                    </div>
-                </details>
-
-                <!-- frontend-skill -->
-                <details class="skill-category">
-                    <summary class="skill-category-header">
-                        <span class="skill-category-name">frontend-skill</span>
-                        <span class="skill-category-icon">+</span>
-                    </summary>
-                    <div class="skill-category-content">
-                        <p><strong>Purpose:</strong> Build visually strong landing pages, websites, apps, prototypes, demos, or game UIs.</p>
-                        <ul class="skill-features">
-                            <li>Enforces restrained composition and image-led hierarchy</li>
-                            <li>Focuses on cohesive content structure</li>
-                            <li>Uses tasteful motion and animation</li>
-                            <li>Avoids generic cards, weak branding, and UI clutter</li>
-                        </ul>
-                        <div class="prompt-accordion">
-                            <summary class="prompt-accordion-header">
-                                <span class="prompt-accordion-icon">▶</span>
-                                <span>Example prompt</span>
-                            </summary>
-                            <div class="prompt-accordion-content">
-                                <code>/frontend-skill Create a product demo page with a strong visual hierarchy and immersive scroll-based animations.</code>
-                            </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Check pages after making changes</summary>
+                        <div class="use-case-content">
+                            <p>After updating code, the skill runs through key pages and confirms navigation links work, images load, and interactive elements respond.</p>
                         </div>
-                    </div>
-                </details>
-
-                <!-- git-commit -->
-                <details class="skill-category">
-                    <summary class="skill-category-header">
-                        <span class="skill-category-name">git-commit</span>
-                        <span class="skill-category-icon">+</span>
-                    </summary>
-                    <div class="skill-category-content">
-                        <p><strong>Purpose:</strong> Generate meaningful, conventional commit messages from code changes.</p>
-                        <ul class="skill-features">
-                            <li>Analyzes git diff to understand changes</li>
-                            <li>Generates conventional commit messages (feat, fix, refactor, etc.)</li>
-                            <li>Provides clear, descriptive commit summaries</li>
-                            <li>Follows best practices for version control hygiene</li>
-                        </ul>
-                        <div class="prompt-accordion">
-                            <summary class="prompt-accordion-header">
-                                <span class="prompt-accordion-icon">▶</span>
-                                <span>Example prompt</span>
-                            </summary>
-                            <div class="prompt-accordion-content">
-                                <code>/git-commit Generate a commit message for the current staged changes following conventional commit format.</code>
-                            </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Capture screenshots during tests</summary>
+                        <div class="use-case-content">
+                            <p>The tool takes screenshots at key steps, providing visual records that help with debugging when a test fails.</p>
                         </div>
-                    </div>
-                </details>
+                    </details>
+                </div>
+            </div>
 
-                <!-- impeccable -->
-                <details class="skill-category">
-                    <summary class="skill-category-header">
-                        <span class="skill-category-name">impeccable</span>
-                        <span class="skill-category-icon">+</span>
-                    </summary>
-                    <div class="skill-category-content">
-                        <p><strong>Purpose:</strong> Design, critique, polish, and optimize frontend interfaces across websites, dashboards, components, and UI systems.</p>
-                        <ul class="skill-features">
-                            <li>UX review and visual hierarchy analysis</li>
-                            <li>Information architecture and cognitive load assessment</li>
-                            <li>Accessibility, performance, and responsive behavior</li>
-                            <li>Theming, typography, spacing, layout, alignment, color</li>
-                            <li>Motion, micro-interactions, and UX copy</li>
-                            <li>Error states, edge cases, and reusable design tokens</li>
-                        </ul>
-                        <div class="prompt-accordion">
-                            <summary class="prompt-accordion-header">
-                                <span class="prompt-accordion-icon">▶</span>
-                                <span>Example prompt</span>
-                            </summary>
-                            <div class="prompt-accordion-content">
-                                <code>/impeccable Review the dashboard design and suggest improvements for better visual hierarchy and accessibility.</code>
-                            </div>
+            <h2 id="skill-composition-patterns">composition-patterns</h2>
+            <div class="skill-card" id="skill-composition-patterns-card">
+                <div class="skill-card-header">
+                    <h3>composition-patterns</h3>
+                    <span class="skill-badge">Development Tools</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">React is a popular framework for building website interfaces — it controls what the user sees and how the page responds to clicks. This skill restructures complex React components into smaller, reusable pieces. It identifies components that have too many responsibilities and suggests ways to split them. The agent will likely activate this skill itself when it detects you're working with React.</p>
+                    <details class="use-case">
+                        <summary>Example: Split a large component</summary>
+                        <div class="use-case-content">
+                            <p>When a component handles multiple responsibilities — rendering a form, validating input, and submitting data — the skill breaks it into focused sub-components so each piece has a single responsibility.</p>
                         </div>
-                    </div>
-                </details>
-
-                <!-- skill-creator -->
-                <details class="skill-category">
-                    <summary class="skill-category-header">
-                        <span class="skill-category-name">skill-creator</span>
-                        <span class="skill-category-icon">+</span>
-                    </summary>
-                    <div class="skill-category-content">
-                        <p><strong>Purpose:</strong> MANDATORY tool for creating new skills.</p>
-                        <ul class="skill-features">
-                            <li>Creates new skill definitions and configurations</li>
-                            <li>Must be invoked immediately when user wants to add any skill</li>
-                            <li>Handles skill scaffolding and registration</li>
-                        </ul>
-                        <div class="prompt-accordion">
-                            <summary class="prompt-accordion-header">
-                                <span class="prompt-accordion-icon">▶</span>
-                                <span>Example prompt</span>
-                            </summary>
-                            <div class="prompt-accordion-content">
-                                <code>/skill-creator Create a new skill for automated accessibility testing of React components.</code>
-                            </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Create reusable components</summary>
+                        <div class="use-case-content">
+                            <p>The skill helps design components that adapt to different content across the project, reducing duplication of similar UI patterns like card layouts.</p>
                         </div>
-                    </div>
-                </details>
-
-                <!-- vercel-composition-patterns -->
-                <details class="skill-category">
-                    <summary class="skill-category-header">
-                        <span class="skill-category-name">vercel-composition-patterns</span>
-                        <span class="skill-category-icon">+</span>
-                    </summary>
-                    <div class="skill-category-content">
-                        <p><strong>Purpose:</strong> React composition patterns that scale — compound components, render props, context providers.</p>
-                        <ul class="skill-features">
-                            <li>Addresses boolean prop proliferation</li>
-                            <li>Builds flexible component libraries</li>
-                            <li>Designs reusable component APIs</li>
-                            <li>Includes React 19 API changes</li>
-                            <li>Triggers on compound components and render props tasks</li>
-                        </ul>
-                        <div class="prompt-accordion">
-                            <summary class="prompt-accordion-header">
-                                <span class="prompt-accordion-icon">▶</span>
-                                <span>Example prompt</span>
-                            </summary>
-                            <div class="prompt-accordion-content">
-                                <code>/vercel-composition-patterns Refactor this Modal component to use the compound component pattern with proper context.</code>
-                            </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Replace boolean props with composition patterns</summary>
+                        <div class="use-case-content">
+                            <p>If a component has grown to accept multiple boolean props like <code>isLarge</code>, <code>showDetails</code>, the skill suggests using compound components or render props instead.</p>
                         </div>
-                    </div>
-                </details>
+                    </details>
+                </div>
+            </div>
 
-                <!-- vercel-react-best-practices -->
-                <details class="skill-category">
-                    <summary class="skill-category-header">
-                        <span class="skill-category-name">vercel-react-best-practices</span>
-                        <span class="skill-category-icon">+</span>
-                    </summary>
-                    <div class="skill-category-content">
-                        <p><strong>Purpose:</strong> React and Next.js performance optimization guidelines from Vercel Engineering.</p>
-                        <ul class="skill-features">
-                            <li>Optimal React component patterns</li>
-                            <li>Next.js page optimization</li>
-                            <li>Data fetching best practices</li>
-                            <li>Bundle optimization techniques</li>
-                            <li>Performance patterns and anti-patterns</li>
-                        </ul>
-                        <div class="prompt-accordion">
-                            <summary class="prompt-accordion-header">
-                                <span class="prompt-accordion-icon">▶</span>
-                                <span>Example prompt</span>
-                            </summary>
-                            <div class="prompt-accordion-content">
-                                <code>/vercel-react-best-practices Review this dashboard page for performance issues and suggest optimizations.</code>
-                            </div>
+            <h2 id="skill-agent-browser">agent-browser</h2>
+            <div class="skill-card" id="skill-agent-browser-card">
+                <div class="skill-card-header">
+                    <h3>agent-browser</h3>
+                    <span class="skill-badge">Productivity</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill lets TRAE control a web browser. It can open websites, fill out forms, click buttons, scroll pages, and extract data.</p>
+                    <details class="use-case">
+                        <summary>Example: Extract data from a website</summary>
+                        <div class="use-case-content">
+                            <p>Tell the skill to visit a page and collect information like prices, titles, or links. It navigates the site and returns the content you need.</p>
                         </div>
-                    </div>
-                </details>
-
-                <!-- webapp-testing -->
-                <details class="skill-category">
-                    <summary class="skill-category-header">
-                        <span class="skill-category-name">webapp-testing</span>
-                        <span class="skill-category-icon">+</span>
-                    </summary>
-                    <div class="skill-category-content">
-                        <p><strong>Purpose:</strong> Toolkit for testing local web applications using Playwright.</p>
-                        <ul class="skill-features">
-                            <li>Interacts with and tests web applications</li>
-                            <li>Verifies frontend functionality</li>
-                            <li>Debugs UI behavior</li>
-                            <li>Captures browser screenshots</li>
-                            <li>Views browser logs and console output</li>
-                            <li>Supports navigation, clicks, form fills, and assertions</li>
-                        </ul>
-                        <div class="prompt-accordion">
-                            <summary class="prompt-accordion-header">
-                                <span class="prompt-accordion-icon">▶</span>
-                                <span>Example prompt</span>
-                            </summary>
-                            <div class="prompt-accordion-content">
-                                <code>/webapp-testing Navigate to http://localhost:3000/login, fill in the form with test credentials, click submit, and verify the dashboard loads.</code>
-                            </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Fill out the same form with different data</summary>
+                        <div class="use-case-content">
+                            <p>The skill types into fields, selects dropdowns, clicks submit, and waits for the response — repeating the process for each set of data.</p>
                         </div>
-                    </div>
-                </details>
-            </section>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Check how a page looks</summary>
+                        <div class="use-case-content">
+                            <p>The skill can take a screenshot of any page. It can also click through navigation menus to verify that pages load, which is useful during development and testing.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
 
-            <section class="content-section">
-                <h2>Quick Reference Table</h2>
-                <table class="skills-table">
-                    <thead>
-                        <tr>
-                            <th>Skill</th>
-                            <th>Category</th>
-                            <th>Use When...</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><code>brainstorming</code></td><td>Ideation</td><td>Exploring options before building</td></tr>
-                        <tr><td><code>canvas-design</code></td><td>Visual Design</td><td>Creating posters, art, or static visuals</td></tr>
-                        <tr><td><code>chart-visualization</code></td><td>Data Viz</td><td>Generating charts from data</td></tr>
-                        <tr><td><code>data-analysis</code></td><td>Data</td><td>Analyzing Excel/CSV files</td></tr>
-                        <tr><td><code>doc-coauthoring</code></td><td>Documentation</td><td>Writing specs, PRDs, or decision docs</td></tr>
-                        <tr><td><code>figma</code></td><td>Design Integration</td><td>Translating Figma designs to code</td></tr>
-                        <tr><td><code>frontend-design</code></td><td>UI</td><td>Building web pages, dashboards, or components</td></tr>
-                        <tr><td><code>frontend-skill</code></td><td>UI</td><td>Creating visually impressive interfaces</td></tr>
-                        <tr><td><code>git-commit</code></td><td>Version Control</td><td>Generating conventional commit messages</td></tr>
-                        <tr><td><code>impeccable</code></td><td>UI Polish</td><td>Reviewing and refining interface design</td></tr>
-                        <tr><td><code>skill-creator</code></td><td>Meta</td><td>Creating new custom skills</td></tr>
-                        <tr><td><code>vercel-composition-patterns</code></td><td>React</td><td>Refactoring component architecture</td></tr>
-                        <tr><td><code>vercel-react-best-practices</code></td><td>React</td><td>Optimizing React/Next.js performance</td></tr>
-                        <tr><td><code>webapp-testing</code></td><td>Testing</td><td>Testing web apps with Playwright</td></tr>
-                    </tbody>
-                </table>
-            </section>
+            <h2 id="skill-brainstorming">brainstorming</h2>
+            <div class="skill-card" id="skill-brainstorming-card">
+                <div class="skill-card-header">
+                    <h3>brainstorming</h3>
+                    <span class="skill-badge">Productivity</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill helps organise your ideas before you start coding. You share a rough concept, and it asks clarifying questions and produces a structured plan.</p>
+                    <details class="use-case">
+                        <summary>Example: Clarify a rough idea</summary>
+                        <div class="use-case-content">
+                            <p>Say you want to build a dashboard but are not sure where to start. The skill asks questions about data sources, layout, and users, and produces a step-by-step plan.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Compare different approaches</summary>
+                        <div class="use-case-content">
+                            <p>The skill helps weigh options like comparing two databases or two UI layouts. You get a balanced view of trade-offs before building.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Write a specification document</summary>
+                        <div class="use-case-content">
+                            <p>For features that involve multiple components and data flows, the skill helps write a clear specification that other skills can follow during implementation.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h2 id="skill-figma">figma</h2>
+            <div class="skill-card" id="skill-figma-card">
+                <div class="skill-card-header">
+                    <h3>figma</h3>
+                    <span class="skill-badge">UI Design</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill reads a Figma design file and generates frontend code from it. It extracts layout, colours, typography, and spacing from the design.</p>
+                    <details class="use-case">
+                        <summary>Example: Convert a Figma mockup into code</summary>
+                        <div class="use-case-content">
+                            <p>Pass a Figma file link to the skill. It reads the design layers, extracts styles, and generates React components that match the visual layout.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Extract design tokens</summary>
+                        <div class="use-case-content">
+                            <p>The skill pulls out colours, spacing values, font sizes, and other design tokens from your Figma file. You get a consistent set of variables for your project.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Flag Figma setup issues before coding</summary>
+                        <div class="use-case-content">
+                            <p>When a Figma file has unnamed layers, inconsistent spacing, or missing component structure, the skill flags the problems so you can decide how to handle them.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h2 id="skill-frontend-design">frontend-design</h2>
+            <div class="skill-card" id="skill-frontend-design-card">
+                <div class="skill-card-header">
+                    <h3>frontend-design</h3>
+                    <span class="skill-badge">UI Design</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill builds interfaces with a distinct visual style from scratch. It handles layout, colour scheme, typography, and motion effects.</p>
+                    <details class="use-case">
+                        <summary>Example: Build a landing page from a description</summary>
+                        <div class="use-case-content">
+                            <p>Describe the sections you need — hero, features, pricing, testimonials — and the skill generates a styled page with appropriate layouts and visual hierarchy.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Improve an existing page's appearance</summary>
+                        <div class="use-case-content">
+                            <p>The skill reviews the layout and suggests adjustments — rearranging elements, adjusting spacing, adding visual accents — that improve the design without changing the content.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Build responsive components</summary>
+                        <div class="use-case-content">
+                            <p>The skill creates components that adapt to different screen sizes. Your layout works across mobile, tablet, and desktop.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h2 id="skill-frontend-skill">frontend-skill</h2>
+            <div class="skill-card" id="skill-frontend-skill-card">
+                <div class="skill-card-header">
+                    <h3>frontend-skill</h3>
+                    <span class="skill-badge">UI Design</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill creates clean interfaces with restrained style and clear visual hierarchy. It focuses on making important content stand out while avoiding visual clutter.</p>
+                    <details class="use-case">
+                        <summary>Example: Build a simple app interface</summary>
+                        <div class="use-case-content">
+                            <p>For an app shell with a sidebar, header, and content area, the skill creates a clean structure with proper spacing and clear visual hierarchy.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Tighten an uneven UI</summary>
+                        <div class="use-case-content">
+                            <p>If your interface has inconsistent paddings, misaligned buttons, or unclear content priority, the skill makes targeted adjustments to spacing, alignment, and visual emphasis.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Add subtle motion</summary>
+                        <div class="use-case-content">
+                            <p>The skill adds transitions, hover effects, and micro-interactions where appropriate. Just enough motion to make the interface feel responsive without being distracting.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h2 id="skill-chart-visualization">chart-visualization</h2>
+            <div class="skill-card" id="skill-chart-visualization-card">
+                <div class="skill-card-header">
+                    <h3>chart-visualization</h3>
+                    <span class="skill-badge">Data &amp; Content</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill examines your data and selects the most suitable chart type — bar, line, pie, scatter, and others from the available options.</p>
+                    <details class="use-case">
+                        <summary>Example: Show trends over time</summary>
+                        <div class="use-case-content">
+                            <p>Provide monthly numbers and the skill automatically selects a line chart, which shows trends clearly. The visual makes it easy to see whether values are rising, falling, or flat.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Compare items side by side</summary>
+                        <div class="use-case-content">
+                            <p>For comparing product sales across regions, the skill picks a grouped bar chart. You see which product is leading in which region at a glance.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Find patterns or outliers</summary>
+                        <div class="use-case-content">
+                            <p>When exploring data without a specific question, the skill recommends charts that reveal patterns. A scatter plot might show a correlation, or a histogram might highlight unusual outliers.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h2 id="skill-data-analysis">data-analysis</h2>
+            <div class="skill-card" id="skill-data-analysis-card">
+                <div class="skill-card-header">
+                    <h3>data-analysis</h3>
+                    <span class="skill-badge">Data &amp; Content</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill reads Excel or CSV files and runs SQL queries against them. You can ask for totals, averages, filtered lists, or multi-table reports.</p>
+                    <details class="use-case">
+                        <summary>Example: Summarise a spreadsheet</summary>
+                        <div class="use-case-content">
+                            <p>Upload a spreadsheet and ask something like "What is the total revenue per product?" The skill writes the query and returns the summarised results.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Join data from multiple sheets</summary>
+                        <div class="use-case-content">
+                            <p>If data is spread across multiple tabs — customers in one tab, orders in another — the skill connects them so you can ask questions involving both.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Filter and sort data</summary>
+                        <div class="use-case-content">
+                            <p>Ask the skill to find records matching criteria — like all orders over $500 from last month, sorted by date. It applies the filters and returns the relevant rows.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h2 id="skill-canvas-design">canvas-design</h2>
+            <div class="skill-card" id="skill-canvas-design-card">
+                <div class="skill-card-header">
+                    <h3>canvas-design</h3>
+                    <span class="skill-badge">Data &amp; Content</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill creates original visual content like posters and covers in PNG or PDF format. It handles composition, typography, and colour choices.</p>
+                    <details class="use-case">
+                        <summary>Example: Create an event poster</summary>
+                        <div class="use-case-content">
+                            <p>Describe your event — title, date, venue — and the style you want (minimal, bold, retro, modern). The skill generates a poster with balanced composition and appropriate typography.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Design social media graphics</summary>
+                        <div class="use-case-content">
+                            <p>The skill creates compositions sized correctly for each platform — blog covers, LinkedIn banners, or visual quotes.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Generate print-ready materials</summary>
+                        <div class="use-case-content">
+                            <p>The skill can produce PDF output for report covers, booklet front pages, or certificates, using typography and layout standards suitable for printing.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h2 id="skill-doc-coauthoring">doc-coauthoring</h2>
+            <div class="skill-card" id="skill-doc-coauthoring-card">
+                <div class="skill-card-header">
+                    <h3>doc-coauthoring</h3>
+                    <span class="skill-badge">Data &amp; Content</span>
+                </div>
+                <div class="skill-card-body">
+                    <p class="skill-description">This skill helps write and refine documents through an iterative process. You provide ideas and context, and it structures them into clear documents.</p>
+                    <details class="use-case">
+                        <summary>Example: Write a technical specification</summary>
+                        <div class="use-case-content">
+                            <p>Share rough notes about a feature. The skill organises them into sections — overview, requirements, architecture, timeline — and refines each section iteratively.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Create a project proposal</summary>
+                        <div class="use-case-content">
+                            <p>The skill guides you through writing a proposal piece by piece, asking for context and helping structure arguments so the final document clearly communicates scope and resource needs.</p>
+                        </div>
+                    </details>
+                    <details class="use-case">
+                        <summary>Example: Review an existing document</summary>
+                        <div class="use-case-content">
+                            <p>If you already have a draft, the skill reviews it for clarity, structure, and completeness. It identifies gaps, suggests reorganisations, and helps polish the language.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="skills.html" class="btn btn-secondary">← Previous: SKILLS</a>
+                <a href="skills-reference.html" class="btn btn-primary">Next: Skills in Action →</a>
+            </div>
         </article>
-        <div class="navigation-buttons">
-            <a href="skills.html" class="btn btn-secondary">← Previous: SKILLS</a>
-            <a href="skills-reference.html" class="btn btn-primary">Next: Skills in Action →</a>
-        </div>
     </main>
+
     <script src="scripts.js"></script>
 </body>
 </html>

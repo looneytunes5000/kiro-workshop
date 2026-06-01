@@ -53,33 +53,31 @@
 
             <h2 id="connecting-agent-programmatically">Connecting Your Agent Programmatically</h2>
 
-            <p>Once you've built your AI agent in Copilot Studio, the next step is making it accessible from your own applications, websites, or devices. This is done programmatically :meaning your code "talks" to the agent without manual interaction.</p>
+            <p>Once you've built your AI agent in Copilot Studio, the next step is making it accessible from your own applications, websites, or devices. This is done programmatically: your code "talks" to the agent without manual interaction.</p>
+
+            <p>This guide is for reference if you want to integrate your agent into channels other than Teams or Moodle. For the standard Teams and Moodle deployments, simply follow <a href="copilot-studio-reference.html">videos 4 and 5</a> in the E-Tutorials.</p>
 
             <p>Think of it like setting up a telephone line: your application dials the agent, and they can communicate back and forth automatically.</p>
 
 
 
-            <h2 id="enable-direct-line">Step 1: Enable Direct Line Speech Channel</h2>
-            <p>Want to integrate your agent programmatically without using the chat interface? Follow along with <strong>Video 4 and Video 5</strong> in the <a href="copilot-studio-reference.html">E-Tutorials series</a> to learn how to set up the Direct Line Speech Channel in Copilot Studio.</p>
+            <h2 id="enable-direct-line">Step 1: Enable Direct Line Speech Channel and Get Your Token Endpoint</h2>
+            <div class="image-container" style="text-align: center; margin-bottom: 24px;">
+                <img src="img/studio_2.png" alt="Studio Direct Line Speech configuration" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--gold-primary);">
+            </div>
 
-
-
-            <h2 id="token-endpoint">Step 2: Get Your Token Endpoint</h2>
-            <p>Once Direct Line Speech is enabled, you'll receive a <strong>token endpoint</strong> :this is a special URL your application uses to connect to your agent.</p>
-            <p>The token provides secure access to your agent and remains active for your integration needs.</p>
+            <p>You'll receive a <strong>token endpoint</strong> after enabling the Direct Line Speech Channel. This is a special URL your application uses to connect to your agent.</p>
 
             <div class="callout">
                 <div class="callout-header">
                     <div class="dot"></div>
-                    <span>How Tokens Work</span>
+                    <span class="callout-emphasis">Important</span>
                 </div>
-                <p>Your app uses the token endpoint :receives a token :uses that token to start conversations :the token stays active for continued access.</p>
+                <p>Your app uses the token endpoint, receives a token, uses that token to start conversations, and the token stays active for continued access.</p>
             </div>
 
-
-
-            <h2 id="using-token-code">Step 3: Integrate with TRAE</h2>
-            <p>Simply provide the token endpoint to TRAE, and the coding agent will handle the rest of the integration for you. No need to worry about the technical details :just share your endpoint and let TRAE do the work.</p>
+            <h2 id="using-token-code">Step 2: Integrate with TRAE</h2>
+            <p>Simply provide the token endpoint to TRAE, and the coding agent will handle the rest of the integration for you. No need to worry about the technical details: just share your endpoint and let TRAE do the work.</p>
 
 
 

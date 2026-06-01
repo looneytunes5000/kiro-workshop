@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRAE : AI Coding Agent - Documentation - TRAE</title>
+    <title>TRAE: AI Coding Agent - Documentation - TRAE</title>
     <link rel="icon" type="image/png" sizes="32x32" href="img/aiHackathon_icon-02.png?v=1">
     <link rel="shortcut icon" href="img/aiHackathon_icon-02.png?v=1">
     <link rel="stylesheet" href="styles.css">
@@ -20,18 +20,24 @@
 
     <main class="main" id="main-content">
         <header class="page-header">
-            <h1>TRAE : AI Coding Agent</h1>
-            <p>An autonomous AI agent that plans, builds, tests, and deploys your entire project : right inside the TRAE workspace</p>
+            <h1>TRAE: AI Coding Agent</h1>
+            <p>An autonomous AI agent that plans, builds, tests, and deploys your entire project right inside the TRAE workspace</p>
         </header>
 
         <article class="content">
             <h2 id="what-is-trae">What is TRAE?</h2>
-            <p>TRAE is an AI coding agent that autonomously plans and executes the entire development process :from understanding your requirements, to generating code, testing, previewing results, and deploying.</p>
+            <p>TRAE is an AI coding agent that autonomously plans and executes the entire development process from understanding your requirements to generating code, testing, previewing results, and deploying.</p>
             <p>You provide goals through natural language, voice, or file uploads. The agent independently breaks down tasks and works through them, greatly simplifying your development workflow.</p>
-            <p><strong>Note:</strong> For the aiHackathon, TRAE is the recommended AI coding agent for building your projects.</p>
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Note</span>
+                </div>
+                <p>For the aiHackathon, TRAE is the recommended AI coding agent for building your projects.</p>
+            </div>
 
             <h2 id="start-working">Getting Started</h2>
-            <p>When you open TRAE, the AI coding agent is ready to work. Use the mode toggle in the top-left corner to make sure you're in agent mode : then just start describing what you want to build.</p>
+            <p>When you open TRAE, the AI coding agent is ready to work. Use the mode toggle in the top-left corner to make sure you're in SOLO mode then just start describing what you want to build.</p>
 
             <h2 id="ui">Interface</h2>
             <p>The TRAE workspace is shown below. From left to right, it consists of the task management panel, the AI chat panel, and the tool panel.</p>
@@ -44,7 +50,7 @@
             <h2 id="capabilities">Capabilities</h2>
 
             <h3>Autonomous Coding</h3>
-            <p>The coding agent is your AI teammate that writes code for you. You describe what you want to build, and the agent figures out how to make it happen :from planning the architecture to writing the actual code.</p>
+            <p>The coding agent is your AI teammate that writes code for you. You describe what you want to build, and the agent figures out how to make it happen from planning the architecture to writing the actual code.</p>
             <p>Instead of coding everything step by step yourself, you give the agent your goal, review the plan it generates, and let it do the heavy lifting. You stay in control: approve the plan, watch progress, and step in whenever you need to.</p>
 
             <h3>Task Management</h3>
@@ -59,7 +65,7 @@
             </div>
 
             <h3>Built-in Tools</h3>
-            <p>TRAE provides a range of built-in tools, including an editor, documentation viewer, and browser. Use these tools to see files, read docs, and preview your app :all without leaving the workspace.</p>
+            <p>TRAE provides a range of built-in tools, including an editor, documentation viewer, and browser. Use these tools to see files, read docs, and preview your app all without leaving the workspace.</p>
 
             <div class="callout">
                 <div class="callout-header">
@@ -74,7 +80,7 @@
                     <div class="dot" style="background: #ef4444;"></div>
                     <span style="color: #ef4444;">aiHackathon Notice</span>
                 </div>
-                <p><strong>Paid premium features are not permitted during the aiHackathon.</strong> This includes Figma AI, Supabase, Payment service integrations, and other subscription-based services. Participants should use free-tier services, local development, and built-in features only (Editor, DocView, Terminal, Browser, DiffView, Agents, MCP, Settings).</p>
+                <p><strong>Paid premium features are not permitted during the aiHackathon, except for premium features provided by the organiser.</strong> This includes Figma AI, Supabase, Payment service integrations, and other subscription-based services. Participants should use free-tier services, local development, and built-in features only (Editor, DocView, Terminal, Browser, DiffView, Agents, MCP, Settings).</p>
             </div>
 
             <div class="callout" style="margin-top: 24px;">
@@ -82,7 +88,7 @@
                     <div class="dot" style="background: #f59e0b;"></div>
                     <span style="color: #f59e0b;">aiHackathon Resource</span>
                 </div>
-                <p><strong>Local LLM Engine is available as a resource during the aiHackathon.</strong> If your solution requires AI models to power your application, you can use <a href="ollama.html">Local LLM Engine</a> to run models locally. Local LLM Engine is included in the Survival Kit section :check there for quick access and setup guidance.</p>
+                <p><strong>Local LLM Engine is available as a resource during the aiHackathon.</strong> If your solution requires AI models to power your application, you can use <a href="ollama.html">Local LLM Engine</a> to run models locally. Local LLM Engine is included in the Survival Kit section check there for quick access and setup guidance.</p>
             </div>
 
             <h2 id="diffview">DiffView</h2>
@@ -99,6 +105,14 @@
                 <p class="image-caption">Example workflow showing file changes with line-by-line diffs across the project</p>
             </div>
 
+            <div class="callout">
+                <div class="callout-header">
+                    <div class="dot"></div>
+                    <span>Note</span>
+                </div>
+                <p>Changes are automatically applied, there is no need to approve every update.</p>
+            </div>
+
             <h2 id="custom-models">Custom models</h2>
             <div class="workflow-image-container">
                 <img src="img/solo-overview_3.png" alt="Additional overview screenshot" class="workflow-image" style="max-width: 50%; width: auto;" loading="lazy">
@@ -110,12 +124,13 @@
                     <div class="dot"></div>
                     <span class="callout-emphasis">Important</span>
                 </div>
-                <p>Four models are designated and pre-installed in the AI coding agents for the aiHackathon:</p>
+                <p>Five models are designated and pre-installed in the AI coding agents for the aiHackathon:</p>
                 <ul>
-                    <li><strong>Qwen3.6</strong></li>
-                    <li><strong>MiniMax-M2.7</strong></li>
-                    <li><strong>Kimi K2.6</strong></li>
-                    <li><strong>GLM-5.1</strong></li>
+                    <li><strong>qwen3.6-plus</strong> (suggested model, supports text and image input)</li>
+                    <li><strong>minimax-m2.7</strong></li>
+                    <li><strong>kimi-k2.6</strong> (supports text and image input)</li>
+                    <li><strong>glm-5.1</strong></li>
+                    <li><strong>deepseek-v4-flash</strong></li>
                 </ul>
                 <p>These models offer similar performance for coding and agentic tasks. Contestants are <strong>free to switch between them</strong> should they experience instability or slowdowns from any one model. Contestants are <strong>not permitted</strong> to use any other models for development in TRAE and OpenCode.</p>
             </div>

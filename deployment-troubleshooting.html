@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fixing Deployment Issues - TRAE SOLO Workshop</title>
+    <title>Fixing Deployment Issues - TRAE Workshop</title>
     <link rel="icon" type="image/png" sizes="32x32" href="img/aiHackathon_icon-02.png?v=1">
     <link rel="shortcut icon" href="img/aiHackathon_icon-02.png?v=1">
     <link rel="stylesheet" href="styles.css">
@@ -28,14 +28,14 @@
             <h2>What We're Doing</h2>
             <p>In the <a href="deploy-backend.html">previous page</a>, you learned how to deploy your app. But what happens when deployment fails? Error messages, missing files, things that work on your computer but break in the cloud : this is where things get interesting.</p>
 
-            <p>In this exercise, you'll use TRAE SOLO's Spec mode to diagnose and fix deployment problems for the paraphrasing mentoring app. Unlike the Practice Mode exercise where you built something new from scratch, this is a "something is broken, let's fix it" scenario.</p>
+            <p>On this page, you'll use TRAE's Spec mode to diagnose and fix deployment problems. Unlike building something new from scratch, this is a "something is broken, let's fix it" scenario.</p>
 
             <h2>Choosing Between Vibe Mode and Spec Mode</h2>
             <p>Before we dive in, it's worth understanding when to use each mode for troubleshooting:</p>
 
             <ul>
                 <li><strong><a href="vibe-coding-reference.html">Vibe Mode</a></strong> is great for quick, simple fixes : like "the button text is cut off" or "add an error message when the upload fails." You describe the problem, and the AI suggests a fix. Fast and iterative.</li>
-                <li><strong>Spec Mode (Spec-Driven Development)</strong> is better when the problem is deeper or you're not sure what's wrong. It forces a structured approach: understand the issue, design a fix plan, and execute systematically.</li>
+                <li><strong>Spec Mode (<a href="spec-driven-reference.html">Spec-Driven Development</a>)</strong> is better when the problem is deeper or you're not sure what's wrong. It forces a structured approach: understand the issue, design a fix plan, and execute systematically.</li>
             </ul>
 
             <div class="callout">
@@ -50,7 +50,6 @@
             <p>Deployment scripts can fail for many reasons. Here are the most common ones, explained in plain English:</p>
             <ul>
                 <li><strong>Wrong passwords or keys</strong> : Your app uses "environment variables" (like secret passwords) to connect to services. If these don't match between your computer and the server, things break.</li>
-                <li><strong>Missing pieces</strong> : Your app needs certain tools or services installed. If the server doesn't have them, the app won't run.</li>
                 <li><strong>Wrong addresses</strong> : File paths or web addresses that work on your laptop might be different on the server.</li>
                 <li><strong>Permission issues</strong> : The server account running your app might not have the right to read certain files or write to certain folders.</li>
                 <li><strong>Version mismatches</strong> : Your computer has newer versions of software than the server does. What works locally might break in production.</li>
@@ -58,7 +57,7 @@
             </ul>
 
             <h2>Step 1: Tell TRAE What's Wrong</h2>
-            <p>Open TRAE SOLO and switch to Spec mode. Describe what you're seeing:</p>
+            <p>Open TRAE and switch to Spec mode. Describe what you're seeing:</p>
 
             <details class="prompt-accordion">
                 <summary class="prompt-accordion-header">

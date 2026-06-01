@@ -38,6 +38,7 @@
             align-items: center;
             text-align: center;
             position: relative;
+            overflow: visible;
             background:
                 radial-gradient(ellipse 70% 50% at 50% 0%, oklch(from var(--gold-primary) l c h / 0.06) 0%, transparent 100%);
         }
@@ -275,6 +276,33 @@
             font-weight: 500 !important;
         }
 
+        /* home theme toggle */
+
+        .hero-section .theme-toggle-page {
+            position: absolute;
+            top: 24px;
+            right: var(--content-gap);
+            background: var(--surface);
+            border: 1px solid var(--blue-accent);
+            color: var(--text-secondary);
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            min-height: 36px;
+            min-width: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: border-color 0.2s var(--ease-out-quint), background 0.2s var(--ease-out-quint);
+            z-index: 9999 !important;
+        }
+
+        .hero-section .theme-toggle-page:hover {
+            border-color: var(--gold-primary);
+            background: rgba(201, 168, 76, 0.08);
+        }
+
         /*  footer  */
 
         .simplified-footer {
@@ -411,6 +439,7 @@
 
     <main class="main" id="main-content">
         <article class="content">
+            <button class="theme-toggle-page theme-toggle-home" style="position: fixed; top: 24px; right: 30px; z-index: 99999 !important; background: var(--surface); border: 1px solid var(--blue-accent); color: var(--text-secondary); padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 1rem; min-height: 36px; min-width: 36px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;" aria-label="Toggle theme">☀️</button>
             <section class="hero-section animate-in">
                 <div class="hero-logo animate-in">
                     <img src="img/aiHackathon logo.png" alt="aiHackathon 2026" width="440" height="120">

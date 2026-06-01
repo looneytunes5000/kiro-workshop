@@ -300,6 +300,7 @@ body {
     transition: color 0.1s ease, background 0.1s ease;
     border-left: 2px solid transparent;
     line-height: 1.5;
+    position: relative;
 }
 
 .sidebar-link:visited {
@@ -345,11 +346,34 @@ body {
     transform: rotate(90deg);
 }
 
+.sidebar-nav-item .sidebar-link.sub-item {
+    display: none;
+}
+
+.sidebar-nav-item.expanded .sidebar-link.sub-item {
+    display: block;
+}
+
 .sidebar-link.sub-item.active {
     color: var(--gold-primary);
     background: rgba(232, 197, 71, 0.1);
     border-left-color: var(--gold-primary);
     font-weight: 600;
+}
+
+.sidebar-link.active-parent {
+    color: var(--text-primary);
+    background: transparent;
+    border-left-color: transparent;
+    font-weight: 500;
+}
+
+.sidebar-link.active-parent::before {
+    display: none;
+}
+
+.sidebar-link.active-parent .subpage-arrow {
+    color: var(--gold-primary);
 }
 
 .sidebar-link.sub-sub-item {
@@ -2580,6 +2604,30 @@ a.btn:hover, a.btn:focus { text-decoration: none !important; }
 .chatbot-fab:focus-visible {
     outline: 2px solid var(--gold-primary);
     outline-offset: 2px;
+}
+
+.floating-toc-btn {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface);
+    border: 1px solid var(--blue-accent);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: border-color 0.2s var(--ease-out-quint), background 0.2s var(--ease-out-quint);
+}
+
+.floating-toc-btn:hover {
+    border-color: var(--gold-primary);
+    background: rgba(201, 168, 76, 0.08);
 }
 
 .chatbot-window {

@@ -35,7 +35,7 @@ const SIDEBAR_SECTIONS = [
         title: 'AI Coding Agents',
         pages: [
             {
-                title: 'TRAE Overview',
+                title: 'TRAE',
                 subpages: [
                     { file: 'trae-solo-overview.html', label: 'Overview' },
                     { file: 'multitasking.html', label: 'Multitasking' },
@@ -220,7 +220,8 @@ document.addEventListener('DOMContentLoaded', function() {
         updateThemeIcon(themeBtn, newTheme);
     });
 
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const rawPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPage = rawPage.endsWith('.html') ? rawPage : rawPage + '.html';
     const visitedPages = JSON.parse(localStorage.getItem('visitedPages') || '[]');
     if (!visitedPages.includes(currentPage)) {
         visitedPages.push(currentPage);
@@ -278,7 +279,8 @@ function generateSidebar() {
     const sidebar = document.querySelector('.sidebar');
     if (!sidebar) return;
 
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const rawPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPage = rawPage.endsWith('.html') ? rawPage : rawPage + '.html';
 
     let sidebarHTML = `
         <div class="sidebar-header">
@@ -331,9 +333,11 @@ function generateSidebar() {
 
             if (isCategoryOnly) {
                 const expandedClass = isSubpageActive ? 'expanded' : '';
+                const activeParentClass = isSubpageActive ? 'active-parent' : '';
 
+                sidebarHTML += `<div class="sidebar-nav-item ${expandedClass}">`;
                 sidebarHTML += `
-                    <div class="sidebar-link has-subpages ${expandedClass}" style="cursor: pointer;">
+                    <div class="sidebar-link has-subpages ${activeParentClass}" style="cursor: pointer;">
                         ${page.title}
                         <span class="subpage-arrow">▶</span>
                     </div>
@@ -341,20 +345,23 @@ function generateSidebar() {
 
                 page.subpages.forEach(function(subpage) {
                     const isSubActive = subpage.file === currentPage;
-                    const displayStyle = isSubpageActive ? 'block' : 'none';
                     sidebarHTML += `
-                        <a href="${subpage.file}" class="sidebar-link sub-item ${isSubActive ? 'active' : ''}" style="display: ${displayStyle};">
+                        <a href="${subpage.file}" class="sidebar-link sub-item ${isSubActive ? 'active' : ''}">
                             ${subpage.label}
                         </a>
                     `;
                 });
+                sidebarHTML += `</div>`;
             } else {
                 const isActive = page.file === currentPage;
+                const isActiveOrSubActive = isActive || isSubpageActive;
                 const arrowIcon = hasSubpages ? '<span class="subpage-arrow">▶</span>' : '';
                 const expandedClass = isSubpageActive ? 'expanded' : '';
+                const activeParentClass = isSubpageActive && !isActive ? 'active-parent' : '';
 
+                sidebarHTML += `<div class="sidebar-nav-item ${expandedClass}">`;
                 sidebarHTML += `
-                    <a href="${page.file}" class="sidebar-link ${isActive ? 'active' : ''} ${hasSubpages ? 'has-subpages' : ''} ${expandedClass}">
+                    <a href="${page.file}" class="sidebar-link ${isActive ? 'active' : ''} ${hasSubpages ? 'has-subpages' : ''} ${activeParentClass}">
                         ${page.label}
                         ${arrowIcon}
                     </a>
@@ -363,14 +370,14 @@ function generateSidebar() {
                 if (hasSubpages) {
                     page.subpages.forEach(function(subpage) {
                         const isSubActive = subpage.file === currentPage;
-                        const displayStyle = isSubActive ? 'block' : 'none';
                         sidebarHTML += `
-                            <a href="${subpage.file}" class="sidebar-link sub-item ${isSubActive ? 'active' : ''}" style="display: ${displayStyle};">
+                            <a href="${subpage.file}" class="sidebar-link sub-item ${isSubActive ? 'active' : ''}">
                                 ${subpage.label}
                             </a>
                         `;
                     });
                 }
+                sidebarHTML += `</div>`;
             }
         });
 
@@ -386,18 +393,43 @@ function generateSidebar() {
 
     sidebar.innerHTML = sidebarHTML;
 
-    document.querySelectorAll('.sidebar-link.has-subpages:not(a)').forEach(function(link) {
-        link.addEventListener('click', function(e) {
+    document.querySelectorAll('.sidebar-nav-item .sidebar-link.has-subpages').forEach(function(link) {
+        if (link.tagName !== 'A') {
+            link.setAttribute('tabindex', '0');
+            link.setAttribute('role', 'button');
+            link.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    if (sidebar) {
+        sidebar.addEventListener('click', function(e) {
+            const hasSubpagesEl = e.target.closest('.sidebar-nav-item .sidebar-link.has-subpages');
+            if (!hasSubpagesEl) return;
+
             e.preventDefault();
-            link.classList.toggle('expanded');
-            let sibling = link.nextElementSibling;
-            while (sibling && sibling.classList.contains('sub-item')) {
-                const currentDisplay = sibling.style.display;
-                sibling.style.display = currentDisplay === 'none' ? 'block' : 'none';
-                sibling = sibling.nextElementSibling;
+            e.stopPropagation();
+
+            const navItem = hasSubpagesEl.closest('.sidebar-nav-item');
+            if (!navItem) return;
+
+            const isExpanding = !navItem.classList.contains('expanded');
+            navItem.classList.toggle('expanded');
+            if (hasSubpagesEl.tagName !== 'A') {
+                hasSubpagesEl.setAttribute('aria-expanded', String(isExpanding));
             }
         });
-    });
+
+        sidebar.addEventListener('keydown', function(e) {
+            const hasSubpagesEl = e.target.closest('.sidebar-nav-item .sidebar-link.has-subpages');
+            if (!hasSubpagesEl || hasSubpagesEl.tagName === 'A') return;
+
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                e.stopPropagation();
+                hasSubpagesEl.click();
+            }
+        });
+    }
 
     const pageHeader = document.querySelector('.page-header');
     if (pageHeader) {
@@ -407,6 +439,7 @@ function generateSidebar() {
         themeBtn.textContent = '🌙';
         pageHeader.appendChild(themeBtn);
     }
+
 }
 
 function generateOverview() {
@@ -524,12 +557,12 @@ function initCollapsibleSections() {
     const savedState = JSON.parse(localStorage.getItem('sidebarCollapsed') || '{}');
 
     document.querySelectorAll('.collapsible').forEach(function(section) {
-        const sectionId = section.getAttribute('data-section');
         const hasActiveLink = section.querySelector('.sidebar-link.active') !== null;
 
+        // Auto-expand sections containing the active link for navigation UX,
+        // but do NOT modify savedState here - preserve the user's explicit preference
         if (hasActiveLink) {
             section.classList.remove('collapsed');
-            savedState[sectionId] = false;
         }
     });
 
@@ -539,19 +572,48 @@ function initCollapsibleSections() {
             const header = e.target.closest('.collapsible-header');
             if (!header) return;
 
+            if (header.querySelector('a:hover')) {
+                return;
+            }
+
             e.preventDefault();
+            e.stopPropagation();
+
             const section = header.closest('.collapsible');
             if (!section) return;
 
             const sectionId = section.getAttribute('data-section');
             section.classList.toggle('collapsed');
-            const isCollapsed = section.classList.contains('collapsed');
-            savedState[sectionId] = isCollapsed;
+            savedState[sectionId] = section.classList.contains('collapsed');
             localStorage.setItem('sidebarCollapsed', JSON.stringify(savedState));
+
+            const icon = header.querySelector('.collapsible-icon');
+            if (icon) {
+                icon.setAttribute('aria-expanded', String(!section.classList.contains('collapsed')));
+            }
+        });
+
+        sidebar.addEventListener('keydown', function(e) {
+            const header = e.target.closest('.collapsible-header');
+            if (!header) return;
+
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                e.stopPropagation();
+                header.click();
+            }
         });
     }
 
-    localStorage.setItem('sidebarCollapsed', JSON.stringify(savedState));
+    document.querySelectorAll('.collapsible-header').forEach(function(header) {
+        if (!header.getAttribute('tabindex')) {
+            header.setAttribute('tabindex', '0');
+            header.setAttribute('role', 'button');
+            const section = header.closest('.collapsible');
+            const isExpanded = section && !section.classList.contains('collapsed');
+            header.setAttribute('aria-expanded', String(isExpanded));
+        }
+    });
 }
 
 function initSidebarKeyboardNavigation() {
@@ -602,8 +664,10 @@ function generateBreadcrumbs() {
     const mainElement = document.querySelector('.main');
     if (!mainElement) return;
 
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const rawPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPage = rawPage.endsWith('.html') ? rawPage : rawPage + '.html';
     if (currentPage === 'index.html') return;
+    if (currentPage === 'home.html') return;
 
     const pageHeader = mainElement.querySelector('.page-header');
     if (!pageHeader) return;
@@ -618,7 +682,7 @@ function generateBreadcrumbs() {
     const homeItem = document.createElement('li');
     homeItem.className = 'breadcrumb-item';
     const homeLink = document.createElement('a');
-    homeLink.href = 'index.html';
+    homeLink.href = 'home.html';
     homeLink.textContent = 'Home';
     homeItem.appendChild(homeLink);
     breadcrumbList.appendChild(homeItem);
@@ -670,12 +734,12 @@ function createSeparator() {
 
 const CHATBOT_CONTEXT = {
     eventName: 'aiHackathon 2026',
-    eventDescription: 'A hackathon focused on AI-driven development using TRAE tools, covering Vibe Coding, Spec-Driven Development, AI Coding Agents, and enterprise AI systems.',
+    eventDescription: 'A hackathon focused on AI-driven development using TRAE and OpenCode tools, covering Vibe Coding, Spec-Driven Development, AI Coding Agents, and enterprise AI systems.',
     tracks: [
         {
             name: 'Training Session',
             description: 'Learn the fundamentals of TRAE\'s AI-driven development. From Vibe Coding to Spec-Driven Development and Skills activation.',
-            pages: ['training-reference.html', 'ai-coding-agients.html', 'vibe-coding-reference.html', 'llm-eval-intro.html', 'spec-driven-reference.html', 'free-practice-feature.html', 'skills.html', '14-skills.html', 'skills-reference.html', 'getting-started.html']
+            pages: ['training-reference.html', 'ai-coding-agents.html', 'vibe-coding-reference.html', 'llm-eval-intro.html', 'spec-driven-reference.html', 'free-practice-feature.html', 'skills.html', '14-skills.html', 'skills-reference.html', 'getting-started.html']
         },
         {
             name: 'AI Coding Agents',
@@ -689,7 +753,7 @@ const CHATBOT_CONTEXT = {
         }
     ],
     roadmap: [
-        { step: 1, title: 'Getting Started', tag: 'Training', desc: 'Introduction to TRAE, environment setup, and understanding the dual-client architecture with MTC and Code modes.' },
+        { step: 1, title: 'Getting Started', tag: 'Training', desc: 'Introduction to TRAE, environment setup, and understanding the spec workflow with /spec command.' },
         { step: 2, title: 'Vibe Coding', tag: 'Training', desc: 'Rapid feature development using natural language descriptions. Build real interfaces with conversational AI workflows.' },
         { step: 3, title: 'Spec-Driven Development', tag: 'Training', desc: 'Structured specifications for complex, multi-file features. Plan requirements and edge cases before writing code.' },
         { step: 4, title: 'Skills', tag: 'Training', desc: 'Access to 14 curated essential skills covering development, design, data analysis, and content creation.' },
@@ -711,56 +775,82 @@ const CHATBOT_CONTEXT = {
         'vercel-react-best-practices', 'webapp-testing'
     ],
     keyTools: [
-        { name: 'TRAE', desc: 'AI-powered IDE with multitasking, tool panel, and MCP integration' },
-        { name: 'OpenCode', desc: 'Terminal-based and web UI for AI-powered coding' },
-        { name: 'AI Agent Builder', desc: 'Enterprise AI agent building and deployment' },
-        { name: 'GenAI Portal', desc: 'Browser automation and advanced AI interactions' },
-        { name: 'Local LLM Engine', desc: 'Local LLM running for private AI development' }
+        { name: 'TRAE', desc: 'AI-powered IDE with multitasking, tool panel, MCP integration, and SOLO mode' },
+        { name: 'OpenCode', desc: 'Terminal-based and web UI for AI-powered coding; free and open-source' },
+        { name: 'AI Agent Builder', desc: 'Microsoft Copilot Studio: enterprise AI agent building and deployment' },
+        { name: 'GenAI Portal', desc: 'Web gateway for LLM, image, video generation models, and Deep Research' },
+        { name: 'Local LLM Engine', desc: 'Run LLMs locally via Ollama for private AI development' }
     ],
     pageSummaries: {
-        'getting-started.html': 'Introduction to TRAE, covering environment setup, the dual-client architecture with MTC (Chat) and Code modes, and how to configure your first AI-powered session.',
-        'vibe-coding-reference.html': 'Vibe Coding: rapid feature development using natural language descriptions. You describe what you want in plain English and the AI builds it iteratively. Covers prompt writing best practices and examples of good vs poor prompts.',
-        'spec-driven-reference.html': 'Spec-Driven Development: structured approach for complex multi-file features. Generate requirements documents, technical specifications, and implementation plans before writing code. Best for projects with many moving parts.',
-        'skills.html': 'Overview of the 14 curated essential skills available in TRAE, covering development (brainstorming, git-commit), design (canvas-design, figma, frontend-design, impeccable), data (chart-visualization, data-analysis), content (doc-coauthoring), and testing (webapp-testing).',
-        'trae-solo-overview.html': 'TRAE overview: multitasking capabilities, tool panel for file management and terminal access, and how to coordinate multiple AI-powered tasks simultaneously.',
-        'mcp-integration.html': 'Model Context Protocol (MCP) integration: connecting TRAE to external tools, APIs, databases, and services. Enables the AI agent to read/write files, run commands, query data, and deploy applications.',
-        'opencode.html': 'OpenCode: terminal-based coding agent interface for AI-powered development workflows in your console. Alternative to the GUI-based TRAE experience.',
-        'microsoft-copilot-studio.html': 'AI Agent Builder: build and deploy custom AI agents for enterprise use. Create conversational Q&A bots, connect to knowledge bases, and integrate with Microsoft 365 and other business systems.',
-        'agent-integration.html': 'Agent Integration with Copilot Studio: configuring voice channels like Direct Line Speech, obtaining authentication tokens, and embedding AI agents into applications for real-time conversations.',
-        'genai-portal.html': 'GenAI Portal: browser automation and advanced AI interaction capabilities. Automate web workflows, handle authentication, and scale AI-powered browsing tasks.',
-        'ollama.html': 'Local LLM Engine: running AI language models locally on your own machine for private, offline AI development. Supports models like Llama, Mistral, and Phi.'
+        'getting-started.html': 'How to start a new project in TRAE using the /spec command. Workflow: open a folder, write a spec prompt, review output, iterate. Covers spec workflow for large features vs chat for small tweaks.',
+        'vibe-coding-reference.html': 'Vibe Coding: rapid feature development using natural language. Best for quick UI additions, simple features, bug fixes, single-file refactoring. If requirements span multiple paragraphs, use Spec mode instead. Covers good vs poor prompt examples and iterative workflow.',
+        'spec-driven-reference.html': 'Spec-Driven Development: generates spec.md (requirements), design.md (architecture), tasks.md (steps). Best for multi-file features, cross-cutting changes. In hackathon: suggested to approve specs rather than edit extensively, given the tight timeline.',
+        'skills.html': 'Overview of TRAE skills: 14 pre-installed specialised capabilities. Two activation methods: automatic (agent suggests based on task) and manual (user specifies like /frontend-design). Skills work like specialised experts for UI, testing, security, etc.',
+        '14-skills.html': 'Catalogue of 14 skills: Development Tools (git-commit, react-best-practices, webapp-testing, composition-patterns), Productivity (agent-browser, brainstorming), UI Design (figma, frontend-design, frontend-skill), Data & Content (chart-visualization, data-analysis, canvas-design, doc-coauthoring).',
+        'skills-reference.html': 'Skills in Action demonstrations: frontend-design for UI polish (spacing, typography, accessibility), and code-reviewer for catching issues in AI-generated code (hardcoded mock data, placeholders). Always review AI-generated code before deployment.',
+        'training-reference.html': 'Recap of the training session: Vibe Coding (basics + Ollama demo), Spec-Driven Development (basics + Free Practice demo), Skills (basics + in action), and Next Steps (getting started). Links to dedicated pages for each topic.',
+        'ai-coding-agents.html': 'Introduction to AI coding agents and the agentic loop (gather context, take action, verify). Key differentiators: persistent knowledge via AGENTS.md/ MEMORY.md, tools/automation via MCP, delegation to subagents. Two available agents: TRAE and OpenCode.',
+        'llm-eval-intro.html': 'Demo on integrating a local LLM with TRAE. Covers vibe technique to evaluate and connect local LLMs for development.',
+        'free-practice-feature.html': 'Free Practice mode in TRAE for hands-on skill development. Use /spec for spec-driven tasks.',
+        'trae-solo-overview.html': 'TRAE overview: SOLO mode (recommended for hackathon), workspace layout (tasks, chat, tools), 5 designated pre-installed models (qwen3.6-plus, minimax-m2.7, kimi-k2.6, glm-5.1, deepseek-v4-flash), DiffView for tracking changes. Premium features (Figma AI, Supabase, payments) are NOT permitted. Changes are auto-applied, no approval needed.',
+        'multitasking.html': 'Managing multiple tasks simultaneously within a single project. Use cases: simultaneous chat + development, parallel frontend/backend development. Create, rename, delete tasks via the task panel. TRAE breaks limitations of serial task execution.',
+        'tool-panel.html': '11 tools in SOLO mode: Editor, DocView, Terminal, Browser, DiffView, Agents, MCP, Settings (available); Figma, Supabase, Integrations (PREMIUM - NOT PERMITTED). Flow mode enables automatic tool switching. Agent confirms before destructive operations.',
+        'mcp-integration.html': 'Model Context Protocol (MCP): open standard for connecting AI agents to external tools/APIs/databases. 3 included MCP servers: Context7 (real-time docs), Excel (read/write), Playwright (browser automation). MCP is heavy on context window -- only enable servers you need. Premium MCP servers not permitted.',
+        'deploy-backend.html': 'Deployment guide: localhost is usually sufficient for hackathon. Vercel NOT RECOMMENDED due to major security breach in April 2026. Deployment path: push to GitHub, create GitHub Codespace, open Ports tab, set to Public, copy URL.',
+        'deployment-troubleshooting.html': 'Exercise using TRAE Spec mode to diagnose and fix deployment problems. Common issues: wrong env variables, wrong file paths, permission issues, version mismatches, connection problems. Vibe mode for quick fixes; Spec mode for deeper/unknown problems.',
+        'opencode.html': 'OpenCode overview: free, open-source AI coding assistant, another option alongside TRAE. TRAE vs OpenCode comparison: TRAE has subscription, safe sandbox, managed harness. OpenCode is free, terminal-focused, DIY harness. Same 5 designated models as TRAE.',
+        'opencode-web-ui.html': 'OpenCode Quick Start: initialise project, iterate on plan (Plan mode), build features (Tab key). Supports drag-and-drop images for visual references. Use @ syntax to reference files. /undo to revert, /redo to reapply. Plan mode for complex changes, direct build for simple edits.',
+        'microsoft-copilot-studio.html': 'AI Agent Builder: low-code platform for building Copilot Studio copilots with Microsoft LLMs. aiHackathon access via VTC staff account at www.vtc.edu.hk/mscopilotstudioforaihackathon2026. Environment available for 1 month after competition. Key capabilities: built-in LLM, knowledge storage, multi-language support.',
+        'copilot-studio-reference.html': 'Copilot Studio E-Tutorials: 5 video episodes on Panopto showing how to create and deploy agents. (1) Getting Started, (2) Instruction and Knowledge, (3) Settings/Testing/Publishing, (4) Embedding in Moodle, (5) Embedding in Teams. Videos 4-5 cover Teams and Moodle deployments.',
+        'agent-integration.html': 'Programmatic agent integration: enable Direct Line Speech Channel to get a token endpoint, then provide it to TRAE for integration. For Teams/Moodle deployments, follow E-Tutorial videos 4-5. Security warning: keep token endpoints secure, do not expose in client-side code.',
+        'genai-portal.html': 'GenAI Portal: web gateway for LLM, image, video generation, and Deep Research. Contestant credits: 1,000,000 LLM tokens, 100 images, 30 videos, 30 Deep Research runs. Extra tokens to accelerate hackathon development.',
+        'genai-portal-reference.html': 'VTC GenAI Portal Browser Automation using Playwright (pre-installed as MCP tool in TRAE). Portal URL: https://genai.vtc.edu.hk/. Covers automating image generation with Nano banana, batch generation from JSON, and video generation. Optional -- only needed if project requires automated image/video generation.',
+        'ollama.html': 'Local LLM Engine via Ollama: run AI models locally without internet. Available models: gemma4:e4b (Mixture-of-experts, ~5s, text+image, chatting agents), deepseek-r1:8b (chain-of-thought, ~15s, text-only, math/logic), qwen3.5:35b (general reasoning, ~60s, strong Chinese, text+image), qwen2.5vl:7b (visual-language, ~15s/image, image/OCR). No limits, no paywalls.'
     },
     keyConcepts: {
-        'Vibe Coding': 'A development approach where you describe user interfaces and features using natural language, and the AI generates the code iteratively through conversation. Focuses on rapid prototyping without writing code manually.',
-        'Spec-Driven Development': 'A structured methodology where you generate formal requirement documents and technical specifications before implementation. Used for complex features that need planning, edge-case analysis, and multi-file coordination.',
-        'MCP (Model Context Protocol)': 'A standard for connecting AI coding agents to external tools and data sources. Enables agents to access databases, APIs, file systems, and development environments to take real-world actions beyond text generation.',
-        'Skills': 'Pre-built specialized capabilities within TRAE that guide the AI through specific workflows (e.g., testing, design, data analysis, documentation). Each skill provides structured prompts, patterns, and best practices.',
-        'Agentic Loop': 'The cycle where an AI coding agent gathers context from the codebase, takes action by writing or modifying code, then verifies results by running tests or checking for errors. Unlike a chatbot, the agent takes concrete actions.',
-        'Direct Line Speech': 'A communication channel in Microsoft Copilot Studio that allows real-time voice conversations with your AI agent. Used for building voice-enabled assistants in applications.',
-        'TRAE': 'An AI-powered integrated development environment that combines code editing, AI chat, tool panels, and MCP integration into a single workspace for building applications with AI assistance.'
+        'Vibe Coding': 'A development approach where you describe features in natural language and the AI builds iteratively through conversation. Best for quick prototyping, simple features, and single-file changes. If requirements span multiple paragraphs, use Spec mode instead.',
+        'Spec-Driven Development': 'A structured methodology generating spec.md, design.md, and tasks.md before implementation. Used for complex multi-file features needing planning and edge-case analysis. Fixes during planning are 5-7x less costly than during implementation.',
+        'MCP (Model Context Protocol)': 'An open standard for connecting AI coding agents to external tools, APIs, databases, and file systems. Enables agents to take real-world actions beyond text generation. Three included servers: Context7 (docs), Excel (read/write), Playwright (browser automation).',
+        'Skills': 'Pre-built specialized capabilities within TRAE that guide the AI through specific workflows. 14 skills available covering development, design, data, content, and testing. Two activation methods: automatic (agent suggests) and manual (user specifies).',
+        'Agentic Loop': 'The cycle where an AI coding agent gathers context from the codebase, takes action by writing/modifying code, then verifies results. Unlike a chatbot, the agent takes concrete actions and has persistent knowledge via AGENTS.md and MEMORY.md files.',
+        'Direct Line Speech': 'A communication channel in Copilot Studio for real-time voice conversations with your AI agent. Used for building voice-enabled assistants. Provides a token endpoint that applications use to connect.',
+        'SOLO Mode': 'The recommended mode in TRAE for aiHackathon. Provides autonomous coding, multitasking, and built-in tools (Editor, DocView, Terminal, Browser, DiffView, Agents, MCP, Settings). Changes are auto-applied without needing approval.',
+        'OpenCode': 'Free, open-source AI coding assistant. Another option alongside TRAE for the hackathon. Terminal-based and web UI. Plan mode (Tab to switch) for complex changes, direct build for simple edits. /undo and /redo for version control.',
+        'Flow Mode': 'Automatic tool switching in TRAE based on the AI\'s current work stage. Enables seamless transitions between tools. Read-only during execution. Exit by clicking Flow button or double-clicking.',
+        'TRAE': 'An AI-powered IDE combining code editing, SOLO mode, chat, tool panel, MCP integration, and Flow mode into a single workspace for building applications with AI assistance.',
+        'Harness Engineering': 'The underlying framework controlling how the AI agent behaves, makes decisions, and interacts with your codebase. TRAE provides a managed harness; OpenCode offers DIY/customizable harness.'
     },
     faqEntries: [
         { q: 'What are the judging criteria?', a: 'Four criteria: Quality (Completeness of Functionality and User Experience), Feasibility (Potential Technical Feasibility and Practical Implementation of the Prototype or Proof-of-Concept), Innovation and Creativity (Brand-new Ideas or Creative Solutions), and Presentation (Clarity, Fluency and Effective Communication). Note: these criteria apply to all awards except the My Favourite AI Solution Award, which uses audience vote.' },
         { q: 'How many tracks are there?', a: 'Three tracks: Training Session (fundamentals of AI-driven development), AI Coding Agents (toolkits including TRAE, OpenCode, and MCP integration), and AI-Powered Systems / Survival Kit (enterprise tools like Copilot Studio and GenAI Portal).' },
-        { q: 'How do I get started?', a: 'Start with Step 1: Getting Started, which covers TRAE setup and the dual-client architecture. Then move through the roadmap or jump into the track most relevant to your project.' },
+        { q: 'How do I get started?', a: 'Start with Step 1: Getting Started, which covers TRAE setup and the spec workflow with /spec command. Then move through the roadmap or jump into the track most relevant to your project.' },
         { q: 'What is the roadmap?', a: 'An 8-step guide: (1) Getting Started, (2) Vibe Coding, (3) Spec-Driven Development, (4) Skills, (5) TRAE Overview, (6) OpenCode, (7) AI Agent Builder, (8) GenAI Portal.' },
         { q: 'Do I need to set up an API key?', a: 'No — the AI assistant is pre-configured and ready to use. Just start asking questions!' },
         { q: 'What skills are available?', a: '14 skills: brainstorming, canvas-design, chart-visualization, data-analysis, doc-coauthoring, figma, frontend-design, frontend-skill, git-commit, impeccable, skill-creator, vercel-composition-patterns, vercel-react-best-practices, and webapp-testing.' },
-        { q: 'How do I build a chatbot or AI assistant?', a: 'For Q&A agents, AI Agent Builder (Step 7) is ideal. For coding-focused agents, use TRAE with MCP integration (Steps 5-6). Both integrate with the TRAE Skills ecosystem.' },
-        { q: 'How do I back up my project to keep building after the event?', a: 'You have two options: (1) Push to GitHub — use a prompt in TRAE to initialize a git repo, create a .gitignore, and push to a new personal repository. Make sure you are signed in to GitHub first. (2) Upload to OneDrive — copy your project directory to your personal OneDrive. On Mac, the path is Documents -> trae_projects.' },
+        { q: 'How do I build a chatbot or AI assistant?', a: 'For Q&A agents, AI Agent Builder (Copilot Studio, Step 7) is ideal. For coding-focused agents, use TRAE or OpenCode. Both integrate with the TRAE Skills ecosystem and can use MCP servers like Context7, Excel, and Playwright.' },
+        { q: 'How do I back up my project to keep building after the event?', a: 'Two options: (1) Push to GitHub — use a prompt in TRAE to initialize a git repo, create a .gitignore, and push to a new personal repository. Make sure you are signed in to GitHub first. (2) Upload to OneDrive — copy your project directory to your personal OneDrive. On Mac, the path is Documents -> trae_projects.' },
         { q: 'Will the aiHackathon 2026 environment in AI Agent Builder be available after the competition?', a: 'The environment will be available for 1 month after the competition. You are strongly advised to migrate any data you would like to keep into the production environment. For developing student-facing agents, use www.vtc.edu.hk/aiAgentForStudent. For developing staff-facing agents, use www.vtc.edu.hk/aiAgentForStaff.' },
         { q: 'How long can I keep the extra token for VTC GenAI Portal?', a: 'The extra token will be available for 6 months after the event.' },
         { q: 'What awards are available?', a: 'Total prizes worth HK$30,000: Gold Award (HK$10,000 per team), Silver Award (HK$8,000 per team), Bronze Award (HK$5,000 per team), Outstanding Innovation Award (HK$2,000 per team), My Favourite AI Solution Award (Audience Vote, HK$2,000 per team), Excellent Strategic Solution Award (HK$1,000 per team), Excellent Administrative Solution Award (HK$1,000 per team), and Excellent Learning & Teaching Solution Award (HK$1,000 per team). All competing teams receive certificates of attendance.' },
-        { q: 'What is the schedule for the competition day?', a: 'The event on 5 June 2026 at Hall, VTC Tsing Yi Complex runs from 09:00 to 17:15. Key milestones: 09:00 Check-in, 09:40 Training Session, 10:40 Official Start, 13:30 Live Streaming Begins, 14:40 Team Presentations, 16:40 Judging Panel Deliberation, 17:00 Voting Deadline & Prize Presentation, 17:15 Closing Remarks.' },
+        { q: 'What is the schedule for the competition day?', a: 'The event on 5 June 2026 at Hall, VTC Tsing Yi Complex runs from 09:00 to 17:15. Key milestones: 09:00 Check-in, 09:30 Opening Remarks, 09:35 Briefing on Rules, 09:40 Training Session, 10:40 – 14:40 Development Session, 14:40 Team Presentations, 16:40 Judging Panel Deliberation, 17:00 Voting Deadline & Prize Presentation, 17:15 Closing Remarks.' },
         { q: 'Who are the judges?', a: 'The Judging Panel consists of: Dave CHEN (President, Hong Kong Computer Society), Dr. John HUI (Principal cum Chief Digital Officer, HKIIT), Dr. Daniel YAN (Academic Director of Engineering, VTC cum Principal, HTI Tsing Yi), Kenny WOO (Director, Human Resources Office, VTC), Keith YEUNG (Director, Information Technology Office, VTC), and Dennis WONG (Associate Principal, HTI Chai Wan).' },
-        { q: 'Must I use TRAE for this project?', a: 'No. You are free to use any tools or workflows that are allowed in the aiHackathon, such as AI Agent Builder and OpenCode. TRAE is recommended but not mandatory.' },
+        { q: 'Must I use TRAE for this project?', a: 'No. You are free to use any development tools you prefer for the hackathon. TRAE and OpenCode are both allowed. You may also use AI Agent Builder and GenAI Portal. You are welcome to use whatever tool makes you most productive.' },
+        { q: 'What are the models available in TRAE and OpenCode?', a: 'Five designated models: qwen3.6-plus (suggested model, supports text+image input), minimax-m2.7, kimi-k2.6 (supports text+image input), glm-5.1, and deepseek-v4-flash. Contestants are not permitted to use any other models in TRAE or OpenCode.' },
+        { q: 'What models are available in Ollama?', a: 'Four models: gemma4:e4b (Mixture-of-experts, ~5s/interaction, text+image, best for chatting agents), deepseek-r1:8b (chain-of-thought reasoning, ~15s, text-only, best for math/logic), qwen3.5:35b (general reasoning, ~60s, strong Chinese support, text+image), qwen2.5vl:7b (visual-language model, ~15s/image, best for image processing/OCR). All run locally on your machine.' },
+        { q: 'What credits does GenAI Portal provide?', a: 'LLM Tokens: 1,000,000, Image Generation: 100 images, Video Generation: 30 videos, Deep Research: 30 runs.' },
+        { q: 'How do I integrate my Copilot Studio agent into my project?', a: 'Enable Direct Line Speech Channel in Copilot Studio to get a token endpoint. Provide this endpoint to TRAE and the coding agent will handle the integration. For Teams/Moodle deployments, follow E-Tutorial videos 4 and 5. For other channels, refer to the Agent Integration page. Keep your token endpoint secure — do not expose it in client-side code.' },
+        { q: 'How do I access Copilot Studio during the hackathon?', a: 'Use the VTC staff account at www.vtc.edu.hk/mscopilotstudioforaihackathon2026.' },
         { q: 'TRAE seems stuck. What should I do?', a: 'First, check the terminal for any pending input prompts. If that does not help, press Escape and restart the session. You may also be in a "thinking loop" — this tends to occur when the Context Window is approaching its limit.' },
         { q: 'TRAE is asking me to approve a high-risk command. Should I approve?', a: 'Yes, it is generally safe to approve. TRAE operates within an isolated sandbox environment, so commands executed during the aiHackathon will not affect your host system. However, exercise caution when using other coding agents outside this event on company machines.' },
         { q: 'Can I use pre-existing code or templates?', a: 'Yes, but you are strongly encouraged to keep enhancing your solution in the spirit of competition.' },
         { q: 'Do we need a PowerPoint for the presentation?', a: 'There is no fixed format. Focus on convincing the judges to award you a high score across the judging criteria. Use whatever medium best communicates your idea.' },
         { q: 'What should I do if I experience network issues?', a: 'If you experience constant or frequent network problems, voice it out to the technical support on-site so they can assist.' },
         { q: 'Where can I get help if I am stuck?', a: 'Technical support on-site will only address issues with the provided tools and resources. For project guidance, the agent in TRAE and this survival kit are your available resources.' },
-        { q: 'Is there a deadline for project submission?', a: 'The deadline is 14:40 sharp.' }
+        { q: 'Is there a deadline for project submission?', a: 'The deadline is 14:40 sharp.' },
+        { q: 'Should I deploy my project or is localhost enough?', a: 'For hackathon prototypes, localhost is usually sufficient. Deploy only when you need to share with others. Vercel is NOT recommended due to a major security breach in April 2026. Use GitHub Codespaces if deployment is needed.' },
+        { q: 'What is Vibe Coding vs Spec-Driven Development?', a: 'Vibe Coding is conversational and fast — you describe features in natural language and the AI builds iteratively. Best for quick prototyping, simple features, single-file changes. Spec-Driven Development is structured and document-driven — it generates spec.md, design.md, and tasks.md before implementation. Best for complex multi-file features needing planning.' },
+        { q: 'How do I deploy to GitHub Codespaces?', a: 'Push your code to GitHub, open the repo in your browser, click "Code" and create a new Codespace. In the Codespace, open the Ports tab, set the port to Public, and copy the forward URL to share.' },
+        { q: 'What is Playwright and how do I use it?', a: 'Playwright is a browser automation tool pre-installed in TRAE as an MCP tool. Use it to automate web interactions like navigating pages, filling forms, clicking buttons, and scraping content. Can be used with GenAI Portal for automated image/video generation.' }
     ]
 };
 
@@ -930,7 +1020,8 @@ const CHATBOT_PAGE_SUGGESTIONS = {
 };
 
 function buildSystemPrompt() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const rawPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPage = rawPage.endsWith('.html') ? rawPage : rawPage + '.html';
     const currentPageSummary = CHATBOT_CONTEXT.pageSummaries[currentPage] || null;
 
     const trackInfo = CHATBOT_CONTEXT.tracks.map(t => `- **${t.name}**: ${t.description}`).join('\n');
@@ -1036,6 +1127,7 @@ function renderMarkdown(text) {
     html = html.replace(/^#### (.+)$/gm, '<h4>$1</h4>');
     html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');
     html = html.replace(/^## (.+)$/gm, '<h2>$1</h2>');
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
 
     let inUl = false;
     let inOl = false;
@@ -1086,7 +1178,7 @@ function initChatbot() {
 function injectChatbotHTML() {
     const fab = document.createElement('button');
     fab.className = 'chatbot-fab';
-    fab.setAttribute('aria-label', 'Open AI Hackathon Assistant chatbot');
+    fab.setAttribute('aria-label', 'Open aiHackathon Assistant chatbot');
     fab.innerHTML = '<video src="img/spinning_chatbot.webm" autoplay loop muted playsinline></video>';
     document.body.appendChild(fab);
 
@@ -1114,7 +1206,8 @@ function injectChatbotHTML() {
         intro.addEventListener('click', function() { intro.remove(); sessionStorage.setItem('chatbot_intro_shown', 'true'); });
     }
 
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const rawPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPage = rawPage.endsWith('.html') ? rawPage : rawPage + '.html';
     const suggestions = CHATBOT_PAGE_SUGGESTIONS[currentPage] || CHATBOT_PAGE_SUGGESTIONS['home.html'];
     const suggestionsHTML = suggestions.map(s => `<button class="chatbot-suggestion-chip" data-suggestion="${s}">${s}</button>`).join('');
 
@@ -1122,7 +1215,7 @@ function injectChatbotHTML() {
         <div class="chatbot-window" id="chatbot-window">
             <div class="chatbot-header">
                 <div class="chatbot-header-left">
-                    <h3 class="chatbot-header-title">AI Hackathon Assistant</h3>
+                    <h3 class="chatbot-header-title">aiHackathon Assistant</h3>
                 </div>
                 <div class="chatbot-header-right">
                     <button class="chatbot-clear-btn" id="chatbot-clear" aria-label="Clear chat history">Clear</button>
@@ -1673,12 +1766,20 @@ function initMobileAutoClose() {
     if (!sidebar) return;
 
     sidebar.addEventListener('click', function(e) {
-        const link = e.target.closest('.sidebar-link[href], .sidebar-home-link[href]');
+        if (e.target.closest('.collapsible-header')) {
+            return;
+        }
+
+        if (e.target.closest('.sidebar-nav-item .sidebar-link.has-subpages')) {
+            return;
+        }
+
+        const link = e.target.closest('a.sidebar-link[href], a.sidebar-home-link[href]');
         if (!link) return;
 
-        if (sidebar.classList.contains('open')) {
+        if (window.innerWidth <= 768 && sidebar.classList.contains('open')) {
             sidebar.classList.remove('open');
-            if (menuBtn) menuBtn.classList.remove('is-open');
+            if (menuBtn) menuBtn.classList.remove('open');
             const backdrop = document.querySelector('.sidebar-backdrop');
             if (backdrop) {
                 backdrop.classList.remove('active');
