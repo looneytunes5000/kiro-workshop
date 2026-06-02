@@ -29,35 +29,36 @@
 
             <details class="prompt-accordion">
                 <summary class="prompt-accordion-header">
-                    <span class="prompt-accordion-icon">&#9654;</span> <span class="prompt-accordion-title">Must I use TRAE for this project?</span>
+                    <span class="prompt-accordion-icon">&#9654;</span> <span class="prompt-accordion-title">Must I use AI coding agents for development?</span>
                 </summary>
                 <div class="prompt-accordion-content">
-                    <p>No. You are free to use any tools or workflows that are allowed in the aiHackathon, such as AI Agent Builder, and OpenCode. TRAE is recommended but not mandatory.</p>
+                    <p>No, Allowed tools and platforms such as OpenCode, Microsoft Copilot Studio can be used to develop, TRAE is recommended but not mandatory.</p>
                 </div>
             </details>
 
             <details class="prompt-accordion">
                 <summary class="prompt-accordion-header">
-                    <span class="prompt-accordion-icon">&#9654;</span> <span class="prompt-accordion-title">TRAE seems stuck. What should I do?</span>
+                    <span class="prompt-accordion-icon">&#9654;</span> <span class="prompt-accordion-title">AI coding agent seems stuck. What should I do?</span>
                 </summary>
                 <div class="prompt-accordion-content">
-                    <p>First, check the terminal for any pending input prompts. If that does not help, press Escape and restart the session. You may also be in a "thinking loop" &#8212; this tends to occur when the Context Window is approaching its limit.</p>
+                    <p>First, check the terminal for any pending input prompts. If that does not help, press Escape and restart the session.</p>
                     <video controls playsinline style="width: 100%; margin-top: 16px;">
                         <source src="img/pending for terminal.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                     <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px; font-style: italic;">A sample of a terminal waiting for user input</p>
+                    <p>You may also be in a "thinking loop" &#8212; this tends to occur when the Context Window is approaching its limit.</p>
                 </div>
             </details>
 
             <details class="prompt-accordion">
                 <summary class="prompt-accordion-header">
-                    <span class="prompt-accordion-icon">&#9654;</span> <span class="prompt-accordion-title">TRAE is asking me to approve a high-risk command. Should I approve?</span>
+                    <span class="prompt-accordion-icon">&#9654;</span> <span class="prompt-accordion-title">AI Coding Agent is asking me to approve a high-risk command. Should I approve?</span>
                 </summary>
                 <div class="prompt-accordion-content">
-                    <p>Yes, it is generally safe to approve. TRAE operates within an isolated sandbox environment, so commands executed during the aiHackathon will not affect your host system.</p>
+                    <p>Yes, it is generally safe to approve. The AI Coding Agent operates within an isolated sandbox environment, so commands executed during the aiHackathon will not affect your host system.</p>
                     
-                    <img src="img/addingcommand.png" alt="Example of TRAE requesting command approval" style="width: 100%; margin-top: 16px; border-radius: 8px;">
+                    <img src="img/addingcommand.png" alt="Example of AI Coding Agent requesting command approval" style="width: 100%; margin-top: 16px; border-radius: 8px;">
                     
                     <p>However, exercise caution when using other coding agents outside this event, especially on company machines. Outside the sandbox, high-risk commands could lead to cyber-security issues.</p>
                     
@@ -67,10 +68,34 @@
 
             <details class="prompt-accordion">
                 <summary class="prompt-accordion-header">
-                    <span class="prompt-accordion-icon">&#9654;</span> <span class="prompt-accordion-title">Can I use pre-existing code or templates?</span>
+                    <span class="prompt-accordion-icon">&#9654;</span> <span class="prompt-accordion-title">The AI Coding Agent is showing "Model Request failed" warning, what should I do?</span>
                 </summary>
                 <div class="prompt-accordion-content">
-                    <p>Yes, but you are strongly encouraged to keep enhancing your solution in the spirit of competition.</p>
+                    <p>Occasional network instability may occur. Contestants are advised to keep trying to prompt the agent to continue or switch to other provided models. The service is likely to resume within a few minutes.</p>
+                    
+                    <img src="img/request_fail_1.png" alt="Model Request failed warning example" style="width: 100%; margin-top: 16px; border-radius: 8px;">
+                    
+                    <img src="img/request_fail_2.png" alt="Model Request failed warning example" style="width: 100%; margin-top: 16px; border-radius: 8px;">
+                    
+                    <p>If the issue persists after a few minutes, please alert the on-site technical support.</p>
+                </div>
+            </details>
+
+            <details class="prompt-accordion">
+                <summary class="prompt-accordion-header">
+                    <span class="prompt-accordion-icon">&#9654;</span> <span class="prompt-accordion-title">What models are allowed to be used during the event?</span>
+                </summary>
+                <div class="prompt-accordion-content">
+                    <p>Five models are designated and pre-installed in the AI coding agents for the aiHackathon:</p>
+                    <ul>
+                        <li><strong>qwen3.6-plus</strong> (suggested model, supports text and image input)</li>
+                        <li><strong>minimax-m2.7</strong></li>
+                        <li><strong>kimi-k2.6</strong> (supports text and image input)</li>
+                        <li><strong>glm-5.1</strong></li>
+                        <li><strong>deepseek-v4-flash</strong></li>
+                    </ul>
+                    <p>These models offer similar performance for coding and agentic tasks. Contestants are free to switch between them should they experience instability or slowdowns from any one model. Contestants are not permitted to use any other models for development in TRAE and OpenCode.</p>
+                    <p>In TRAE, these models are accessible under the "Custom Models" section.</p>
                 </div>
             </details>
 
@@ -100,7 +125,7 @@
                     <span class="prompt-accordion-icon">&#9654;</span> <span class="prompt-accordion-title">What should I do if I experience network issues during the hackathon?</span>
                 </summary>
                 <div class="prompt-accordion-content">
-                    <p>If you experience constant or frequent network problems, voice it out to the technical support on-site so they can assist.</p>
+                    <p>If you experience constant or frequent network problems, voice it out to the technical support on-site so they can investigate the issue.</p>
                 </div>
             </details>
 
@@ -109,7 +134,7 @@
                     <span class="prompt-accordion-icon">&#9654;</span> <span class="prompt-accordion-title">Where can I get help if I am stuck?</span>
                 </summary>
                 <div class="prompt-accordion-content">
-                    <p>Technical support on-site will only address issues with the provided tools and resources. For project guidance, the agent in TRAE and this survival kit are your available resources. Use them to troubleshoot and advance your work.</p>
+                    <p>Technical support on-site will only address stability issues with the provided tools and resources. For project guidance, the agent in AI Coding Agent and this survival kit are your available resources. Use them to troubleshoot and advance your work.</p>
                 </div>
             </details>
 
@@ -117,7 +142,7 @@
 
             <details class="prompt-accordion">
                 <summary class="prompt-accordion-header">
-                    <span class="prompt-accordion-icon">&#9654;</span> <span class="prompt-accordion-title">Is there a deadline for project submission?</span>
+                    <span class="prompt-accordion-icon">&#9654;</span> <span class="prompt-accordion-title">Is there a deadline for the development phase?</span>
                 </summary>
                 <div class="prompt-accordion-content">
                     <p>The deadline is 14:40 sharp.</p>
@@ -131,14 +156,14 @@
                 <div class="prompt-accordion-content">
                     <p>Total prizes worth HK$30,000:</p>
                     <ul>
-                        <li><strong>Gold Award</strong> :HK$10,000 per team</li>
-                        <li><strong>Silver Award</strong> :HK$8,000 per team</li>
-                        <li><strong>Bronze Award</strong> :HK$5,000 per team</li>
-                        <li><strong>Outstanding Innovation Award</strong> :HK$2,000 per team</li>
-                        <li><strong>My Favourite AI Solution Award</strong> (Audience Vote) :HK$2,000 per team</li>
-                        <li><strong>Excellent Strategic Solution Award</strong> :HK$1,000 per team</li>
-                        <li><strong>Excellent Administrative Solution Award</strong> :HK$1,000 per team</li>
-                        <li><strong>Excellent Learning & Teaching Solution Award</strong> :HK$1,000 per team</li>
+                        <li><strong>Gold Award</strong> :HK$10,000 for the winning team</li>
+                        <li><strong>Silver Award</strong> :HK$8,000 for the winning team</li>
+                        <li><strong>Bronze Award</strong> :HK$5,000 for the winning team</li>
+                        <li><strong>Outstanding Innovation Award</strong> :HK$2,000 for the winning team</li>
+                        <li><strong>My Favourite AI Solution Award</strong> (Audience Vote) :HK$2,000 for the winning team</li>
+                        <li><strong>Excellent Strategic Solution Award</strong> :HK$1,000 for the winning team</li>
+                        <li><strong>Excellent Administrative Solution Award</strong> :HK$1,000 for the winning team</li>
+                        <li><strong>Excellent Learning & Teaching Solution Award</strong> :HK$1,000 for the winning team</li>
                     </ul>
                     <p>All competing teams will receive certificates of attendance. Winners will receive certificates of merit and prizes.</p>
                 </div>
@@ -146,7 +171,7 @@
 
             <details class="prompt-accordion">
                 <summary class="prompt-accordion-header">
-                    <span class="prompt-accordion-icon">&#9654;</span> <span class="prompt-accordion-title">What is the schedule for the competition day (5 June 2026)?</span>
+                    <span class="prompt-accordion-icon">&#9654;</span> <span class="prompt-accordion-title">What is the schedule for the competition day?</span>
                 </summary>
                 <div class="prompt-accordion-content">
                     <ul>
@@ -154,7 +179,7 @@
                         <li><strong>09:30</strong> :Opening Remarks</li>
                         <li><strong>09:35</strong> :Briefing on Rules and Regulations</li>
                         <li><strong>09:40</strong> :Training Session</li>
-                        <li><strong>10:40 – 14:40</strong> :Development Session</li>
+                        <li><strong>10:40 – 14:40</strong> :Development Session (live streaming from 13:30 to 14:40)</li>
                         <li><strong>14:40</strong> :Team Presentations</li>
                         <li><strong>16:40</strong> :Recess and Judging Panel Deliberation</li>
                         <li><strong>17:00</strong> :Voting Deadline & Prize Presentation Ceremony</li>
